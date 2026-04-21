@@ -1,0 +1,303 @@
+{
+  "scenes": [
+    {
+      "sceneName": "GameScene",
+      "lines": [
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "오늘도 시작해 볼까!",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "뭔가 잘될 것 같은 날이군!",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "오늘은 이쯤 할까..",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "슬슬 마무리 해야겠군..",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "안녕하세요! 제 무기좀 강화해주세요!",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "여기가 대장간 맞나요? 무기좀 강화하려구요!",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "어서 오시게. 나한테 맡기면 된다네.",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "제가 처음 산 무기에요! 멋지게 부탁드려요!",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "이건 실패할 수가 없지.",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "이건 해줘야지~!",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "역시. 붙을 줄 알았다구.",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "으하하! 이 정도는 쉽지.",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "감사합니다! 또 올게요~",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "안녕히 계세요.",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "아.. 실패해 버렸잖아? 아쉬워라..",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "이게 안되다니.. 오늘은 날이 아닌가..?",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "… 나도 이럴줄은 몰랐네..",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "안녕히 계세요...",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_01",
+          "charName": "NPC_adventurer_01",
+          "text": "다시는 여기 오면 안되겠다.",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "강화 때문에 잠이 안와서 들렀어요",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "계십니까? 장비 강화좀 맡기려고 하는데요",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "어서 오시오. 어떤 것을 도와드릴까?",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "긴장 되네. 잘 부탁해요.",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "이 장비를 부탁드립니다.",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "이제 한동안은 걱정 없겠다..",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "오늘 강화 운이 좋은걸?",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "내 망치가 큰일을 해냈군!",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "안녕히 계세요.(다음에 또 와야겠다.)",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "감사합니다. 다음에 또 올게요",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "하.. 설마 했는데 진짜네.",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "?? 아니, 이걸 실패한다고? 여기 완전 똥손이잖아",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "최선을 다했지만.. 미안하오..",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "(고개만 숙여 인사 후 떠난다.)",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_02",
+          "charName": "NPC_adventurer_02",
+          "text": "쯧.. 내 돈만 날렸네",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "주인장 계신가!",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "(여기가 그렇게 강화가 잘 된다던데..)",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "어서오십시오. 이쪽으로 오시지요.",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "처음 보는 대장장이군. 이 놈일세",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "이번 무기는 꼭 성공했으면 좋겠네..",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "오! 대단하군! 역시 믿고 맡기길 잘했어.",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "이 확률을 뚫다니..! 오늘은 되는 날이시군요.",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "운이 좋았던 것 뿐입니다.",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "여기는 내가 잘 이용하도록 하지! 다음에 또 봅세!",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "종종 들르겠습니다. 안녕히 계세요",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "마음의 준비는 했지만, 그래도 뼈 아프네",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "아.. 실망이네.. 여기는 다를 줄 알았는데..",
+          "eventId": ""
+        },
+        {
+          "img": "User_smith",
+          "charName": "User_smith",
+          "text": "… 확률은 이미 설명을 드렸습니다",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "별 볼일 없는 곳이구만!",
+          "eventId": ""
+        },
+        {
+          "img": "NPC_adventurer_03",
+          "charName": "NPC_adventurer_03",
+          "text": "짜증나네. 이게 얼마짜린데.",
+          "eventId": ""
+        }
+      ]
+    }
+  ]
+}

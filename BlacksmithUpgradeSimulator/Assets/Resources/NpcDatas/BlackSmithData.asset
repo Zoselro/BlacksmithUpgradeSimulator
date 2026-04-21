@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9102255fa0bb20f429dc9d6ef0b31284, type: 3}
+  m_Name: BlackSmithData
+  m_EditorClassIdentifier: 
+  nameID: "\uB300\uC7A5\uC7A5\uC774"
+  backSprite: {fileID: 8740719520246008846, guid: d073b261348368c4c9db3df7a63bd37e, type: 3}
+  normalSprite: {fileID: 3253026227718421890, guid: 3c34249d777291c42acc3ebe69d2cea4, type: 3}
+  happySprite: {fileID: -3204751465703054373, guid: 4a9c4562b045d1a4998dfdad06540ebf, type: 3}
+  sadSprite: {fileID: 6758112461979686326, guid: 6b6a06dc714c14b45b84ee6c8d1c0c1b, type: 3}
+  openID: shopOpen00
+  closeID: shopClose
+  welcomeID: greetSmith
+  completeFailID: CompleteFail
+  completeSuccessID: CompleteSuccess
+  enhanceSuccessID: enhanceSuccessSmith
+  enhaceGreatSuccess: enhanceGreatSuccessSmith
+  enhanceFailID: enhanceFailSmith

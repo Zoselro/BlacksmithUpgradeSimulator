@@ -1,0 +1,780 @@
+{
+  "lines": [
+    {
+      "text": "오늘도 시작해 볼까!",
+      "eventID": "shopOpen00"
+    },
+    {
+      "text": "뭔가 잘될 것 같은 날이군!",
+      "eventID": "shopOpen00"
+    },
+    {
+      "text": "어서 오시오! 무엇을 도와드릴까?",
+      "eventID": "greetSmith"
+    },
+    {
+      "text": "대장간에 잘 왔소. 뭘 맡기러 오셨나?",
+      "eventID": "greetSmith"
+    },
+    {
+      "text": "손에 잘 붙는구만!",
+      "eventID": "enhanceSuccessSmith"
+    },
+    {
+      "text": "하하! 성공했잖아!",
+      "eventID": "enhanceSuccessSmith"
+    },
+    {
+      "text": "내 인생의 역작이 만들어졌군..!",
+      "eventID": "enhanceGreatSuccessSmith"
+    },
+    {
+      "text": "이토록 아름다울수가..!",
+      "eventID": "enhanceGreatSuccessSmith"
+    },
+    {
+      "text": "헉.. 큰일났군.",
+      "eventID": "enhanceFailSmith"
+    },
+    {
+      "text": "…난 확률대로만 만들 뿐이지.",
+      "eventID": "enhanceFailSmith"
+    },
+    {
+      "text": "무기 여기 있소!",
+      "eventID": "CompleteSuccess"
+    },
+    {
+      "text": "무기.. 여기 있소…",
+      "eventID": "CompleteFail"
+    },
+    {
+      "text": "오늘은 이쯤 할까..",
+      "eventID": "shopClose"
+    },
+    {
+      "text": "슬슬 마무리 해야겠군..",
+      "eventID": "shopClose"
+    },
+    {
+      "text": "장비 강화가 여기가 맞나?",
+      "NpcTendency": "FirstVisit",
+      "NpcState": "Enter",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "여기가 장비 강화 해주는 데겠지?",
+      "NpcTendency": "FirstVisit",
+      "NpcState": "Enter",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "이거를 강화하면 되겠지?",
+      "NpcTendency": "FirstVisit",
+      "NpcState": "Request",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "이 템 강화하라고 그랬던 것 같은데..",
+
+      "NpcTendency": "FirstVisit",
+      "NpcState": "Request",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "나이스. 나 좀 세졌겠지?",
+
+      "NpcTendency": "FirstVisit",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "오, 붙었네!",
+
+      "NpcTendency": "FirstVisit",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "어.. 실패했네..",
+
+      "NpcTendency": "FirstVisit",
+      "NpcState": "CompleteFail",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "엌.. 확률 높을텐데…",
+
+      "NpcTendency": "FirstVisit",
+      "NpcState": "CompleteFail",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "이 게임 나랑 맞을지도? 우훗",
+
+      "NpcTendency": "FirstVisit",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "빨리 다른거도 하러 가야지!",
+
+      "NpcTendency": "FirstVisit",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "아 게임 시작부터 불안하네..",
+
+      "NpcTendency": "FirstVisit",
+      "NpcState": "ExitFail",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "기분 나쁘네..",
+
+      "NpcTendency": "FirstVisit",
+      "NpcState": "ExitFail",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "하.. 여기가 그 대장간이야?",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "Enter",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "아 짜증나. 어딜 가도 실패하네",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "Enter",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "여기요. 약해 죽겠네 진짜.",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "Request",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "이거 강화해주세요. 실패하면 가만 안둬.",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "Request",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "이 게임은 왜 찔끔찔끔 오르는거야.",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "이제야 좀 쓸만하겠네",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "아니 이게 왜 실패해!! 진짜로!",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "CompleteFail",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "아 뭔 이게 실패야. 말 안되네.",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "CompleteFail",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "그나마 여기가 낫네.",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "근데 좀 아쉽긴 하다. 에잉..",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "게임을 접든지 해야지",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "ExitFail",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "온 세상이 나만 억까해. 진짜",
+
+      "NpcTendency": "HotHeaded",
+      "NpcState": "ExitFail",
+      "NpcType": "Beginner"
+    },
+
+    {
+      "text": "실례합니다. 여기가 대장간이죠?",
+
+      "NpcTendency": "Polite",
+      "NpcState": "Enter",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "안녕하세요. 강화좀 하려구요",
+
+      "NpcTendency": "Polite",
+      "NpcState": "Enter",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "이 장비를 좀 봐주셨으면 합니다.",
+
+      "NpcTendency": "Polite",
+      "NpcState": "Request",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "이거 강화가 될까요?",
+
+      "NpcTendency": "Polite",
+      "NpcState": "Request",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "와..! 성공했다!!",
+
+      "NpcTendency": "Polite",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "이게 성공이군요. 감사합니다.",
+
+      "NpcTendency": "Polite",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "확률이 높다고 다가 아니였군요.",
+
+      "NpcTendency": "Polite",
+      "NpcState": "CompleteFail",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "아! 실패했군요. 괜찮습니다.",
+
+      "NpcTendency": "Polite",
+      "NpcState": "CompleteFail",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "게임이 재미있네요. 다음에 또 찾아뵐게요.",
+
+      "NpcTendency": "Polite",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "감사합니다. 큰 도움이 되었습니다.",
+
+      "NpcTendency": "Polite",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "오늘은 게임을 여기까지만 해야겠어요.",
+
+      "NpcTendency": "Polite",
+      "NpcState": "ExitFail",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "에써주신 덕분입니다. 안녕히 계세요",
+
+      "NpcTendency": "Polite",
+      "NpcState": "ExitFail",
+      "NpcType": "Beginner"
+    },
+    {
+      "text": "스읍..후… 안녕하쇼…",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "Enter",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "아 진짜 열받아 죽겟네!!!!!!!",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "Enter",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "이거. 강화 실패하면 가만 안둬.",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "Request",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "실패하기만 해봐.",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "Request",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "나이스! 이거지~",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "그르치!!! 다 죽었다.",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "아!!!!!!!!!!!!!!!!!!!!!",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "CompleteFail",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "아! 왜! 이게! 어째서! 대체! 아니!",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "CompleteFail",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "아 빨리 성능 테스트하러 가야지~",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "휴, 성공 못했으면 뭐 하나 부술뻔",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "부술 거 어디 없나..",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "ExitFail",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "주인장, 내 눈에 띄지 마쇼.",
+      "NpcTendency": "HotHeaded",
+      "NpcState": "ExitFail",
+      "NpcType": "Intermediate"
+    },
+
+
+    {
+      "text": "여기서 내가 강화를 해봤었나?",
+      "NpcTendency": "Polite",
+      "NpcState": "Enter",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "안녕하세요.",
+      "NpcTendency": "Polite",
+      "NpcState": "Enter",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "이거 좀 부탁합니다.",
+      "NpcTendency": "Polite",
+      "NpcState": "Request",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "얘 좀 강화해주세요",
+      "NpcTendency": "Polite",
+      "NpcState": "Request",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "이게 한번에 되네.",
+      "NpcTendency": "Polite",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "이걸 성공하네.",
+      "NpcTendency": "Polite",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "아.. 이게 안되네..",
+      "NpcTendency": "Polite",
+      "NpcState": "CompleteFail",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "쩝.. 좀 아쉬운데.",
+      "NpcTendency": "Polite",
+      "NpcState": "CompleteFail",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "여기는 종종 올만 하겠다.",
+      "NpcTendency": "Polite",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "감사합니다. 번창하세요.",
+      "NpcTendency": "Polite",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "오늘은 날이 아니다..",
+      "NpcTendency": "Polite",
+      "NpcState": "ExitFail",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "명당 어디 없나..",
+      "NpcTendency": "Polite",
+      "NpcState": "ExitFail",
+      "NpcType": "Intermediate"
+    },
+
+
+    {
+      "text": "제발..제발…제발…...",
+      "NpcTendency": "Sage",
+      "NpcState": "Enter",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "다 걸었다. 여기만 믿는다..",
+      "NpcTendency": "Sage",
+      "NpcState": "Enter",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "얘 꼭좀 성공 시켜주세요….",
+      "NpcTendency": "Sage",
+      "NpcState": "Request",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "이거만 붙으면 인생 피는데…..",
+      "NpcTendency": "Sage",
+      "NpcState": "Request",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "나이스!!!!!!!!!!!!!!!!!",
+      "NpcTendency": "Sage",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "그르치!!! 오늘 뭔가 느낌 좋았어!",
+      "NpcTendency": "Sage",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "… 그래.. 안될 것 같더라..",
+      "NpcTendency": "Sage",
+      "NpcState": "CompleteFail",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "다 부질없다..",
+      "NpcTendency": "Sage",
+      "NpcState": "CompleteFail",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "다행이다. 레이드 갈 수 있겠어.",
+      "NpcTendency": "Sage",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "강화는 자신감이야!",
+      "NpcTendency": "Sage",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Intermediate"
+    },
+
+    {
+      "text": "템 팔아요…",
+      "NpcTendency": "Sage",
+      "NpcState": "ExitFail",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "게임 접어요…",
+      "NpcTendency": "Sage",
+      "NpcState": "ExitFail",
+      "NpcType": "Intermediate"
+    },
+    {
+      "text": "오늘의 운세가 지금 강화하라 했어..!",
+      "NpcTendency": "Superstitious",
+      "NpcState": "Enter",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "여기서 강화하면 잘될거라 했어..!",
+      "NpcTendency": "Superstitious",
+      "NpcState": "Enter",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "강화하실 때 마음속으로 3까지 세주세요.",
+      "NpcTendency": "Superstitious",
+      "NpcState": "Request",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "강화 하시기 전에 손은 씻으셨나요..?",
+      "NpcTendency": "Superstitious",
+      "NpcState": "Request",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "그러췌~~ 될 것 같았다니깐!",
+      "NpcTendency": "Superstitious",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "오오! 역시 오늘이였나..?!",
+      "NpcTendency": "Superstitious",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "어..이상하다..? 오늘이 아닌가..?",
+      "NpcTendency": "Superstitious",
+      "NpcState": "CompleteFail",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "악. 다른 방법으로 강화했어야 했나?",
+      "NpcTendency": "Superstitious",
+      "NpcState": "CompleteFail",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "하루가 기분이 좋은걸~?",
+      "NpcTendency": "Superstitious",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "다음에도 여기서 해야지~!",
+      "NpcTendency": "Superstitious",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "여기는 마가 꼈네. 오면 안되겠다.",
+      "NpcTendency": "Superstitious",
+      "NpcState": "ExitFail",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "내가 문제가 아니라 여기가 문제인가..?",
+      "NpcTendency": "Superstitious",
+      "NpcState": "ExitFail",
+      "NpcType": "Advanced"
+    },
+
+
+    {
+      "text": "오잉?ㅋㅋ 처음 보는 대장간이넹?",
+      "NpcTendency": "Casual",
+      "NpcState": "Enter",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "주인장 반갑고 ㅋㅋ",
+      "NpcTendency": "Casual",
+      "NpcState": "Enter",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "내 무기 간지나지?ㅋㅋㅋ 이거 부탁해~",
+      "NpcTendency": "Casual",
+      "NpcState": "Request",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "이럴 때 도전해줘야지 또 ㅋㅋㅋ",
+      "NpcTendency": "Casual",
+      "NpcState": "Request",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "엌ㅋㅋㅋㅋ 주인장 고맙다!",
+      "NpcTendency": "Casual",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "이게 붙네 ㅋㅋㅋㅋㅋ",
+      "NpcTendency": "Casual",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "ㅋㅋㅋㅋㅋ 까비",
+      "NpcTendency": "Casual",
+      "NpcState": "CompleteFail",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "아 ㅋㅋㅋㅋ 까비요",
+      "NpcTendency": "Casual",
+      "NpcState": "CompleteFail",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "나중에 또 멋진걸로 들고올게 ㅋㅋㅋㅋ",
+      "NpcTendency": "Casual",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "주인장 맘에 든다 ㅋㅋ 또 봐~",
+      "NpcTendency": "Casual",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "ㅋㅋㅋㅋ 나중에 또 올게",
+      "NpcTendency": "Casual",
+      "NpcState": "ExitFail",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "아 성공했으면 상급 레이드 가는데 ㅋㅋ",
+      "NpcTendency": "Casual",
+      "NpcState": "ExitFail",
+      "NpcType": "Advanced"
+    },
+
+
+    {
+      "text": "후.. 심기일전 하고...",
+      "NpcTendency": "RankFocused",
+      "NpcState": "Enter",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "안녕하세요..",
+      "NpcTendency": "RankFocused",
+      "NpcState": "Enter",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "이거 붙으면 10등 안으로 든다..",
+      "NpcTendency": "RankFocused",
+      "NpcState": "Request",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "이거만 붙으면 랭킹 순위권이다...",
+      "NpcTendency": "RankFocused",
+      "NpcState": "Request",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "나이스! 랭킹 확인해봐!!",
+      "NpcTendency": "RankFocused",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "오케이! 이러면 확정이다.",
+      "NpcTendency": "RankFocused",
+      "NpcState": "CompleteSuccess",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "아흐.. 얼른 붙어야 하는데...",
+      "NpcTendency": "RankFocused",
+      "NpcState": "CompleteFail",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "으아.. 이러면 계획이....",
+      "NpcTendency": "RankFocused",
+      "NpcState": "CompleteFail",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "랭킹판이 어디있더라?",
+      "NpcTendency": "RankFocused",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "1등이 몇강이지? 확인해봐야겠다.",
+      "NpcTendency": "RankFocused",
+      "NpcState": "ExitSuccess",
+      "NpcType": "Advanced"
+    },
+
+    {
+      "text": "이럴 시간이 없다. 다시 재료 모아!",
+      "NpcTendency": "RankFocused",
+      "NpcState": "ExitFail",
+      "NpcType": "Advanced"
+    },
+    {
+      "text": "그냥 포기할까...",
+      "NpcTendency": "RankFocused",
+      "NpcState": "ExitFail",
+      "NpcType": "Advanced"
+    }
+  ]
+}

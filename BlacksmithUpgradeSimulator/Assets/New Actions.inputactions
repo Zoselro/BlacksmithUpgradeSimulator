@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "New Actions",
+    "maps": [
+        {
+            "name": "InputActionSystem",
+            "id": "7abafc9f-0fa0-4ab2-80e7-00a3f9b0217a",
+            "actions": [
+                {
+                    "name": "Mouse Left",
+                    "type": "Button",
+                    "id": "2d593fbf-1063-4974-8190-ae07b653eb96",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "spaceBar",
+                    "type": "Button",
+                    "id": "099e830c-50e2-4a04-981c-5b80e50b2b0e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "06ab23b5-7635-4e14-8e27-1d7f900053ed",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c9bc71d-480a-49f5-8e20-d79fefe82fc0",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "spaceBar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
