@@ -4,8 +4,8 @@ using UnityEngine.Events;
 public class ObjectAnimation : MonoBehaviour
 {   
     [SerializeField] private UnityEvent onWelcome;
-    [SerializeField] private UnityEvent onFadeIn;
     [SerializeField] private UnityEvent onFadeOut;
+    [SerializeField] private UnityEvent onFadeIn;
     public void WelcomeEvent()
     {
         onWelcome.Invoke();
@@ -13,11 +13,11 @@ public class ObjectAnimation : MonoBehaviour
 
     public void ShowFadeIOutImage()
     {
-        onFadeIn.Invoke();
+        onFadeOut.Invoke();
     }
 
     public void ShowFadeInImage()
     {
-        onFadeOut.Invoke();
+        onFadeIn.Invoke();
     }
 }

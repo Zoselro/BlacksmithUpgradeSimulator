@@ -7,7 +7,7 @@ public class StartNextDayButton : MonoBehaviour
     public void OnStartNextDayButton()
     {
         uiManager.ShowSettlementWindow(false);
-        animator.SetTrigger("StartNextDay");
+        //animator.SetTrigger("StartNextDay");
         uiManager.ShowStartNextDayText(true, "다시 하루가 밝았다.");
     }
 }
