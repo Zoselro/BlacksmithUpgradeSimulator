@@ -17,9 +17,7 @@ public class EnhanceUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI weaponTypeText;
     [SerializeField] private TextMeshProUGUI weaponRankText;
     [SerializeField] private TextMeshProUGUI weaponLevelText;
-    [SerializeField] private Button endDayButton;
     [SerializeField] private Button confirmButton;
-    public Button EndDayButton => endDayButton;
 
     [Header("MiniGame")]
     [SerializeField] private GameObject MiniGame;

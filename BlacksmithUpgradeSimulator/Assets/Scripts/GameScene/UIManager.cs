@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI failCnt;
     [SerializeField] private TextMeshProUGUI goldCnt;
     [SerializeField] private Button confirmButton;
+    [SerializeField] private GameObject settlementWindowObj;
     [SerializeField] private GameObject settlementWindow;
     [SerializeField] private GameObject startNextDayTextObj;
     [SerializeField] private TextMeshProUGUI startNextDayText;
@@ -203,6 +204,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowSettlementWindow(bool active)
     {
+        settlementWindowObj.gameObject.SetActive(active);
         settlementWindow.gameObject.SetActive(active);
     }
 
@@ -220,5 +222,10 @@ public class UIManager : MonoBehaviour
     {
         startNextDayTextObj.SetActive(active);
         this.startNextDayText.text = startNextDayText;
+    }
+
+    public void ShowStartNextDayBtn(bool active)
+    {
+        startNextDayTextObj.gameObject.SetActive(active);
     }
 }

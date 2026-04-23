@@ -120,11 +120,29 @@ public class GameManager : MonoBehaviour
         initializeBuffer(); // 대사 버퍼 저장공간 초기화
         UpdateDayUI(); // 일 수 갱신
 
-        uiManager.SetBackGround();
-        waitForSeconds = new WaitForSeconds(eventPopUpTime);
         uiManager.ShowFadeImage(true);
+
+        uiManager.SetBackGround();
+        waitForSeconds = new WaitForSeconds(eventPopUpTime * 1.5f);
         // 대장장이 이미지 띄우도록 지시
         //uiManager.SetActiveImg(true, blackSmithData.BackSprite, Direction.Left)
+        HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅
+    }
+
+    public void NewDay()
+    {
+        uiManager.ShowDialogueBox2(false); // 정산 대사창 비활성화
+        uiManager.ShowDialogueBox(true); // 대화창 활성화
+        uiManager.ShowNextBtn(true); // 다음 버튼 활성화
+        uiManager.ShowStartNextDayBtn(false); // 다음 날 시작 버튼 비활성화
+        uiManager.ShowFadeImage(false);
+
+        //정산 애니메이션 연출 이후,
+        UpdateDayUI(); // 일 수 갱신
+        visitors = 0;
+        // 첫 번째 방문이지만, 첫 날이 아니라면,
+        // 오프닝 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해준다.
+        initializeBuffer();
         HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅
     }
 
@@ -286,23 +304,21 @@ public class GameManager : MonoBehaviour
     {
         if (visitors >= 0)
         {
-            uiManager.ShowSprite(true, buffer[1][1].GetImage(), Direction.Right); // NPC 이미지 보임
-            
-            // 문 열림 BackGround 교체 후 1초 후 누군가가 방문 했다는 팝업창
+            // 문 열림 BackGround 교체 후 1.5초 후 누군가가 방문 했다는 팝업창
             uiManager.SetBackGround(BgType.OpenCounter);
             uiManager.ShowDialogueBox(false);
 
-            yield return waitForSeconds;
-
-            uiManager.NPCVisitTrigger(); // NPC 방문 연출 트리거
             uiManager.PlayWelcomeSequence(true, "누군가가 방문 했습니다.");
 
             yield return waitForSeconds;
 
+            uiManager.ShowSprite(true, buffer[1][1].GetImage(), Direction.Right); // NPC 이미지 보임
+            uiManager.NPCVisitTrigger(); // NPC 방문 연출 트리거
+
             visitors++;
             topUIManager.TopBarDisPlay(); // 방문자 수 갱신
 
-            uiManager.PlayWelcomeSequence(false);
+            //uiManager.PlayWelcomeSequence(false);
         }
     }
     #endregion
@@ -337,8 +353,9 @@ public class GameManager : MonoBehaviour
     public void initializeBuffer()
     {
         // 만약, 첫 번째 방문이라면, 대사 버퍼에 대사 객체를 새로 만들어준다.
-        if (visitors <= 0)
+        if (visitors <= 0 && days == 0)
         {
+            Debug.Log("첫 번째 날에 첫 번째 방문입니다. 대사 버퍼에 대사 객체를 새로 만들어줍니다.");
             buffer[0] = new DialogueLine[FIRST_DIALOGUE_NUM];
             buffer[1] = new DialogueLine[SECOND_DIALOGUE_NUM];
             buffer[2] = new DialogueLine[THIRD_DIALOGUE_NUM];
@@ -352,9 +369,23 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        // 첫 번째 방문이지만, 첫 날이 아니라면,
+        // 오프닝 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해준다.
+        else if (visitors <= 0 && days > 0)
+        {
+            Debug.Log("첫 번째 방문이지만, 첫 날이 아닙니다. 오프닝 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해줍니다.");
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                for (int j = 0; j < buffer[i].Length; j++)
+                {
+                    buffer[i][j].Reset();
+                }
+            }
+        }
         // 첫 번째 방문이 아니라면, 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해준다.
         else
         {
+            Debug.Log("첫 번째 방문이 아닙니다. 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해줍니다.");
             for (int i = 1; i < buffer.Length; i++)
             {
                 for (int j = 0; j < buffer[i].Length; j++)

@@ -687,3 +687,12 @@ NPC 방문
 
 퇴장
 NPC 퇴장 - NPC 방문 
+
+정산 애니메이션 연출 이후, 
+Days++;
+UpdateDayUI(); // 일 수 갱신
+visit = 0;
+// 첫 번째 방문이지만, 첫 날이 아니라면,
+// 오프닝 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해준다.
+initializeBuffer();
+HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅

@@ -1434,6 +1434,24 @@ MonoBehaviour:
   inFadeBackGround:
     m_PersistentCalls:
       m_Calls: []
+  playNpcVistSequence:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 686011356}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PlayWelcomeSequence
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  playNewDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &224584698 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9133436775729557454, guid: 6dc3f50d83375ec4b8252198d892c73d, type: 3}
@@ -2742,6 +2760,7 @@ MonoBehaviour:
   failCnt: {fileID: 81411515}
   goldCnt: {fileID: 1719456113}
   confirmButton: {fileID: 1368884384}
+  settlementWindowObj: {fileID: 523104714}
   settlementWindow: {fileID: 1217746235}
   startNextDayTextObj: {fileID: 1758493032}
   startNextDayText: {fileID: 1560722723}
@@ -3635,7 +3654,6 @@ MonoBehaviour:
   weaponTypeText: {fileID: 1380152758}
   weaponRankText: {fileID: 1663129341}
   weaponLevelText: {fileID: 1430659828}
-  endDayButton: {fileID: 0}
   confirmButton: {fileID: 1666326738}
   MiniGame: {fileID: 1868901291}
   enhanceProgressBar: {fileID: 463157509}
@@ -4368,7 +4386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1217746236
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6901,6 +6919,24 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ShowFadeImage
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  playNpcVistSequence:
+    m_PersistentCalls:
+      m_Calls: []
+  playNewDay:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2056736164}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: NewDay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
