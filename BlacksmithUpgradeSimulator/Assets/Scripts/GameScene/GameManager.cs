@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int gold;
     public int Gold => gold;
+
     [SerializeField] private int visitors;
     public int Visitors => visitors;
     string[] weekdays = { "월", "화", "수", "목", "금", "토", "일" };
@@ -49,11 +50,21 @@ public class GameManager : MonoBehaviour
     public string Weekday => weekday;
     [SerializeField] private int days = 0;
     public int Days => days;
-    private int currentSuccessCnt = 0;
+    private int successCnt = 0;
+    private int greatSuccessCnt = 0;
+    private int failCnt = 0;
+    public int SuccessCnt => successCnt;
+    public int GreatSuccessCnt => greatSuccessCnt;
+    public int FailCnt => failCnt;
+
+    private int currentGold = 0; // 정산 화면에서 보여지는 현재 골드 양
+    private int currentSuccessCnt = 0; // 정산 화면에서 보여지는 현재 성공 횟수
+    private int currentGreatSuccessCnt = 0; // 정산 화면에서 보여지는 현재 대 성공 횟수
+    private int currentFailCnt = 0; // 정산 화면에서 보여지는 현재 실패 횟수
+
+    public int CurrentGold => currentGold;
     public int CurrentSuccessCnt => currentSuccessCnt;
-    private int currentGreatSuccessCnt = 0;
     public int CurrentGreatSuccessCnt => currentGreatSuccessCnt;
-    private int currentFailCnt = 0;
     public int CurrentFailCnt => currentFailCnt;
 
     [Header("Dialogue Management")]
@@ -70,7 +81,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EnhanceManager enhanceManager;
 
     [Header("Options")]
-    [SerializeField] private int currentVisitors; // 방문 고객에 따른 정산 변수
     [SerializeField] private float time = 3f; // 정산 화면을 띄우는 시간
     [SerializeField] private float enhanceTime = 3f;
     public float EnhanceTime => enhanceTime;
@@ -119,8 +129,8 @@ public class GameManager : MonoBehaviour
         InitDialogueSet(); // 대화 객체 저장공간 초기화
         initializeBuffer(); // 대사 버퍼 저장공간 초기화
         UpdateDayUI(); // 일 수 갱신
-
-        uiManager.ShowFadeImage(true);
+        uiManager.BlackSmithEntranceTrigger(); // 왼쪽 스프라이트 트리거 -> 게임 시작하자마자 대장장이 등장 연출
+        //uiManager.ShowFadeImage(true);
 
         uiManager.SetBackGround();
         waitForSeconds = new WaitForSeconds(eventPopUpTime * 1.5f);
@@ -131,15 +141,24 @@ public class GameManager : MonoBehaviour
 
     public void NewDay()
     {
+        uiManager.ShowleftSprite(true); // 왼쪽 스프라이트 활성화
+        //uiManager.BlackSmithResetTrigger(); // 대장장이 리셋 트리거 -> 새로운 날이 시작하자마자 대장장이 등장 연출
+        uiManager.BlackSmithEntranceTrigger(); // 대장장이 등장 트리거
         uiManager.ShowDialogueBox2(false); // 정산 대사창 비활성화
-        uiManager.ShowDialogueBox(true); // 대화창 활성화
+        //uiManager.ShowDialogueBox(true); // 대화창 활성화
         uiManager.ShowNextBtn(true); // 다음 버튼 활성화
         uiManager.ShowStartNextDayBtn(false); // 다음 날 시작 버튼 비활성화
         uiManager.ShowFadeImage(false);
 
         //정산 애니메이션 연출 이후,
         UpdateDayUI(); // 일 수 갱신
-        visitors = 0;
+
+        visitors = 0; // 정산 화면에서 보여진 후 방문자 수 초기화
+        currentFailCnt = 0; // 정산 화면에서 보여진 후 현재 실패 횟수 초기화
+        currentSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 성공 횟수 초기화
+        currentGreatSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 대 성공 횟수 초기화
+        currentGold = 0; // 정산 화면에서 보여진 후 현재 골드 양 초기화
+
         // 첫 번째 방문이지만, 첫 날이 아니라면,
         // 오프닝 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해준다.
         initializeBuffer();
@@ -161,8 +180,12 @@ public class GameManager : MonoBehaviour
     {
         enhanceManager.PlayEnhance(probability, adventurerType, 
                                                 npcGenerator.WeaponController, ref gold, 
-                                                ref currentFailCnt, ref currentSuccessCnt, 
-                                                ref currentGreatSuccessCnt);
+                                                ref failCnt, ref successCnt, 
+                                                ref greatSuccessCnt,
+                                                ref currentGold,
+                                                ref currentSuccessCnt,
+                                                ref currentGreatSuccessCnt,
+                                                ref currentFailCnt);
     }
 
     public void UpdateDayUI()

@@ -61,7 +61,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite blacksmithBackground;
 
     [Header("Animator")]
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator rightImageAnimator;
+    [SerializeField] private Animator leftImageAnimator;
 
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
@@ -75,6 +76,17 @@ public class UIManager : MonoBehaviour
     public void ShowRightSprite(bool active)
     {
         rightSprite.gameObject.SetActive(active);
+    }
+
+    public void BlackSmithEntranceTrigger()
+    {
+        rightImageAnimator.Play("BlackSmith_Idle", 0, 0f);
+        leftImageAnimator.SetTrigger("Entrance");
+    }
+
+    public void BlackSmithResetTrigger()
+    {
+        leftImageAnimator.SetTrigger("Reset");
     }
 
     public void ShowDialogueBox2(bool active)
@@ -110,19 +122,19 @@ public class UIManager : MonoBehaviour
 
             // "Visit" 상태를 0번 레이어에서 재생하되, 
             // 진행도를 1.0f(100%)로 설정해서 마지막 위치에 고정시킵니다.
-            animator.Play("Visit", 0, 1.0f);
+            rightImageAnimator.Play("Visit", 0, 1.0f);
         }
     }
 
     // NPC 방문 트리거 메서드
     public void NPCVisitTrigger()
     {
-        animator.SetTrigger("Visit");
+        rightImageAnimator.SetTrigger("Visit");
     }
 
     public void NPCExit(bool state)
     {
-        animator.SetBool("Exit", state);
+        rightImageAnimator.SetBool("Exit", state);
     }
 
     // 이름, 대사, 이미지, 방향, 활성화 여부를 동시에 설정하는 메서드
@@ -180,13 +192,6 @@ public class UIManager : MonoBehaviour
         nextBtn.gameObject.SetActive(active);
     }
 
-    // 정산 창 활성화 여부 설정 메서드
-    //public void ShowSettlementWindow(bool active)
-    //{
-    //    settlementWindow.gameObject.SetActive(active);
-
-    //}
-
     // 키 값에 따라 Value를 얻는 형식으로 구현
     public void SetBackGround()
     {
@@ -215,7 +220,7 @@ public class UIManager : MonoBehaviour
         successCnt.text = gm.CurrentSuccessCnt.ToString();
         greatSuccessCnt.text = gm.CurrentGreatSuccessCnt.ToString();
         failCnt.text = gm.CurrentFailCnt.ToString();
-        goldCnt.text = gm.Gold.ToString();
+        goldCnt.text = gm.CurrentGold.ToString();
     }
 
     public void ShowStartNextDayText(bool active, string startNextDayText)

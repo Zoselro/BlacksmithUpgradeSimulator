@@ -1324,7 +1324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &220606031
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1431,9 +1431,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  inFadeBackGround:
-    m_PersistentCalls:
-      m_Calls: []
   playNpcVistSequence:
     m_PersistentCalls:
       m_Calls:
@@ -1450,6 +1447,12 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   playNewDay:
+    m_PersistentCalls:
+      m_Calls: []
+  onSettlementWindow:
+    m_PersistentCalls:
+      m_Calls: []
+  onShowContent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!224 &224584698 stripped
@@ -2387,15 +2390,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 537439267}
+  - component: {fileID: 537439271}
   - component: {fileID: 537439269}
   - component: {fileID: 537439268}
+  - component: {fileID: 537439270}
   m_Layer: 5
   m_Name: LeftImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &537439267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2412,7 +2417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -230}
+  m_AnchoredPosition: {x: 160, y: -230}
   m_SizeDelta: {x: 518, y: 974}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &537439268
@@ -2435,7 +2440,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 8740719520246008846, guid: d073b261348368c4c9db3df7a63bd37e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2453,6 +2458,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537439266}
   m_CullTransparentMesh: 1
+--- !u!95 &537439270
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537439266}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a71ca10917c2c8f419b6ecfc0691608f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &537439271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537439266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8223e278ebabfe40b6e18d4b52c60d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onWelcome:
+    m_PersistentCalls:
+      m_Calls: []
+  playNpcVistSequence:
+    m_PersistentCalls:
+      m_Calls: []
+  playNewDay:
+    m_PersistentCalls:
+      m_Calls: []
+  onSettlementWindow:
+    m_PersistentCalls:
+      m_Calls: []
+  onShowContent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 686011356}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ShowDialogueBox
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &544782668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,7 +2840,8 @@ MonoBehaviour:
   openCounterImg: {fileID: -4117169642912844055, guid: b9fdc8fa2ed7eba4ba37e817a79f4898, type: 3}
   enhanceImg: {fileID: 7840943033321212773, guid: bfa420b0e92a6ce41a16e6834e41eedb, type: 3}
   blacksmithBackground: {fileID: 6365703815161080692, guid: 9dc0eb060ccc5a9498e01041d1ad0cac, type: 3}
-  animator: {fileID: 220606034}
+  rightImageAnimator: {fileID: 220606034}
+  leftImageAnimator: {fileID: 537439270}
 --- !u!4 &686011357
 Transform:
   m_ObjectHideFlags: 0
@@ -5578,6 +5645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1509360519}
+  - component: {fileID: 1509360523}
   - component: {fileID: 1509360522}
   - component: {fileID: 1509360521}
   - component: {fileID: 1509360520}
@@ -5587,7 +5655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1509360519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5669,6 +5737,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509360518}
   m_CullTransparentMesh: 1
+--- !u!114 &1509360523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509360518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8223e278ebabfe40b6e18d4b52c60d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onWelcome:
+    m_PersistentCalls:
+      m_Calls: []
+  playNpcVistSequence:
+    m_PersistentCalls:
+      m_Calls: []
+  playNewDay:
+    m_PersistentCalls:
+      m_Calls: []
+  onSettlementWindow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 686011356}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ShowSettlementWindow
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onShowContent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1539818542
 GameObject:
   m_ObjectHideFlags: 0
@@ -6168,7 +6275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1658584432
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6912,21 +7019,6 @@ MonoBehaviour:
   onWelcome:
     m_PersistentCalls:
       m_Calls: []
-  inFadeBackGround:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 686011356}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowFadeImage
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   playNpcVistSequence:
     m_PersistentCalls:
       m_Calls: []
@@ -6945,6 +7037,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onSettlementWindow:
+    m_PersistentCalls:
+      m_Calls: []
+  onShowContent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1770767654
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,17 +4,13 @@ using UnityEngine.Events;
 public class UnityEventCall : MonoBehaviour
 {   
     [SerializeField] private UnityEvent onWelcome;
-    [SerializeField] private UnityEvent inFadeBackGround;
     [SerializeField] private UnityEvent playNpcVistSequence;
     [SerializeField] private UnityEvent playNewDay;
+    [SerializeField] private UnityEvent onSettlementWindow;
+    [SerializeField] private UnityEvent onShowContent;
     public void WelcomeEvent()
     {
         onWelcome.Invoke();
-    }
-
-    public void FadeInBackground()
-    {
-        inFadeBackGround.Invoke();
     }
 
     public void PlayNpcVisitSequence()
@@ -25,5 +21,15 @@ public class UnityEventCall : MonoBehaviour
     public void PlayNewDay()
     {
         playNewDay.Invoke();
+    }
+
+    public void OnSettlementWindow()
+    {
+        onSettlementWindow.Invoke();
+    }
+
+    public void OnShowContent()
+    {
+        onShowContent.Invoke();
     }
 }

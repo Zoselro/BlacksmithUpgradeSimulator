@@ -39,8 +39,11 @@ public class EnhanceManager : MonoBehaviour
     }
 
     public void PlayEnhance(float successProb, AdventurerType adventurerType, WeaponController weapon,
-                            ref int gold, ref int currentFailCnt,
-                            ref int currentSuccessCnt, ref int currentGreatSuccessCnt)
+                            ref int gold, ref int failCnt,
+                            ref int successCnt, ref int greatSuccessCnt,
+                            ref int currentGold, ref int currentSuccessCnt,
+                            ref int currentGreatSuccessCnt,
+                            ref int currentFailCnt)
     {
         if (isEnhancing)
         {
@@ -54,7 +57,8 @@ public class EnhanceManager : MonoBehaviour
                 isEnhancing = false;
                 currentEnhanceTime = 0; // 강화 시간 초기화
                 BuildEnhanceResultPrefabMap(); // 성공, 대성공, 실패 prefab 세팅
-                result = Enhance(successProb, greatSuccessRatio, ref currentFailCnt, ref currentSuccessCnt, ref currentGreatSuccessCnt);
+                result = Enhance(successProb, greatSuccessRatio, ref failCnt, ref successCnt, ref greatSuccessCnt,
+                                            ref currentFailCnt, ref currentSuccessCnt, ref currentGreatSuccessCnt);
                 Debug.Log($"강화 결과 : {result}");
 
                 // GameManager에게 강화 결과를 전달.
@@ -62,7 +66,7 @@ public class EnhanceManager : MonoBehaviour
                 gm.SetPostEnhancementDialogue(result);
                 gm.OnEnhanceResult(result);
 
-                EnhanceEquipment(adventurerType, result, ref gold, weapon);
+                EnhanceEquipment(adventurerType, result, ref gold, ref currentGold, weapon);
                 enhancementImage.UpdateEnhancementWeaponUI(weapon); // 무기 이미지 및 강화 결과 세팅
                 enhanceUIManager.ActiveConfirmButton(true);
                 topUIManager.SetGoldText(gold);
@@ -86,13 +90,16 @@ public class EnhanceManager : MonoBehaviour
     // 확률, 대성공 확률, 실패, 성공, 대성공 카운트
     // 에 대하여 EnhanceResult 값을 EnhanceEquipment() 에 넘겨줌
     public EnhanceResult Enhance(float successProb, float greatSuccessRatio,
-                            ref int currentFailCnt, ref int currentSuccessCnt,
+                            ref int failCnt, ref int successCnt,
+                            ref int greatSuccessCnt, 
+                            ref int currentFailCnt, ref int currentSuccessCnt, 
                             ref int currentGreatSuccessCnt)
     {
         float roll = Random.value;
 
         if (roll > successProb)
         {
+            failCnt++;
             currentFailCnt++;
             return EnhanceResult.Fail;
         }
@@ -101,10 +108,12 @@ public class EnhanceManager : MonoBehaviour
 
         if (roll <= greatSuccessProb)
         {
+            greatSuccessCnt++;
             currentGreatSuccessCnt++;
             return EnhanceResult.GreatSuccess;
 
         }
+        successCnt++;
         currentSuccessCnt++;
         return EnhanceResult.Success;
     }
@@ -112,7 +121,7 @@ public class EnhanceManager : MonoBehaviour
     // 장비강화 기능 구현
     // NPC 타입, 성공확률, EnhanceEquipment, Add 할 골드, 무기를 넘겨줌.
     public void EnhanceEquipment(AdventurerType adventurerType, EnhanceResult result, 
-                                ref int gold, WeaponController weapon)
+                                ref int gold, ref int currentGold, WeaponController weapon)
     {
         // result : 그 확률에 대한 성공, 실패, 대성공 의 여부 결과값
         switch (result)
@@ -121,6 +130,7 @@ public class EnhanceManager : MonoBehaviour
                 if (adventurerType == AdventurerType.Beginner)
                 {
                     gold += 100;
+                    currentGold += 100;
                     weapon.SetEnhancementStages(2);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                     //enhanceUIManager.SetEnhancementImage(enhancementImage);
@@ -128,12 +138,14 @@ public class EnhanceManager : MonoBehaviour
                 else if (adventurerType == AdventurerType.Intermediate)
                 {
                     gold += 100;
+                    currentGold += 100;
                     weapon.SetEnhancementStages(2);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
                 else
                 {
                     gold += 100;
+                    currentGold += 100;
                     weapon.SetEnhancementStages(2);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
@@ -144,18 +156,21 @@ public class EnhanceManager : MonoBehaviour
                 if (adventurerType == AdventurerType.Beginner)
                 {
                     gold += 50;
+                    currentGold += 50;
                     weapon.SetEnhancementStages(1);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
                 else if (adventurerType == AdventurerType.Intermediate)
                 {
                     gold += 100;
+                    currentGold += 100;
                     weapon.SetEnhancementStages(1);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
                 else
                 {
                     gold += 100;
+                    currentGold += 100;
                     weapon.SetEnhancementStages(1);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
