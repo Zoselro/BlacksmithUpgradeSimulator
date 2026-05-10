@@ -1955,7 +1955,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102785d21445f994f9f2b8859cd4563b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   menuPanel: {fileID: 499447058}
+  continueButton: {fileID: 0}
+  settingButton: {fileID: 0}
+  exitButton: {fileID: 0}
 --- !u!4 &378610598
 Transform:
   m_ObjectHideFlags: 0
@@ -2479,7 +2483,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102785d21445f994f9f2b8859cd4563b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   menuPanel: {fileID: 0}
+  continueButton: {fileID: 0}
+  settingButton: {fileID: 0}
+  exitButton: {fileID: 0}
 --- !u!1 &523104714
 GameObject:
   m_ObjectHideFlags: 0
@@ -4604,7 +4612,7 @@ GameObject:
   - component: {fileID: 1111132937}
   - component: {fileID: 1111132936}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: SettingButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5075,7 +5083,7 @@ GameObject:
   - component: {fileID: 1312701411}
   - component: {fileID: 1312701410}
   m_Layer: 5
-  m_Name: Button
+  m_Name: continueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5381,7 +5389,7 @@ GameObject:
   - component: {fileID: 1373112444}
   - component: {fileID: 1373112443}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
