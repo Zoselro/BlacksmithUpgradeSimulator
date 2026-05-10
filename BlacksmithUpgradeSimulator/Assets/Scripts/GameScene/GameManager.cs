@@ -33,7 +33,6 @@ public enum NpcState
 }
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Inst = null;
     private const int FIRST_DIALOGUE_NUM = 1;
     private const int SECOND_DIALOGUE_NUM = 3;
     private const int THIRD_DIALOGUE_NUM = 1;
@@ -96,6 +95,9 @@ public class GameManager : MonoBehaviour
 
     DialogueSet[] dialogueSet = new DialogueSet[4];
     private DialogueLine[][] buffer = new DialogueLine[4][];
+
+    private bool isPaused; // 게임이 일시정지 상태인지 여부를 나타내는 변수
+    public bool IsPaused => isPaused;
 
     // --------------- 대사 변수 -----------------
     // 처음 대사
@@ -325,24 +327,19 @@ public class GameManager : MonoBehaviour
     // NPC 등장 팝업창 연출
     public IEnumerator WelcomeCoroutine()
     {
-        if (visitors >= 0)
-        {
-            // 문 열림 BackGround 교체 후 1.5초 후 누군가가 방문 했다는 팝업창
-            uiManager.SetBackGround(BgType.OpenCounter);
-            uiManager.ShowDialogueBox(false);
+        // 문 열림 BackGround 교체 후 1.5초 후 누군가가 방문 했다는 팝업창
+        uiManager.SetBackGround(BgType.OpenCounter);
+        uiManager.ShowDialogueBox(false);
 
-            uiManager.PlayWelcomeSequence(true, "누군가가 방문 했습니다.");
+        uiManager.PlayWelcomeSequence(true, "누군가가 방문 했습니다.");
 
-            yield return waitForSeconds;
+        yield return waitForSeconds;
 
-            uiManager.ShowSprite(true, buffer[1][1].GetImage(), Direction.Right); // NPC 이미지 보임
-            uiManager.NPCVisitTrigger(); // NPC 방문 연출 트리거
+        uiManager.ShowSprite(true, buffer[1][1].GetImage(), Direction.Right); // NPC 이미지 보임
+        uiManager.NPCVisitTrigger(); // NPC 방문 연출 트리거
 
-            visitors++;
-            topUIManager.TopBarDisPlay(); // 방문자 수 갱신
-
-            //uiManager.PlayWelcomeSequence(false);
-        }
+        visitors++;
+        topUIManager.TopBarDisPlay(); // 방문자 수 갱신
     }
     #endregion
 
