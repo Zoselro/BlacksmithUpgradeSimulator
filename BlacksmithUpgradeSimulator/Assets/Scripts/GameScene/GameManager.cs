@@ -328,12 +328,13 @@ public class GameManager : MonoBehaviour
     public IEnumerator WelcomeCoroutine()
     {
         // 문 열림 BackGround 교체 후 1.5초 후 누군가가 방문 했다는 팝업창
-        uiManager.SetBackGround(BgType.OpenCounter);
         uiManager.ShowDialogueBox(false);
 
         uiManager.PlayWelcomeSequence(true, "누군가가 방문 했습니다.");
 
         yield return waitForSeconds;
+
+        uiManager.SetBackGround(BgType.OpenCounter);
 
         uiManager.ShowSprite(true, buffer[1][1].GetImage(), Direction.Right); // NPC 이미지 보임
         uiManager.NPCVisitTrigger(); // NPC 방문 연출 트리거

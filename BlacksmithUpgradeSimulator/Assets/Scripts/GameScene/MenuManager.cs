@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
@@ -21,8 +22,26 @@ public class MenuManager : MonoBehaviour
     {
         if (gm == null)
             return;
-
         // 게임 매니저에게 일시정지를 요청
+    }
 
+    public void OnContinueButton()
+    {
+        ShowMenu(false);
+
+        // 게임 매니저에게 게임 재개를 요청하는 메서드 호출
+    }
+
+    public void OnSettingButton()
+    {
+        // 설정 메뉴로 이동하는 로직을 여기에 작성
+        Debug.Log("설정 버튼이 클릭되었습니다.");
+    }
+
+    public void OnExitButton()
+    {
+        // 게임 종료 로직을 여기에 작성
+        Debug.Log("게임이 종료됩니다.");
+        SceneManager.LoadScene("GameStart");
     }
 }
