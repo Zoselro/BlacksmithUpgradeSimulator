@@ -2,7 +2,8 @@ using UnityEngine;
 
 public enum WeaponType
 {
-    Sword,
+    LongSword,
+    ShortSword,
     Bow,
     Rapier,
     Crossbow

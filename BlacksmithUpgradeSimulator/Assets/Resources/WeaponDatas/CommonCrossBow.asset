@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093d3bae5d5dbe14882051b2ede262a5, type: 3}
   m_Name: CommonCrossBow
   m_EditorClassIdentifier: 
-  weaponType: 3
-  sprite: {fileID: -8621188525477621462, guid: 91469f1b747c4a743ad82fdddca4cff0, type: 3}
+  weaponType: 4
+  sprite: {fileID: 898323828, guid: 658c607996460214abce653b80ee4a51, type: 3}
   weaponRank: 0

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093d3bae5d5dbe14882051b2ede262a5, type: 3}
   m_Name: EpicRapier
   m_EditorClassIdentifier: 
-  weaponType: 2
-  sprite: {fileID: 0}
+  weaponType: 3
+  sprite: {fileID: -1089696459874568112, guid: 658c607996460214abce653b80ee4a51, type: 3}
   weaponRank: 2

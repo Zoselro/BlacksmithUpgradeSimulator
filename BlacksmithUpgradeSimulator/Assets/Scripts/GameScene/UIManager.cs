@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
 
     public void BlackSmithEntranceTrigger()
     {
-        rightImageAnimator.Play("BlackSmith_Idle", 0, 0f);
+        //rightImageAnimator.Play("LeftIdle", 0, 0f);
         leftImageAnimator.SetTrigger("Entrance");
     }
 
@@ -122,7 +122,7 @@ public class UIManager : MonoBehaviour
 
             // "Visit" 상태를 0번 레이어에서 재생하되, 
             // 진행도를 1.0f(100%)로 설정해서 마지막 위치에 고정시킵니다.
-            rightImageAnimator.Play("Visit", 0, 1.0f);
+            // rightImageAnimator.Play("Visit", 0, 1.0f);
         }
     }
 

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 093d3bae5d5dbe14882051b2ede262a5, type: 3}
-  m_Name: RareSword
+  m_Name: EpicLongSword
   m_EditorClassIdentifier: 
   weaponType: 0
-  sprite: {fileID: -8621188525477621462, guid: 91469f1b747c4a743ad82fdddca4cff0, type: 3}
-  weaponRank: 1
+  sprite: {fileID: 8057596924038091288, guid: 91469f1b747c4a743ad82fdddca4cff0, type: 3}
+  weaponRank: 2

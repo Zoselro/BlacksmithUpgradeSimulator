@@ -88,7 +88,8 @@ public class WeaponController : MonoBehaviour
         }
         switch (weaponData.GetWeaponType())
         {
-            case WeaponType.Sword: return "검";
+            case WeaponType.LongSword: return "장검";
+            case WeaponType.ShortSword: return "단검";
             case WeaponType.Bow: return "활";
             case WeaponType.Rapier: return "레이피어";
             case WeaponType.Crossbow: return "석궁";

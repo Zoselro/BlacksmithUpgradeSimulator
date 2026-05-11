@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 093d3bae5d5dbe14882051b2ede262a5, type: 3}
-  m_Name: EpicCrossBow
+  m_Name: EpicShortSword
   m_EditorClassIdentifier: 
-  weaponType: 4
-  sprite: {fileID: -7501931141107880566, guid: 658c607996460214abce653b80ee4a51, type: 3}
+  weaponType: 1
+  sprite: {fileID: -4924065256469680006, guid: 658c607996460214abce653b80ee4a51, type: 3}
   weaponRank: 2

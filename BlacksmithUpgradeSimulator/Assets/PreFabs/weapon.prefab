@@ -64,13 +64,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aefc0a201a7de624d9c45f65dd8b43ba, type: 2}
   - {fileID: 11400000, guid: aeeb7a36c82e51f478e88fd507bfe02e, type: 2}
   - {fileID: 11400000, guid: 1046012dc798d0e4b8d8e18adc3b7ce0, type: 2}
-  sprites:
-  - {fileID: -7030671753443466061, guid: 91469f1b747c4a743ad82fdddca4cff0, type: 3}
-  - {fileID: -8621188525477621462, guid: 91469f1b747c4a743ad82fdddca4cff0, type: 3}
-  - {fileID: 8057596924038091288, guid: 91469f1b747c4a743ad82fdddca4cff0, type: 3}
-  - {fileID: -8641393053154436664, guid: 91469f1b747c4a743ad82fdddca4cff0, type: 3}
-  - {fileID: -2766710420380342184, guid: 91469f1b747c4a743ad82fdddca4cff0, type: 3}
-  - {fileID: 8846298160373120899, guid: 91469f1b747c4a743ad82fdddca4cff0, type: 3}
+  - {fileID: 11400000, guid: de876afaadb5b7349a57fee76fc6ceae, type: 2}
+  - {fileID: 11400000, guid: 99b717610f089714c9484619c6abcb6e, type: 2}
+  - {fileID: 11400000, guid: c1b7b81b671eb0d42ae58e94591dd657, type: 2}
   weaponImage: {fileID: 1526605721150707225}
 --- !u!222 &6818351040311091184
 CanvasRenderer:
