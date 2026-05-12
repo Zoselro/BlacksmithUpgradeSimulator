@@ -1455,6 +1455,9 @@ MonoBehaviour:
   onShowContent:
     m_PersistentCalls:
       m_Calls: []
+  npcVisitPopup:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &224584698 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9133436775729557454, guid: 6dc3f50d83375ec4b8252198d892c73d, type: 3}
@@ -2403,7 +2406,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 499447059}
-  - component: {fileID: 499447062}
   - component: {fileID: 499447061}
   - component: {fileID: 499447060}
   m_Layer: 5
@@ -2471,23 +2473,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499447058}
   m_CullTransparentMesh: 1
---- !u!114 &499447062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499447058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 102785d21445f994f9f2b8859cd4563b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gm: {fileID: 0}
-  menuPanel: {fileID: 0}
-  continueButton: {fileID: 0}
-  settingButton: {fileID: 0}
-  exitButton: {fileID: 0}
 --- !u!1 &523104714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,6 +2647,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  npcVisitPopup:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &544782668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,6 +3050,7 @@ MonoBehaviour:
   blacksmithBackground: {fileID: 6365703815161080692, guid: 9dc0eb060ccc5a9498e01041d1ad0cac, type: 3}
   rightImageAnimator: {fileID: 220606034}
   leftImageAnimator: {fileID: 537439270}
+  welcomPopupAnimator: {fileID: 1490083138}
 --- !u!4 &686011357
 Transform:
   m_ObjectHideFlags: 0
@@ -6287,8 +6276,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1490083135}
+  - component: {fileID: 1490083139}
   - component: {fileID: 1490083137}
   - component: {fileID: 1490083136}
+  - component: {fileID: 1490083138}
   m_Layer: 5
   m_Name: WelcomText
   m_TagString: Untagged
@@ -6354,6 +6345,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490083134}
   m_CullTransparentMesh: 1
+--- !u!95 &1490083138
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490083134}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0f5095481ea6404b9efec12eac11529, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1490083139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490083134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8223e278ebabfe40b6e18d4b52c60d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onWelcome:
+    m_PersistentCalls:
+      m_Calls: []
+  playNpcVistSequence:
+    m_PersistentCalls:
+      m_Calls: []
+  playNewDay:
+    m_PersistentCalls:
+      m_Calls: []
+  onSettlementWindow:
+    m_PersistentCalls:
+      m_Calls: []
+  onShowContent:
+    m_PersistentCalls:
+      m_Calls: []
+  npcVisitPopup:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2056736164}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: NpcVisit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1503756131
 GameObject:
   m_ObjectHideFlags: 0
@@ -6567,6 +6622,9 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   onShowContent:
+    m_PersistentCalls:
+      m_Calls: []
+  npcVisitPopup:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1539818542
@@ -7970,6 +8028,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onShowContent:
+    m_PersistentCalls:
+      m_Calls: []
+  npcVisitPopup:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1770767654

@@ -8,6 +8,7 @@ public class UnityEventCall : MonoBehaviour
     [SerializeField] private UnityEvent playNewDay;
     [SerializeField] private UnityEvent onSettlementWindow;
     [SerializeField] private UnityEvent onShowContent;
+    [SerializeField] private UnityEvent npcVisitPopup;
     public void WelcomeEvent()
     {
         onWelcome.Invoke();
@@ -31,5 +32,10 @@ public class UnityEventCall : MonoBehaviour
     public void OnShowContent()
     {
         onShowContent.Invoke();
+    }
+    
+    public void NpcVisit()
+    {
+        npcVisitPopup.Invoke();
     }
 }

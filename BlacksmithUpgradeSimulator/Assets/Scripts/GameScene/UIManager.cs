@@ -63,6 +63,7 @@ public class UIManager : MonoBehaviour
     [Header("Animator")]
     [SerializeField] private Animator rightImageAnimator;
     [SerializeField] private Animator leftImageAnimator;
+    [SerializeField] private Animator welcomPopupAnimator;
 
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
@@ -78,9 +79,14 @@ public class UIManager : MonoBehaviour
         rightSprite.gameObject.SetActive(active);
     }
 
+    public void PlayWelcomePopupAnimation()
+    {
+        welcomPopupAnimator.SetTrigger("Play");
+    }
+
     public void BlackSmithEntranceTrigger()
     {
-        //rightImageAnimator.Play("LeftIdle", 0, 0f);
+        rightImageAnimator.Play("Idle", 0, 0f);
         leftImageAnimator.SetTrigger("Entrance");
     }
 
@@ -121,8 +127,9 @@ public class UIManager : MonoBehaviour
             rightSprite.gameObject.SetActive(active);
 
             // "Visit" 상태를 0번 레이어에서 재생하되, 
-            // 진행도를 1.0f(100%)로 설정해서 마지막 위치에 고정시킵니다.
-            // rightImageAnimator.Play("Visit", 0, 1.0f);
+            // 진행도를 1.0f(100%)로 설정해서 마지막 위치에 고정
+            if(active)
+                rightImageAnimator.Play("Visit", 0, 1.0f);
         }
     }
 
@@ -232,5 +239,18 @@ public class UIManager : MonoBehaviour
     public void ShowStartNextDayBtn(bool active)
     {
         startNextDayTextObj.gameObject.SetActive(active);
+    }
+    public void StopAnimator()
+    {
+        rightImageAnimator.speed = 0f;
+        leftImageAnimator.speed = 0f;
+        welcomPopupAnimator.speed = 0f;
+    }
+
+    public void StartAnimator()
+    {
+        rightImageAnimator.speed = 1f;
+        leftImageAnimator.speed = 1f;
+        welcomPopupAnimator.speed = 1f;
     }
 }

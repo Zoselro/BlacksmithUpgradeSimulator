@@ -178,6 +178,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (isPaused) return;
         enhanceManager.PlayEnhance(probability, adventurerType, 
                                                 npcGenerator.WeaponController, ref gold, 
                                                 ref failCnt, ref successCnt, 
@@ -319,20 +320,13 @@ public class GameManager : MonoBehaviour
         HandlePreEnhancementFlow(1);
 
         // 나가는 연출 이후 새로운 NPC 등장 연출
-        StartCoroutine(WelcomeCoroutine());
+        uiManager.PlayWelcomeSequence(true, "누군가가 방문 했습니다.");
     }
 
-    // NPC 등장 팝업창 연출
-    public IEnumerator WelcomeCoroutine()
+    public void NpcVisit()
     {
-        // 문 열림 BackGround 교체 후 1.5초 후 누군가가 방문 했다는 팝업창
-        uiManager.ShowDialogueBox(false);
-
-        uiManager.PlayWelcomeSequence(true, "누군가가 방문 했습니다.");
-
-        yield return waitForSeconds;
-
-        uiManager.SetBackGround(BgType.OpenCounter);
+        if (visitors == 0)
+            uiManager.SetBackGround(BgType.OpenCounter);
 
         uiManager.ShowSprite(true, buffer[1][1].GetImage(), Direction.Right); // NPC 이미지 보임
         uiManager.NPCVisitTrigger(); // NPC 방문 연출 트리거
@@ -443,7 +437,7 @@ public class GameManager : MonoBehaviour
                                         blackSmithData.BackSprite, Direction.Left);
             dialogueSet[0].SetDialogueLines(buffer[0]);
 
-            dialogueSet[0].SetEndFunc(() => StartCoroutine(WelcomeCoroutine()));
+            dialogueSet[0].SetEndFunc(() => uiManager.PlayWelcomeSequence(true, "누군가가 방문 했습니다."));
         }
         else // 첫 번째 방문이 아닐 때는 오픈 대사 제외 나머지 초기화
         {
@@ -543,4 +537,18 @@ public class GameManager : MonoBehaviour
             dialogueSet[3].SetEndFunc(() => HandleEndOfDay());
     }
     #endregion
+
+    public void TryEnhance(bool active)
+    {
+        if (active)
+        {
+            uiManager.StopAnimator();
+            isPaused = true;
+        }
+        else
+        {
+            uiManager.StartAnimator();
+            isPaused = false;
+        }
+    }
 }

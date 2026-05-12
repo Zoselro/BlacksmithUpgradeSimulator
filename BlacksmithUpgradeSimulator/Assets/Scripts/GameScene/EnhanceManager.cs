@@ -194,6 +194,11 @@ public class EnhanceManager : MonoBehaviour
                 }
                 break;
         }
+
+        int lastIndex = enhancementImage.transform.parent.childCount - 1;
+
+        // 맨 아래에서 두 번째
+        enhancementImage.transform.SetSiblingIndex(lastIndex - 1);
     }
     public void EnhancementImageActive(bool active)
     {
