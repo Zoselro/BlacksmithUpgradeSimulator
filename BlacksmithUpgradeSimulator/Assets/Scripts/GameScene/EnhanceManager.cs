@@ -23,17 +23,23 @@ public class EnhanceManager : MonoBehaviour
     private EnhancementImage enhancementImage;
     private EnhanceResult result; // 강화 결과
 
-    private bool isEnhance;
-    public bool IsEnhance => isEnhance;
     private float currentEnhanceTime;
 
     private bool isEnhancing;
+    public bool IsEnhancing => isEnhancing;
+
     public void RequestEnhance(bool isEnhance)
     {
         if (isEnhance)
         {
             isEnhancing = true;
             Debug.Log("강화 시작");
+            return;
+        }
+        else
+        {
+            isEnhancing = false;
+            Debug.Log("강화 중단");
             return;
         }
     }

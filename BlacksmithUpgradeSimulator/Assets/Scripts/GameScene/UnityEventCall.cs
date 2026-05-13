@@ -2,9 +2,10 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class UnityEventCall : MonoBehaviour
-{   
+{
+    [SerializeField] private UIManager uiManager;
+
     [SerializeField] private UnityEvent onWelcome;
-    [SerializeField] private UnityEvent playNpcVistSequence;
     [SerializeField] private UnityEvent playNewDay;
     [SerializeField] private UnityEvent onSettlementWindow;
     [SerializeField] private UnityEvent onShowContent;
@@ -16,7 +17,7 @@ public class UnityEventCall : MonoBehaviour
 
     public void PlayNpcVisitSequence()
     {
-        playNpcVistSequence.Invoke();
+        uiManager.PlayWelcomeSequence(false);
     }
 
     public void PlayNewDay()

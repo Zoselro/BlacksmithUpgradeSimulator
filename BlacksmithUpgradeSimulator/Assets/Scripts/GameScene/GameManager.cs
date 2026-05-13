@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (isPaused) return;
+        if (!enhanceManager.IsEnhancing) return;
         enhanceManager.PlayEnhance(probability, adventurerType, 
                                                 npcGenerator.WeaponController, ref gold, 
                                                 ref failCnt, ref successCnt, 
@@ -538,17 +538,18 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    // 게임이 일시정지가 되는 함수
     public void TryEnhance(bool active)
     {
         if (active)
         {
             uiManager.StopAnimator();
-            isPaused = true;
+            enhanceManager.RequestEnhance(false); // 강화 중단 요청
         }
         else
         {
             uiManager.StartAnimator();
-            isPaused = false;
+            enhanceManager.RequestEnhance(true); // 강화 시작 요청
         }
     }
 }
