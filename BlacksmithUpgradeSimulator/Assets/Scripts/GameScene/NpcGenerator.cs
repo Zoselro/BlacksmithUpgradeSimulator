@@ -14,6 +14,7 @@ public class NpcGenerator : MonoBehaviour
     [SerializeField] private WeaponController weaponController;
     [SerializeField] private NpcController npcController;
     [SerializeField] private NpcData[] npcDatas;
+    
 
     public NpcController NpcController => npcController;
 

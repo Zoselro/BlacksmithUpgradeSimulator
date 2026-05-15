@@ -927,6 +927,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hunter
       objectReference: {fileID: 0}
+    - target: {fileID: 6114058959028052031, guid: bcbf8ef69ca2fd64c8b8996aea050020, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8291530300345173485, guid: bcbf8ef69ca2fd64c8b8996aea050020, type: 3}
       propertyPath: m_Pivot.x
       value: 1
