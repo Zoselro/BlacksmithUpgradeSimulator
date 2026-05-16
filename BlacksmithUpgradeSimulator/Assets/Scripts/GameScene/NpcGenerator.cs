@@ -13,6 +13,8 @@ public class NpcGenerator : MonoBehaviour
 {
     [SerializeField] private WeaponController weaponController;
     [SerializeField] private NpcData[] npcDatas;
+    [SerializeField] private NpcData2[] npcData2s;
+    [SerializeField] private Transform canvasTransform;
     [SerializeField] private AdventurerType adventurerType;
 
 
@@ -25,6 +27,16 @@ public class NpcGenerator : MonoBehaviour
 
         NpcData npcData = PickNpcDataByType(adventurerType); // adventurerType의 대한 랜덤한 npc를 뽑아냄
         weaponController.GetEnhancementLevelByAdventurerType(adventurerType); // 고객의 등급에 따라 강화 등급을 결정한다.
+
+        for(int i = 0; i < npcData2s.Length; i++)
+        {
+            if (npcData2s[i].AdventurerType == adventurerType)
+            {
+                Debug.Log("adventurerType : " + adventurerType);
+                Instantiate(npcData2s[i], transform.position, Quaternion.identity, canvasTransform);
+            }
+        }
+
         return npcData;
     }
 

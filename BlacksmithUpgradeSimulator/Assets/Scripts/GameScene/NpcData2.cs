@@ -4,6 +4,9 @@ public class NpcData2 : MonoBehaviour
 {
     [SerializeField] AdventurerType adventuerType;
     public AdventurerType AdventurerType => adventuerType;
+
+    [SerializeField] private Sprite expression;
+
     [SerializeField] string nameID;
     public string NameID => nameID;
     [SerializeField] private Sprite normalSprite; // 대장장이 슬픔,웃음,Normal 이미지
@@ -15,25 +18,23 @@ public class NpcData2 : MonoBehaviour
     [SerializeField] private NpcTendency npcTendency;
     public NpcTendency NpcTendency => npcTendency;
 
-    public Sprite GetNPCEmotion(Emotion emotion)
+    public void GetNPCEmotion(Emotion emotion)
     {
-        Sprite sprite = null;
 
         switch (emotion)
         {
             case Emotion.Normal:
-                sprite = normalSprite;
+                expression = normalSprite;
                 break;
             case Emotion.Sad:
-                sprite = sadSprite;
+                expression = sadSprite;
                 break;
             case Emotion.Happy:
-                sprite = happySprite;
+                expression = happySprite;
                 break;
             default:
-                sprite = normalSprite;
+                expression = normalSprite;
                 break;
         }
-        return sprite;
     }
 }
