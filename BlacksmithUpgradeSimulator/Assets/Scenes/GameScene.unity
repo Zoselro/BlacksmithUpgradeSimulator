@@ -5583,6 +5583,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8b098aa5c42cea143894962bb841547f, type: 2}
   - {fileID: 11400000, guid: 09d49ee2e10fe564ebfa9db3a7806f97, type: 2}
   - {fileID: 11400000, guid: 038532cec2a5ccd43bdada3c4789a5fe, type: 2}
+  npcData2s:
+  - {fileID: -878709379722568377, guid: bcbf8ef69ca2fd64c8b8996aea050020, type: 3}
+  - {fileID: 2174192102365522619, guid: 978fa2fb617654f5eaeff9da6fc7d116, type: 3}
+  - {fileID: -7163644551062998548, guid: 97d68cc671b44f243af07aece008d824, type: 3}
+  - {fileID: 208738670285433854, guid: 65803abfd090b5e4f801c431a8947d11, type: 3}
+  - {fileID: -7789472329411664840, guid: a3c1faf915dc240bca8ed7566d46910c, type: 3}
+  - {fileID: -8871750454027700903, guid: 13c470c5b8dcd4854834911f7e0a9a6c, type: 3}
+  canvasTransform: {fileID: 2074051140}
   adventurerType: 0
 --- !u!4 &1200748677
 Transform:
@@ -11067,6 +11075,7 @@ SceneRoots:
   - {fileID: 33521988}
   - {fileID: 2056736163}
   - {fileID: 918014735}
+  - {fileID: 164328360}
   - {fileID: 686011357}
   - {fileID: 1818317715}
   - {fileID: 378610598}
@@ -11076,4 +11085,3 @@ SceneRoots:
   - {fileID: 2074051140}
   - {fileID: 487196929}
   - {fileID: 408592829}
-  - {fileID: 164328360}
