@@ -16,10 +16,6 @@ public class NpcData : ScriptableObject
     [SerializeField] private NpcTendency npcTendency;
     public NpcTendency NpcTendency => npcTendency;
 
-    //public Sprite GetPlayerSprite(Emotion emotion)
-    //{
-    //    return null;
-    //}
 
     public Sprite GetNPCSprite(Emotion emotion)
     {

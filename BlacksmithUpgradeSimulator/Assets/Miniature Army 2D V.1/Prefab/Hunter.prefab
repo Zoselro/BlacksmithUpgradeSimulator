@@ -384,6 +384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8291530300345173485}
+  - component: {fileID: -878709379722568377}
   m_Layer: 0
   m_Name: Hunter
   m_TagString: Untagged
@@ -418,6 +419,24 @@ RectTransform:
   m_AnchoredPosition: {x: -1264, y: -195}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &-878709379722568377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6114058959028052031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9767222ff2a54d146aa88b1f05ee78cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adventuerType: 2
+  nameID: "\uC911\uAE09\uD5CC\uD130"
+  normalSprite: {fileID: -2844065467469701822, guid: 298eaf14d5794a54881bdc35f34b3ef4, type: 3}
+  happySprite: {fileID: -2906948458310057533, guid: b72e9eba01d4cc74999af959628066a0, type: 3}
+  sadSprite: {fileID: 402207363046032840, guid: 069001f711abd764eaa43eea559086b4, type: 3}
+  npcTendency: 0
 --- !u!1 &6760918291106512551
 GameObject:
   m_ObjectHideFlags: 0

@@ -459,6 +459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3380651019054992940}
+  - component: {fileID: 208738670285433854}
   m_Layer: 0
   m_Name: Prist
   m_TagString: Untagged
@@ -492,6 +493,24 @@ RectTransform:
   m_AnchoredPosition: {x: -723, y: -195}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &208738670285433854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8111856214891925538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9767222ff2a54d146aa88b1f05ee78cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adventuerType: 0
+  nameID: "\uCD08\uAE09\uD504\uB9AC\uC2A4\uD2B8"
+  normalSprite: {fileID: 286782432450102103, guid: 85e38f95df3080e43acd42dc145b5678, type: 3}
+  happySprite: {fileID: 8861505317297529154, guid: 920b848109357ab47b0646f3b04230e8, type: 3}
+  sadSprite: {fileID: 8249165508676523624, guid: 0f177eabcc3bc77499a841092ffedf50, type: 3}
+  npcTendency: 0
 --- !u!1 &8716195097438738288
 GameObject:
   m_ObjectHideFlags: 0

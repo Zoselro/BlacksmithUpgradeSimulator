@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7567238279493577817}
   - component: {fileID: 2467411770775738995}
   m_Layer: 0
-  m_Name: face
+  m_Name: hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -309,6 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 374977092768327565}
+  - component: {fileID: 2174192102365522619}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -341,6 +342,24 @@ RectTransform:
   m_AnchoredPosition: {x: -995, y: -195}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &2174192102365522619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718390203286184417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9767222ff2a54d146aa88b1f05ee78cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adventuerType: 1
+  nameID: "\uC911\uAE09\uB098\uC774\uD2B8"
+  normalSprite: {fileID: -4296160826702518020, guid: af21dbef9fdaac941a27b437e2758cbe, type: 3}
+  happySprite: {fileID: -1934224707021899584, guid: 03ce0e251a66e82479087775b43d1eaa, type: 3}
+  sadSprite: {fileID: -6689155600526028062, guid: f069a216d750e6849a4e8f28eb615e8d, type: 3}
+  npcTendency: 0
 --- !u!1 &7240309018618073782
 GameObject:
   m_ObjectHideFlags: 0

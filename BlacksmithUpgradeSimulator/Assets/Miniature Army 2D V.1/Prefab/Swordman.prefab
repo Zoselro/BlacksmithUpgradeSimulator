@@ -309,8 +309,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5190234234901913781}
+  - component: {fileID: -7789472329411664840}
   m_Layer: 0
-  m_Name: SwordMan
+  m_Name: Swordman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,6 +342,24 @@ RectTransform:
   m_AnchoredPosition: {x: -178, y: -195}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &-7789472329411664840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994380872491566926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9767222ff2a54d146aa88b1f05ee78cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adventuerType: 0
+  nameID: "\uCD08\uAE09\uAC80\uC0AC"
+  normalSprite: {fileID: -4296160826702518020, guid: af21dbef9fdaac941a27b437e2758cbe, type: 3}
+  happySprite: {fileID: -1934224707021899584, guid: 03ce0e251a66e82479087775b43d1eaa, type: 3}
+  sadSprite: {fileID: -6689155600526028062, guid: f069a216d750e6849a4e8f28eb615e8d, type: 3}
+  npcTendency: 0
 --- !u!1 &5256106767626757110
 GameObject:
   m_ObjectHideFlags: 0

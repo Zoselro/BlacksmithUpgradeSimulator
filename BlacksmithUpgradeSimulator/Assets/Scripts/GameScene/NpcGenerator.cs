@@ -12,12 +12,7 @@ public enum EmotionType
 public class NpcGenerator : MonoBehaviour
 {
     [SerializeField] private WeaponController weaponController;
-    [SerializeField] private NpcController npcController;
     [SerializeField] private NpcData[] npcDatas;
-    
-
-    public NpcController NpcController => npcController;
-
     [SerializeField] private AdventurerType adventurerType;
 
 

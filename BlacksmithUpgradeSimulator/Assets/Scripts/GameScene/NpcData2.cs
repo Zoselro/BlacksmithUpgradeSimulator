@@ -15,12 +15,7 @@ public class NpcData2 : MonoBehaviour
     [SerializeField] private NpcTendency npcTendency;
     public NpcTendency NpcTendency => npcTendency;
 
-    //public Sprite GetPlayerSprite(Emotion emotion)
-    //{
-    //    return null;
-    //}
-
-    public Sprite GetNPCSprite(Emotion emotion)
+    public Sprite GetNPCEmotion(Emotion emotion)
     {
         Sprite sprite = null;
 

@@ -200,11 +200,6 @@ public class GameManager : MonoBehaviour
     {
         adventurerType = GetWeightedCustomer(); // 방문 고객수에 따라 방문 고객의 등급이 정해진다.
         npcData = npcGenerator.Setting(adventurerType); // 고객의 타입을 Generator에 알려준 후 , 타입을 갖고 그 고객의 전반적인 세팅을 한다.
-
-        //Sprite sprite = npcData.GetNPCSprite(Emotion.Normal);
-
-        //uiManager.SetRightSprite(sprite); // 게임씬 화면에서 보여질 Npc 이미지를 세팅
-        npcGenerator.NpcController.SetGameManager(this); // npcController에게 알려주고, 고객의 Prefab에 GameManager를 전달시켜준다.
         probability = enhanceChanceCalculator.GetRandomEnhanceChance(adventurerType);//NpcGenerator.AdventurerType); // 고객의 타입에 따라 강화 확률이 결정이 된다.
 
         return npcData;
