@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using static TMPro.Examples.ObjectSpin;
 
 public class NpcController : MonoBehaviour
 {

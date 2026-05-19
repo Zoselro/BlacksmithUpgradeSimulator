@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public enum NpcTendency
@@ -182,14 +181,16 @@ public class GameManager : MonoBehaviour
     {
         if (!enhanceManager.IsEnhancing) return;
         enhanceManager.PlayEnhance(probability, adventurerType, 
-                                                npcGenerator.WeaponController, ref gold, 
-                                                ref failCnt, ref successCnt, 
-                                                ref greatSuccessCnt,
-                                                ref currentGold,
-                                                ref currentSuccessCnt,
-                                                ref currentGreatSuccessCnt,
-                                                ref currentFailCnt);
+                                                npcGenerator.WeaponController, gold, 
+                                                failCnt, successCnt, 
+                                                greatSuccessCnt,
+                                                currentGold,
+                                                currentSuccessCnt,
+                                                currentGreatSuccessCnt,
+                                                currentFailCnt);
     }
+
+
 
     public void UpdateDayUI()
     {
@@ -221,7 +222,7 @@ public class GameManager : MonoBehaviour
 
         uiManager.ShowFadeImage(true); // 대화 말풍선 뜨고 난 후 2초뒤 FadeImage 활성화
 
-        topUIManager.SetGoldText(gold);
+        topUIManager.SetGoldText(gold); // 현재 골드 양 갱신
         uiManager.ShowNextBtn(false);
     }
 
@@ -293,12 +294,75 @@ public class GameManager : MonoBehaviour
         return adventurerType;
     }
 
-    public void AddGold(int amount)
+    public void SetGold(int amount)
     {
         gold += amount;
         if (gold <= 0)
         {
             gold = 0;
+        }
+    }
+
+    public void SetSuccessCnt(int successCnt)
+    {
+        this.successCnt += successCnt;
+        if(this.successCnt < 0)
+        {
+            this.successCnt = 0;
+        }
+    }
+
+    public void SetGreatSuccessCnt(int greatSuccessCnt)
+    {
+        this.greatSuccessCnt += greatSuccessCnt;
+        if(this.greatSuccessCnt < 0)
+        {
+            this.greatSuccessCnt = 0;
+        }
+    }
+
+    public void SetFailCnt(int failCnt)
+    {
+        this.failCnt += failCnt;
+        if(this.failCnt < 0)
+        {
+            this.failCnt = 0;
+        }
+    }
+
+    public void SetCurrentGold(int currentGold)
+    {
+        this.currentGold += currentGold;
+        if(this.currentGold < 0)
+        {
+            this.currentGold = 0;
+        }
+    }
+
+    public void SetCurrentSuccessCnt(int currentSuccessCnt)
+    {
+        this.currentSuccessCnt += currentSuccessCnt;
+        if(this.currentSuccessCnt < 0)
+        {
+            this.currentSuccessCnt = 0;
+        }
+    }
+
+    public void SetCurrentGreatSuccessCnt(int currentGreatSuccessCnt)
+    {
+        this.currentGreatSuccessCnt += currentGreatSuccessCnt;
+        if(this.currentGreatSuccessCnt < 0)
+        {
+            this.currentGreatSuccessCnt = 0;
+        }
+    }
+
+    public void SetCurrentFailCnt(int currentFailCnt)
+    {
+        this.currentFailCnt += currentFailCnt;
+        if(this.currentFailCnt < 0)
+        {
+            this.currentFailCnt = 0;
         }
     }
 
