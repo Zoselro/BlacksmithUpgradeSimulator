@@ -15,7 +15,6 @@ public enum NpcTendency
 // 감정 상태를 나타내는 enum
 public enum Emotion
 {
-    Back,
     Normal,
     Sad,
     Happy
@@ -83,13 +82,16 @@ public class GameManager : MonoBehaviour
     public float EnhanceTime => enhanceTime;
     [SerializeField] private float eventPopUpTime = 1f; // NPC 등장 팝업창이 보여지는 시간
 
+    [Header("NPCConroller")]
+    [SerializeField] private NpcController npcController;
+
     private float probability = 0f; // 강화 확률
     private AdventurerType[] adventurerTypeArr = 
                                     { AdventurerType.Beginner, AdventurerType.Intermediate, AdventurerType.Advanced}; // 가중치에 따라서 리스트중 Npc 타입 결정
     private AdventurerType adventurerType; // 결정된 npc 타입
 
     private WaitForSeconds waitForSeconds = null;
-    private NpcData npcData;
+    private NpcData2 npcData;
 
     DialogueSet[] dialogueSet = new DialogueSet[4];
     private DialogueLine[][] buffer = new DialogueLine[4][];
@@ -196,7 +198,7 @@ public class GameManager : MonoBehaviour
         weekday = weekdays[dayindex];
         topUIManager.TopBarDisPlay(); // 일 수 갱신
     }
-    private NpcData SetupNpc()
+    private NpcData2 SetupNpc()
     {
         adventurerType = GetWeightedCustomer(); // 방문 고객수에 따라 방문 고객의 등급이 정해진다.
         npcData = npcGenerator.Setting(adventurerType); // 고객의 타입을 Generator에 알려준 후 , 타입을 갖고 그 고객의 전반적인 세팅을 한다.
@@ -415,11 +417,11 @@ public class GameManager : MonoBehaviour
 
         dialogueWelcomPlayerData = scriptReader.ReadPlayer(blackSmithData.WelcomeID);
 
-        dialogueVisitNpcData = scriptReader.ReadNPC(npcData.AdventurerType.ToString(),
+        dialogueVisitNpcData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                             npcData.NpcTendency.ToString(),
                                             NpcState.Enter);
 
-        dialogueRequestNpcData = scriptReader.ReadNPC(npcData.AdventurerType.ToString(),
+        dialogueRequestNpcData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                                 npcData.NpcTendency.ToString(),
                                                 NpcState.Request);
     }
@@ -442,10 +444,10 @@ public class GameManager : MonoBehaviour
 
         buffer[1][0].Set(blackSmithData.NameID, dialogueWelcomPlayerData,
                                         blackSmithData.BackSprite, Direction.Left);
-        buffer[1][1].Set(npcData.NameID, dialogueVisitNpcData,
-                                    npcData.GetNPCSprite(Emotion.Normal), Direction.Right);
-        buffer[1][2].Set(npcData.NameID, dialogueRequestNpcData,
-                                    npcData.GetNPCSprite(Emotion.Normal), Direction.Right);
+        buffer[1][1].Set(npcData.GetNameID(), dialogueVisitNpcData,
+                                    npcController.SetEmotion(Emotion.Normal), Direction.Right);
+        buffer[1][2].Set(npcData.GetNameID(), dialogueRequestNpcData,
+                                    npcController.SetEmotion(Emotion.Normal), Direction.Right);
 
         dialogueSet[1].SetDialogueLines(buffer[1]);
 
@@ -463,7 +465,7 @@ public class GameManager : MonoBehaviour
         {
             dialoguePlayerSuccessData = scriptReader.ReadPlayer(blackSmithData.EnhanceSuccessID);
             dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteSuccessID);
-            dialogueNPCSuccessExitData = scriptReader.ReadNPC(npcData.AdventurerType.ToString(),
+            dialogueNPCSuccessExitData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                                     npcData.NpcTendency.ToString(),
                                                     NpcState.ExitSuccess);
         }
@@ -472,7 +474,7 @@ public class GameManager : MonoBehaviour
         {
             dialoguePlayerGreateSuccessData = scriptReader.ReadPlayer(blackSmithData.EnhanceGreatSuccessID);
             dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteSuccessID);
-            dialogueNPCSuccessExitData = scriptReader.ReadNPC(npcData.AdventurerType.ToString(),
+            dialogueNPCSuccessExitData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                                     npcData.NpcTendency.ToString(),
                                                     NpcState.ExitSuccess);
         }
@@ -481,7 +483,7 @@ public class GameManager : MonoBehaviour
         {
             dialoguePlayerFailData = scriptReader.ReadPlayer(blackSmithData.EnhanceFailID);
             dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteFailID);
-            dialogueNPCFailExitData = scriptReader.ReadNPC(npcData.AdventurerType.ToString(),
+            dialogueNPCFailExitData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                                     npcData.NpcTendency.ToString(),
                                                     NpcState.ExitFail);
         }
@@ -498,8 +500,8 @@ public class GameManager : MonoBehaviour
                                     blackSmithData.HappySprite, Direction.Right);
             buffer[3][0].Set(blackSmithData.NameID, dialogueBlackSmithDeliverData,
                                     blackSmithData.BackSprite, Direction.Left);
-            buffer[3][1].Set(npcData.NameID, dialogueNPCSuccessExitData,
-                                    npcData.GetNPCSprite(Emotion.Happy), Direction.Right);
+            buffer[3][1].Set(npcData.GetNameID(), dialogueNPCSuccessExitData,
+                                    npcController.SetEmotion(Emotion.Happy), Direction.Right);
         }
         else if(result == EnhanceResult.GreatSuccess)
         {
@@ -507,8 +509,8 @@ public class GameManager : MonoBehaviour
                                     blackSmithData.HappySprite, Direction.Right);
             buffer[3][0].Set(blackSmithData.NameID, dialogueBlackSmithDeliverData,
                                     blackSmithData.BackSprite, Direction.Left);
-            buffer[3][1].Set(npcData.NameID, dialogueNPCSuccessExitData,
-                                    npcData.GetNPCSprite(Emotion.Happy), Direction.Right);
+            buffer[3][1].Set(npcData.GetNameID(), dialogueNPCSuccessExitData,
+                                    npcController.SetEmotion(Emotion.Happy), Direction.Right);
         }
         else
         {
@@ -516,8 +518,8 @@ public class GameManager : MonoBehaviour
                                     blackSmithData.SadSprite, Direction.Right);
             buffer[3][0].Set(blackSmithData.NameID, dialogueBlackSmithDeliverData,
                                     blackSmithData.BackSprite, Direction.Left);
-            buffer[3][1].Set(npcData.NameID, dialogueNPCFailExitData,
-                                    npcData.GetNPCSprite(Emotion.Sad), Direction.Right);
+            buffer[3][1].Set(npcData.GetNameID(), dialogueNPCFailExitData,
+                                    npcController.SetEmotion(Emotion.Sad), Direction.Right);
         }
         dialogueSet[2].SetDialogueLines(buffer[2]);
         dialogueSet[2].SetEndFunc(() => SetBackGroundOpenCounter());
@@ -538,13 +540,27 @@ public class GameManager : MonoBehaviour
     {
         if (active)
         {
-            uiManager.StopAnimator();
+            Debug.Log("강화 중단");
             enhanceManager.RequestEnhance(false); // 강화 중단 요청
         }
         else
         {
-            uiManager.StartAnimator();
+            Debug.Log("강화 시작");
             enhanceManager.RequestEnhance(true); // 강화 시작 요청
+        }
+    }
+
+    public void TryAnimation(bool active)
+    {
+        if (active)
+        {
+            uiManager.StopAnimator();
+            Debug.Log("애니메이션 중단");
+        }
+        else
+        {
+            uiManager.StartAnimator();
+            Debug.Log("애니메이션 재개");
         }
     }
 }

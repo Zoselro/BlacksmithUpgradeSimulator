@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI startNextDayText;
 
     [Header("CharactorSprite")] 
-    [SerializeField] private Image rightSprite;
+    [SerializeField] private GameObject npcObj;
     [SerializeField] private Image leftSprite;
     [SerializeField] private Image welcomImg;
     [SerializeField] private TextMeshProUGUI welcomText;
@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
     // 오른쪽 스프라이트 활성화 여부 설정 메서드
     public void ShowRightSprite(bool active)
     {
-        rightSprite.gameObject.SetActive(active);
+        npcObj.gameObject.SetActive(active);
     }
 
     public void PlayWelcomePopupAnimation()
@@ -112,8 +112,8 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            rightSprite.sprite = sprite;
-            rightSprite.gameObject.SetActive(active);
+            //rightSprite.sprite = sprite;
+            npcObj.gameObject.SetActive(active);
         }
     }
 
@@ -126,7 +126,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            rightSprite.gameObject.SetActive(active);
+            npcObj.gameObject.SetActive(active);
 
             // "Visit" 상태를 0번 레이어에서 재생하되, 
             // 진행도를 1.0f(100%)로 설정해서 마지막 위치에 고정
@@ -160,8 +160,8 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            rightSprite.sprite = sprite;
-            rightSprite.gameObject.SetActive(active);
+            //rightSprite.sprite = sprite;
+            npcObj.gameObject.SetActive(active);
             rightContentBox.gameObject.SetActive(active);
             leftContentBox.gameObject.SetActive(!active);
         }

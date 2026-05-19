@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 5162386681825340839}
   - component: {fileID: 5716752224700824678}
   m_Layer: 0
-  m_Name: leg
+  m_Name: Leftleg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,6 +300,81 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3692275896271525346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1672452435670874200}
+  - component: {fileID: 5534567737652236086}
+  - component: {fileID: 1072753511976264414}
+  m_Layer: 0
+  m_Name: Hair2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1672452435670874200
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692275896271525346}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8291530300345173485}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3.7999992, y: 48.2}
+  m_SizeDelta: {x: 75.8, y: 89.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5534567737652236086
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692275896271525346}
+  m_CullTransparentMesh: 1
+--- !u!114 &1072753511976264414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692275896271525346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1008294324084481806, guid: 48177e5cfdecca044a7abf4383db1237, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4734182687716715177
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +479,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1672452435670874200}
   - {fileID: 6597758904322526581}
   - {fileID: 4064857130615752993}
   - {fileID: 4670309215594140379}
@@ -432,11 +508,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adventuerType: 2
-  nameID: "\uC911\uAE09\uD5CC\uD130"
+  nameID: "\uC0BC\uAE09\uD5CC\uD130"
   normalSprite: {fileID: -2844065467469701822, guid: 298eaf14d5794a54881bdc35f34b3ef4, type: 3}
   happySprite: {fileID: -2906948458310057533, guid: b72e9eba01d4cc74999af959628066a0, type: 3}
   sadSprite: {fileID: 402207363046032840, guid: 069001f711abd764eaa43eea559086b4, type: 3}
-  npcTendency: 0
+  leftLeg: {fileID: 5716752224700824678}
+  rightLeg: {fileID: 3832848497292057888}
+  leftArm: {fileID: 3963537927447995023}
+  rightArm: {fileID: 2681787876875541448}
+  body: {fileID: 3475476193040278443}
+  face: {fileID: 4698681151787115302}
+  hair: {fileID: 237110499341621768}
+  hair2: {fileID: 1072753511976264414}
+  expression: {fileID: 2667598173992592425}
+  npcTendency: 6
 --- !u!1 &6760918291106512551
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +684,7 @@ GameObject:
   - component: {fileID: 700481569866527973}
   - component: {fileID: 3832848497292057888}
   m_Layer: 0
-  m_Name: leg2
+  m_Name: Rightleg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
