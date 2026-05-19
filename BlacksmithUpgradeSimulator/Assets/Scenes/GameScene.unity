@@ -809,7 +809,7 @@ MonoBehaviour:
       - m_Target: {fileID: 378610597}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: SettingComplete
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1858,6 +1858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 2056736164}
+  enhanceManager: {fileID: 164328359}
   menuPanel: {fileID: 499447058}
   menuUI: {fileID: 1320771317}
   optionUI: {fileID: 1991473666}

@@ -23,10 +23,10 @@ public class MenuManager : MonoBehaviour
     public void ShowMenu(bool active)
     {
         menuText.text = "메뉴";
-        menuPanel.SetActive(active);
+        menuPanel.SetActive(active); // 메뉴 패널의 활성화 여부 설정
         optionUI.SetActive(!active); // 옵션 UI는 처음에 비활성화
         menuUI.SetActive(active); // 메뉴 UI는 활성화 여부에 따라 설정
-        //gm.TryEnhance(active); // 메뉴가 활성화될 때 게임 매니저에게 일시정지를 요청하는 메서드 호출
+        gm.TryAnimation(active); // 메뉴가 활성화될 때 게임 매니저에게 일시정지를 요청하는 메서드 호출
 
         if (active)
         {
@@ -66,10 +66,27 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("GameStart");
     }
 
-    public void SettingComplete()
+    public void SettingComplete(bool active)
     {
-        menuPanel.SetActive(false);
-        gm.TryEnhance(false);
+        menuPanel.SetActive(active);
+        gm.TryAnimation(active); // 메뉴가 비활성화될 때 게임 매니저에게 애니메이션을 재개하는 메서드 호출
+
+        if (active)
+        {
+            wasEnhancingBeforeMenu = enhanceManager.IsEnhancing; // 메뉴가 열리기 전에 강화 중이었는지 여부 저장
+            Debug.Log($"메뉴 활성화: wasEnhancingBeforeMenu = {wasEnhancingBeforeMenu}");
+            if (wasEnhancingBeforeMenu)
+            {
+                gm.TryEnhance(true); // 메뉴가 활성화될 때 게임 매니저에게 일시정지를 요청하는 메서드 호출
+            }
+        }
+        else
+        {
+            if (wasEnhancingBeforeMenu)
+            {
+                gm.TryEnhance(false); // 메뉴가 비활성화될 때 게임 매니저에게 일시정지를 해제하는 메서드 호출
+            }
+        }
         Debug.Log("설정이 완료되었습니다.");
     }
 }
