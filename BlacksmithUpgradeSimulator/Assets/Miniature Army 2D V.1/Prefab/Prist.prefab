@@ -663,14 +663,23 @@ MonoBehaviour:
   happySprite: {fileID: 8861505317297529154, guid: 920b848109357ab47b0646f3b04230e8, type: 3}
   sadSprite: {fileID: 8249165508676523624, guid: 0f177eabcc3bc77499a841092ffedf50, type: 3}
   leftLeg: {fileID: 3558378867911628903}
+  leftLegRectTransform: {fileID: 8756745064125892550}
   rightLeg: {fileID: 879849175632651451}
+  rightLegRectTransform: {fileID: 3037926097056183986}
   leftArm: {fileID: 3058791037138471944}
+  leftArmRectTransform: {fileID: 4836191746870354186}
   rightArm: {fileID: 7899715401025541772}
+  rightArmRectTransform: {fileID: 2006981650557023680}
   body: {fileID: 6414273642320033328}
+  bodyRectTransform: {fileID: 4660172842526261075}
   face: {fileID: 2346104243127273959}
+  faceRectTransform: {fileID: 2121704731322857950}
   hair: {fileID: 3957670066487490589}
+  hairRectTransform: {fileID: 1592092897014337066}
   hair2: {fileID: 1107460147389550194}
+  hair2RectTransfrom: {fileID: 8715652933699681718}
   expression: {fileID: 4268444723520224231}
+  expressionRectTransform: {fileID: 1086642947804742744}
   npcTendency: 0
 --- !u!1 &8716195097438738288
 GameObject:

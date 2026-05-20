@@ -57,21 +57,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9767222ff2a54d146aa88b1f05ee78cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adventuerType: 2
+  adventuerType: 0
   nameID: "\uC0C1\uAE09\uBAA8\uD5D8\uAC00"
   normalSprite: {fileID: 6886390255356908870, guid: d4d332efdddeb994db89bfbc0aec601b, type: 3}
   happySprite: {fileID: -7982432965253262553, guid: fae6667b078853841805bf231c22feb9, type: 3}
   sadSprite: {fileID: -8583506833237509429, guid: 3043b89c6f029f147a83a4195f259718, type: 3}
   leftLeg: {fileID: 3466274392832697222}
+  leftLegRectTransform: {fileID: 6903474739372119264}
   rightLeg: {fileID: 2322717007974233114}
+  rightLegRectTransform: {fileID: 7676871267792402490}
   leftArm: {fileID: 3716413328489579049}
+  leftArmRectTransform: {fileID: 6712628339347458931}
   rightArm: {fileID: 7506347448917809463}
+  rightArmRectTransform: {fileID: 5794976142686806668}
   body: {fileID: 218492888060399816}
+  bodyRectTransform: {fileID: 8500428668066850059}
   face: {fileID: 6652141174376902600}
+  faceRectTransform: {fileID: 7353295577839953097}
   hair: {fileID: 8779372991913966084}
+  hairRectTransform: {fileID: 2889953205943248544}
   hair2: {fileID: 178045994872369380}
+  hair2RectTransfrom: {fileID: 8175006959493874515}
   expression: {fileID: 1133406376698157969}
-  npcTendency: 6
+  expressionRectTransform: {fileID: 1832119063107702814}
+  npcTendency: 0
 --- !u!1 &1225771886463516710
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +543,7 @@ GameObject:
   - component: {fileID: 7478695931971755830}
   - component: {fileID: 8779372991913966084}
   m_Layer: 0
-  m_Name: hair
+  m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

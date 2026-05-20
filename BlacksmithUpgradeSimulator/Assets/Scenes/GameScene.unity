@@ -11287,14 +11287,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftLeg: {fileID: 1892848759858299116}
+  leftLegRectTransform: {fileID: 1053480519037317631}
   rightLeg: {fileID: 6926614642934964650}
+  rightLegRectTransform: {fileID: 7888057157281854891}
   leftArm: {fileID: 7066170397300923909}
+  leftArmRectTransform: {fileID: 1567535569962741329}
   rightArm: {fileID: 8081388381760546626}
+  rightArmRectTransform: {fileID: 3481858551310559010}
   body: {fileID: 7289668736908123937}
+  bodyRectTransform: {fileID: 67645896160291841}
   face: {fileID: 1451379176803917740}
+  faceRectTransform: {fileID: 2263795778340468645}
   hair: {fileID: 6222609680583501442}
+  hairRectTransform: {fileID: 518324491482875356}
   hair2: {fileID: 336692756}
+  hair2RectTransform: {fileID: 336692755}
   expression: {fileID: 8076205723238586531}
+  expressionRectTransform: {fileID: 7451677920777343313}
   adventurerType: 0
 --- !u!95 &2738235679479019881
 Animator:

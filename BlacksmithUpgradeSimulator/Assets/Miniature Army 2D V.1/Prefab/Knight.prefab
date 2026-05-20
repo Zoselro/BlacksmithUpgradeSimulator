@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7567238279493577817}
   - component: {fileID: 2467411770775738995}
   m_Layer: 0
-  m_Name: face
+  m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 6321241184476072418}
   - component: {fileID: 4915713341279942589}
   m_Layer: 0
-  m_Name: hair
+  m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,21 +582,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9767222ff2a54d146aa88b1f05ee78cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adventuerType: 1
+  adventuerType: 0
   nameID: "\uC911\uAE09\uB098\uC774\uD2B8"
   normalSprite: {fileID: -1008294324084481806, guid: 48177e5cfdecca044a7abf4383db1237, type: 3}
   happySprite: {fileID: -1008294324084481806, guid: 48177e5cfdecca044a7abf4383db1237, type: 3}
   sadSprite: {fileID: -1008294324084481806, guid: 48177e5cfdecca044a7abf4383db1237, type: 3}
   leftLeg: {fileID: 7031605203222131746}
+  leftLegRectTransform: {fileID: 3036725245935609411}
   rightLeg: {fileID: 5551632111159243129}
+  rightLegRectTransform: {fileID: 1748017912874640585}
   leftArm: {fileID: 5670249138456388359}
+  leftArmRectTransform: {fileID: 5370422921152361633}
   rightArm: {fileID: 5888292433959370647}
+  rightArmRectTransform: {fileID: 8144334635929310818}
   body: {fileID: 2938082807589498003}
+  bodyRectTransform: {fileID: 2660453612232981431}
   face: {fileID: 2467411770775738995}
+  faceRectTransform: {fileID: 7629107154172319826}
   hair: {fileID: 4915713341279942589}
+  hairRectTransform: {fileID: 4335444442560518972}
   hair2: {fileID: 6864265814354370643}
+  hair2RectTransfrom: {fileID: 273370267366634508}
   expression: {fileID: 9210505230097073148}
-  npcTendency: 1
+  expressionRectTransform: {fileID: 2392729680369082690}
+  npcTendency: 0
 --- !u!1 &7240309018618073782
 GameObject:
   m_ObjectHideFlags: 0

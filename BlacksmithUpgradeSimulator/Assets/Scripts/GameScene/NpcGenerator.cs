@@ -18,7 +18,7 @@ public class NpcGenerator : MonoBehaviour
 
         NpcData2 npcData = PickNpcDataByType(adventurerType); // adventurerType의 대한 랜덤한 npc를 뽑아냄
         
-        if(npcData == null)
+        if (npcData == null)
         {
             Debug.LogError($"[NpcGenerator] {adventurerType} 타입의 NpcData를 찾을 수 없습니다.");
             return null;
@@ -26,6 +26,7 @@ public class NpcGenerator : MonoBehaviour
         npcController.Initialize(npcData); // 뽑아낸 npc의 데이터를 npcController에 초기화한다.
 
         npcController.ApplyNpcTemplate(npcData); // 뽑아낸 npc의 데이터를 npcController에 적용한다.
+        npcController.InitializeRectTransform(npcData);
 
         weaponController.GetEnhancementLevelByAdventurerType(adventurerType); // 고객의 등급에 따라 강화 등급을 결정한다.
 
