@@ -504,11 +504,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6114058959028052031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9767222ff2a54d146aa88b1f05ee78cf, type: 3}
+  m_Script: {fileID: 11500000, guid: c867ea120ec46c24081741a31c47a3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adventuerType: 0
-  nameID: "\uC0BC\uAE09\uD5CC\uD130"
+  adventuerType: 1
+  nameID: "\uCD08\uAE09\uD5CC\uD130"
   normalSprite: {fileID: -2844065467469701822, guid: 298eaf14d5794a54881bdc35f34b3ef4, type: 3}
   happySprite: {fileID: -2906948458310057533, guid: b72e9eba01d4cc74999af959628066a0, type: 3}
   sadSprite: {fileID: 402207363046032840, guid: 069001f711abd764eaa43eea559086b4, type: 3}
@@ -530,7 +530,7 @@ MonoBehaviour:
   hair2RectTransfrom: {fileID: 1672452435670874200}
   expression: {fileID: 2667598173992592425}
   expressionRectTransform: {fileID: 3636913579323420123}
-  npcTendency: 0
+  npcTendency: 1
 --- !u!1 &6760918291106512551
 GameObject:
   m_ObjectHideFlags: 0

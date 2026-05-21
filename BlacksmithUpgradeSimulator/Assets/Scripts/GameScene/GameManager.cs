@@ -143,22 +143,23 @@ public class GameManager : MonoBehaviour
     public void NewDay()
     {
         uiManager.ShowBlackSmith(true, Dir.Left); // 왼쪽 스프라이트 활성화
-        //uiManager.BlackSmithResetTrigger(); // 대장장이 리셋 트리거 -> 새로운 날이 시작하자마자 대장장이 등장 연출
+        uiManager.BlackSmithResetTrigger(); // 대장장이 리셋 트리거 -> 새로운 날이 시작하자마자 대장장이 등장 연출
         uiManager.BlackSmithEntranceTrigger(); // 대장장이 등장 트리거
         uiManager.ShowDialogueBox2(false); // 정산 대사창 비활성화
         //uiManager.ShowDialogueBox(true); // 대화창 활성화
         uiManager.ShowNextBtn(true); // 다음 버튼 활성화
         uiManager.ShowStartNextDayBtn(false); // 다음 날 시작 버튼 비활성화
         uiManager.ShowFadeImage(false);
+        uiManager.ShowNpc(true); // NPC 활성화
 
-        //정산 애니메이션 연출 이후,
-        UpdateDayUI(); // 일 수 갱신
 
         visitors = 0; // 정산 화면에서 보여진 후 방문자 수 초기화
         currentFailCnt = 0; // 정산 화면에서 보여진 후 현재 실패 횟수 초기화
         currentSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 성공 횟수 초기화
         currentGreatSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 대 성공 횟수 초기화
         currentGold = 0; // 정산 화면에서 보여진 후 현재 골드 양 초기화
+        
+        UpdateDayUI(); // 일 수 갱신
 
         // 첫 번째 방문이지만, 첫 날이 아니라면,
         // 오프닝 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해준다.
@@ -211,7 +212,7 @@ public class GameManager : MonoBehaviour
     // 하루가 끝났을 때, 정산 화면으로 넘어가는 함수
     public void HandleEndOfDay()
     {
-        uiManager.ShowBlackSmith(false, Dir.Left);
+        //uiManager.ShowBlackSmith(false, Dir.Left);
         uiManager.ShowCounterImage(true);
         uiManager.ShowDialogueBox(false);
         uiManager.ShowNpc(false);

@@ -65,22 +65,24 @@ public class UIManager : MonoBehaviour
 
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
-    // 왼쪽 스프라이트 활성화 여부 설정 메서드
+    // 대장장이 스프라이트 활성화 여부 설정 메서드
     public void ShowBlackSmith(bool active, Dir dir)
     {
         if(dir == Dir.Left)
         {
-            leftBlackSmithSprite.gameObject.SetActive(active);
-            rightBlackSmithSprite.gameObject.SetActive(false);
+            //leftBlackSmithSprite.gameObject.SetActive(active);
+            leftBlackSmithSprite.color = new Color(255f, 255f, 255f, active ? 255f : 0f);
+            //rightBlackSmithSprite.gameObject.SetActive(!active);
         }
         else
         {
             rightBlackSmithSprite.gameObject.SetActive(active);
-            leftBlackSmithSprite.gameObject.SetActive(false);
+            //leftBlackSmithSprite.gameObject.SetActive(!active);
+            //leftBlackSmithSprite.color = new Color(255f, 255f, 255f, active ? 255f : 0f);
         }
     }
 
-    // 오른쪽 스프라이트 활성화 여부 설정 메서드
+    // NPC 스프라이트 활성화 여부 설정 메서드
     public void ShowNpc(bool active)
     {
         npcCanvasGroup.alpha = active ? 1f : 0f; // 활성화 여부에 따라 투명도 조절
@@ -131,7 +133,8 @@ public class UIManager : MonoBehaviour
             {
                 Debug.Log($"왼쪽 말하는 주체 대장장이");
                 leftBlackSmithSprite.sprite = sprite;
-                leftBlackSmithSprite.gameObject.SetActive(true);
+                //leftBlackSmithSprite.gameObject.SetActive(true);
+                leftBlackSmithSprite.color = new Color(255f, 255f, 255f, 255f);
                 rightBlackSmithSprite.gameObject.SetActive(false);
             }
             else
@@ -149,7 +152,8 @@ public class UIManager : MonoBehaviour
                 Debug.Log($"오른쪽 말하는 주체 대장장이");
                 rightBlackSmithSprite.sprite = sprite;
                 rightBlackSmithSprite.gameObject.SetActive(true);
-                leftBlackSmithSprite.gameObject.SetActive(false);
+                //leftBlackSmithSprite.gameObject.SetActive(false);
+                leftBlackSmithSprite.color = new Color(255f, 255f, 255f, 0f);
             }
             else
             {
