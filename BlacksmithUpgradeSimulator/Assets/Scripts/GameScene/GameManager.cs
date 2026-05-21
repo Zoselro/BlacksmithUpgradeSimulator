@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
     private AdventurerType adventurerType; // 결정된 npc 타입
 
     private WaitForSeconds waitForSeconds = null;
-    private NpcData2 npcData;
+    private NpcData npcData;
 
     DialogueSet[] dialogueSet = new DialogueSet[4];
     private DialogueLine[][] buffer = new DialogueLine[4][];
@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
 
     public void NewDay()
     {
-        uiManager.ShowleftSprite(true); // 왼쪽 스프라이트 활성화
+        uiManager.ShowBlackSmith(true, Dir.Left); // 왼쪽 스프라이트 활성화
         //uiManager.BlackSmithResetTrigger(); // 대장장이 리셋 트리거 -> 새로운 날이 시작하자마자 대장장이 등장 연출
         uiManager.BlackSmithEntranceTrigger(); // 대장장이 등장 트리거
         uiManager.ShowDialogueBox2(false); // 정산 대사창 비활성화
@@ -199,7 +199,7 @@ public class GameManager : MonoBehaviour
         weekday = weekdays[dayindex];
         topUIManager.TopBarDisPlay(); // 일 수 갱신
     }
-    private NpcData2 SetupNpc()
+    private NpcData SetupNpc()
     {
         adventurerType = GetWeightedCustomer(); // 방문 고객수에 따라 방문 고객의 등급이 정해진다.
         npcData = npcGenerator.Setting(adventurerType); // 고객의 타입을 Generator에 알려준 후 , 타입을 갖고 그 고객의 전반적인 세팅을 한다.
@@ -211,11 +211,11 @@ public class GameManager : MonoBehaviour
     // 하루가 끝났을 때, 정산 화면으로 넘어가는 함수
     public void HandleEndOfDay()
     {
-        uiManager.ShowleftSprite(false);
+        uiManager.ShowBlackSmith(false, Dir.Left);
         uiManager.ShowCounterImage(true);
         uiManager.ShowDialogueBox(false);
-        uiManager.ShowRightSprite(false);
-        uiManager.ShowSprite(true, blackSmithData.BackSprite, Direction.Left);
+        uiManager.ShowNpc(false);
+        //uiManager.ShowSprite(true, blackSmithData.BackSprite, Speaker.BlackSmith);
         uiManager.SetBackGround(BgType.CloseCounter);
 
         uiManager.ShowDialogueBox2(true);
@@ -389,7 +389,7 @@ public class GameManager : MonoBehaviour
         if (visitors == 0)
             uiManager.SetBackGround(BgType.OpenCounter);
 
-        uiManager.ShowSprite(true, buffer[1][1].GetImage(), Direction.Right); // NPC 이미지 보임
+        //uiManager.ShowSprite(true, buffer[1][1].GetImage(), Speaker.Npc); // NPC 이미지 보임
         uiManager.NPCVisitTrigger(); // NPC 방문 연출 트리거
 
         visitors++;
@@ -410,7 +410,7 @@ public class GameManager : MonoBehaviour
     public void SetBackGroundOpenCounter()
     {
         uiManager.SetBackGround(BgType.OpenCounter);
-        uiManager.ShowSprite(true, buffer[3][1].GetImage() ,Direction.Right);
+        //uiManager.ShowSprite(true, buffer[3][1].GetImage() ,Speaker.Npc);
         uiManager.ShowCounterImage(true);
     }
     #endregion
@@ -495,7 +495,7 @@ public class GameManager : MonoBehaviour
         if (visitors == 0)
         {
             buffer[0][0].Set(blackSmithData.NameID, dialogueOpeningData,
-                                        blackSmithData.BackSprite, Direction.Left);
+                                        blackSmithData.BackSprite, Speaker.BlackSmith, Dir.Left);
             dialogueSet[0].SetDialogueLines(buffer[0]);
 
             dialogueSet[0].SetEndFunc(() => uiManager.PlayWelcomeSequence(true, "누군가가 방문 했습니다."));
@@ -507,11 +507,11 @@ public class GameManager : MonoBehaviour
         }
 
         buffer[1][0].Set(blackSmithData.NameID, dialogueWelcomPlayerData,
-                                        blackSmithData.BackSprite, Direction.Left);
+                                        blackSmithData.BackSprite, Speaker.BlackSmith, Dir.Left);
         buffer[1][1].Set(npcData.GetNameID(), dialogueVisitNpcData,
-                                    npcController.SetEmotion(Emotion.Normal), Direction.Right);
+                                    npcController.SetEmotion(Emotion.Normal), Speaker.Npc, Dir.Right);
         buffer[1][2].Set(npcData.GetNameID(), dialogueRequestNpcData,
-                                    npcController.SetEmotion(Emotion.Normal), Direction.Right);
+                                    npcController.SetEmotion(Emotion.Normal), Speaker.Npc, Dir.Right);
 
         dialogueSet[1].SetDialogueLines(buffer[1]);
 
@@ -561,29 +561,29 @@ public class GameManager : MonoBehaviour
         if (result == EnhanceResult.Success)
         {
             buffer[2][0].Set(blackSmithData.NameID, dialoguePlayerSuccessData,
-                                    blackSmithData.HappySprite, Direction.Right);
+                                    blackSmithData.HappySprite, Speaker.BlackSmith, Dir.Right);
             buffer[3][0].Set(blackSmithData.NameID, dialogueBlackSmithDeliverData,
-                                    blackSmithData.BackSprite, Direction.Left);
+                                    blackSmithData.BackSprite, Speaker.BlackSmith, Dir.Left);
             buffer[3][1].Set(npcData.GetNameID(), dialogueNPCSuccessExitData,
-                                    npcController.SetEmotion(Emotion.Happy), Direction.Right);
+                                    npcController.SetEmotion(Emotion.Happy), Speaker.Npc, Dir.Right);
         }
         else if(result == EnhanceResult.GreatSuccess)
         {
             buffer[2][0].Set(blackSmithData.NameID, dialoguePlayerGreateSuccessData,
-                                    blackSmithData.HappySprite, Direction.Right);
+                                    blackSmithData.HappySprite, Speaker.BlackSmith, Dir.Right);
             buffer[3][0].Set(blackSmithData.NameID, dialogueBlackSmithDeliverData,
-                                    blackSmithData.BackSprite, Direction.Left);
+                                    blackSmithData.BackSprite, Speaker.BlackSmith, Dir.Left);
             buffer[3][1].Set(npcData.GetNameID(), dialogueNPCSuccessExitData,
-                                    npcController.SetEmotion(Emotion.Happy), Direction.Right);
+                                    npcController.SetEmotion(Emotion.Happy), Speaker.Npc, Dir.Right);
         }
         else
         {
             buffer[2][0].Set(blackSmithData.NameID, dialoguePlayerFailData,
-                                    blackSmithData.SadSprite, Direction.Right);
+                                    blackSmithData.SadSprite, Speaker.BlackSmith, Dir.Right);
             buffer[3][0].Set(blackSmithData.NameID, dialogueBlackSmithDeliverData,
-                                    blackSmithData.BackSprite, Direction.Left);
+                                    blackSmithData.BackSprite, Speaker.BlackSmith, Dir.Left);
             buffer[3][1].Set(npcData.GetNameID(), dialogueNPCFailExitData,
-                                    npcController.SetEmotion(Emotion.Sad), Direction.Right);
+                                    npcController.SetEmotion(Emotion.Sad), Speaker.Npc, Dir.Right);
         }
         dialogueSet[2].SetDialogueLines(buffer[2]);
         dialogueSet[2].SetEndFunc(() => SetBackGroundOpenCounter());

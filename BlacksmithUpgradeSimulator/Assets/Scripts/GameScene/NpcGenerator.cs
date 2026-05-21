@@ -5,18 +5,18 @@ public class NpcGenerator : MonoBehaviour
 {
     [SerializeField] private WeaponController weaponController;
     [SerializeField] private NpcController npcController;
-    [SerializeField] private NpcData2[] npcDatas;
+    [SerializeField] private NpcData[] npcDatas;
 
     [SerializeField] private AdventurerType adventurerType;
     public AdventurerType AdventurerType => adventurerType;
 
     public WeaponController WeaponController => weaponController;
 
-    public NpcData2 Setting(AdventurerType adventurerType)
+    public NpcData Setting(AdventurerType adventurerType)
     {
         this.adventurerType = adventurerType;
 
-        NpcData2 npcData = PickNpcDataByType(adventurerType); // adventurerTypeÀÇ ´ëÇÑ ·£´ýÇÑ npc¸¦ »Ì¾Æ³¿
+        NpcData npcData = PickNpcDataByType(adventurerType); // adventurerTypeÀÇ ´ëÇÑ ·£´ýÇÑ npc¸¦ »Ì¾Æ³¿
         
         if (npcData == null)
         {
@@ -33,9 +33,9 @@ public class NpcGenerator : MonoBehaviour
         return npcData;
     }
 
-    private NpcData2 PickNpcDataByType(AdventurerType type)
+    private NpcData PickNpcDataByType(AdventurerType type)
     {
-        List<NpcData2> candidates = new List<NpcData2>();
+        List<NpcData> candidates = new List<NpcData>();
         for (int i = 0; i < npcDatas.Length; i++)
         {
             if (npcDatas[i].GetAdventurerType() == type)

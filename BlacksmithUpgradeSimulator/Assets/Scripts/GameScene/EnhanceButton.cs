@@ -18,8 +18,10 @@ public class EnhanceButton : MonoBehaviour
         enhanceUIManager.ActiveEnhanceUIBar(true, (gm.GetProbability() * 100).ToString("F1"));
         uiManager.SetBackGround(BgType.Enhance);
         topUIManager.ActiveTopUIPanel(false);
-        uiManager.ShowSprite(false, Direction.Right);
-        uiManager.ShowSprite(false, Direction.Left);
+        //uiManager.ShowSprite(false, Speaker.Npc);
+        //uiManager.ShowSprite(false, Speaker.BlackSmith);
+        uiManager.ShowBlackSmith(false, Dir.Left);
+        uiManager.ShowNpc(false);
         uiManager.ShowCounterImage(false);
     }
 
@@ -28,7 +30,7 @@ public class EnhanceButton : MonoBehaviour
         uiManager.SetBackGround(BgType.Blacksmith);
         topUIManager.ActiveTopUIPanel(true);
         enhanceUIManager.ActiveEnhanceUIBar(false);
-        uiManager.ShowSprite(true, Direction.Right);
+        uiManager.ShowBlackSmith(true, Dir.Right);
         dialogueController.OnClickNextBtn(); // 강화 이후 대사 실행
 
         enhanceUIManager.ActiveConfirmButton(false);

@@ -11,11 +11,6 @@ public enum BgType
     Enhance, // 작업실
     Blacksmith // 대장간
 }
-public enum Direction
-{
-    Left,
-    Right
-}
 
 public class UIManager : MonoBehaviour
 {
@@ -45,8 +40,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI startNextDayText;
 
     [Header("CharactorSprite")] 
-    [SerializeField] private GameObject npcObj;
-    [SerializeField] private Image leftSprite;
+    [SerializeField] private CanvasGroup npcCanvasGroup;
+    [SerializeField] private Image leftBlackSmithSprite;
+    [SerializeField] private Image rightBlackSmithSprite;
     [SerializeField] private Image welcomImg;
     [SerializeField] private TextMeshProUGUI welcomText;
 
@@ -70,15 +66,24 @@ public class UIManager : MonoBehaviour
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
     // 왼쪽 스프라이트 활성화 여부 설정 메서드
-    public void ShowleftSprite(bool active)
+    public void ShowBlackSmith(bool active, Dir dir)
     {
-        leftSprite.gameObject.SetActive(active);
+        if(dir == Dir.Left)
+        {
+            leftBlackSmithSprite.gameObject.SetActive(active);
+            rightBlackSmithSprite.gameObject.SetActive(false);
+        }
+        else
+        {
+            rightBlackSmithSprite.gameObject.SetActive(active);
+            leftBlackSmithSprite.gameObject.SetActive(false);
+        }
     }
 
     // 오른쪽 스프라이트 활성화 여부 설정 메서드
-    public void ShowRightSprite(bool active)
+    public void ShowNpc(bool active)
     {
-        npcObj.gameObject.SetActive(active);
+        npcCanvasGroup.alpha = active ? 1f : 0f; // 활성화 여부에 따라 투명도 조절
     }
 
     public void PlayWelcomePopupAnimation()
@@ -102,38 +107,6 @@ public class UIManager : MonoBehaviour
         dialogueBox2.gameObject.SetActive(active);
     }
 
-    // 이미지와 활성화 여부를 동시에 설정하는 메서드
-    public void ShowSprite(bool active, Sprite sprite, Direction dir)
-    {
-        if (dir == Direction.Left)
-        {
-            leftSprite.sprite = sprite;
-            leftSprite.gameObject.SetActive(active);
-        }
-        else
-        {
-            //rightSprite.sprite = sprite;
-            npcObj.gameObject.SetActive(active);
-        }
-    }
-
-    // 이미지 활성화 여부만 설정하는 메서드
-    public void ShowSprite(bool active, Direction dir)
-    {
-        if (dir == Direction.Left)
-        {
-            leftSprite.gameObject.SetActive(active);
-        }
-        else
-        {
-            npcObj.gameObject.SetActive(active);
-
-            // "Visit" 상태를 0번 레이어에서 재생하되, 
-            // 진행도를 1.0f(100%)로 설정해서 마지막 위치에 고정
-            if(active)
-                rightImageAnimator.Play("Visit", 0, 1.0f);
-        }
-    }
 
     // NPC 방문 트리거 메서드
     public void NPCVisitTrigger()
@@ -147,23 +120,44 @@ public class UIManager : MonoBehaviour
     }
 
     // 이름, 대사, 이미지, 방향, 활성화 여부를 동시에 설정하는 메서드
-    public void OutPutSprite(string name, string text, Sprite sprite, Direction dir, bool active)
+    public void OutPutSprite(string name, string text, Sprite sprite, Speaker speak, Dir dir)
     {
         npcName.text = name;
         content.text = text;
-        if(dir == Direction.Left)
+
+        if(dir == Dir.Left)
         {
-            leftSprite.sprite = sprite;
-            leftSprite.gameObject.SetActive(active);
-            leftContentBox.gameObject.SetActive(active);
-            rightContentBox.gameObject.SetActive(!active);
+            if(speak == Speaker.BlackSmith)
+            {
+                Debug.Log($"왼쪽 말하는 주체 대장장이");
+                leftBlackSmithSprite.sprite = sprite;
+                leftBlackSmithSprite.gameObject.SetActive(true);
+                rightBlackSmithSprite.gameObject.SetActive(false);
+            }
+            else
+            {
+                Debug.Log($"왼쪽 말하는 주체 NPC");
+                ShowNpc(true);
+            }
+            leftContentBox.gameObject.SetActive(true);
+            rightContentBox.gameObject.SetActive(false);
         }
         else
         {
-            //rightSprite.sprite = sprite;
-            npcObj.gameObject.SetActive(active);
-            rightContentBox.gameObject.SetActive(active);
-            leftContentBox.gameObject.SetActive(!active);
+            if (speak == Speaker.BlackSmith)
+            {
+                Debug.Log($"오른쪽 말하는 주체 대장장이");
+                rightBlackSmithSprite.sprite = sprite;
+                rightBlackSmithSprite.gameObject.SetActive(true);
+                leftBlackSmithSprite.gameObject.SetActive(false);
+            }
+            else
+            {
+                Debug.Log($"오른쪽 말하는 주체 NPC");
+                ShowNpc(true);
+            }
+            rightContentBox.gameObject.SetActive(true);
+            leftContentBox.gameObject.SetActive(false);
         }
     }
 

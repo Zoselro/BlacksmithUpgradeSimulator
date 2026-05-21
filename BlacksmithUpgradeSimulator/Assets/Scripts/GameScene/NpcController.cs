@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class NpcController : MonoBehaviour
 {
-    private NpcData2 currentNpcData;
+    private NpcData currentNpcData;
 
     [Header("NPC Parts")]
     [SerializeField] private Image leftLeg;
@@ -36,9 +36,9 @@ public class NpcController : MonoBehaviour
     [Header("AdventureType")]
     [SerializeField] private AdventurerType adventurerType;
 
-    NpcData2 currentDataTemplate;
+    NpcData currentDataTemplate;
 
-    public void ApplyNpcTemplate(NpcData2 template)
+    public void ApplyNpcTemplate(NpcData template)
     {
         currentDataTemplate = template;
 
@@ -69,7 +69,7 @@ public class NpcController : MonoBehaviour
         }
     }
 
-    public void Initialize(NpcData2 npcData)
+    public void Initialize(NpcData npcData)
     {
         currentNpcData = npcData;
         // 초기 표정을 Normal로 설정
@@ -102,7 +102,7 @@ public class NpcController : MonoBehaviour
         return currentNpcData != null ? currentNpcData.GetAdventurerType() : AdventurerType.Beginner;
     }
 
-    public void InitializeRectTransform(NpcData2 npcData)
+    public void InitializeRectTransform(NpcData npcData)
     {
         CopyRect(npcData.LeftArmRectTransform, leftArmRectTransform);
         CopyRect(npcData.RightArmRectTransform, rightArmRectTransform);
