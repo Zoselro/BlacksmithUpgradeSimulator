@@ -57,7 +57,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite blacksmithBackground;
 
     [Header("Animator")]
-    [SerializeField] private Animator rightImageAnimator;
+    [SerializeField] private Animator npcAnimator;
     [SerializeField] private Animator leftImageAnimator;
     [SerializeField] private Animator welcomPopupAnimator;
     [SerializeField] private Animator fadeAnimator;
@@ -95,7 +95,7 @@ public class UIManager : MonoBehaviour
 
     public void BlackSmithEntranceTrigger()
     {
-        rightImageAnimator.Play("Idle", 0, 0f);
+        npcAnimator.Play("Idle", 0, 0f);
         leftImageAnimator.SetTrigger("Entrance");
     }
 
@@ -113,12 +113,12 @@ public class UIManager : MonoBehaviour
     // NPC 방문 트리거 메서드
     public void NPCVisitTrigger()
     {
-        rightImageAnimator.SetTrigger("Visit");
+        npcAnimator.SetTrigger("Visit");
     }
 
     public void NPCExit(bool state)
     {
-        rightImageAnimator.SetBool("Exit", state);
+        npcAnimator.SetBool("Exit", state);
     }
 
     // 이름, 대사, 이미지, 방향, 활성화 여부를 동시에 설정하는 메서드
@@ -244,7 +244,7 @@ public class UIManager : MonoBehaviour
     // 애니메이터의 속도를 0으로 설정하여 애니메이션을 멈추는 메서드
     public void StopAnimator()
     {
-        rightImageAnimator.speed = 0f;
+        npcAnimator.speed = 0f;
         leftImageAnimator.speed = 0f;
         welcomPopupAnimator.speed = 0f;
         fadeAnimator.speed = 0f;
@@ -254,7 +254,7 @@ public class UIManager : MonoBehaviour
     // 애니메이터의 속도를 1로 설정하여 애니메이션을 재생하는 메서드
     public void StartAnimator()
     {
-        rightImageAnimator.speed = 1f;
+        npcAnimator.speed = 1f;
         leftImageAnimator.speed = 1f;
         welcomPopupAnimator.speed = 1f;
         fadeAnimator.speed = 1f;
