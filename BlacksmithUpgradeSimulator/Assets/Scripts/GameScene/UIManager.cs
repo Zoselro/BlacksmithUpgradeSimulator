@@ -61,7 +61,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Animator leftImageAnimator;
     [SerializeField] private Animator welcomPopupAnimator;
     [SerializeField] private Animator fadeAnimator;
-    [SerializeField] private Animator startDayTextAnimator;
 
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
@@ -214,11 +213,6 @@ public class UIManager : MonoBehaviour
         backGround.sprite = bgDictionary[bgType];
     }
 
-    public void ShowSettlementWindow(bool active)
-    {
-        settlementWindowObj.gameObject.SetActive(active);
-        settlementWindow.gameObject.SetActive(active);
-    }
 
     public void ShowFadeImage(bool active)
     {
@@ -248,7 +242,7 @@ public class UIManager : MonoBehaviour
         leftImageAnimator.speed = 0f;
         welcomPopupAnimator.speed = 0f;
         fadeAnimator.speed = 0f;
-        startDayTextAnimator.speed = 0f;
+        //startDayTextAnimator.speed = 0f;
     }
 
     // 애니메이터의 속도를 1로 설정하여 애니메이션을 재생하는 메서드
@@ -258,6 +252,6 @@ public class UIManager : MonoBehaviour
         leftImageAnimator.speed = 1f;
         welcomPopupAnimator.speed = 1f;
         fadeAnimator.speed = 1f;
-        startDayTextAnimator.speed = 1f;
+        //startDayTextAnimator.speed = 1f;
     }
 }

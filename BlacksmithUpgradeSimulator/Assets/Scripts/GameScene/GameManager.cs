@@ -27,6 +27,15 @@ public enum NpcState
     ExitSuccess,        // NPC 퇴장(성공)
     ExitFail            // NPC 퇴장(실패)
 }
+
+public enum AnimatorState
+{
+    Open,
+    Popup,
+    NpcVisit,
+    NpcExit,
+    ShowFadeImage,
+}
 public class GameManager : MonoBehaviour
 {
     private const int FIRST_DIALOGUE_NUM = 1;
@@ -89,7 +98,6 @@ public class GameManager : MonoBehaviour
                                     { AdventurerType.Beginner, AdventurerType.Intermediate, AdventurerType.Advanced}; // 가중치에 따라서 리스트중 Npc 타입 결정
     private AdventurerType adventurerType; // 결정된 npc 타입
 
-    private WaitForSeconds waitForSeconds = null;
     private NpcData npcData;
 
     DialogueSet[] dialogueSet = new DialogueSet[4];
@@ -107,12 +115,10 @@ public class GameManager : MonoBehaviour
 
     // 강화에 성공이였을 때
     private string dialoguePlayerSuccessData = "";
-    //private string dialogueNPCSuccessRequestCompleteData = "";
     private string dialogueNPCSuccessExitData = "";
 
     // 강화에 실패했을 때
     private string dialoguePlayerFailData = "";
-    //private string dialogueNPCFailRequestCompleteData = "";
     private string dialogueNPCFailExitData = "";
 
     // 강화에 대 성공 했을 때
@@ -134,7 +140,6 @@ public class GameManager : MonoBehaviour
         //uiManager.ShowFadeImage(true);
 
         uiManager.SetBackGround();
-        waitForSeconds = new WaitForSeconds(eventPopUpTime * 1.5f);
         // 대장장이 이미지 띄우도록 지시
         //uiManager.SetActiveImg(true, blackSmithData.BackSprite, Direction.Left)
         HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅
