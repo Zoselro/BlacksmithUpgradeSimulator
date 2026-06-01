@@ -601,31 +601,31 @@ public class GameManager : MonoBehaviour
     #endregion
 
     // 게임이 일시정지가 되는 함수
-    public void TryEnhance(bool active)
-    {
-        if (active)
-        {
-            Debug.Log("강화 중단");
-            enhanceManager.RequestEnhance(false); // 강화 중단 요청
-        }
-        else
-        {
-            Debug.Log("강화 시작");
-            enhanceManager.RequestEnhance(true); // 강화 시작 요청
-        }
-    }
+    //public void TryEnhance(bool active)
+    //{
+    //    if (active)
+    //    {
+    //        Debug.Log("강화 중단");
+    //        enhanceManager.RequestEnhance(false); // 강화 중단 요청
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("강화 시작");
+    //        enhanceManager.RequestEnhance(true); // 강화 시작 요청
+    //    }
+    //}
 
-    public void TryAnimation(bool active)
-    {
-        if (active)
-        {
-            uiManager.StopAnimator();
-            Debug.Log("애니메이션 중단");
-        }
-        else
-        {
-            uiManager.StartAnimator();
-            Debug.Log("애니메이션 재개");
-        }
-    }
+    //public void TryAnimation(bool active)
+    //{
+    //    if (active)
+    //    {
+    //        uiManager.StopAnimator();
+    //        Debug.Log("애니메이션 중단");
+    //    }
+    //    else
+    //    {
+    //        uiManager.StartAnimator();
+    //        Debug.Log("애니메이션 재개");
+    //    }
+    //}
 }

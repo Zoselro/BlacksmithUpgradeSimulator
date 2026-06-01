@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: BlackSmithData
   m_EditorClassIdentifier: 
   nameID: "\uB300\uC7A5\uC7A5\uC774"
-  backSprite: {fileID: -1628496655, guid: 1d08c2635d92d4745962f8f22cfc09df, type: 3}
-  normalSprite: {fileID: 1008665232, guid: 1d08c2635d92d4745962f8f22cfc09df, type: 3}
-  happySprite: {fileID: -778836631736824886, guid: 54aca502f91682547a0e7dccb97f9c29, type: 3}
-  sadSprite: {fileID: 2012728539, guid: 54aca502f91682547a0e7dccb97f9c29, type: 3}
+  backSprite: {fileID: -690842657246971508, guid: a24dcac6247c2ca44b5d8b22031644b7, type: 3}
+  normalSprite: {fileID: -2407380536479491230, guid: f058c7dd7b6f2c6418ac72fed0613d4f, type: 3}
+  happySprite: {fileID: 8931235457843382573, guid: f058c7dd7b6f2c6418ac72fed0613d4f, type: 3}
+  sadSprite: {fileID: -5542536543066184629, guid: f058c7dd7b6f2c6418ac72fed0613d4f, type: 3}
   openID: shopOpen00
   closeID: shopClose
   welcomeID: greetSmith
