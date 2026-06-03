@@ -31,13 +31,17 @@ public enum NpcState
 public enum AnimatorState
 {
     Open,
-    Popup,
+    OnContent,
     NpcVisit,
+    NpcWelcomeSequence,
     NpcExit,
+    NpcWelcomEvent,
     ShowFadeImage,
 }
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Inst;
+
     private const int FIRST_DIALOGUE_NUM = 1;
     private const int SECOND_DIALOGUE_NUM = 3;
     private const int THIRD_DIALOGUE_NUM = 1;
@@ -78,6 +82,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ScriptReader scriptReader;
     [SerializeField] private EnhanceChanceCalculator enhanceChanceCalculator;
     [SerializeField] private UIManager uiManager;
+    public UIManager UIManager => uiManager;
     [SerializeField] private EnhanceUIManager enhanceUIManager;
     [SerializeField] private BlackSmithData blackSmithData;
     [SerializeField] private TopUIManager topUIManager;
@@ -131,6 +136,10 @@ public class GameManager : MonoBehaviour
     private string dialogueClosePlayerData = "";
     // --------------- 대사 변수 -----------------
 
+    private void Awake()
+    {
+        Inst = this;
+    }
     private void Start()
     {
         InitDialogueSet(); // 대화 객체 저장공간 초기화

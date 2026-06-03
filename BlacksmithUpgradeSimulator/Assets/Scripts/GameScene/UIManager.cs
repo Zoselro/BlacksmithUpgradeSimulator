@@ -17,7 +17,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameManager gm;
 
     [Header("DialogueBox")]
-    [SerializeField] private GameObject namePanel;
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private Button nextBtn;
     [SerializeField] private TextMeshProUGUI npcName;
