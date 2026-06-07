@@ -30,6 +30,7 @@ public class EnhanceUIManager : MonoBehaviour
 
     public void OnClickActiveEnhanceActivePanel(bool active)
     {
+        SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         enhanceActivePanel.gameObject.SetActive(active);
         weaponDataPanel.gameObject.SetActive(!active);
     }

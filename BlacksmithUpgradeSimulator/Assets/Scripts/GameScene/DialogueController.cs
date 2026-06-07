@@ -5,6 +5,8 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] private SoundManager soundManager;
+
 
     DialogueSet[] dialogues = null;
 
@@ -31,16 +33,16 @@ public class DialogueController : MonoBehaviour
         {
             uiManager.ShowNpc(true);
         }
-        dialogueUI.Show(dialogueSet.Dialogues[dialogueLineIndex].NicName, 
-                            dialogueSet.Dialogues[dialogueLineIndex].Content, 
-                            dialogueSet.Dialogues[dialogueLineIndex].Sprite, 
-                            dialogueSet.Dialogues[dialogueLineIndex].Speak, 
-                            dialogueSet.Dialogues[dialogueLineIndex].Dir);
+        //dialogueUI.Show(dialogueSet.Dialogues[dialogueLineIndex].NicName, 
+        //                    dialogueSet.Dialogues[dialogueLineIndex].Content, 
+        //                    dialogueSet.Dialogues[dialogueLineIndex].Sprite, 
+        //                    dialogueSet.Dialogues[dialogueLineIndex].Speak, 
+        //                    dialogueSet.Dialogues[dialogueLineIndex].Dir);
 
-        //uiManager.OutPutSprite(dialogueSet.Dialogues[dialogueLineIndex].NicName,
-        //                            dialogueSet.Dialogues[dialogueLineIndex].Content,
-        //                            dialogueSet.Dialogues[dialogueLineIndex].Sprite,
-        //                            dialogueSet.Dialogues[dialogueLineIndex].Speak, dialogueSet.Dialogues[dialogueLineIndex].Dir);
+        uiManager.OutPutSprite(dialogueSet.Dialogues[dialogueLineIndex].NicName,
+                                    dialogueSet.Dialogues[dialogueLineIndex].Content,
+                                    dialogueSet.Dialogues[dialogueLineIndex].Sprite,
+                                    dialogueSet.Dialogues[dialogueLineIndex].Speak, dialogueSet.Dialogues[dialogueLineIndex].Dir);
         dialogueLineIndex++;
     }
 
@@ -74,6 +76,8 @@ public class DialogueController : MonoBehaviour
         // index ++ 이후 가져옴.
         // UI한테 실행
 
+        SoundManager.Inst.PlaySFX(ESfx.Button_Click);
+
         if (dialogues == null) 
             return;
 
@@ -86,6 +90,7 @@ public class DialogueController : MonoBehaviour
         {
             OnDialogueEnd(dialogues[dialogueSetIndex]);
         }
+
     }
 
     public void SetDialogue(DialogueSet[] dialogues, int startIndex)

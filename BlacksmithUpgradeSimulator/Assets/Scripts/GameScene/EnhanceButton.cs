@@ -8,10 +8,11 @@ public class EnhanceButton : MonoBehaviour
     [SerializeField] private GameManager gm;
     [SerializeField] private EnhanceManager enhanceManager;
     [SerializeField] private DialogueController dialogueController;
+
     public void EnhanceButtonOnClick()
     {
         enhanceManager.RequestEnhance(true); // 강화 시작 요청
-
+        SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         enhanceUIManager.EnhanceActivePanel(false);
 
         //enhanceUIManager.SetActiveMiniGame(true); 미니게임

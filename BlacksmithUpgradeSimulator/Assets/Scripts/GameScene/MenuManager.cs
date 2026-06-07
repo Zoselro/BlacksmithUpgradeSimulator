@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private GameManager gm;
     [SerializeField] private EnhanceManager enhanceManager;
-
 
     [Header("Menu")]
     [SerializeField] private GameObject menuPanel;
@@ -17,11 +15,14 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button settingButton;
     [SerializeField] private Button exitButton;
     [SerializeField] private TextMeshProUGUI menuText;
+    [SerializeField] private Slider bgmSlider;
+    [SerializeField] private Slider sfxSlider;
 
     private bool wasEnhancingBeforeMenu; // 메뉴가 열리기 전에 강화 중이었는지 여부를 저장하는 변수
 
     public void ShowMenu(bool active)
     {
+        SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         menuText.text = "메뉴";
         menuPanel.SetActive(active); // 메뉴 패널의 활성화 여부 설정
         optionUI.SetActive(!active); // 옵션 UI는 처음에 비활성화
@@ -48,11 +49,13 @@ public class MenuManager : MonoBehaviour
 
     public void OnContinueButton()
     {
+        SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         ShowMenu(false);
     }
 
     public void OnSettingButton()
     {
+        SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         menuText.text = "설정";
         optionUI.SetActive(true);
         menuUI.SetActive(false);
@@ -61,6 +64,7 @@ public class MenuManager : MonoBehaviour
 
     public void OnExitButton()
     {
+        SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         // 게임 종료 로직을 여기에 작성
         Debug.Log("게임이 종료됩니다.");
         SceneManager.LoadScene("GameStart");
@@ -70,7 +74,7 @@ public class MenuManager : MonoBehaviour
     {
         menuPanel.SetActive(active);
         //gm.TryAnimation(active); // 메뉴가 비활성화될 때 게임 매니저에게 애니메이션을 재개하는 메서드 호출
-
+        SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         if (active)
         {
             wasEnhancingBeforeMenu = enhanceManager.IsEnhancing; // 메뉴가 열리기 전에 강화 중이었는지 여부 저장
@@ -88,5 +92,22 @@ public class MenuManager : MonoBehaviour
             }
         }
         Debug.Log("설정이 완료되었습니다.");
+    }
+
+    public void ResetSetting()
+    {
+        SoundManager.Inst.PlaySFX(ESfx.Button_Click);
+    }
+
+    public void SetBgm()
+    {
+        Debug.Log($"BGM 슬라이더 값: {bgmSlider.value}");
+        SoundManager.Inst.SetBGM(bgmSlider.value);
+    }
+
+    public void SetSFX()
+    {
+        Debug.Log($"SFX 슬라이더 값: {sfxSlider.value}");
+        SoundManager.Inst.SetSFX(sfxSlider.value);
     }
 }

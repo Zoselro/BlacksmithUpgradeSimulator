@@ -129,6 +129,8 @@ public class EnhanceManager : MonoBehaviour
     public void EnhanceEquipment(AdventurerType adventurerType, EnhanceResult result, 
                                 int gold, int currentGold, WeaponController weapon)
     {
+        ESfx EnhanceResultSFX = ESfx.Fail;
+
         // result : 그 확률에 대한 성공, 실패, 대성공 의 여부 결과값
         switch (result)
         {
@@ -139,7 +141,6 @@ public class EnhanceManager : MonoBehaviour
                     gm.SetCurrentGold(100);
                     weapon.SetEnhancementStages(2);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
-                    //enhanceUIManager.SetEnhancementImage(enhancementImage);
                 }
                 else if (adventurerType == AdventurerType.Intermediate)
                 {
@@ -155,6 +156,7 @@ public class EnhanceManager : MonoBehaviour
                     weapon.SetEnhancementStages(2);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
+                EnhanceResultSFX = ESfx.GreatSuccess;
                 break;
 
             case EnhanceResult.Success:
@@ -180,6 +182,7 @@ public class EnhanceManager : MonoBehaviour
                     weapon.SetEnhancementStages(1);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
+                EnhanceResultSFX = ESfx.Success;
                 break;
 
             case EnhanceResult.Fail:
@@ -198,9 +201,10 @@ public class EnhanceManager : MonoBehaviour
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                     weapon.SetEnhancementStages(0);
                 }
+                EnhanceResultSFX = ESfx.Fail;
                 break;
         }
-
+        SoundManager.Inst.PlaySFX(EnhanceResultSFX);
         int lastIndex = enhancementImage.transform.parent.childCount - 1;
 
         // 맨 아래에서 두 번째

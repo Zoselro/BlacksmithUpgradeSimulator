@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TopUIManager topUIManager;
     [SerializeField] private NpcGenerator npcGenerator;
     [SerializeField] private EnhanceManager enhanceManager;
+    [SerializeField] private MenuManager menuManager;
 
     [Header("Options")]
     [SerializeField] private float time = 3f; // 정산 화면을 띄우는 시간
@@ -142,6 +143,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        SoundManager.Inst.PlayBGM(EBgm.Counter_music); // BGM 재생
         InitDialogueSet(); // 대화 객체 저장공간 초기화
         initializeBuffer(); // 대사 버퍼 저장공간 초기화
         UpdateDayUI(); // 일 수 갱신
@@ -152,6 +154,19 @@ public class GameManager : MonoBehaviour
         // 대장장이 이미지 띄우도록 지시
         //uiManager.SetActiveImg(true, blackSmithData.BackSprite, Direction.Left)
         HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅
+    }
+
+    private void Update()
+    {
+        if (!enhanceManager.IsEnhancing) return;
+        enhanceManager.PlayEnhance(probability, adventurerType,
+                                                npcGenerator.WeaponController, gold,
+                                                failCnt, successCnt,
+                                                greatSuccessCnt,
+                                                currentGold,
+                                                currentSuccessCnt,
+                                                currentGreatSuccessCnt,
+                                                currentFailCnt);
     }
 
     public void NewDay()
@@ -191,20 +206,6 @@ public class GameManager : MonoBehaviour
         // 대화 컨트롤러에게 대화 객체를 전달해준다.
         dialogueController.SetDialogue(SetDialogue(), startIndex);
     }
-
-    private void Update()
-    {
-        if (!enhanceManager.IsEnhancing) return;
-        enhanceManager.PlayEnhance(probability, adventurerType, 
-                                                npcGenerator.WeaponController, gold, 
-                                                failCnt, successCnt, 
-                                                greatSuccessCnt,
-                                                currentGold,
-                                                currentSuccessCnt,
-                                                currentGreatSuccessCnt,
-                                                currentFailCnt);
-    }
-
 
 
     public void UpdateDayUI()
@@ -392,8 +393,10 @@ public class GameManager : MonoBehaviour
 
     public void WelcomeAnimation()
     {
+        
         uiManager.NPCExit(false);
         HandlePreEnhancementFlow(1);
+
 
         // 나가는 연출 이후 새로운 NPC 등장 연출
         uiManager.PlayWelcomeSequence(true, "누군가가 방문 했습니다.");
@@ -406,6 +409,7 @@ public class GameManager : MonoBehaviour
 
         //uiManager.ShowSprite(true, buffer[1][1].GetImage(), Speaker.Npc); // NPC 이미지 보임
         uiManager.NPCVisitTrigger(); // NPC 방문 연출 트리거
+        SoundManager.Inst.PlaySFX(ESfx.Bell); // NPC 방문 효과음 재생
 
         visitors++;
         topUIManager.TopBarDisPlay(); // 방문자 수 갱신
