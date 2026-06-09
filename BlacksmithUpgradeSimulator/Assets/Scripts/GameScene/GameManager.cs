@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private NpcGenerator npcGenerator;
     [SerializeField] private EnhanceManager enhanceManager;
     [SerializeField] private MenuManager menuManager;
+    [SerializeField] private DialogueUI dialogueUI;
 
     [Header("Options")]
     [SerializeField] private float time = 3f; // 정산 화면을 띄우는 시간
@@ -171,11 +172,10 @@ public class GameManager : MonoBehaviour
 
     public void NewDay()
     {
-        uiManager.ShowBlackSmith(true, Dir.Left); // 왼쪽 스프라이트 활성화
+        dialogueUI.ShowBlackSmith(true, Dir.Left);
         uiManager.BlackSmithResetTrigger(); // 대장장이 리셋 트리거 -> 새로운 날이 시작하자마자 대장장이 등장 연출
         uiManager.BlackSmithEntranceTrigger(); // 대장장이 등장 트리거
         uiManager.ShowDialogueBox2(false); // 정산 대사창 비활성화
-        //uiManager.ShowDialogueBox(true); // 대화창 활성화
         uiManager.ShowNextBtn(true); // 다음 버튼 활성화
         uiManager.ShowStartNextDayBtn(false); // 다음 날 시작 버튼 비활성화
         uiManager.ShowFadeImage(false);

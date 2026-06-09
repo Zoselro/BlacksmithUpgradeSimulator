@@ -40,8 +40,6 @@ public class UIManager : MonoBehaviour
 
     [Header("CharactorSprite")] 
     [SerializeField] private CanvasGroup npcCanvasGroup;
-    [SerializeField] private Image leftBlackSmithSprite;
-    [SerializeField] private Image rightBlackSmithSprite;
     [SerializeField] private Image welcomImg;
     [SerializeField] private TextMeshProUGUI welcomText;
 
@@ -63,32 +61,10 @@ public class UIManager : MonoBehaviour
 
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
-    // 대장장이 스프라이트 활성화 여부 설정 메서드
-    public void ShowBlackSmith(bool active, Dir dir)
-    {
-        if(dir == Dir.Left)
-        {
-            //leftBlackSmithSprite.gameObject.SetActive(active);
-            leftBlackSmithSprite.color = new Color(255f, 255f, 255f, active ? 255f : 0f);
-            //rightBlackSmithSprite.gameObject.SetActive(!active);
-        }
-        else
-        {
-            rightBlackSmithSprite.gameObject.SetActive(active);
-            //leftBlackSmithSprite.gameObject.SetActive(!active);
-            //leftBlackSmithSprite.color = new Color(255f, 255f, 255f, active ? 255f : 0f);
-        }
-    }
-
     // NPC 스프라이트 활성화 여부 설정 메서드
     public void ShowNpc(bool active)
     {
         npcCanvasGroup.alpha = active ? 1f : 0f; // 활성화 여부에 따라 투명도 조절
-    }
-
-    public void PlayWelcomePopupAnimation()
-    {
-        welcomPopupAnimator.SetTrigger("Play");
     }
 
     public void BlackSmithEntranceTrigger()
@@ -120,48 +96,48 @@ public class UIManager : MonoBehaviour
     }
 
     // 이름, 대사, 이미지, 방향, 활성화 여부를 동시에 설정하는 메서드
-    public void OutPutSprite(string name, string text, Sprite sprite, Speaker speak, Dir dir)
-    {
-        npcName.text = name;
-        content.text = text;
+    //public void OutPutSprite(string name, string text, Sprite sprite, Speaker speak, Dir dir)
+    //{
+    //    npcName.text = name;
+    //    content.text = text;
 
-        if(dir == Dir.Left)
-        {
-            if(speak == Speaker.BlackSmith)
-            {
-                Debug.Log($"왼쪽 말하는 주체 대장장이");
-                leftBlackSmithSprite.sprite = sprite;
-                //leftBlackSmithSprite.gameObject.SetActive(true);
-                leftBlackSmithSprite.color = new Color(255f, 255f, 255f, 255f);
-                rightBlackSmithSprite.gameObject.SetActive(false);
-            }
-            else
-            {
-                Debug.Log($"왼쪽 말하는 주체 NPC");
-                ShowNpc(true);
-            }
-            leftContentBox.gameObject.SetActive(true);
-            rightContentBox.gameObject.SetActive(false);
-        }
-        else
-        {
-            if (speak == Speaker.BlackSmith)
-            {
-                Debug.Log($"오른쪽 말하는 주체 대장장이");
-                rightBlackSmithSprite.sprite = sprite;
-                rightBlackSmithSprite.gameObject.SetActive(true);
-                //leftBlackSmithSprite.gameObject.SetActive(false);
-                leftBlackSmithSprite.color = new Color(255f, 255f, 255f, 0f);
-            }
-            else
-            {
-                Debug.Log($"오른쪽 말하는 주체 NPC");
-                ShowNpc(true);
-            }
-            rightContentBox.gameObject.SetActive(true);
-            leftContentBox.gameObject.SetActive(false);
-        }
-    }
+    //    if(dir == Dir.Left)
+    //    {
+    //        if(speak == Speaker.BlackSmith)
+    //        {
+    //            Debug.Log($"왼쪽 말하는 주체 대장장이");
+    //            leftBlackSmithSprite.sprite = sprite;
+    //            //leftBlackSmithSprite.gameObject.SetActive(true);
+    //            leftBlackSmithSprite.color = new Color(255f, 255f, 255f, 255f);
+    //            rightBlackSmithSprite.gameObject.SetActive(false);
+    //        }
+    //        else
+    //        {
+    //            Debug.Log($"왼쪽 말하는 주체 NPC");
+    //            ShowNpc(true);
+    //        }
+    //        leftContentBox.gameObject.SetActive(true);
+    //        rightContentBox.gameObject.SetActive(false);
+    //    }
+    //    else
+    //    {
+    //        if (speak == Speaker.BlackSmith)
+    //        {
+    //            Debug.Log($"오른쪽 말하는 주체 대장장이");
+    //            rightBlackSmithSprite.sprite = sprite;
+    //            rightBlackSmithSprite.gameObject.SetActive(true);
+    //            //leftBlackSmithSprite.gameObject.SetActive(false);
+    //            leftBlackSmithSprite.color = new Color(255f, 255f, 255f, 0f);
+    //        }
+    //        else
+    //        {
+    //            Debug.Log($"오른쪽 말하는 주체 NPC");
+    //            ShowNpc(true);
+    //        }
+    //        rightContentBox.gameObject.SetActive(true);
+    //        leftContentBox.gameObject.SetActive(false);
+    //    }
+    //}
 
 
     // 이름과 대사, 활성화 여부를 설정하는 메서드
@@ -241,7 +217,6 @@ public class UIManager : MonoBehaviour
         leftImageAnimator.speed = 0f;
         welcomPopupAnimator.speed = 0f;
         fadeAnimator.speed = 0f;
-        //startDayTextAnimator.speed = 0f;
     }
 
     // 애니메이터의 속도를 1로 설정하여 애니메이션을 재생하는 메서드
@@ -251,6 +226,5 @@ public class UIManager : MonoBehaviour
         leftImageAnimator.speed = 1f;
         welcomPopupAnimator.speed = 1f;
         fadeAnimator.speed = 1f;
-        //startDayTextAnimator.speed = 1f;
     }
 }

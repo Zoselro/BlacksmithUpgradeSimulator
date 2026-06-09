@@ -687,6 +687,7 @@ MonoBehaviour:
   gm: {fileID: 2056736164}
   enhanceManager: {fileID: 164328359}
   dialogueController: {fileID: 749586834}
+  dialogueUI: {fileID: 1466799736}
 --- !u!1 &104133886
 GameObject:
   m_ObjectHideFlags: 0
@@ -7015,7 +7016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueBoxUI: {fileID: 606475375}
-  characterImageUI:
+  blackSmithImageUI:
   - {fileID: 537439268}
   - {fileID: 1596202020}
 --- !u!4 &1466799737
@@ -7629,7 +7630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1596202020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8431,6 +8432,7 @@ MonoBehaviour:
   gm: {fileID: 2056736164}
   enhanceManager: {fileID: 164328359}
   dialogueController: {fileID: 749586834}
+  dialogueUI: {fileID: 0}
 --- !u!1 &1719456111
 GameObject:
   m_ObjectHideFlags: 0
@@ -10759,6 +10761,7 @@ MonoBehaviour:
   npcGenerator: {fileID: 1200748676}
   enhanceManager: {fileID: 164328359}
   menuManager: {fileID: 378610597}
+  dialogueUI: {fileID: 1466799736}
   time: 3
   enhanceTime: 3
   eventPopUpTime: 1

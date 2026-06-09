@@ -8,6 +8,7 @@ public class EnhanceButton : MonoBehaviour
     [SerializeField] private GameManager gm;
     [SerializeField] private EnhanceManager enhanceManager;
     [SerializeField] private DialogueController dialogueController;
+    [SerializeField] private DialogueUI dialogueUI;
 
     public void EnhanceButtonOnClick()
     {
@@ -19,9 +20,7 @@ public class EnhanceButton : MonoBehaviour
         enhanceUIManager.ActiveEnhanceUIBar(true, (gm.GetProbability() * 100).ToString("F1"));
         uiManager.SetBackGround(BgType.Enhance);
         topUIManager.ActiveTopUIPanel(false);
-        //uiManager.ShowSprite(false, Speaker.Npc);
-        //uiManager.ShowSprite(false, Speaker.BlackSmith);
-        uiManager.ShowBlackSmith(false, Dir.Left);
+        dialogueUI.ShowBlackSmith(false, Dir.Left);
         uiManager.ShowNpc(false);
         uiManager.ShowCounterImage(false);
     }
@@ -31,7 +30,6 @@ public class EnhanceButton : MonoBehaviour
         uiManager.SetBackGround(BgType.Blacksmith);
         topUIManager.ActiveTopUIPanel(true);
         enhanceUIManager.ActiveEnhanceUIBar(false);
-        uiManager.ShowBlackSmith(true, Dir.Right);
         dialogueController.OnClickNextBtn(); // 강화 이후 대사 실행
 
         enhanceUIManager.ActiveConfirmButton(false);
