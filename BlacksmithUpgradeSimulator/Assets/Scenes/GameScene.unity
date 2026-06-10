@@ -373,7 +373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 73616381}
   m_Layer: 5
-  m_Name: DialogueBox2
+  m_Name: EndContentBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,6 +688,7 @@ MonoBehaviour:
   enhanceManager: {fileID: 164328359}
   dialogueController: {fileID: 749586834}
   dialogueUI: {fileID: 1466799736}
+  dialogueBoxUI: {fileID: 606475375}
 --- !u!1 &104133886
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,6 +3102,8 @@ MonoBehaviour:
   - {fileID: 1453468558}
   - {fileID: 1770767654}
   nextBtn: {fileID: 749586831}
+  contentBoxObj: {fileID: 1658584431}
+  endContentBoxObj: {fileID: 73616380}
 --- !u!4 &606475376
 Transform:
   m_ObjectHideFlags: 0
@@ -3299,28 +3302,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c26ee8da296bd468add90d56765411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 2056736164}
-  dialogueBox: {fileID: 1658584431}
-  nextBtn: {fileID: 749586831}
-  npcName: {fileID: 1638758688}
-  content: {fileID: 544782670}
-  leftContentBox: {fileID: 1453468560}
-  rightContentBox: {fileID: 1770767656}
-  dialogueBox2: {fileID: 73616380}
-  fadeImage: {fileID: 1509360521}
-  dayCnt: {fileID: 1625916162}
-  successCnt: {fileID: 857482634}
-  greatSuccessCnt: {fileID: 198575721}
-  failCnt: {fileID: 81411515}
-  goldCnt: {fileID: 1719456113}
-  confirmButton: {fileID: 1368884384}
-  settlementWindowObj: {fileID: 523104714}
-  settlementWindow: {fileID: 1217746235}
-  startNextDayTextObj: {fileID: 1758493032}
-  startNextDayText: {fileID: 1560722723}
+  dialogueBoxUI: {fileID: 606475375}
+  settlementWindow: {fileID: 2089590443}
   npcCanvasGroup: {fileID: 2738235679479019883}
-  leftBlackSmithSprite: {fileID: 537439268}
-  rightBlackSmithSprite: {fileID: 1596202020}
   welcomImg: {fileID: 1490083136}
   welcomText: {fileID: 2093620513}
   counterImg: {fileID: 701500096}
@@ -3328,11 +3312,10 @@ MonoBehaviour:
   closeCounterImg: {fileID: 3951079931369108778, guid: 3945698a6d5b49347bddd4ea83832027, type: 3}
   openCounterImg: {fileID: -4117169642912844055, guid: b9fdc8fa2ed7eba4ba37e817a79f4898, type: 3}
   enhanceImg: {fileID: 7840943033321212773, guid: bfa420b0e92a6ce41a16e6834e41eedb, type: 3}
-  blacksmithBackground: {fileID: 6365703815161080692, guid: 9dc0eb060ccc5a9498e01041d1ad0cac, type: 3}
+  blacksmithBackground: {fileID: -6235853778935256792, guid: 648baf879121e404e96a189031582b6e, type: 3}
   npcAnimator: {fileID: 2738235679479019881}
   leftImageAnimator: {fileID: 537439270}
   welcomPopupAnimator: {fileID: 1490083138}
-  fadeAnimator: {fileID: 1509360520}
 --- !u!4 &686011357
 Transform:
   m_ObjectHideFlags: 0
@@ -6220,6 +6203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 686011356}
+  settlementWindow: {fileID: 2089590443}
   animator: {fileID: 1509360520}
 --- !u!1 &1373112441
 GameObject:
@@ -7016,7 +7000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueBoxUI: {fileID: 606475375}
-  blackSmithImageUI:
+  imageUI:
   - {fileID: 537439268}
   - {fileID: 1596202020}
 --- !u!4 &1466799737
@@ -7258,7 +7242,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1509360519}
-  - component: {fileID: 1509360523}
   - component: {fileID: 1509360522}
   - component: {fileID: 1509360521}
   - component: {fileID: 1509360520}
@@ -7350,58 +7333,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509360518}
   m_CullTransparentMesh: 1
---- !u!114 &1509360523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509360518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8223e278ebabfe40b6e18d4b52c60d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiManager: {fileID: 686011356}
-  onWelcome:
-    m_PersistentCalls:
-      m_Calls: []
-  playNewDay:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2056736164}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: NewDay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onSettlementWindow:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 686011356}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowSettlementWindow
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onShowContent:
-    m_PersistentCalls:
-      m_Calls: []
-  npcVisitPopup:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1539818542
 GameObject:
   m_ObjectHideFlags: 0
@@ -8107,7 +8038,7 @@ GameObject:
   - component: {fileID: 1658584432}
   - component: {fileID: 1658584434}
   m_Layer: 5
-  m_Name: DialogueBox
+  m_Name: ContentBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8432,7 +8363,8 @@ MonoBehaviour:
   gm: {fileID: 2056736164}
   enhanceManager: {fileID: 164328359}
   dialogueController: {fileID: 749586834}
-  dialogueUI: {fileID: 0}
+  dialogueUI: {fileID: 1466799736}
+  dialogueBoxUI: {fileID: 606475375}
 --- !u!1 &1719456111
 GameObject:
   m_ObjectHideFlags: 0
@@ -10762,6 +10694,8 @@ MonoBehaviour:
   enhanceManager: {fileID: 164328359}
   menuManager: {fileID: 378610597}
   dialogueUI: {fileID: 1466799736}
+  dialogueBoxUI: {fileID: 606475375}
+  settlementWindow: {fileID: 2089590443}
   time: 3
   enhanceTime: 3
   eventPopUpTime: 1
@@ -10960,6 +10894,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075809940}
   m_CullTransparentMesh: 1
+--- !u!1 &2089590442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2089590444}
+  - component: {fileID: 2089590443}
+  m_Layer: 0
+  m_Name: SettlementWindow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2089590443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089590442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b74660f0a3a277499aaef18c8cc9d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 2056736164}
+  fadeImage: {fileID: 1509360521}
+  dayCnt: {fileID: 1625916162}
+  successCnt: {fileID: 857482634}
+  greatSuccessCnt: {fileID: 198575721}
+  failCnt: {fileID: 81411515}
+  goldCnt: {fileID: 1719456113}
+  confirmButton: {fileID: 1368884384}
+  settlementWindowObj: {fileID: 523104714}
+  settlementWindow: {fileID: 1217746235}
+  startNextDayTextObj: {fileID: 1758493032}
+  startNextDayText: {fileID: 1560722723}
+  fadeAnimator: {fileID: 1509360520}
+--- !u!4 &2089590444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089590442}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1058.9235, y: 426.6881, z: -6.743769}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093620511
 GameObject:
   m_ObjectHideFlags: 0
@@ -11200,7 +11191,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2738235679479019879}
   - component: {fileID: 2738235679479019880}
-  - component: {fileID: 2738235679479019882}
   - component: {fileID: 2738235679479019881}
   - component: {fileID: 2738235679479019883}
   m_Layer: 0
@@ -11503,46 +11493,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2738235679479019882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128568152890711221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8223e278ebabfe40b6e18d4b52c60d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiManager: {fileID: 686011356}
-  onWelcome:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2056736164}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: WelcomeAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  playNewDay:
-    m_PersistentCalls:
-      m_Calls: []
-  onSettlementWindow:
-    m_PersistentCalls:
-      m_Calls: []
-  onShowContent:
-    m_PersistentCalls:
-      m_Calls: []
-  npcVisitPopup:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!225 &2738235679479019883
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11936,9 +11886,10 @@ SceneRoots:
   - {fileID: 1818317715}
   - {fileID: 378610598}
   - {fileID: 825004419}
-  - {fileID: 548800217}
   - {fileID: 1200748677}
-  - {fileID: 2074051140}
-  - {fileID: 487196929}
   - {fileID: 1466799737}
   - {fileID: 606475376}
+  - {fileID: 2089590444}
+  - {fileID: 548800217}
+  - {fileID: 2074051140}
+  - {fileID: 487196929}

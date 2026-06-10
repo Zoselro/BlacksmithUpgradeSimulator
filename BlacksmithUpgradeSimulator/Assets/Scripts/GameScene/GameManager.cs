@@ -37,6 +37,7 @@ public enum AnimatorState
     NpcExit,
     NpcWelcomEvent,
     ShowFadeImage,
+    NewDay
 }
 public class GameManager : MonoBehaviour
 {
@@ -90,6 +91,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EnhanceManager enhanceManager;
     [SerializeField] private MenuManager menuManager;
     [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] private DialogueBoxUI dialogueBoxUI;
+    public DialogueBoxUI DialogueBoxUI => dialogueBoxUI;
+    [SerializeField] private SettlementWindow settlementWindow;
 
     [Header("Options")]
     [SerializeField] private float time = 3f; // 정산 화면을 띄우는 시간
@@ -173,14 +177,18 @@ public class GameManager : MonoBehaviour
     public void NewDay()
     {
         dialogueUI.ShowBlackSmith(true, Dir.Left);
+        dialogueBoxUI.ShowEndContentBoxObj(false); // 정산 대사창 오브젝트 비활성화
+        dialogueBoxUI.ShowNextBtn(true); // 다음 버튼 활성화
         uiManager.BlackSmithResetTrigger(); // 대장장이 리셋 트리거 -> 새로운 날이 시작하자마자 대장장이 등장 연출
         uiManager.BlackSmithEntranceTrigger(); // 대장장이 등장 트리거
-        uiManager.ShowDialogueBox2(false); // 정산 대사창 비활성화
-        uiManager.ShowNextBtn(true); // 다음 버튼 활성화
-        uiManager.ShowStartNextDayBtn(false); // 다음 날 시작 버튼 비활성화
-        uiManager.ShowFadeImage(false);
-        uiManager.ShowNpc(true); // NPC 활성화
+        //uiManager.ShowStartNextDayBtn(false); // 다음 날 시작 버튼 비활성화
+        settlementWindow.ShowStartNextDayBtn(false);
 
+        //uiManager.ShowFadeImage(false);
+        settlementWindow.ShowFadeImage(false);
+
+
+        uiManager.ShowNpc(true); // NPC 활성화
 
         visitors = 0; // 정산 화면에서 보여진 후 방문자 수 초기화
         currentFailCnt = 0; // 정산 화면에서 보여진 후 현재 실패 횟수 초기화
@@ -227,19 +235,17 @@ public class GameManager : MonoBehaviour
     // 하루가 끝났을 때, 정산 화면으로 넘어가는 함수
     public void HandleEndOfDay()
     {
-        //uiManager.ShowBlackSmith(false, Dir.Left);
         uiManager.ShowCounterImage(true);
-        uiManager.ShowDialogueBox(false);
+        dialogueBoxUI.ShowContentBox(false);
         uiManager.ShowNpc(false);
-        //uiManager.ShowSprite(true, blackSmithData.BackSprite, Speaker.BlackSmith);
         uiManager.SetBackGround(BgType.CloseCounter);
+        dialogueBoxUI.ShowEndContentBoxObj(true);
 
-        uiManager.ShowDialogueBox2(true);
-
-        uiManager.ShowFadeImage(true); // 대화 말풍선 뜨고 난 후 2초뒤 FadeImage 활성화
+        //uiManager.ShowFadeImage(true); // 대화 말풍선 뜨고 난 후 2초뒤 FadeImage 활성화
+        settlementWindow.ShowFadeImage(true);
 
         topUIManager.SetGoldText(gold); // 현재 골드 양 갱신
-        uiManager.ShowNextBtn(false);
+        dialogueBoxUI.ShowNextBtn(false);
     }
 
     public float GetProbability()
@@ -387,7 +393,8 @@ public class GameManager : MonoBehaviour
     // 나가는 연출
     public void ExitAnimation()
     {
-        uiManager.ShowDialogueBox(false);
+        //uiManager.ShowDialogueBox(false);
+        dialogueBoxUI.ShowContentBox(false);
         uiManager.NPCExit(true); // NPC 나가는 연출 트리거
     }
 
@@ -419,7 +426,8 @@ public class GameManager : MonoBehaviour
     #region 무기 정보를 확인하는 메서드
     public void StartEnhanceInteraction(WeaponController weapon)
     {
-        uiManager.ShowDialogueBox(false);
+        //uiManager.ShowDialogueBox(false);
+        dialogueBoxUI.ShowContentBox(false);
         enhanceUIManager.OnClickActiveEnhanceActivePanel(true);
         enhanceUIManager.Initialized(weapon.PrevEnhancementLevel, weapon.Sprite, weapon.GetWeaponTypeName(), weapon.GetWeaponRankName());
     }

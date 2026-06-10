@@ -7,7 +7,7 @@ public class TestVersionText : MonoBehaviour
     string version;
     private void Start()
     {
-        SoundManager.Inst.PlayBGM(EBgm.Title_music_Ver2);
+        SoundManager.Inst.PlayBGM(EBgm.Title_music_Ver1);
         version = Application.version;
         versionText.text = "Ver." + version;
     }

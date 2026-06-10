@@ -14,29 +14,11 @@ public enum BgType
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameManager gm;
-
     [Header("DialogueBox")]
-    [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private Button nextBtn;
-    [SerializeField] private TextMeshProUGUI npcName;
-    [SerializeField] private TextMeshProUGUI content;
-    [SerializeField] private Image leftContentBox;
-    [SerializeField] private Image rightContentBox;
-    [SerializeField] private GameObject dialogueBox2;
+    [SerializeField] DialogueBoxUI dialogueBoxUI;
 
     [Header("SettlementWindow")]
-    [SerializeField] private Image fadeImage;
-    [SerializeField] private TextMeshProUGUI dayCnt;
-    [SerializeField] private TextMeshProUGUI successCnt;
-    [SerializeField] private TextMeshProUGUI greatSuccessCnt;
-    [SerializeField] private TextMeshProUGUI failCnt;
-    [SerializeField] private TextMeshProUGUI goldCnt;
-    [SerializeField] private Button confirmButton;
-    [SerializeField] private GameObject settlementWindowObj;
-    [SerializeField] private GameObject settlementWindow;
-    [SerializeField] private GameObject startNextDayTextObj;
-    [SerializeField] private TextMeshProUGUI startNextDayText;
+    [SerializeField] SettlementWindow settlementWindow;
 
     [Header("CharactorSprite")] 
     [SerializeField] private CanvasGroup npcCanvasGroup;
@@ -57,7 +39,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Animator npcAnimator;
     [SerializeField] private Animator leftImageAnimator;
     [SerializeField] private Animator welcomPopupAnimator;
-    [SerializeField] private Animator fadeAnimator;
 
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
@@ -78,11 +59,6 @@ public class UIManager : MonoBehaviour
         leftImageAnimator.SetTrigger("Reset");
     }
 
-    public void ShowDialogueBox2(bool active)
-    {
-        dialogueBox2.gameObject.SetActive(active);
-    }
-
 
     // NPC 방문 트리거 메서드
     public void NPCVisitTrigger()
@@ -95,82 +71,25 @@ public class UIManager : MonoBehaviour
         npcAnimator.SetBool("Exit", state);
     }
 
-    // 이름, 대사, 이미지, 방향, 활성화 여부를 동시에 설정하는 메서드
-    //public void OutPutSprite(string name, string text, Sprite sprite, Speaker speak, Dir dir)
-    //{
-    //    npcName.text = name;
-    //    content.text = text;
-
-    //    if(dir == Dir.Left)
-    //    {
-    //        if(speak == Speaker.BlackSmith)
-    //        {
-    //            Debug.Log($"왼쪽 말하는 주체 대장장이");
-    //            leftBlackSmithSprite.sprite = sprite;
-    //            //leftBlackSmithSprite.gameObject.SetActive(true);
-    //            leftBlackSmithSprite.color = new Color(255f, 255f, 255f, 255f);
-    //            rightBlackSmithSprite.gameObject.SetActive(false);
-    //        }
-    //        else
-    //        {
-    //            Debug.Log($"왼쪽 말하는 주체 NPC");
-    //            ShowNpc(true);
-    //        }
-    //        leftContentBox.gameObject.SetActive(true);
-    //        rightContentBox.gameObject.SetActive(false);
-    //    }
-    //    else
-    //    {
-    //        if (speak == Speaker.BlackSmith)
-    //        {
-    //            Debug.Log($"오른쪽 말하는 주체 대장장이");
-    //            rightBlackSmithSprite.sprite = sprite;
-    //            rightBlackSmithSprite.gameObject.SetActive(true);
-    //            //leftBlackSmithSprite.gameObject.SetActive(false);
-    //            leftBlackSmithSprite.color = new Color(255f, 255f, 255f, 0f);
-    //        }
-    //        else
-    //        {
-    //            Debug.Log($"오른쪽 말하는 주체 NPC");
-    //            ShowNpc(true);
-    //        }
-    //        rightContentBox.gameObject.SetActive(true);
-    //        leftContentBox.gameObject.SetActive(false);
-    //    }
-    //}
-
-
     // 이름과 대사, 활성화 여부를 설정하는 메서드
     public void PlayWelcomeSequence(bool active, string text)
     {
         welcomText.text = text;
         welcomImg.gameObject.SetActive(active);
-        dialogueBox.gameObject.SetActive(!active);
+        dialogueBoxUI.ShowContentBox(!active);
     }
 
     // 이름과 대사, 활성화 여부를 설정하는 메서드
     public void PlayWelcomeSequence(bool active)
     {
         welcomImg.gameObject.SetActive(active);
-        dialogueBox.gameObject.SetActive(!active);
-    }
-
-    // 이름과 대사 활성화 여부를 설정하는 메서드
-    public void ShowDialogueBox(bool active)
-    {
-        dialogueBox.gameObject.SetActive(active);
+        dialogueBoxUI.ShowContentBox(!active);
     }
 
     // 카운터 이미지 활성화 여부 설정 메서드
     public void ShowCounterImage(bool active)
     {
         counterImg.gameObject.SetActive(active);
-    }
-
-    // 다음 버튼 활성화 여부 설정 메서드
-    public void ShowNextBtn(bool active)
-    {
-        nextBtn.gameObject.SetActive(active);
     }
 
     // 키 값에 따라 Value를 얻는 형식으로 구현
@@ -189,34 +108,13 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void ShowFadeImage(bool active)
-    {
-        fadeImage.gameObject.SetActive(active);
-        dayCnt.text = gm.Days.ToString() + " 일차 정산 일지";
-        successCnt.text = gm.CurrentSuccessCnt.ToString();
-        greatSuccessCnt.text = gm.CurrentGreatSuccessCnt.ToString();
-        failCnt.text = gm.CurrentFailCnt.ToString();
-        goldCnt.text = gm.CurrentGold.ToString();
-    }
-
-    public void ShowStartNextDayText(bool active, string startNextDayText)
-    {
-        startNextDayTextObj.SetActive(active);
-        this.startNextDayText.text = startNextDayText;
-    }
-
-    public void ShowStartNextDayBtn(bool active)
-    {
-        startNextDayTextObj.gameObject.SetActive(active);
-    }
-
     // 애니메이터의 속도를 0으로 설정하여 애니메이션을 멈추는 메서드
     public void StopAnimator()
     {
         npcAnimator.speed = 0f;
         leftImageAnimator.speed = 0f;
         welcomPopupAnimator.speed = 0f;
-        fadeAnimator.speed = 0f;
+        settlementWindow.FadeAnimatorSpeed(0f);
     }
 
     // 애니메이터의 속도를 1로 설정하여 애니메이션을 재생하는 메서드
@@ -225,6 +123,6 @@ public class UIManager : MonoBehaviour
         npcAnimator.speed = 1f;
         leftImageAnimator.speed = 1f;
         welcomPopupAnimator.speed = 1f;
-        fadeAnimator.speed = 1f;
+        settlementWindow.FadeAnimatorSpeed(1f);
     }
 }

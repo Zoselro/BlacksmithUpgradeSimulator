@@ -38,11 +38,6 @@ public class DialogueController : MonoBehaviour
                             dialogueSet.Dialogues[dialogueLineIndex].Sprite,
                             dialogueSet.Dialogues[dialogueLineIndex].Speak,
                             dialogueSet.Dialogues[dialogueLineIndex].Dir);
-
-        //uiManager.OutPutSprite(dialogueSet.Dialogues[dialogueLineIndex].NicName,
-        //                            dialogueSet.Dialogues[dialogueLineIndex].Content,
-        //                            dialogueSet.Dialogues[dialogueLineIndex].Sprite,
-        //                            dialogueSet.Dialogues[dialogueLineIndex].Speak, dialogueSet.Dialogues[dialogueLineIndex].Dir);
         dialogueLineIndex++;
     }
 

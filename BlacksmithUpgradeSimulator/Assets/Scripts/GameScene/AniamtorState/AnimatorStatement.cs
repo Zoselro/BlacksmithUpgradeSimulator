@@ -14,7 +14,7 @@ public class AnimatorStatement : StateMachineBehaviour
                 animator.SetTrigger("ShowContent");
                 break;
             case AnimatorState.OnContent:
-                GameManager.Inst.UIManager.ShowDialogueBox(true);
+                GameManager.Inst.DialogueBoxUI.ShowContentBox(true);
                 break;
             case AnimatorState.NpcVisit:
                 animator.SetTrigger("WelcomeSequence");
@@ -27,6 +27,10 @@ public class AnimatorStatement : StateMachineBehaviour
                 break;
             case AnimatorState.NpcWelcomEvent:
                 GameManager.Inst.WelcomeAnimation();
+                break;
+            case AnimatorState.NewDay:
+                animator.SetTrigger("NewDay");
+                GameManager.Inst.NewDay();
                 break;
         }
     }

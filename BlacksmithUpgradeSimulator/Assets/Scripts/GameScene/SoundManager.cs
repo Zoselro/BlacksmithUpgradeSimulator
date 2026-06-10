@@ -4,7 +4,6 @@ using UnityEngine;
 public enum EBgm
 {
     Title_music_Ver1,
-    Title_music_Ver2,
     Counter_music
 }
 
