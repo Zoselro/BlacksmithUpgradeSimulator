@@ -37,6 +37,7 @@ public enum AnimatorState
     NpcExit,
     NpcWelcomEvent,
     ShowFadeImage,
+    Close,
     NewDay
 }
 public class GameManager : MonoBehaviour
@@ -176,6 +177,7 @@ public class GameManager : MonoBehaviour
 
     public void NewDay()
     {
+        uiManager.NPCExit(false);
         dialogueUI.ShowBlackSmith(true, Dir.Left);
         dialogueBoxUI.ShowEndContentBoxObj(false); // 정산 대사창 오브젝트 비활성화
         dialogueBoxUI.ShowNextBtn(true); // 다음 버튼 활성화
@@ -622,7 +624,8 @@ public class GameManager : MonoBehaviour
             dialogueSet[3].SetEndFunc(() => ExitAnimation());
         }
         else // 방문자가 9명 이상이라면, NPC 퇴장 연출 후 정산 화면으로 넘어간다.
-            dialogueSet[3].SetEndFunc(() => HandleEndOfDay());
+            //dialogueSet[3].SetEndFunc(() => HandleEndOfDay());
+            dialogueSet[3].SetEndFunc(() => ExitAnimation());
     }
     #endregion
 

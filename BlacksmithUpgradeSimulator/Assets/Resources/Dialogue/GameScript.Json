@@ -57,7 +57,7 @@
       "eventID": "shopClose"
     },
     {
-      "text": "장비 강화가 여기가 맞나?",
+      "text": "장비 강화가 여기가 맞나?!!!",
       "NpcTendency": "FirstVisit",
       "NpcState": "Enter",
       "NpcType": "Beginner"

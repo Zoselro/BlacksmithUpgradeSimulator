@@ -23,15 +23,30 @@ public class AnimatorStatement : StateMachineBehaviour
                 GameManager.Inst.UIManager.PlayWelcomeSequence(false);
                 break;
             case AnimatorState.NpcExit:
-                animator.SetTrigger("WelcomEvent");
+                if (GameManager.Inst.Visitors < 8)
+                    animator.SetTrigger("WelcomEvent");
+                else
+                {
+                    animator.SetTrigger("Close");
+                    Debug.Log("손님 퇴장 후 이벤트 발생");
+                }
                 break;
             case AnimatorState.NpcWelcomEvent:
                 GameManager.Inst.WelcomeAnimation();
+                break;
+            case AnimatorState.Close:
+                animator.SetTrigger("Close");
+                GameManager.Inst.HandleEndOfDay();
                 break;
             case AnimatorState.NewDay:
                 animator.SetTrigger("NewDay");
                 GameManager.Inst.NewDay();
                 break;
         }
+    }
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        Debug.Log("끝난 후 : " + animatorState);
     }
 }
