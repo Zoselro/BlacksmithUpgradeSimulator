@@ -68,8 +68,8 @@ public class UIManager : MonoBehaviour
 
     public void NPCExit(bool state)
     {
-        //npcAnimator.SetBool("Exit", state);
-        npcAnimator.SetTrigger("Exit");
+        npcAnimator.SetBool("Exit", state);
+        //npcAnimator.SetTrigger("Exit");
     }
 
     // 이름과 대사, 활성화 여부를 설정하는 메서드
