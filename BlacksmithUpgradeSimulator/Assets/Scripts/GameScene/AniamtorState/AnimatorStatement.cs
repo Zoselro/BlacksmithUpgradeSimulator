@@ -1,5 +1,18 @@
 using UnityEngine;
 
+public enum AnimatorState
+{
+    Open,
+    OnContent,
+    NpcVisit,
+    NpcWelcomeSequence,
+    NpcExit,
+    NpcWelcomEvent,
+    ShowFadeImage,
+    Close,
+    NewDay
+}
+
 public class AnimatorStatement : StateMachineBehaviour
 {
     [SerializeField] AnimatorState animatorState;

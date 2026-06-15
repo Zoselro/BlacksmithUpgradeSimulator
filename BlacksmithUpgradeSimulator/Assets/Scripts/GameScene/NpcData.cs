@@ -1,6 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum AdventurerType
+{
+    Beginner,
+    Intermediate,
+    Advanced
+}
+
 public class NpcData : MonoBehaviour
 {
     [SerializeField] AdventurerType adventuerType;

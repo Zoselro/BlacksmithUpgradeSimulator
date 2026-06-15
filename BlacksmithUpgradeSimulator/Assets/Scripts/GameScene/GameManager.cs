@@ -22,24 +22,12 @@ public enum NpcState
 {
     Enter,              // NPC 등장
     Request,  // 의뢰 수행 중
-    CompleteSuccess,     // 의뢰 완료(성공)
-    CompleteFail,        // 의뢰 완료(실패)
+    //CompleteSuccess,     // 의뢰 완료(성공)
+    //CompleteFail,        // 의뢰 완료(실패)
     ExitSuccess,        // NPC 퇴장(성공)
     ExitFail            // NPC 퇴장(실패)
 }
 
-public enum AnimatorState
-{
-    Open,
-    OnContent,
-    NpcVisit,
-    NpcWelcomeSequence,
-    NpcExit,
-    NpcWelcomEvent,
-    ShowFadeImage,
-    Close,
-    NewDay
-}
 public class GameManager : MonoBehaviour
 {
     public static GameManager Inst;
