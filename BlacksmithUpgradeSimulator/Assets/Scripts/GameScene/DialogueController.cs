@@ -1,17 +1,31 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DialogueController : MonoBehaviour
 {
     [SerializeField] private UIManager uiManager;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private DialogueUI dialogueUI;
-    [SerializeField] private SoundManager soundManager;
-
 
     DialogueSet[] dialogues = null;
 
     int dialogueSetIndex = 0; // 대화 객체의 Index
     int dialogueLineIndex = 0; // 대화 객체 속에 있는 대사들 Index
+
+    public void OnSpaceBar(InputAction.CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        if (!gameObject.activeInHierarchy)
+            return;
+
+        if (context.performed)
+        {
+            Debug.Log("SpaceBar Pressed");
+            OnClickNextBtn();
+        }
+    }
 
     public void OnDialogueNext(DialogueSet dialogueSet)
     {

@@ -59,6 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   adventuerType: 0
   nameID: "\uB0A8\uC790"
+  gender: 0
   normalSprite: {fileID: 6886390255356908870, guid: d4d332efdddeb994db89bfbc0aec601b, type: 3}
   happySprite: {fileID: -7982432965253262553, guid: fae6667b078853841805bf231c22feb9, type: 3}
   sadSprite: {fileID: -8583506833237509429, guid: 3043b89c6f029f147a83a4195f259718, type: 3}
@@ -80,7 +81,7 @@ MonoBehaviour:
   hair2RectTransfrom: {fileID: 8175006959493874515}
   expression: {fileID: 1133406376698157969}
   expressionRectTransform: {fileID: 1832119063107702814}
-  npcTendency: 0
+  npcTendency: 1
 --- !u!1 &1225771886463516710
 GameObject:
   m_ObjectHideFlags: 0

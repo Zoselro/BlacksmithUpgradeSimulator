@@ -689,6 +689,136 @@ MonoBehaviour:
   dialogueController: {fileID: 749586834}
   dialogueUI: {fileID: 1466799736}
   dialogueBoxUI: {fileID: 606475375}
+--- !u!1 &93837715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93837717}
+  - component: {fileID: 93837716}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &93837716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93837715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d7b939a80c9862042b8e709fc645c749, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b15c6d21-6c64-4ee3-b1c5-fcaba7ba98cf
+    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 91b96828-ad5f-49a2-8042-47276c874a4d
+    m_ActionName: 'Player/Look[/Mouse/delta]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c73fbcbb-b16b-4a66-898b-63322c673db0
+    m_ActionName: 'Player/Fire[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1658584435}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: OnSpaceBar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ba6789d9-f178-4e05-a79e-d072c9cac17e
+    m_ActionName: 'Player/SpaceBar[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 579adb7d-1b8b-4cda-b1ea-d05ab00f553b
+    m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d47f034e-f66b-4993-bdd5-923972106d76
+    m_ActionName: 'UI/Submit[/Keyboard/enter]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 29686ecf-243f-4691-91df-933ef8283d8e
+    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 827b7b64-7d15-440e-be82-1374474f3d86
+    m_ActionName: 'UI/Point[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 500ea8be-4d0c-4624-aee1-022a1730e13b
+    m_ActionName: 'UI/Click[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 861aa662-226a-4820-80ed-13b5eac2db82
+    m_ActionName: 'UI/ScrollWheel[/Mouse/scroll]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bc48d9c0-412c-46aa-97a9-98d9c40a914a
+    m_ActionName: 'UI/MiddleClick[/Mouse/middleButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ef5a327-1aa9-4987-9e67-177e2937f721
+    m_ActionName: 'UI/RightClick[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f62b3d28-7d38-48e0-9fc1-7ec96c2e6239
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 56cb19e9-6933-41c5-9675-008b0795426b
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!4 &93837717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93837715}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1121.7919, y: 721.2094, z: -1.6124495}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &104133886
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +1047,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &170961831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 170961833}
+  - component: {fileID: 170961832}
+  m_Layer: 0
+  m_Name: TypingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &170961832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170961831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c95d4fbbf202cc409f1902915b50d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeForCharacter: 0
+  timeForCharacter_Fast: 0
+  tmpSave: {fileID: 544782670}
+--- !u!4 &170961833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170961831}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1121.7919, y: 721.2094, z: -1.6124495}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &189583679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,6 +2994,7 @@ GameObject:
   - component: {fileID: 544782669}
   - component: {fileID: 544782671}
   - component: {fileID: 544782670}
+  - component: {fileID: 544782672}
   m_Layer: 5
   m_Name: ContentText
   m_TagString: Untagged
@@ -2840,8 +3018,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 400, y: 330}
-  m_SizeDelta: {x: 1350, y: 50}
+  m_AnchoredPosition: {x: 70, y: 300}
+  m_SizeDelta: {x: 650, y: 50}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &544782670
 MonoBehaviour:
@@ -2942,6 +3120,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544782668}
   m_CullTransparentMesh: 1
+--- !u!114 &544782672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544782668}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 170961832}
+          m_TargetAssemblyTypeName: TypingManager, Assembly-CSharp
+          m_MethodName: GetInputDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 170961832}
+          m_TargetAssemblyTypeName: TypingManager, Assembly-CSharp
+          m_MethodName: GetInputUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &548800215
 GameObject:
   m_ObjectHideFlags: 0
@@ -3426,7 +3649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &749586830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3556,7 +3779,6 @@ MonoBehaviour:
   uiManager: {fileID: 686011356}
   gameManager: {fileID: 2056736164}
   dialogueUI: {fileID: 1466799736}
-  soundManager: {fileID: 0}
 --- !u!82 &749586835
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8037,6 +8259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1658584432}
   - component: {fileID: 1658584434}
+  - component: {fileID: 1658584435}
   m_Layer: 5
   m_Name: ContentBox
   m_TagString: Untagged
@@ -8076,6 +8299,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658584431}
   m_CullTransparentMesh: 1
+--- !u!114 &1658584435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658584431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2e54a4603bd2d4ead51c9f132782bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 686011356}
+  gameManager: {fileID: 2056736164}
+  dialogueUI: {fileID: 1466799736}
 --- !u!1 &1663129339
 GameObject:
   m_ObjectHideFlags: 0
@@ -10683,7 +10921,7 @@ MonoBehaviour:
   gold: 0
   visitors: 0
   days: 0
-  dialogueController: {fileID: 749586834}
+  dialogueController: {fileID: 1658584435}
   scriptReader: {fileID: 825004420}
   enhanceChanceCalculator: {fileID: 548800216}
   uiManager: {fileID: 686011356}
@@ -10694,6 +10932,7 @@ MonoBehaviour:
   enhanceManager: {fileID: 164328359}
   menuManager: {fileID: 378610597}
   dialogueUI: {fileID: 1466799736}
+  typingManager: {fileID: 170961832}
   dialogueBoxUI: {fileID: 606475375}
   settlementWindow: {fileID: 2089590443}
   time: 3
@@ -11891,5 +12130,7 @@ SceneRoots:
   - {fileID: 606475376}
   - {fileID: 2089590444}
   - {fileID: 548800217}
+  - {fileID: 170961833}
+  - {fileID: 93837717}
   - {fileID: 2074051140}
   - {fileID: 487196929}

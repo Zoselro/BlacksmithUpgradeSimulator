@@ -26,7 +26,7 @@ public class ScriptReader : MonoBehaviour
         return dialogueDataList[ran].text;
     }
 
-    public string ReadNPC(string NpcType, string NpcTendency, NpcState npcState)
+    public string ReadNPC(string NpcType, string NpcTendency, NpcState npcState, Gender gender)
     {
         dialogueJson = Resources.Load<TextAsset>(path);
         dialogueDataList = new List<DialogueData>();
@@ -34,7 +34,7 @@ public class ScriptReader : MonoBehaviour
 
         foreach (DialogueData dialogueData in dialoguesLines.lines)
         {
-            if (dialogueData.NpcTendency == NpcTendency && dialogueData.NpcType == NpcType && dialogueData.NpcState == npcState.ToString())
+            if (dialogueData.NpcTendency == NpcTendency && dialogueData.NpcType == NpcType && dialogueData.NpcState == npcState.ToString() && dialogueData.Gender == gender.ToString())
             {
                 dialogueDataList.Add(dialogueData);
             }

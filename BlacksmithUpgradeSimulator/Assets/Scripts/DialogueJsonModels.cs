@@ -58,4 +58,5 @@ public class DialogueData
     public string NpcTendency;
     public string NpcState;
     public string NpcType;
+    public string Gender;
 }

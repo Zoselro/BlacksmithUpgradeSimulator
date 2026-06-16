@@ -8,10 +8,17 @@ public enum AdventurerType
     Advanced
 }
 
+public enum Gender
+{
+    Man,
+    Woman
+}
+
 public class NpcData : MonoBehaviour
 {
-    [SerializeField] AdventurerType adventuerType;
-    [SerializeField] string nameID;
+    [SerializeField] private AdventurerType adventuerType;
+    [SerializeField] private string nameID;
+    [SerializeField] private Gender gender;
 
     public string GetNameID()
     {
@@ -21,6 +28,11 @@ public class NpcData : MonoBehaviour
             return "Unknown";
         }
         return nameID;
+    }
+
+    public Gender GetGender()
+    {
+        return gender;
     }
 
     public AdventurerType GetAdventurerType()

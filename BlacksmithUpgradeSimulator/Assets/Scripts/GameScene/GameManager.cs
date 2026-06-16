@@ -1,15 +1,8 @@
 ﻿using UnityEngine;
-
-
 public enum NpcTendency
 {
-    FirstVisit,      // 첫 플레이
-    HotHeaded,       // 분노조절장애
-    Polite,          // 예의 바름
-    Sage,             // 현자
-    Superstitious, // 미신 숭배
-    Casual, // 즐겜 유저
-    RankFocused // 랭킹 집착
+  Runaway, // 폭주
+  Cynical // 냉소
 }
 // 감정 상태를 나타내는 enum
 public enum Emotion
@@ -80,6 +73,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EnhanceManager enhanceManager;
     [SerializeField] private MenuManager menuManager;
     [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] private TypingManager typingManager;
     [SerializeField] private DialogueBoxUI dialogueBoxUI;
     public DialogueBoxUI DialogueBoxUI => dialogueBoxUI;
     [SerializeField] private SettlementWindow settlementWindow;
@@ -148,6 +142,12 @@ public class GameManager : MonoBehaviour
         // 대장장이 이미지 띄우도록 지시
         //uiManager.SetActiveImg(true, blackSmithData.BackSprite, Direction.Left)
         HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅
+
+        string[] abc = { dialogueOpeningData, dialogueWelcomPlayerData, dialogueVisitNpcData, dialogueRequestNpcData,
+            dialoguePlayerSuccessData, dialogueNPCSuccessExitData, dialoguePlayerFailData, dialogueNPCFailExitData,
+            dialoguePlayerGreateSuccessData, dialogueBlackSmithDeliverData, dialogueClosePlayerData};
+
+        typingManager.SendText(abc); // 첫 방문 대사 타이핑 시작
     }
 
     private void Update()
@@ -500,11 +500,11 @@ public class GameManager : MonoBehaviour
 
         dialogueVisitNpcData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                             npcData.NpcTendency.ToString(),
-                                            NpcState.Enter);
+                                            NpcState.Enter, npcData.GetGender());
 
         dialogueRequestNpcData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                                 npcData.NpcTendency.ToString(),
-                                                NpcState.Request);
+                                                NpcState.Request, npcData.GetGender());
     }
 
     public DialogueSet[] SetDialogue()
@@ -548,7 +548,7 @@ public class GameManager : MonoBehaviour
             dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteSuccessID);
             dialogueNPCSuccessExitData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                                     npcData.NpcTendency.ToString(),
-                                                    NpcState.ExitSuccess);
+                                                    NpcState.ExitSuccess, npcData.GetGender());
         }
         // 대 성공 했을 때
         else if (EnhanceResult.GreatSuccess == result)
@@ -557,7 +557,7 @@ public class GameManager : MonoBehaviour
             dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteSuccessID);
             dialogueNPCSuccessExitData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                                     npcData.NpcTendency.ToString(),
-                                                    NpcState.ExitSuccess);
+                                                    NpcState.ExitSuccess, npcData.GetGender());
         }
         // 실패 했을 때
         else
@@ -566,7 +566,7 @@ public class GameManager : MonoBehaviour
             dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteFailID);
             dialogueNPCFailExitData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                                     npcData.NpcTendency.ToString(),
-                                                    NpcState.ExitFail);
+                                                    NpcState.ExitFail, npcData.GetGender());
         }
     }
 
