@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
         // 대장장이 등장
         //dialogueUI.EnterCharacter(Dir.Left); // 대장장이 등장 애니메이션 재생
 
-        uiManager.BlackSmithEntranceTrigger(); // 왼쪽 스프라이트 트리거 -> 게임 시작하자마자 대장장이 등장 연출
+        dialogueUI.BlackSmithAppearTrigger(); // 왼쪽 스프라이트 트리거 -> 게임 시작하자마자 대장장이 등장 연출
 
         uiManager.SetBackGround();
         // 대장장이 이미지 띄우도록 지시
@@ -168,12 +168,12 @@ public class GameManager : MonoBehaviour
 
     public void NewDay()
     {
-        uiManager.NPCExit(false);
+        dialogueUI.NPCExit(false);
         dialogueUI.ShowBlackSmith(true, Dir.Left);
         dialogueBoxUI.ShowEndContentBoxObj(false); // 정산 대사창 오브젝트 비활성화
         dialogueBoxUI.ShowNextBtn(true); // 다음 버튼 활성화
-        uiManager.BlackSmithResetTrigger(); // 대장장이 리셋 트리거 -> 새로운 날이 시작하자마자 대장장이 등장 연출
-        uiManager.BlackSmithEntranceTrigger(); // 대장장이 등장 트리거
+        dialogueUI.BlackSmithResetTrigger(); // 대장장이 리셋 트리거 -> 새로운 날이 시작하자마자 대장장이 등장 연출
+        dialogueUI.BlackSmithEntranceTrigger(); // 대장장이 등장 트리거
         //uiManager.ShowStartNextDayBtn(false); // 다음 날 시작 버튼 비활성화
         settlementWindow.ShowStartNextDayBtn(false);
 
@@ -388,13 +388,13 @@ public class GameManager : MonoBehaviour
     {
         //uiManager.ShowDialogueBox(false);
         dialogueBoxUI.ShowContentBox(false);
-        uiManager.NPCExit(true); // NPC 나가는 연출 트리거
+        dialogueUI.NPCExit(true); // NPC 나가는 연출 트리거
     }
 
     public void WelcomeAnimation()
     {
         
-        uiManager.NPCExit(false);
+        dialogueUI.NPCExit(false);
         HandlePreEnhancementFlow(1);
 
 
@@ -408,7 +408,7 @@ public class GameManager : MonoBehaviour
             uiManager.SetBackGround(BgType.OpenCounter);
 
         //uiManager.ShowSprite(true, buffer[1][1].GetImage(), Speaker.Npc); // NPC 이미지 보임
-        uiManager.NPCVisitTrigger(); // NPC 방문 연출 트리거
+        dialogueUI.NPCVisitTrigger(); // NPC 방문 연출 트리거
         SoundManager.Inst.PlaySFX(ESfx.Bell); // NPC 방문 효과음 재생
 
         visitors++;

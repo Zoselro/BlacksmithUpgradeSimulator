@@ -2896,7 +2896,6 @@ GameObject:
   - component: {fileID: 537439267}
   - component: {fileID: 537439269}
   - component: {fileID: 537439268}
-  - component: {fileID: 537439270}
   m_Layer: 5
   m_Name: LeftBlackSmithImage
   m_TagString: Untagged
@@ -2912,7 +2911,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537439266}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.743769}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2920,7 +2919,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -898.92346, y: -116.68811}
+  m_AnchoredPosition: {x: -750, y: -240}
   m_SizeDelta: {x: 518, y: 974}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &537439268
@@ -2943,7 +2942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1008294324084481806, guid: 48177e5cfdecca044a7abf4383db1237, type: 3}
+  m_Sprite: {fileID: -690842657246971508, guid: a24dcac6247c2ca44b5d8b22031644b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2961,28 +2960,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537439266}
   m_CullTransparentMesh: 1
---- !u!95 &537439270
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537439266}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a71ca10917c2c8f419b6ecfc0691608f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &544782668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3536,9 +3513,6 @@ MonoBehaviour:
   openCounterImg: {fileID: -4117169642912844055, guid: b9fdc8fa2ed7eba4ba37e817a79f4898, type: 3}
   enhanceImg: {fileID: 7840943033321212773, guid: bfa420b0e92a6ce41a16e6834e41eedb, type: 3}
   blacksmithBackground: {fileID: -6235853778935256792, guid: 648baf879121e404e96a189031582b6e, type: 3}
-  npcAnimator: {fileID: 2738235679479019881}
-  leftImageAnimator: {fileID: 537439270}
-  welcomPopupAnimator: {fileID: 1490083138}
 --- !u!4 &686011357
 Transform:
   m_ObjectHideFlags: 0
@@ -7225,7 +7199,7 @@ MonoBehaviour:
   imageUI:
   - {fileID: 537439268}
   - {fileID: 1596202020}
-  imageAnimators: []
+  animator: {fileID: 2074051142}
 --- !u!224 &1466799737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7233,7 +7207,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466799735}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7256,10 +7230,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1490083135}
-  - component: {fileID: 1490083139}
   - component: {fileID: 1490083137}
   - component: {fileID: 1490083136}
-  - component: {fileID: 1490083138}
   m_Layer: 5
   m_Name: WelcomText
   m_TagString: Untagged
@@ -7325,68 +7297,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490083134}
   m_CullTransparentMesh: 1
---- !u!95 &1490083138
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490083134}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e0f5095481ea6404b9efec12eac11529, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1490083139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490083134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8223e278ebabfe40b6e18d4b52c60d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiManager: {fileID: 0}
-  onWelcome:
-    m_PersistentCalls:
-      m_Calls: []
-  playNewDay:
-    m_PersistentCalls:
-      m_Calls: []
-  onSettlementWindow:
-    m_PersistentCalls:
-      m_Calls: []
-  onShowContent:
-    m_PersistentCalls:
-      m_Calls: []
-  npcVisitPopup:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2056736164}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: NpcVisit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1503756131
 GameObject:
   m_ObjectHideFlags: 0
@@ -7510,7 +7420,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509360518}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 00d3eed80a0107542bbd7bb278404794, type: 2}
   m_CullingMode: 0
@@ -7837,7 +7747,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596202019}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.743769}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7845,7 +7755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 601.07654, y: -116.68811}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 518, y: 974}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1597275071
@@ -11025,7 +10935,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -11083,7 +10993,7 @@ MonoBehaviour:
   imageUI:
   - {fileID: 537439268}
   - {fileID: 1596202020}
-  imageAnimators: []
+  animator: {fileID: 0}
 --- !u!95 &2074051142
 Animator:
   serializedVersion: 7
@@ -11129,9 +11039,6 @@ MonoBehaviour:
   openCounterImg: {fileID: -4117169642912844055, guid: b9fdc8fa2ed7eba4ba37e817a79f4898, type: 3}
   enhanceImg: {fileID: 7840943033321212773, guid: bfa420b0e92a6ce41a16e6834e41eedb, type: 3}
   blacksmithBackground: {fileID: -6235853778935256792, guid: 648baf879121e404e96a189031582b6e, type: 3}
-  npcAnimator: {fileID: 2738235679479019881}
-  leftImageAnimator: {fileID: 537439270}
-  welcomPopupAnimator: {fileID: 1490083138}
 --- !u!1 &2075809940
 GameObject:
   m_ObjectHideFlags: 0
@@ -11504,7 +11411,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2738235679479019879}
   - component: {fileID: 2738235679479019880}
-  - component: {fileID: 2738235679479019881}
   - component: {fileID: 2738235679479019883}
   m_Layer: 0
   m_Name: NpcPrefab
@@ -11784,28 +11690,6 @@ MonoBehaviour:
   expression: {fileID: 8076205723238586531}
   expressionRectTransform: {fileID: 7451677920777343313}
   adventurerType: 0
---- !u!95 &2738235679479019881
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128568152890711221}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 20c7160c1b46e3c488f6086bcbaa3fdc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!225 &2738235679479019883
 CanvasGroup:
   m_ObjectHideFlags: 0

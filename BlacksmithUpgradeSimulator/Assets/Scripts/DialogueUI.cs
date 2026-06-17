@@ -7,6 +7,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private DialogueBoxUI dialogueBoxUI;
     [SerializeField] private Image[] imageUI;
     //[SerializeField] private Animator[] imageAnimators;
+    [SerializeField] private Animator animator;
 
     private Dir currentDir;
 
@@ -31,11 +32,31 @@ public class DialogueUI : MonoBehaviour
          imageUI[(int)currentDir].sprite = sprite;
     }
 
-    public void EnterCharacter(Dir dir)
+    public void BlackSmithAppearTrigger()
     {
-        //imageAnimators[(int)dir].SetTrigger("Entrance");
+        animator.SetTrigger("Next");
     }
 
+    public void NPCExit(bool state)
+    {
+        animator.SetBool("Exit", state);
+        //npcAnimator.SetTrigger("Exit");
+    }
+
+    public void BlackSmithResetTrigger()
+    {
+        animator.SetTrigger("Reset");
+    }
+
+    public void BlackSmithEntranceTrigger()
+    {
+        animator.SetTrigger("Entrance");
+    }
+
+    public void NPCVisitTrigger()
+    {
+        animator.SetTrigger("Visit");
+    }
 
     public void ShowImageAnimation(Dir dir, Sprite sprite)
     {

@@ -34,10 +34,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite enhanceImg;
     [SerializeField] private Sprite blacksmithBackground;
 
-    [Header("Animator")]
-    [SerializeField] private Animator npcAnimator;
-    [SerializeField] private Animator leftImageAnimator;
-    [SerializeField] private Animator welcomPopupAnimator;
 
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
@@ -55,30 +51,6 @@ public class UIManager : MonoBehaviour
     private void ShowDialgoue()
     {
 
-    }
-
-    public void BlackSmithEntranceTrigger()
-    {
-        npcAnimator.Play("Idle", 0, 0f);
-        leftImageAnimator.SetTrigger("Entrance");
-    }
-
-    public void BlackSmithResetTrigger()
-    {
-        leftImageAnimator.SetTrigger("Reset");
-    }
-
-
-    // NPC 방문 트리거 메서드
-    public void NPCVisitTrigger()
-    {
-        npcAnimator.SetTrigger("Visit");
-    }
-
-    public void NPCExit(bool state)
-    {
-        npcAnimator.SetBool("Exit", state);
-        //npcAnimator.SetTrigger("Exit");
     }
 
     // 이름과 대사, 활성화 여부를 설정하는 메서드
@@ -121,18 +93,18 @@ public class UIManager : MonoBehaviour
     // 애니메이터의 속도를 0으로 설정하여 애니메이션을 멈추는 메서드
     public void StopAnimator()
     {
-        npcAnimator.speed = 0f;
-        leftImageAnimator.speed = 0f;
-        welcomPopupAnimator.speed = 0f;
+        //npcAnimator.speed = 0f;
+        //leftImageAnimator.speed = 0f;
+        //welcomPopupAnimator.speed = 0f;
         settlementWindow.FadeAnimatorSpeed(0f);
     }
 
     // 애니메이터의 속도를 1로 설정하여 애니메이션을 재생하는 메서드
     public void StartAnimator()
     {
-        npcAnimator.speed = 1f;
-        leftImageAnimator.speed = 1f;
-        welcomPopupAnimator.speed = 1f;
+        //npcAnimator.speed = 1f;
+        //leftImageAnimator.speed = 1f;
+        //welcomPopupAnimator.speed = 1f;
         settlementWindow.FadeAnimatorSpeed(1f);
     }
 }
