@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
 
     [Header("CharactorSprite")] 
     [SerializeField] private CanvasGroup npcCanvasGroup;
-    [SerializeField] private Image welcomImg;
+    [SerializeField] private Image popUpImg;
     [SerializeField] private TextMeshProUGUI welcomText;
 
     [Header("CounterImg")]
@@ -43,29 +43,31 @@ public class UIManager : MonoBehaviour
         npcCanvasGroup.alpha = active ? 1f : 0f; // 활성화 여부에 따라 투명도 조절
     }
 
-    private void BlackSmithEnter() // animator
-    {
-        //dialogueUI.EnterCharacter(Dir.Left);
-    }
-
-    private void ShowDialgoue()
-    {
-
-    }
 
     // 이름과 대사, 활성화 여부를 설정하는 메서드
     public void PlayWelcomeSequence(bool active, string text)
     {
         welcomText.text = text;
-        welcomImg.gameObject.SetActive(active);
+        popUpImg.gameObject.SetActive(active);
         dialogueBoxUI.ShowContentBox(!active);
     }
 
     // 이름과 대사, 활성화 여부를 설정하는 메서드
     public void PlayWelcomeSequence(bool active)
     {
-        welcomImg.gameObject.SetActive(active);
+        popUpImg.gameObject.SetActive(active);
         dialogueBoxUI.ShowContentBox(!active);
+    }
+
+    public void ShowDialogueBox(bool active, string text)
+    {
+        welcomText.text = text;
+        dialogueBoxUI.ShowContentBox(active);
+    }
+
+    public void ShowPopUpImage(bool active)
+    {
+        popUpImg.gameObject.SetActive(active);
     }
 
     // 카운터 이미지 활성화 여부 설정 메서드
