@@ -47,6 +47,16 @@ public class UIManager : MonoBehaviour
         npcCanvasGroup.alpha = active ? 1f : 0f; // 활성화 여부에 따라 투명도 조절
     }
 
+    private void BlackSmithEnter() // animator
+    {
+        //dialogueUI.EnterCharacter(Dir.Left);
+    }
+
+    private void ShowDialgoue()
+    {
+
+    }
+
     public void BlackSmithEntranceTrigger()
     {
         npcAnimator.Play("Idle", 0, 0f);

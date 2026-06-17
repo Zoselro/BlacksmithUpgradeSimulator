@@ -6,6 +6,7 @@ public class DialogueUI : MonoBehaviour
     [Header("DialogueBox")]
     [SerializeField] private DialogueBoxUI dialogueBoxUI;
     [SerializeField] private Image[] imageUI;
+    //[SerializeField] private Animator[] imageAnimators;
 
     private Dir currentDir;
 
@@ -29,6 +30,12 @@ public class DialogueUI : MonoBehaviour
         }
          imageUI[(int)currentDir].sprite = sprite;
     }
+
+    public void EnterCharacter(Dir dir)
+    {
+        //imageAnimators[(int)dir].SetTrigger("Entrance");
+    }
+
 
     public void ShowImageAnimation(Dir dir, Sprite sprite)
     {

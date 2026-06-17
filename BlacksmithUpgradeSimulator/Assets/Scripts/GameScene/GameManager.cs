@@ -135,8 +135,11 @@ public class GameManager : MonoBehaviour
         InitDialogueSet(); // 대화 객체 저장공간 초기화
         initializeBuffer(); // 대사 버퍼 저장공간 초기화
         UpdateDayUI(); // 일 수 갱신
+        
+        // 대장장이 등장
+        //dialogueUI.EnterCharacter(Dir.Left); // 대장장이 등장 애니메이션 재생
+
         uiManager.BlackSmithEntranceTrigger(); // 왼쪽 스프라이트 트리거 -> 게임 시작하자마자 대장장이 등장 연출
-        //uiManager.ShowFadeImage(true);
 
         uiManager.SetBackGround();
         // 대장장이 이미지 띄우도록 지시
