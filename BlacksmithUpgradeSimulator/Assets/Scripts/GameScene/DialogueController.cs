@@ -47,6 +47,7 @@ public class DialogueController : MonoBehaviour
         {
             uiManager.ShowNpc(true);
         }
+
         dialogueUI.Show(dialogueSet.Dialogues[dialogueLineIndex].NicName,
                             dialogueSet.Dialogues[dialogueLineIndex].Content,
                             dialogueSet.Dialogues[dialogueLineIndex].Sprite,
@@ -86,7 +87,6 @@ public class DialogueController : MonoBehaviour
         // UI한테 실행
 
         SoundManager.Inst.PlaySFX(ESfx.Button_Click);
-
         if (dialogues == null) 
             return;
 

@@ -146,11 +146,11 @@ public class GameManager : MonoBehaviour
         //uiManager.SetActiveImg(true, blackSmithData.BackSprite, Direction.Left)
         HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅
 
-        string[] abc = { dialogueOpeningData, dialogueWelcomPlayerData, dialogueVisitNpcData, dialogueRequestNpcData,
-            dialoguePlayerSuccessData, dialogueNPCSuccessExitData, dialoguePlayerFailData, dialogueNPCFailExitData,
-            dialoguePlayerGreateSuccessData, dialogueBlackSmithDeliverData, dialogueClosePlayerData};
+        //string[] abc = { dialogueOpeningData, dialogueWelcomPlayerData, dialogueVisitNpcData, dialogueRequestNpcData,
+        //    dialoguePlayerSuccessData, dialogueNPCSuccessExitData, dialoguePlayerFailData, dialogueNPCFailExitData,
+        //    dialoguePlayerGreateSuccessData, dialogueBlackSmithDeliverData, dialogueClosePlayerData};
 
-        typingManager.SendText(abc); // 첫 방문 대사 타이핑 시작
+        //typingManager.SendText(abc); // 첫 방문 대사 타이핑 시작
     }
 
     private void Update()
@@ -386,20 +386,17 @@ public class GameManager : MonoBehaviour
     // 나가는 연출
     public void ExitAnimation()
     {
-        //uiManager.ShowDialogueBox(false);
         dialogueBoxUI.ShowContentBox(false);
         dialogueUI.NPCExit(true); // NPC 나가는 연출 트리거
     }
 
     public void WelcomeAnimation()
     {
-        
         dialogueUI.NPCExit(false);
         HandlePreEnhancementFlow(1);
 
-
         // 나가는 연출 이후 새로운 NPC 등장 연출
-        uiManager.PlayWelcomeSequence(true, "누군가가 방문 했습니다.");
+        uiManager.PlayWelcomeSequence("누군가가 방문 했습니다.");
     }
 
     public void NpcVisit()
@@ -419,8 +416,7 @@ public class GameManager : MonoBehaviour
     #region 무기 정보를 확인하는 메서드
     public void StartEnhanceInteraction(WeaponController weapon)
     {
-        //uiManager.ShowDialogueBox(false);
-        dialogueBoxUI.ShowContentBox(false);
+        dialogueUI.ContentBoxFalseTrigger(); // 대화 내용창 끄는 트리거
         enhanceUIManager.OnClickActiveEnhanceActivePanel(true);
         enhanceUIManager.Initialized(weapon.PrevEnhancementLevel, weapon.Sprite, weapon.GetWeaponTypeName(), weapon.GetWeaponRankName());
     }
@@ -518,7 +514,7 @@ public class GameManager : MonoBehaviour
                                         blackSmithData.BackSprite, Speaker.BlackSmith, Dir.Left);
             dialogueSet[0].SetDialogueLines(buffer[0]);
 
-            dialogueSet[0].SetEndFunc(() => uiManager.PlayWelcomeSequence(true, "누군가가 방문 했습니다."));
+            dialogueSet[0].SetEndFunc(() => uiManager.PlayWelcomeSequence("누군가가 방문 했습니다."));
         }
         else // 첫 번째 방문이 아닐 때는 오픈 대사 제외 나머지 초기화
         {

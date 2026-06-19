@@ -6,7 +6,6 @@ public class DialogueUI : MonoBehaviour
     [Header("DialogueBox")]
     [SerializeField] private DialogueBoxUI dialogueBoxUI;
     [SerializeField] private Image[] imageUI;
-    //[SerializeField] private Animator[] imageAnimators;
     [SerializeField] private Animator animator;
 
     private Dir currentDir;
@@ -37,6 +36,11 @@ public class DialogueUI : MonoBehaviour
         animator.SetTrigger("Next");
     }
 
+    public void WelcomNpcTrigger()
+    {
+        animator.SetTrigger("NpcVisit");
+    }
+
     public void NPCExit(bool state)
     {
         animator.SetBool("Exit", state);
@@ -58,16 +62,6 @@ public class DialogueUI : MonoBehaviour
         animator.SetTrigger("Visit");
     }
 
-    public void ShowImageAnimation(Dir dir, Sprite sprite)
-    {
-
-    }
-
-    public void HideImage(Dir dir)
-    {
-
-    }
-
     public void ShowBlackSmith(bool active, Dir dir)
     {
         if (dir == Dir.Left)
@@ -78,5 +72,10 @@ public class DialogueUI : MonoBehaviour
         {
             imageUI[(int)Dir.Right].color = new Color(255f, 255f, 255f, active ? 255f : 0f);
         }
+    }
+
+    public void ContentBoxFalseTrigger()
+    {
+        animator.SetTrigger("ContentBoxFalse");
     }
 }

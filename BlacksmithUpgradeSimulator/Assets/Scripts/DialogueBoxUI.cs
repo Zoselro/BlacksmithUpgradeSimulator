@@ -1,15 +1,17 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 public class DialogueBoxUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI nameUI;
     [SerializeField] private TextMeshProUGUI contentUI;
-    [SerializeField] private GameObject[] contentBox;
+    [SerializeField] private GameObject[] contentBoxs;
     [SerializeField] private Button nextBtn;
     [SerializeField] private GameObject contentBoxObj;
     [SerializeField] private GameObject endContentBoxObj;
+    [SerializeField] private TextMeshProUGUI welcomText;
 
     private Dir currentDir;
 
@@ -17,17 +19,30 @@ public class DialogueBoxUI : MonoBehaviour
     {
         nameUI.text = name;
         contentUI.text = content;
-
-        if(currentDir != dir)
+        if (currentDir != dir)
         {
-            contentBox[(int)currentDir].SetActive(false);
+            contentBoxs[(int)currentDir].SetActive(false);
             currentDir = dir;
-            contentBox[(int)currentDir].SetActive(true);
+            contentBoxs[(int)currentDir].SetActive(true);
         }
     }
 
+    // 이름과 대사, 활성화 여부를 설정하는 메서드
+    //public void PlayWelcomeSequence(bool active, string text)
+    //{
+    //    welcomText.text = text;
+    //    popUpImg.SetActive(active);
+    //    dialogueBoxUI.ShowContentBox(!active);
+    //}
+
     public void ShowContentBox(bool active)
     {
+        contentBoxObj.SetActive(active);
+    }
+
+    public void ShowContentBox(bool active, string text)
+    {
+        welcomText.text = text;
         contentBoxObj.SetActive(active);
     }
 

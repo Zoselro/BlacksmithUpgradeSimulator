@@ -15,17 +15,18 @@ public class UIManager : MonoBehaviour
 {
     [Header("DialogueBox")]
     [SerializeField] DialogueBoxUI dialogueBoxUI;
+    [SerializeField] DialogueUI dialogueUI;
 
     [Header("SettlementWindow")]
     [SerializeField] SettlementWindow settlementWindow;
 
     [Header("CharactorSprite")] 
     [SerializeField] private CanvasGroup npcCanvasGroup;
-    [SerializeField] private Image popUpImg;
+    [SerializeField] private GameObject popUpImg;
     [SerializeField] private TextMeshProUGUI welcomText;
 
     [Header("CounterImg")]
-    [SerializeField] private Image counterImg;
+    [SerializeField] private GameObject counterImg;
 
     [Header("BackGround")]
     [SerializeField] private Image backGround;
@@ -45,35 +46,21 @@ public class UIManager : MonoBehaviour
 
 
     // 이름과 대사, 활성화 여부를 설정하는 메서드
-    public void PlayWelcomeSequence(bool active, string text)
+    public void PlayWelcomeSequence(string text)
     {
         welcomText.text = text;
-        popUpImg.gameObject.SetActive(active);
-        dialogueBoxUI.ShowContentBox(!active);
+        dialogueUI.WelcomNpcTrigger();
     }
 
-    // 이름과 대사, 활성화 여부를 설정하는 메서드
-    public void PlayWelcomeSequence(bool active)
+    public void ShowPopUp(bool active)
     {
-        popUpImg.gameObject.SetActive(active);
-        dialogueBoxUI.ShowContentBox(!active);
-    }
-
-    public void ShowDialogueBox(bool active, string text)
-    {
-        welcomText.text = text;
-        dialogueBoxUI.ShowContentBox(active);
-    }
-
-    public void ShowPopUpImage(bool active)
-    {
-        popUpImg.gameObject.SetActive(active);
+        popUpImg.SetActive(active);
     }
 
     // 카운터 이미지 활성화 여부 설정 메서드
     public void ShowCounterImage(bool active)
     {
-        counterImg.gameObject.SetActive(active);
+        counterImg.SetActive(active);
     }
 
     // 키 값에 따라 Value를 얻는 형식으로 구현
