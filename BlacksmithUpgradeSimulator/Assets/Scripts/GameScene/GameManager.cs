@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int visitors;
     public int Visitors => visitors;
+    public void SetVisitor(int visit)
+    {
+        visitors += visit;
+    }
+
     string[] weekdays = { "월", "화", "수", "목", "금", "토", "일" };
     string weekday = "";
     int dayindex = 0;
@@ -168,7 +173,7 @@ public class GameManager : MonoBehaviour
 
     public void NewDay()
     {
-        dialogueUI.NPCExit(false);
+        //dialogueUI.NPCExit(false);
         dialogueUI.ShowBlackSmith(true, Dir.Left);
         dialogueBoxUI.ShowEndContentBoxObj(false); // 정산 대사창 오브젝트 비활성화
         dialogueBoxUI.ShowNextBtn(true); // 다음 버튼 활성화
@@ -387,30 +392,30 @@ public class GameManager : MonoBehaviour
     public void ExitAnimation()
     {
         dialogueBoxUI.ShowContentBox(false);
-        dialogueUI.NPCExit(true); // NPC 나가는 연출 트리거
+        dialogueUI.NPCExit(); // NPC 나가는 연출 트리거
     }
 
     public void WelcomeAnimation()
     {
-        dialogueUI.NPCExit(false);
+        //dialogueUI.NPCExit(false);
         HandlePreEnhancementFlow(1);
 
         // 나가는 연출 이후 새로운 NPC 등장 연출
         uiManager.PlayWelcomeSequence("누군가가 방문 했습니다.");
     }
 
-    public void NpcVisit()
-    {
-        if (visitors == 0)
-            uiManager.SetBackGround(BgType.OpenCounter);
+    //public void NpcVisit()
+    //{
+    //    if (visitors == 0)
+    //        uiManager.SetBackGround(BgType.OpenCounter);
 
-        //uiManager.ShowSprite(true, buffer[1][1].GetImage(), Speaker.Npc); // NPC 이미지 보임
-        dialogueUI.NPCVisitTrigger(); // NPC 방문 연출 트리거
-        SoundManager.Inst.PlaySFX(ESfx.Bell); // NPC 방문 효과음 재생
+    //    //uiManager.ShowSprite(true, buffer[1][1].GetImage(), Speaker.Npc); // NPC 이미지 보임
+    //    dialogueUI.NPCVisitTrigger(); // NPC 방문 연출 트리거
+    //    SoundManager.Inst.PlaySFX(ESfx.Bell); // NPC 방문 효과음 재생
 
-        visitors++;
-        topUIManager.TopBarDisPlay(); // 방문자 수 갱신
-    }
+    //    visitors++;
+    //    topUIManager.TopBarDisPlay(); // 방문자 수 갱신
+    //}
     #endregion
 
     #region 무기 정보를 확인하는 메서드

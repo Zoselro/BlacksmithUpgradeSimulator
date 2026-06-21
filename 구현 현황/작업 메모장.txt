@@ -751,3 +751,6 @@ NPC가 8명을 받은 후 강화 마무리 후 NPC 나가는 연출까지 한 �
 6. 오늘은 이쯤 할까.. DialogueBox2가 뜬 후 바로 Animator.ShowFadeImage가 되면 ShowFadeImage(true)가 뜸
 7. FadeImage에서 확인 버튼을 누르면 SettTrigger가 되면서, SettingWindow가 꺼지고, StartDayTextObj가 True.
 된 후 2.5초후 AnimatorState.Open로 바뀌며 BlackSmithSprite가 오른쪽으로 오는 연출 후 DialogueBox가 뜸
+
+-----------------------------------------------------
+

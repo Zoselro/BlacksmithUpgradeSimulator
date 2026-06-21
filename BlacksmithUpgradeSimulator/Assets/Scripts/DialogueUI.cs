@@ -10,12 +10,14 @@ public class DialogueUI : MonoBehaviour
 
     private Dir currentDir;
 
-    public void Show(string name, string text, Sprite sprite, Speaker speak, Dir dir)
+    //public void Show(string name, string text, Sprite sprite, Speaker speak, Dir dir)
+    //{
+    //    dialogueBoxUI.Show(name, text, dir);
+    //}
+
+    public void Show(string name, string text, Dir dir)
     {
         dialogueBoxUI.Show(name, text, dir);
-        
-        if(speak == Speaker.BlackSmith)
-            ShowImage(dir, sprite);
     }
 
     // 방향에 따라 이미지를 보여주는 메서드
@@ -36,15 +38,14 @@ public class DialogueUI : MonoBehaviour
         animator.SetTrigger("Next");
     }
 
-    public void WelcomNpcTrigger()
+    public void NPCVisitTrigger()
     {
         animator.SetTrigger("NpcVisit");
     }
 
-    public void NPCExit(bool state)
+    public void NPCExit()
     {
-        animator.SetBool("Exit", state);
-        //npcAnimator.SetTrigger("Exit");
+        animator.SetTrigger("NpcExit");
     }
 
     public void BlackSmithResetTrigger()
@@ -55,11 +56,6 @@ public class DialogueUI : MonoBehaviour
     public void BlackSmithEntranceTrigger()
     {
         animator.SetTrigger("Entrance");
-    }
-
-    public void NPCVisitTrigger()
-    {
-        animator.SetTrigger("Visit");
     }
 
     public void ShowBlackSmith(bool active, Dir dir)
@@ -77,5 +73,10 @@ public class DialogueUI : MonoBehaviour
     public void ContentBoxFalseTrigger()
     {
         animator.SetTrigger("ContentBoxFalse");
+    }
+
+    public void ContentBoxTrueTrigger()
+    {
+        animator.SetTrigger("ContentBoxTrue");
     }
 }

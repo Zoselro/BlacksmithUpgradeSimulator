@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.U2D;
 
 public class DialogueController : MonoBehaviour
 {
@@ -48,11 +49,22 @@ public class DialogueController : MonoBehaviour
             uiManager.ShowNpc(true);
         }
 
+        //dialogueUI.Show(dialogueSet.Dialogues[dialogueLineIndex].NicName,
+        //                    dialogueSet.Dialogues[dialogueLineIndex].Content,
+        //                    dialogueSet.Dialogues[dialogueLineIndex].Sprite,
+        //                    dialogueSet.Dialogues[dialogueLineIndex].Speak,
+        //                    dialogueSet.Dialogues[dialogueLineIndex].Dir);
+
         dialogueUI.Show(dialogueSet.Dialogues[dialogueLineIndex].NicName,
-                            dialogueSet.Dialogues[dialogueLineIndex].Content,
-                            dialogueSet.Dialogues[dialogueLineIndex].Sprite,
-                            dialogueSet.Dialogues[dialogueLineIndex].Speak,
-                            dialogueSet.Dialogues[dialogueLineIndex].Dir);
+                    dialogueSet.Dialogues[dialogueLineIndex].Content,
+                    dialogueSet.Dialogues[dialogueLineIndex].Dir);
+
+        if (dialogueSet.Dialogues[dialogueLineIndex].Speak == Speaker.BlackSmith)
+        {
+            Debug.Log("대장장이 대사 -> 대장장이 이미지 보여주기");
+            dialogueUI.ShowImage(dialogueSet.Dialogues[dialogueLineIndex].Dir, dialogueSet.Dialogues[dialogueLineIndex].Sprite);
+        }
+
         dialogueLineIndex++;
     }
 
@@ -77,7 +89,7 @@ public class DialogueController : MonoBehaviour
     }
 
     public void OnClickNextBtn()
-    {
+    { 
         // 다음버튼을 눌렀을 때
         // 만약에 대화가 끝났으면 (현재 대사 번호랑 대사의 총 개수랑 비교) 
         // 대화 종료(UI 비활성화, 끝났을 때 이벤트 실행)

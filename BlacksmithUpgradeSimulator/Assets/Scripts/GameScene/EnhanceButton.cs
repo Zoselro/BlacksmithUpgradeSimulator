@@ -32,10 +32,10 @@ public class EnhanceButton : MonoBehaviour
         topUIManager.ActiveTopUIPanel(true);
         enhanceUIManager.ActiveEnhanceUIBar(false);
         dialogueController.OnClickNextBtn(); // 강화 이후 대사 실행
-
+        dialogueUI.ContentBoxTrueTrigger();
         enhanceUIManager.ActiveConfirmButton(false);
         //uiManager.ShowDialogueBox(true);
-        dialogueBoxUI.ShowContentBox(true);
+        //dialogueBoxUI.ShowContentBox(true);
         enhanceManager.EnhancementImageActive(false); // EnhancementImage를 끄도록 요청
     }
 }

@@ -20,6 +20,9 @@ public class UIManager : MonoBehaviour
     [Header("SettlementWindow")]
     [SerializeField] SettlementWindow settlementWindow;
 
+    [Header("TopUI")]
+    [SerializeField] TopUIManager topUIManager;
+
     [Header("CharactorSprite")] 
     [SerializeField] private CanvasGroup npcCanvasGroup;
     [SerializeField] private GameObject popUpImg;
@@ -49,7 +52,7 @@ public class UIManager : MonoBehaviour
     public void PlayWelcomeSequence(string text)
     {
         welcomText.text = text;
-        dialogueUI.WelcomNpcTrigger();
+        dialogueUI.NPCVisitTrigger();
     }
 
     public void ShowPopUp(bool active)
@@ -76,6 +79,15 @@ public class UIManager : MonoBehaviour
     public void SetBackGround(BgType bgType)
     {
         backGround.sprite = bgDictionary[bgType];
+    }
+
+    public void SetBackGroundOpenCounter()
+    {
+        GameManager.Inst.HandlePreEnhancementFlow(1);
+        GameManager.Inst.SetVisitor(1);
+        topUIManager.TopBarDisPlay(); // 방문자 수 갱신
+        backGround.sprite = openCounterImg;
+        SoundManager.Inst.PlaySFX(ESfx.Bell);
     }
 
 
