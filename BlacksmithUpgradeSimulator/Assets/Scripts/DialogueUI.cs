@@ -10,11 +10,6 @@ public class DialogueUI : MonoBehaviour
 
     private Dir currentDir;
 
-    //public void Show(string name, string text, Sprite sprite, Speaker speak, Dir dir)
-    //{
-    //    dialogueBoxUI.Show(name, text, dir);
-    //}
-
     public void Show(string name, string text, Dir dir)
     {
         dialogueBoxUI.Show(name, text, dir);
@@ -25,12 +20,19 @@ public class DialogueUI : MonoBehaviour
     {
         if (currentDir != dir)
         {
-            imageUI[(int)currentDir].color = new Color(255f, 255f, 255f, 0f);
+            SetImageUIAlpha(imageUI[(int)currentDir], 0f);
             currentDir = dir;
-            imageUI[(int)currentDir].color = new Color(255f, 255f, 255f, 255f);
-
+            SetImageUIAlpha(imageUI[(int)currentDir], 255f);
         }
          imageUI[(int)currentDir].sprite = sprite;
+    }
+
+    // UI 이미지의 알파값을 설정하는 메서드
+    public void SetImageUIAlpha(Image image, float alpha)
+    {
+        Color color = image.color;
+        color.a = alpha;
+        image.color = color;
     }
 
     public void BlackSmithAppearTrigger()
@@ -43,7 +45,7 @@ public class DialogueUI : MonoBehaviour
         animator.SetTrigger("NpcVisit");
     }
 
-    public void NPCExit()
+    public void NPCExitTrigger()
     {
         animator.SetTrigger("NpcExit");
     }
@@ -53,9 +55,20 @@ public class DialogueUI : MonoBehaviour
         animator.SetTrigger("Reset");
     }
 
-    public void BlackSmithEntranceTrigger()
+    public void ContentBoxFalseTrigger()
     {
-        animator.SetTrigger("Entrance");
+        animator.SetTrigger("ContentBoxFalse");
+    }
+
+    public void ContentBoxTrueTrigger()
+    {
+        animator.SetTrigger("ContentBoxTrue");
+    }
+
+    public void AdjustmentTrigger()
+    {
+        animator.SetTrigger("Adjustment");
+        dialogueBoxUI.SetEndContentBox("오늘은 이쯤 할까 ...");
     }
 
     public void ShowBlackSmith(bool active, Dir dir)
@@ -68,15 +81,5 @@ public class DialogueUI : MonoBehaviour
         {
             imageUI[(int)Dir.Right].color = new Color(255f, 255f, 255f, active ? 255f : 0f);
         }
-    }
-
-    public void ContentBoxFalseTrigger()
-    {
-        animator.SetTrigger("ContentBoxFalse");
-    }
-
-    public void ContentBoxTrueTrigger()
-    {
-        animator.SetTrigger("ContentBoxTrue");
     }
 }

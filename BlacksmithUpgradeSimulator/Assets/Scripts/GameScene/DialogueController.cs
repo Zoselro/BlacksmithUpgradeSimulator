@@ -49,12 +49,6 @@ public class DialogueController : MonoBehaviour
             uiManager.ShowNpc(true);
         }
 
-        //dialogueUI.Show(dialogueSet.Dialogues[dialogueLineIndex].NicName,
-        //                    dialogueSet.Dialogues[dialogueLineIndex].Content,
-        //                    dialogueSet.Dialogues[dialogueLineIndex].Sprite,
-        //                    dialogueSet.Dialogues[dialogueLineIndex].Speak,
-        //                    dialogueSet.Dialogues[dialogueLineIndex].Dir);
-
         dialogueUI.Show(dialogueSet.Dialogues[dialogueLineIndex].NicName,
                     dialogueSet.Dialogues[dialogueLineIndex].Content,
                     dialogueSet.Dialogues[dialogueLineIndex].Dir);

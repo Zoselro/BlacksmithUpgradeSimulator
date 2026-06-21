@@ -76,15 +76,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TopUIManager topUIManager;
     [SerializeField] private NpcGenerator npcGenerator;
     [SerializeField] private EnhanceManager enhanceManager;
-    [SerializeField] private MenuManager menuManager;
     [SerializeField] private DialogueUI dialogueUI;
     [SerializeField] private TypingManager typingManager;
-    [SerializeField] private DialogueBoxUI dialogueBoxUI;
-    public DialogueBoxUI DialogueBoxUI => dialogueBoxUI;
     [SerializeField] private SettlementWindow settlementWindow;
 
     [Header("Options")]
-    [SerializeField] private float time = 3f; // 정산 화면을 띄우는 시간
     [SerializeField] private float enhanceTime = 3f;
     public float EnhanceTime => enhanceTime;
     [SerializeField] private float eventPopUpTime = 1f; // NPC 등장 팝업창이 보여지는 시간
@@ -173,27 +169,26 @@ public class GameManager : MonoBehaviour
 
     public void NewDay()
     {
-        //dialogueUI.NPCExit(false);
         dialogueUI.ShowBlackSmith(true, Dir.Left);
-        dialogueBoxUI.ShowEndContentBoxObj(false); // 정산 대사창 오브젝트 비활성화
-        dialogueBoxUI.ShowNextBtn(true); // 다음 버튼 활성화
         dialogueUI.BlackSmithResetTrigger(); // 대장장이 리셋 트리거 -> 새로운 날이 시작하자마자 대장장이 등장 연출
-        dialogueUI.BlackSmithEntranceTrigger(); // 대장장이 등장 트리거
-        //uiManager.ShowStartNextDayBtn(false); // 다음 날 시작 버튼 비활성화
         settlementWindow.ShowStartNextDayBtn(false);
 
-        //uiManager.ShowFadeImage(false);
         settlementWindow.ShowFadeImage(false);
-
 
         uiManager.ShowNpc(true); // NPC 활성화
 
+        ResetGame(); // 하루가 끝났을 때, 각종 리셋 하는 함수
+    }
+
+    // 하루가 끝났을 때, 각종 리셋 하는 함수
+    public void ResetGame()
+    {
         visitors = 0; // 정산 화면에서 보여진 후 방문자 수 초기화
         currentFailCnt = 0; // 정산 화면에서 보여진 후 현재 실패 횟수 초기화
         currentSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 성공 횟수 초기화
         currentGreatSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 대 성공 횟수 초기화
         currentGold = 0; // 정산 화면에서 보여진 후 현재 골드 양 초기화
-        
+
         UpdateDayUI(); // 일 수 갱신
 
         // 첫 번째 방문이지만, 첫 날이 아니라면,
@@ -228,22 +223,6 @@ public class GameManager : MonoBehaviour
         probability = enhanceChanceCalculator.GetRandomEnhanceChance(adventurerType);//NpcGenerator.AdventurerType); // 고객의 타입에 따라 강화 확률이 결정이 된다.
 
         return npcData;
-    }
-
-    // 하루가 끝났을 때, 정산 화면으로 넘어가는 함수
-    public void HandleEndOfDay()
-    {
-        uiManager.ShowCounterImage(true);
-        dialogueBoxUI.ShowContentBox(false);
-        uiManager.ShowNpc(false);
-        uiManager.SetBackGround(BgType.CloseCounter);
-        dialogueBoxUI.ShowEndContentBoxObj(true);
-
-        //uiManager.ShowFadeImage(true); // 대화 말풍선 뜨고 난 후 2초뒤 FadeImage 활성화
-        settlementWindow.ShowFadeImage(true);
-
-        topUIManager.SetGoldText(gold); // 현재 골드 양 갱신
-        dialogueBoxUI.ShowNextBtn(false);
     }
 
     public float GetProbability()
@@ -387,35 +366,18 @@ public class GameManager : MonoBehaviour
     }
 
 
-    #region NPC 입/퇴장 연출
+    #region NPC 퇴장 연출
     // 나가는 연출
     public void ExitAnimation()
     {
-        dialogueBoxUI.ShowContentBox(false);
-        dialogueUI.NPCExit(); // NPC 나가는 연출 트리거
+        dialogueUI.NPCExitTrigger(); // NPC 나가는 연출 트리거
+
+        if(visitors > 7)
+        {
+            Debug.Log("손님 끝");
+            dialogueUI.AdjustmentTrigger();
+        }
     }
-
-    public void WelcomeAnimation()
-    {
-        //dialogueUI.NPCExit(false);
-        HandlePreEnhancementFlow(1);
-
-        // 나가는 연출 이후 새로운 NPC 등장 연출
-        uiManager.PlayWelcomeSequence("누군가가 방문 했습니다.");
-    }
-
-    //public void NpcVisit()
-    //{
-    //    if (visitors == 0)
-    //        uiManager.SetBackGround(BgType.OpenCounter);
-
-    //    //uiManager.ShowSprite(true, buffer[1][1].GetImage(), Speaker.Npc); // NPC 이미지 보임
-    //    dialogueUI.NPCVisitTrigger(); // NPC 방문 연출 트리거
-    //    SoundManager.Inst.PlaySFX(ESfx.Bell); // NPC 방문 효과음 재생
-
-    //    visitors++;
-    //    topUIManager.TopBarDisPlay(); // 방문자 수 갱신
-    //}
     #endregion
 
     #region 무기 정보를 확인하는 메서드
@@ -431,7 +393,6 @@ public class GameManager : MonoBehaviour
     public void SetBackGroundOpenCounter()
     {
         uiManager.SetBackGround(BgType.OpenCounter);
-        //uiManager.ShowSprite(true, buffer[3][1].GetImage() ,Speaker.Npc);
         uiManager.ShowCounterImage(true);
     }
     #endregion
@@ -519,7 +480,7 @@ public class GameManager : MonoBehaviour
                                         blackSmithData.BackSprite, Speaker.BlackSmith, Dir.Left);
             dialogueSet[0].SetDialogueLines(buffer[0]);
 
-            dialogueSet[0].SetEndFunc(() => uiManager.PlayWelcomeSequence("누군가가 방문 했습니다."));
+            dialogueSet[0].SetEndFunc(() => uiManager.WelcomNextNpc("누군가가 방문 했습니다."));
         }
         else // 첫 번째 방문이 아닐 때는 오픈 대사 제외 나머지 초기화
         {
@@ -611,13 +572,7 @@ public class GameManager : MonoBehaviour
 
         dialogueSet[3].SetDialogueLines(buffer[3]);
 
-        if(visitors < 8) // 방문자가 8명 미만이라면, NPC 퇴장 연출 후 다음 손님이 방문한다.
-        {
-            dialogueSet[3].SetEndFunc(() => ExitAnimation());
-        }
-        else // 방문자가 9명 이상이라면, NPC 퇴장 연출 후 정산 화면으로 넘어간다.
-            //dialogueSet[3].SetEndFunc(() => HandleEndOfDay());
-            dialogueSet[3].SetEndFunc(() => ExitAnimation());
+        dialogueSet[3].SetEndFunc(() => ExitAnimation());
     }
     #endregion
 

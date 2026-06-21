@@ -9,7 +9,6 @@ public class EnhanceButton : MonoBehaviour
     [SerializeField] private EnhanceManager enhanceManager;
     [SerializeField] private DialogueController dialogueController;
     [SerializeField] private DialogueUI dialogueUI;
-    [SerializeField] private DialogueBoxUI dialogueBoxUI;
 
     public void EnhanceButtonOnClick()
     {
@@ -34,8 +33,6 @@ public class EnhanceButton : MonoBehaviour
         dialogueController.OnClickNextBtn(); // 강화 이후 대사 실행
         dialogueUI.ContentBoxTrueTrigger();
         enhanceUIManager.ActiveConfirmButton(false);
-        //uiManager.ShowDialogueBox(true);
-        //dialogueBoxUI.ShowContentBox(true);
         enhanceManager.EnhancementImageActive(false); // EnhancementImage를 끄도록 요청
     }
 }

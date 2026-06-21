@@ -14,7 +14,6 @@ public enum BgType
 public class UIManager : MonoBehaviour
 {
     [Header("DialogueBox")]
-    [SerializeField] DialogueBoxUI dialogueBoxUI;
     [SerializeField] DialogueUI dialogueUI;
 
     [Header("SettlementWindow")]
@@ -25,7 +24,6 @@ public class UIManager : MonoBehaviour
 
     [Header("CharactorSprite")] 
     [SerializeField] private CanvasGroup npcCanvasGroup;
-    [SerializeField] private GameObject popUpImg;
     [SerializeField] private TextMeshProUGUI welcomText;
 
     [Header("CounterImg")]
@@ -41,23 +39,24 @@ public class UIManager : MonoBehaviour
 
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
+    #region Add Event Animator
+    public void ShowFadeImage()
+    {
+        settlementWindow.ShowFadeImage(true);
+    }
+    #endregion
+
     // NPC 스프라이트 활성화 여부 설정 메서드
     public void ShowNpc(bool active)
     {
         npcCanvasGroup.alpha = active ? 1f : 0f; // 활성화 여부에 따라 투명도 조절
     }
 
-
     // 이름과 대사, 활성화 여부를 설정하는 메서드
-    public void PlayWelcomeSequence(string text)
+    public void WelcomNextNpc(string text)
     {
         welcomText.text = text;
         dialogueUI.NPCVisitTrigger();
-    }
-
-    public void ShowPopUp(bool active)
-    {
-        popUpImg.SetActive(active);
     }
 
     // 카운터 이미지 활성화 여부 설정 메서드
@@ -81,6 +80,11 @@ public class UIManager : MonoBehaviour
         backGround.sprite = bgDictionary[bgType];
     }
 
+    public void SetBackGroundCloseCounter()
+    {
+        backGround.sprite = closeCounterImg;
+    }
+
     public void SetBackGroundOpenCounter()
     {
         GameManager.Inst.HandlePreEnhancementFlow(1);
@@ -89,8 +93,6 @@ public class UIManager : MonoBehaviour
         backGround.sprite = openCounterImg;
         SoundManager.Inst.PlaySFX(ESfx.Bell);
     }
-
-
     // 애니메이터의 속도를 0으로 설정하여 애니메이션을 멈추는 메서드
     public void StopAnimator()
     {
