@@ -7,12 +7,18 @@ public class ScriptReader : MonoBehaviour
 
     private TextAsset dialogueJson = null;
     private string path = "Dialogue/GameScript";
-    public string ReadPlayer(string eventId)
+
+    public ScriptReaderDialogueLines LoadDialogueData()
     {
         dialogueJson = Resources.Load<TextAsset>(path);
         dialogueDataList = new List<DialogueData>();
-        DialogueLines dialoguesLines = JsonUtility.FromJson<DialogueLines>(dialogueJson.text);
+        ScriptReaderDialogueLines dialoguesLines = JsonUtility.FromJson<ScriptReaderDialogueLines>(dialogueJson.text);
 
+        return dialoguesLines;
+    }
+
+    public string ReadPlayer(string eventId, ScriptReaderDialogueLines dialoguesLines)
+    {
         foreach (DialogueData dialogueData in dialoguesLines.lines)
         {
             if(dialogueData.eventID == eventId)
@@ -30,7 +36,7 @@ public class ScriptReader : MonoBehaviour
     {
         dialogueJson = Resources.Load<TextAsset>(path);
         dialogueDataList = new List<DialogueData>();
-        DialogueLines dialoguesLines = JsonUtility.FromJson<DialogueLines>(dialogueJson.text);
+        ScriptReaderDialogueLines dialoguesLines = JsonUtility.FromJson<ScriptReaderDialogueLines>(dialogueJson.text);
 
         foreach (DialogueData dialogueData in dialoguesLines.lines)
         {

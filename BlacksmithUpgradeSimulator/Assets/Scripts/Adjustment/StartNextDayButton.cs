@@ -7,7 +7,7 @@ public class StartNextDayButton : MonoBehaviour
     [SerializeField] private Animator animator;
     public void OnStartNextDayButton()
     {
-        animator.SetTrigger("StartTrigger");
-        settlementWindow.ShowStartNextDayText(true, "다시 하루가 밝았다.");
+        animator.SetTrigger("StartText");
+        settlementWindow.StartNextDayText("다시 하루가 밝았다.");
     }
 }

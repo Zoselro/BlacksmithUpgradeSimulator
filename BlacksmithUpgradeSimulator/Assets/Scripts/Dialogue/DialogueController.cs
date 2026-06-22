@@ -46,7 +46,7 @@ public class DialogueController : MonoBehaviour
         // 대장장이가 무기를 건내 줄 때, NPC 활성화
         if (dialogueSetIndex == 3 && dialogueLineIndex == 0)
         {
-            uiManager.ShowNpc(true);
+            uiManager.ShowPrefab(true);
         }
 
         dialogueUI.Show(dialogueSet.Dialogues[dialogueLineIndex].NicName,

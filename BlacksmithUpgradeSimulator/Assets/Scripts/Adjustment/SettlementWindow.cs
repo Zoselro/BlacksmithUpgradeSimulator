@@ -6,7 +6,6 @@ public class SettlementWindow : MonoBehaviour
 {
     [SerializeField] private GameManager gm;
 
-    [SerializeField] private Image fadeImage;
     [SerializeField] private TextMeshProUGUI dayCnt;
     [SerializeField] private TextMeshProUGUI successCnt;
     [SerializeField] private TextMeshProUGUI greatSuccessCnt;
@@ -20,30 +19,18 @@ public class SettlementWindow : MonoBehaviour
 
     [Header("Animator")]
     [SerializeField] private Animator fadeAnimator;
-    public void ShowFadeImage(bool active)
+    public void Adjustment()
     {
-        fadeImage.gameObject.SetActive(active);
         dayCnt.text = gm.Days.ToString() + " 일차 정산 일지";
         successCnt.text = gm.CurrentSuccessCnt.ToString();
         greatSuccessCnt.text = gm.CurrentGreatSuccessCnt.ToString();
         failCnt.text = gm.CurrentFailCnt.ToString();
         goldCnt.text = gm.CurrentGold.ToString();
-
-        if (active)
-        {
-            fadeAnimator.SetTrigger("NewDay");
-        }
     }
 
-    public void ShowStartNextDayText(bool active, string startNextDayText)
+    public void StartNextDayText(string startNextDayText)
     {
-        startNextDayTextObj.SetActive(active);
         this.startNextDayText.text = startNextDayText;
-    }
-
-    public void ShowStartNextDayBtn(bool active)
-    {
-        startNextDayTextObj.gameObject.SetActive(active);
     }
 
     public void FadeAnimatorSpeed(float speed)

@@ -20,8 +20,8 @@ public class EnhanceButton : MonoBehaviour
         enhanceUIManager.ActiveEnhanceUIBar(true, (gm.GetProbability() * 100).ToString("F1"));
         uiManager.SetBackGround(BgType.Enhance);
         topUIManager.ActiveTopUIPanel(false);
-        dialogueUI.ShowBlackSmith(false, Dir.Left);
-        uiManager.ShowNpc(false);
+        dialogueUI.ShowImage(Dir.Left, false);
+        uiManager.ShowPrefab(false);
         uiManager.ShowCounterImage(false);
     }
 

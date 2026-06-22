@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class TestVersionText : MonoBehaviour
+public class StartSceneGameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI versionText;
     string version;

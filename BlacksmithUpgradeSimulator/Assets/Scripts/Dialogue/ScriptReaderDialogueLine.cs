@@ -45,7 +45,7 @@ using System;
 #endregion GameScene 스크립트 JSON 클래스 정의
 
 [Serializable]
-public class DialogueLines
+public class ScriptReaderDialogueLines
 {
     public DialogueData[] lines;
 }

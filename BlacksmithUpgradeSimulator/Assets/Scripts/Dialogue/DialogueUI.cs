@@ -15,6 +15,15 @@ public class DialogueUI : MonoBehaviour
         dialogueBoxUI.Show(name, text, dir);
     }
 
+    #region 이미지의 알파값을 설정하는 메서드들
+    // UI 이미지의 알파값을 설정하는 메서드
+    public void SetImageUIAlpha(Image image, float alpha)
+    {
+        Color color = image.color;
+        color.a = alpha;
+        image.color = color;
+    }
+
     // 방향에 따라 이미지를 보여주는 메서드
     public void ShowImage(Dir dir, Sprite sprite)
     {
@@ -27,18 +36,26 @@ public class DialogueUI : MonoBehaviour
          imageUI[(int)currentDir].sprite = sprite;
     }
 
-    // UI 이미지의 알파값을 설정하는 메서드
-    public void SetImageUIAlpha(Image image, float alpha)
+    // 방향에 따라 이미지를 보여주는 메서드
+    public void ShowImage(Dir dir, bool active)
     {
-        Color color = image.color;
-        color.a = alpha;
-        image.color = color;
+        if (currentDir != dir)
+        {
+            SetImageUIAlpha(imageUI[(int)currentDir], 0f);
+            currentDir = dir;
+            SetImageUIAlpha(imageUI[(int)currentDir], active ? 255f : 0f);
+        }
+        else
+        {
+            SetImageUIAlpha(imageUI[(int)currentDir], active ? 255f : 0f);
+        }
     }
+    #endregion
 
-    public void BlackSmithAppearTrigger()
-    {
-        animator.SetTrigger("Next");
-    }
+    //public void BlackSmithAppearTrigger()
+    //{
+    //    animator.SetTrigger("Next");
+    //}
 
     public void NPCVisitTrigger()
     {
@@ -50,10 +67,10 @@ public class DialogueUI : MonoBehaviour
         animator.SetTrigger("NpcExit");
     }
 
-    public void BlackSmithResetTrigger()
-    {
-        animator.SetTrigger("Reset");
-    }
+    //public void BlackSmithResetTrigger()
+    //{
+    //    animator.SetTrigger("Reset");
+    //}
 
     public void ContentBoxFalseTrigger()
     {
@@ -71,15 +88,15 @@ public class DialogueUI : MonoBehaviour
         dialogueBoxUI.SetEndContentBox("오늘은 이쯤 할까 ...");
     }
 
-    public void ShowBlackSmith(bool active, Dir dir)
-    {
-        if (dir == Dir.Left)
-        {
-            imageUI[(int)Dir.Left].color = new Color(255f, 255f, 255f, active ? 255f : 0f);
-        }
-        else
-        {
-            imageUI[(int)Dir.Right].color = new Color(255f, 255f, 255f, active ? 255f : 0f);
-        }
-    }
+    //public void ShowBlackSmith(bool active, Dir dir)
+    //{
+    //    if (dir == Dir.Left)
+    //    {
+    //        imageUI[(int)Dir.Left].color = new Color(255f, 255f, 255f, active ? 255f : 0f);
+    //    }
+    //    else
+    //    {
+    //        imageUI[(int)Dir.Right].color = new Color(255f, 255f, 255f, active ? 255f : 0f);
+    //    }
+    //}
 }

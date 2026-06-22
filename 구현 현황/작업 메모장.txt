@@ -754,3 +754,6 @@ NPC가 8명을 받은 후 강화 마무리 후 NPC 나가는 연출까지 한 �
 
 -----------------------------------------------------
 
+페이드 아웃이 4초간 됨 -> SettlementWindowObj켜짐 -> SettlementWindow켜진후 0.5초 걸쳐서 Scale이 0 -> 1로 바뀜
+-> ConfirmButton 활성화 -> Trigger 동작 -> StartDayText 켜진후 Alpha값이 0 -> 255로 1.5초에 걸쳐서 됨
+ -> 1.5초에 Trigger

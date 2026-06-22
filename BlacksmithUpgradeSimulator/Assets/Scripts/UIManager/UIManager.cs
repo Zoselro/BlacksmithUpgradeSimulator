@@ -39,15 +39,13 @@ public class UIManager : MonoBehaviour
 
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
-    #region Add Event Animator
-    public void ShowFadeImage()
+    public void Adjustment()
     {
-        settlementWindow.ShowFadeImage(true);
+        settlementWindow.Adjustment();
     }
-    #endregion
 
     // NPC 스프라이트 활성화 여부 설정 메서드
-    public void ShowNpc(bool active)
+    public void ShowPrefab(bool active)
     {
         npcCanvasGroup.alpha = active ? 1f : 0f; // 활성화 여부에 따라 투명도 조절
     }
