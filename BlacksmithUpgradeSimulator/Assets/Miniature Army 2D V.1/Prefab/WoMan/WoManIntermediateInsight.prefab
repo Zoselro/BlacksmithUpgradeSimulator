@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adventuerType: 1
-  nameID: "\uD1B5\uCC30\uC801\uC778 \uC911\uAE09 \uD5CC\uD130"
+  nameID: "\uD1B5\uCC30\uC801\uC778 \uC911\uAE09 \uC5EC\uC790 NPC"
   gender: 1
   normalSprite: {fileID: 6886390255356908870, guid: d4d332efdddeb994db89bfbc0aec601b, type: 3}
   happySprite: {fileID: -7982432965253262553, guid: fae6667b078853841805bf231c22feb9, type: 3}
