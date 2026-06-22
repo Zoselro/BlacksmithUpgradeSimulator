@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 3380651019054992940}
   - component: {fileID: 208738670285433854}
   m_Layer: 0
-  m_Name: Prist
+  m_Name: PristWoManAdvancedRunaway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,8 +657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c867ea120ec46c24081741a31c47a3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adventuerType: 0
-  nameID: "\uD504\uB9AC\uC2A4\uD2B8"
+  adventuerType: 2
+  nameID: "\uD3ED\uC8FC\uC801\uC778 \uC219\uB828 \uD504\uB9AC\uC2A4\uD2B8"
   gender: 1
   normalSprite: {fileID: 286782432450102103, guid: 85e38f95df3080e43acd42dc145b5678, type: 3}
   happySprite: {fileID: 8861505317297529154, guid: 920b848109357ab47b0646f3b04230e8, type: 3}
@@ -681,7 +681,7 @@ MonoBehaviour:
   hair2RectTransfrom: {fileID: 8715652933699681718}
   expression: {fileID: 4268444723520224231}
   expressionRectTransform: {fileID: 1086642947804742744}
-  npcTendency: 1
+  npcTendency: 0
 --- !u!1 &8716195097438738288
 GameObject:
   m_ObjectHideFlags: 0

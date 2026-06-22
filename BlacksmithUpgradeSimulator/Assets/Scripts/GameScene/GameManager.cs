@@ -1,9 +1,4 @@
 ﻿using UnityEngine;
-public enum NpcTendency
-{
-  Runaway, // 폭주
-  Cynical // 냉소
-}
 // 감정 상태를 나타내는 enum
 public enum Emotion
 {

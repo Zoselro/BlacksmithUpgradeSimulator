@@ -688,7 +688,6 @@ MonoBehaviour:
   enhanceManager: {fileID: 164328359}
   dialogueController: {fileID: 0}
   dialogueUI: {fileID: 1466799736}
-  dialogueBoxUI: {fileID: 606475375}
 --- !u!1 &93837715
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,10 +3300,7 @@ MonoBehaviour:
   contentBoxs:
   - {fileID: 1453468558}
   - {fileID: 1770767654}
-  contentBoxObj: {fileID: 1658584431}
   endContentBox: {fileID: 1951356621}
-  endContentBoxObj: {fileID: 73616380}
-  welcomText: {fileID: 544782670}
 --- !u!4 &606475376
 Transform:
   m_ObjectHideFlags: 0
@@ -3503,18 +3499,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c26ee8da296bd468add90d56765411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBoxUI: {fileID: 606475375}
   dialogueUI: {fileID: 1466799736}
   settlementWindow: {fileID: 2089590443}
   topUIManager: {fileID: 1818317714}
   npcCanvasGroup: {fileID: 2738235679479019883}
-  popUpImg: {fileID: 1490083134}
   welcomText: {fileID: 2093620513}
   counterImg: {fileID: 701500094}
   backGround: {fileID: 2009999517}
   closeCounterImg: {fileID: 3951079931369108778, guid: 3945698a6d5b49347bddd4ea83832027, type: 3}
   openCounterImg: {fileID: -4117169642912844055, guid: b9fdc8fa2ed7eba4ba37e817a79f4898, type: 3}
-  enhanceImg: {fileID: 7840943033321212773, guid: bfa420b0e92a6ce41a16e6834e41eedb, type: 3}
+  enhanceImg: {fileID: -802590564593124886, guid: 075d0a208d57aab4fb3b179d63749e3d, type: 3}
   blacksmithBackground: {fileID: -6235853778935256792, guid: 648baf879121e404e96a189031582b6e, type: 3}
 --- !u!4 &686011357
 Transform:
@@ -5529,6 +5523,26 @@ MonoBehaviour:
   - {fileID: 208738670285433854, guid: 65803abfd090b5e4f801c431a8947d11, type: 3}
   - {fileID: -7789472329411664840, guid: a3c1faf915dc240bca8ed7566d46910c, type: 3}
   - {fileID: -8871750454027700903, guid: 13c470c5b8dcd4854834911f7e0a9a6c, type: 3}
+  - {fileID: -878709379722568377, guid: 6d711d25727560f42bea09de7492b9ee, type: 3}
+  - {fileID: -878709379722568377, guid: 7b149af442804c943882ae5e42f98262, type: 3}
+  - {fileID: -878709379722568377, guid: f31da9a425576114e8bb4d1c3d95d5b9, type: 3}
+  - {fileID: 2174192102365522619, guid: 978fa2fb617654f5eaeff9da6fc7d116, type: 3}
+  - {fileID: 2174192102365522619, guid: cd475bc5d501025469d8a2239da757eb, type: 3}
+  - {fileID: 2174192102365522619, guid: e6fbee42af6f67a4787eb17ab0ef0343, type: 3}
+  - {fileID: 2174192102365522619, guid: a7deae05edb35cb498311c827934a67b, type: 3}
+  - {fileID: -7163644551062998548, guid: cdbfb40ffcc6864479d82f4105774d19, type: 3}
+  - {fileID: -7163644551062998548, guid: 2211e129774010c44b5d95c921ce39cc, type: 3}
+  - {fileID: -7163644551062998548, guid: 9dfe449c3e378d540a9c5d58e0283e0c, type: 3}
+  - {fileID: 208738670285433854, guid: 48900f981141e6944ab40f160fa4e037, type: 3}
+  - {fileID: 208738670285433854, guid: 500c5b9397dd3914597af7ca6ed88e6a, type: 3}
+  - {fileID: 208738670285433854, guid: a8e2bd7df5a5b49459c065ba9ecea77d, type: 3}
+  - {fileID: -7789472329411664840, guid: a3c1faf915dc240bca8ed7566d46910c, type: 3}
+  - {fileID: -7789472329411664840, guid: 2fefdecef5b92934d9e7a5eeec0cdeae, type: 3}
+  - {fileID: -7789472329411664840, guid: 3f76aa646f8402b40a30ae37e80c9c52, type: 3}
+  - {fileID: -7789472329411664840, guid: 0005b33043d4fc94784642e2f6c3085c, type: 3}
+  - {fileID: -8871750454027700903, guid: ed74a4f19e46d2f45a3e36313b60e211, type: 3}
+  - {fileID: -8871750454027700903, guid: 024a3aa15d111d24a9b0ba43e7854431, type: 3}
+  - {fileID: -8871750454027700903, guid: 278dbe6094b789a468a55d2ba90d4b02, type: 3}
   adventurerType: 0
 --- !u!4 &1200748677
 Transform:
@@ -8274,7 +8288,6 @@ MonoBehaviour:
   enhanceManager: {fileID: 164328359}
   dialogueController: {fileID: 1658584435}
   dialogueUI: {fileID: 1466799736}
-  dialogueBoxUI: {fileID: 606475375}
 --- !u!1 &1719456111
 GameObject:
   m_ObjectHideFlags: 0
@@ -10466,12 +10479,9 @@ MonoBehaviour:
   topUIManager: {fileID: 1818317714}
   npcGenerator: {fileID: 1200748676}
   enhanceManager: {fileID: 164328359}
-  menuManager: {fileID: 378610597}
   dialogueUI: {fileID: 1466799736}
   typingManager: {fileID: 170961832}
-  dialogueBoxUI: {fileID: 606475375}
   settlementWindow: {fileID: 2089590443}
-  time: 3
   enhanceTime: 3
   eventPopUpTime: 1
   npcController: {fileID: 2738235679479019880}
@@ -10629,12 +10639,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c26ee8da296bd468add90d56765411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBoxUI: {fileID: 606475375}
   dialogueUI: {fileID: 1466799736}
   settlementWindow: {fileID: 2089590443}
   topUIManager: {fileID: 1818317714}
   npcCanvasGroup: {fileID: 2738235679479019883}
-  popUpImg: {fileID: 1490083134}
   welcomText: {fileID: 2093620513}
   counterImg: {fileID: 701500094}
   backGround: {fileID: 2009999517}

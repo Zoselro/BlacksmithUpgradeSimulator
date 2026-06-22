@@ -14,6 +14,14 @@ public enum Gender
     Woman
 }
 
+public enum NpcTendency
+{
+    Runaway, // ÆøÁÖ
+    Cynical, // ³Ã¼Ò
+    Insight, // ÅëÂû
+    Cheerful, // ¸í¶û
+}
+
 public class NpcData : MonoBehaviour
 {
     [SerializeField] private AdventurerType adventuerType;
