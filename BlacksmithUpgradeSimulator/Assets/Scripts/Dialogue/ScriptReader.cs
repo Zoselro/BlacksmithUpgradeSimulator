@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ScriptReader : MonoBehaviour
@@ -7,18 +8,25 @@ public class ScriptReader : MonoBehaviour
 
     private TextAsset dialogueJson = null;
     private string path = "Dialogue/GameScript";
+    ScriptReaderDialogueLines dialoguesLines = null;
 
     public ScriptReaderDialogueLines LoadDialogueData()
     {
         dialogueJson = Resources.Load<TextAsset>(path);
-        dialogueDataList = new List<DialogueData>();
-        ScriptReaderDialogueLines dialoguesLines = JsonUtility.FromJson<ScriptReaderDialogueLines>(dialogueJson.text);
+        //dialogueDataList = new List<DialogueData>();
+        dialoguesLines = JsonUtility.FromJson<ScriptReaderDialogueLines>(dialogueJson.text);
 
         return dialoguesLines;
     }
 
-    public string ReadPlayer(string eventId, ScriptReaderDialogueLines dialoguesLines)
+    public string ReadPlayer(string eventId)
     {
+        //dialogueJson = Resources.Load<TextAsset>(path);
+        //dialogueDataList = new List<DialogueData>();
+        //ScriptReaderDialogueLines dialoguesLines = JsonUtility.FromJson<ScriptReaderDialogueLines>(dialogueJson.text);
+
+        dialogueDataList = new List<DialogueData>();
+
         foreach (DialogueData dialogueData in dialoguesLines.lines)
         {
             if(dialogueData.eventID == eventId)
@@ -34,9 +42,11 @@ public class ScriptReader : MonoBehaviour
 
     public string ReadNPC(string NpcType, string NpcTendency, NpcState npcState, Gender gender)
     {
-        dialogueJson = Resources.Load<TextAsset>(path);
+        //dialogueJson = Resources.Load<TextAsset>(path);
+        //dialogueDataList = new List<DialogueData>();
+        //ScriptReaderDialogueLines dialoguesLines = JsonUtility.FromJson<ScriptReaderDialogueLines>(dialogueJson.text);
+
         dialogueDataList = new List<DialogueData>();
-        ScriptReaderDialogueLines dialoguesLines = JsonUtility.FromJson<ScriptReaderDialogueLines>(dialogueJson.text);
 
         foreach (DialogueData dialogueData in dialoguesLines.lines)
         {
@@ -56,5 +66,4 @@ public class ScriptReader : MonoBehaviour
 
         return dialogueDataList[ran].text;
     }
-
 }

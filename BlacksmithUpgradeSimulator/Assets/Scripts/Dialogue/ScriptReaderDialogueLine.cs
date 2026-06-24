@@ -1,5 +1,4 @@
 using System;
-
 #region StartScene, EndingScene JSON 클래스 정의
 //[Serializable]
 //public class Scenes

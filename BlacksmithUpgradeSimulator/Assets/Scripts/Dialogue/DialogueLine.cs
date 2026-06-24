@@ -33,7 +33,6 @@ public class DialogueLine
     {
         this.nickName = nickName;
         this.content = content.Replace(".", ".\n").Replace("!","!\n");
-        Debug.Log(this.content);
         this.sprite = sprite;
         this.speak = speak;
         this.dir = dir;

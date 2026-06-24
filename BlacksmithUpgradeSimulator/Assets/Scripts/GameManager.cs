@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DialogueController dialogueController;
 
     [Header("Dependencies")]
-    [SerializeField] private ScriptReader scriptReader;
     [SerializeField] private EnhanceChanceCalculator enhanceChanceCalculator;
     [SerializeField] private UIManager uiManager;
     public UIManager UIManager => uiManager;
@@ -97,7 +96,9 @@ public class GameManager : MonoBehaviour
     public bool IsPaused => isPaused;
 
     // --------------- 대사 변수 -----------------
-    ScriptReaderDialogueLines dialogueLines = null; // 대사 데이터를 저장하는 객체
+    //ScriptReaderDialogueLines dialogueLines = null; // 대사 데이터를 저장하는 객체
+    [Header("ScriptReader")]
+    [SerializeField] private ScriptReader scriptReader;
 
     // 처음 대사
     private string dialogueOpeningData = "";
@@ -126,11 +127,10 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Inst = this;
+        scriptReader.LoadDialogueData(); // 대사 데이터 로드
     }
     private void Start()
     {
-        dialogueLines = scriptReader.LoadDialogueData(); // 대사 데이터 로드
-
         SoundManager.Inst.PlayBGM(EBgm.Counter_music); // BGM 재생
         InitDialogueSet(); // 대화 객체 저장공간 초기화
         initializeBuffer(); // 대사 버퍼 저장공간 초기화
@@ -438,11 +438,11 @@ public class GameManager : MonoBehaviour
     {
         if(visitors <= 0) // 첫 번째 방문이라면, 오프닝 대사와 정산 대사 세팅
         {
-            dialogueOpeningData = scriptReader.ReadPlayer(blackSmithData.OpenID, dialogueLines);
-            dialogueClosePlayerData = scriptReader.ReadPlayer(blackSmithData.CloseID, dialogueLines);
+            dialogueOpeningData = scriptReader.ReadPlayer(blackSmithData.OpenID);
+            dialogueClosePlayerData = scriptReader.ReadPlayer(blackSmithData.CloseID);
         }
 
-        dialogueWelcomPlayerData = scriptReader.ReadPlayer(blackSmithData.WelcomeID, dialogueLines);
+        dialogueWelcomPlayerData = scriptReader.ReadPlayer(blackSmithData.WelcomeID);
 
         dialogueVisitNpcData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                             npcData.NpcTendency.ToString(),
@@ -490,8 +490,8 @@ public class GameManager : MonoBehaviour
         // 성공 했을 때
         if (EnhanceResult.Success == result)
         {
-            dialoguePlayerSuccessData = scriptReader.ReadPlayer(blackSmithData.EnhanceSuccessID, dialogueLines);
-            dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteSuccessID, dialogueLines);
+            dialoguePlayerSuccessData = scriptReader.ReadPlayer(blackSmithData.EnhanceSuccessID);
+            dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteSuccessID);
             dialogueNPCSuccessExitData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                                     npcData.NpcTendency.ToString(),
                                                     NpcState.ExitSuccess, npcData.GetGender());
@@ -499,8 +499,8 @@ public class GameManager : MonoBehaviour
         // 대 성공 했을 때
         else if (EnhanceResult.GreatSuccess == result)
         {
-            dialoguePlayerGreateSuccessData = scriptReader.ReadPlayer(blackSmithData.EnhanceGreatSuccessID, dialogueLines);
-            dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteSuccessID, dialogueLines);
+            dialoguePlayerGreateSuccessData = scriptReader.ReadPlayer(blackSmithData.EnhanceGreatSuccessID);
+            dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteSuccessID);
             dialogueNPCSuccessExitData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                                     npcData.NpcTendency.ToString(),
                                                     NpcState.ExitSuccess, npcData.GetGender());
@@ -508,8 +508,8 @@ public class GameManager : MonoBehaviour
         // 실패 했을 때
         else
         {
-            dialoguePlayerFailData = scriptReader.ReadPlayer(blackSmithData.EnhanceFailID, dialogueLines);
-            dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteFailID, dialogueLines);
+            dialoguePlayerFailData = scriptReader.ReadPlayer(blackSmithData.EnhanceFailID);
+            dialogueBlackSmithDeliverData = scriptReader.ReadPlayer(blackSmithData.CompleteFailID);
             dialogueNPCFailExitData = scriptReader.ReadNPC(npcData.GetAdventurerType().ToString(),
                                                     npcData.NpcTendency.ToString(),
                                                     NpcState.ExitFail, npcData.GetGender());
