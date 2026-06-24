@@ -15,11 +15,11 @@ public class TopUIManager : MonoBehaviour
         npcVisitCount.text = "¹æ¹® ¼ö : " + gm.Visitors + "¸í";
         dayOfWeekText.text = gm.Weekday;
         progressDaysText.text = gm.Days + " ÀÏÂ÷";
-        goldText.text = "°ñµå : " + gm.Gold.ToString("N0");
+        goldText.text = gm.Gold.ToString("N0");
     }
     public void ResetData()
     {
-        goldText.text = "°ñµå : 0";
+        goldText.text = 0.ToString();
     }
 
     public void SetGoldText(int gold)
@@ -28,7 +28,7 @@ public class TopUIManager : MonoBehaviour
         {
             gold = 0;
         }
-        goldText.text = $"°ñµå : {gold}";
+        goldText.text = gold.ToString("N0");
     }
 
     public void ActiveTopUIPanel(bool active)
