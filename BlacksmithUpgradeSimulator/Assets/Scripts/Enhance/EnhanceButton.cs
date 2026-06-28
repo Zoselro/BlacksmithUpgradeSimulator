@@ -17,6 +17,7 @@ public class EnhanceButton : MonoBehaviour
         enhanceUIManager.EnhanceActivePanel(false);
 
         //enhanceUIManager.SetActiveMiniGame(true); 미니게임
+        Debug.Log($"GameManager : {gm}");
         enhanceUIManager.ActiveEnhanceUIBar(true, (gm.GetProbability() * 100).ToString("F1"));
         uiManager.SetBackGround(BgType.Enhance);
         topUIManager.ActiveTopUIPanel(false);

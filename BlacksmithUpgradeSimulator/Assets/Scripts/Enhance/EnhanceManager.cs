@@ -75,7 +75,7 @@ public class EnhanceManager : MonoBehaviour
                 EnhanceEquipment(adventurerType, result, gold, currentGold, weapon);
                 enhancementImage.UpdateEnhancementWeaponUI(weapon); // 무기 이미지 및 강화 결과 세팅
                 enhanceUIManager.ActiveConfirmButton(true);
-                topUIManager.SetGoldText(gm.Gold);
+                //topUIManager.SetGoldText(gm.Gold);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UIElements;
 // 감정 상태를 나타내는 enum
 public enum Emotion
 {
@@ -169,6 +170,7 @@ public class GameManager : MonoBehaviour
         currentSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 성공 횟수 초기화
         currentGreatSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 대 성공 횟수 초기화
         currentGold = 0; // 정산 화면에서 보여진 후 현재 골드 양 초기화
+        uiManager.SetBackGround(BgType.CloseCounter);
 
         UpdateDayUI(); // 일 수 갱신
 
@@ -346,6 +348,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetBackGround(BgType bgType)
+    {
+        settlementWindow.Adjustment(); // 정산 창에 현재 일차, 성공 횟수, 대성공 횟수, 실패 횟수, 골드 수치 갱신
+        uiManager.SetBackGround(bgType); // 정산 할 때 배경 이미지 변경
+    }
+
+    public void SetBackGroundOpenCounter(BgType bgType)
+    {
+        HandlePreEnhancementFlow(1);
+        SetVisitor(1);
+        topUIManager.TopBarDisPlay(); // 방문자 수 갱신
+        //backGround.sprite = openCounterImg;
+        uiManager.SetBackGround(bgType);
+        SoundManager.Inst.PlaySFX(ESfx.Bell);
+    }
+
 
     #region NPC 퇴장 연출
     // 나가는 연출
@@ -353,11 +371,12 @@ public class GameManager : MonoBehaviour
     {
         dialogueUI.NPCExitTrigger(); // NPC 나가는 연출 트리거
 
-        if(visitors > 7)
+        if (visitors > 7)
         {
             Debug.Log("손님 끝");
             dialogueUI.AdjustmentTrigger();
         }
+        topUIManager.SetGoldText(gold);
     }
     #endregion
 

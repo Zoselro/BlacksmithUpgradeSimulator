@@ -39,11 +39,6 @@ public class UIManager : MonoBehaviour
 
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
-    public void Adjustment()
-    {
-        settlementWindow.Adjustment();
-    }
-
     // NPC 스프라이트 활성화 여부 설정 메서드
     public void ShowPrefab(bool active)
     {
@@ -78,19 +73,11 @@ public class UIManager : MonoBehaviour
         backGround.sprite = bgDictionary[bgType];
     }
 
-    public void SetBackGroundCloseCounter()
+    public void SetBackGroundImage(Sprite sprite)
     {
-        backGround.sprite = closeCounterImg;
+        backGround.sprite = sprite;
     }
 
-    public void SetBackGroundOpenCounter()
-    {
-        GameManager.Inst.HandlePreEnhancementFlow(1);
-        GameManager.Inst.SetVisitor(1);
-        topUIManager.TopBarDisPlay(); // 방문자 수 갱신
-        backGround.sprite = openCounterImg;
-        SoundManager.Inst.PlaySFX(ESfx.Bell);
-    }
     // 애니메이터의 속도를 0으로 설정하여 애니메이션을 멈추는 메서드
     public void StopAnimator()
     {

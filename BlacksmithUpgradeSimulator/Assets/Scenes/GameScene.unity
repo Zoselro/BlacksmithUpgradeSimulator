@@ -608,9 +608,9 @@ MonoBehaviour:
   enhanceUIManager: {fileID: 918014736}
   uiManager: {fileID: 686011356}
   topUIManager: {fileID: 1818317714}
-  gm: {fileID: 2056736164}
+  gm: {fileID: 2074051146}
   enhanceManager: {fileID: 164328359}
-  dialogueController: {fileID: 0}
+  dialogueController: {fileID: 1658584435}
   dialogueUI: {fileID: 1466799736}
 --- !u!1 &93837715
 GameObject:
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f719834022c6c9c48bc8fc5586624223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 2056736164}
+  gm: {fileID: 2074051146}
   enhanceUIManager: {fileID: 918014736}
   enhanceButton: {fileID: 84199139}
   enhanceResultPopups:
@@ -7899,7 +7899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 686011356}
-  gameManager: {fileID: 2056736164}
+  gameManager: {fileID: 0}
   dialogueUI: {fileID: 1466799736}
 --- !u!1 &1663129339
 GameObject:
@@ -8185,7 +8185,7 @@ MonoBehaviour:
   enhanceUIManager: {fileID: 918014736}
   uiManager: {fileID: 686011356}
   topUIManager: {fileID: 1818317714}
-  gm: {fileID: 2056736164}
+  gm: {fileID: 0}
   enhanceManager: {fileID: 164328359}
   dialogueController: {fileID: 1658584435}
   dialogueUI: {fileID: 1466799736}
@@ -8849,7 +8849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce587ad263f88834ba96d678eae567cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 2056736164}
+  gm: {fileID: 2074051146}
   npcVisitCount: {fileID: 462020137}
   progressDaysText: {fileID: 330951682}
   dayOfWeekText: {fileID: 759121906}
@@ -10248,68 +10248,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009999515}
   m_CullTransparentMesh: 1
---- !u!1 &2056736162
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2056736163}
-  - component: {fileID: 2056736164}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2056736163
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056736162}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2056736164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056736162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b65e6ffdbebe04b9180e713daf01bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gold: 0
-  visitors: 0
-  days: 0
-  dialogueController: {fileID: 1658584435}
-  enhanceChanceCalculator: {fileID: 548800216}
-  uiManager: {fileID: 686011356}
-  enhanceUIManager: {fileID: 918014736}
-  blackSmithData: {fileID: 11400000, guid: 38cb7feffeda72347b03a598b6917e2e, type: 2}
-  topUIManager: {fileID: 1818317714}
-  npcGenerator: {fileID: 1200748676}
-  enhanceManager: {fileID: 164328359}
-  dialogueUI: {fileID: 1466799736}
-  typingManager: {fileID: 170961832}
-  settlementWindow: {fileID: 2089590443}
-  enhanceTime: 3
-  eventPopUpTime: 1
-  npcController: {fileID: 2738235679479019880}
-  scriptReader: {fileID: 825004420}
 --- !u!1 &2074051136
 GameObject:
   m_ObjectHideFlags: 0
@@ -10319,12 +10257,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2074051140}
+  - component: {fileID: 2074051146}
   - component: {fileID: 2074051139}
   - component: {fileID: 2074051138}
   - component: {fileID: 2074051137}
   - component: {fileID: 2074051142}
   - component: {fileID: 2074051143}
-  - component: {fileID: 2074051144}
   - component: {fileID: 2074051145}
   m_Layer: 5
   m_Name: Canvas
@@ -10477,18 +10415,6 @@ MonoBehaviour:
   openCounterImg: {fileID: -4117169642912844055, guid: b9fdc8fa2ed7eba4ba37e817a79f4898, type: 3}
   enhanceImg: {fileID: 7840943033321212773, guid: bfa420b0e92a6ce41a16e6834e41eedb, type: 3}
   blacksmithBackground: {fileID: -6235853778935256792, guid: 648baf879121e404e96a189031582b6e, type: 3}
---- !u!114 &2074051144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074051136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 549e46f60d94a744e8e38bb5804e32a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2074051145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10501,12 +10427,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce587ad263f88834ba96d678eae567cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 2056736164}
+  gm: {fileID: 2074051146}
   npcVisitCount: {fileID: 462020137}
   progressDaysText: {fileID: 330951682}
   dayOfWeekText: {fileID: 759121906}
   goldText: {fileID: 233008257}
   topUIPanel: {fileID: 470358893}
+--- !u!114 &2074051146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074051136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b65e6ffdbebe04b9180e713daf01bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
+  visitors: 0
+  days: 0
+  dialogueController: {fileID: 1658584435}
+  enhanceChanceCalculator: {fileID: 548800216}
+  uiManager: {fileID: 686011356}
+  enhanceUIManager: {fileID: 918014736}
+  blackSmithData: {fileID: 11400000, guid: 38cb7feffeda72347b03a598b6917e2e, type: 2}
+  topUIManager: {fileID: 1818317714}
+  npcGenerator: {fileID: 1200748676}
+  enhanceManager: {fileID: 164328359}
+  dialogueUI: {fileID: 1466799736}
+  typingManager: {fileID: 170961832}
+  settlementWindow: {fileID: 2089590443}
+  enhanceTime: 3
+  eventPopUpTime: 1
+  npcController: {fileID: 2738235679479019880}
+  scriptReader: {fileID: 825004420}
 --- !u!1 &2075809940
 GameObject:
   m_ObjectHideFlags: 0
@@ -10611,7 +10567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b74660f0a3a277499aaef18c8cc9d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 2056736164}
+  gm: {fileID: 2074051146}
   dayCnt: {fileID: 1625916162}
   successCnt: {fileID: 857482634}
   greatSuccessCnt: {fileID: 198575721}
@@ -11543,7 +11499,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 33521988}
-  - {fileID: 2056736163}
   - {fileID: 918014735}
   - {fileID: 164328360}
   - {fileID: 686011357}

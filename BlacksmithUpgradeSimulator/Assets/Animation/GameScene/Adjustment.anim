@@ -765,9 +765,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: Adjustment
+    functionName: SetBackGround
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: -6235853778935256792, guid: 648baf879121e404e96a189031582b6e, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 3
     messageOptions: 0

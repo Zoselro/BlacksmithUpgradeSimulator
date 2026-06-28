@@ -52,10 +52,6 @@ public class DialogueUI : MonoBehaviour
     }
     #endregion
 
-    //public void BlackSmithAppearTrigger()
-    //{
-    //    animator.SetTrigger("Next");
-    //}
 
     public void NPCVisitTrigger()
     {
@@ -67,10 +63,6 @@ public class DialogueUI : MonoBehaviour
         animator.SetTrigger("NpcExit");
     }
 
-    //public void BlackSmithResetTrigger()
-    //{
-    //    animator.SetTrigger("Reset");
-    //}
 
     public void ContentBoxFalseTrigger()
     {
@@ -87,16 +79,4 @@ public class DialogueUI : MonoBehaviour
         animator.SetTrigger("Adjustment");
         dialogueBoxUI.SetEndContentBox("ø¿¥√¿∫ ¿Ã¬Î «“±Ó ...");
     }
-
-    //public void ShowBlackSmith(bool active, Dir dir)
-    //{
-    //    if (dir == Dir.Left)
-    //    {
-    //        imageUI[(int)Dir.Left].color = new Color(255f, 255f, 255f, active ? 255f : 0f);
-    //    }
-    //    else
-    //    {
-    //        imageUI[(int)Dir.Right].color = new Color(255f, 255f, 255f, active ? 255f : 0f);
-    //    }
-    //}
 }
