@@ -17,9 +17,7 @@ public class SettlementWindow : MonoBehaviour
     [SerializeField] private GameObject startNextDayTextObj;
     [SerializeField] private TextMeshProUGUI startNextDayText;
 
-    [Header("Animator")]
-    [SerializeField] private Animator fadeAnimator;
-    public void Adjustment()
+    public void SetupSettlementUI()
     {
         dayCnt.text = gm.Days.ToString() + " 일차 정산 일지";
         successCnt.text = gm.CurrentSuccessCnt.ToString();
@@ -33,8 +31,8 @@ public class SettlementWindow : MonoBehaviour
         this.startNextDayText.text = startNextDayText;
     }
 
-    public void FadeAnimatorSpeed(float speed)
-    {
-        fadeAnimator.speed = speed;
-    }
+    //public void FadeAnimatorSpeed(float speed)
+    //{
+    //    fadeAnimator.speed = speed;
+    //}
 }

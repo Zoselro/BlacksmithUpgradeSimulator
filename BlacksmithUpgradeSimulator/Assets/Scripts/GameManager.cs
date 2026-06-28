@@ -19,8 +19,6 @@ public enum NpcState
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Inst;
-
     private const int FIRST_DIALOGUE_NUM = 1;
     private const int SECOND_DIALOGUE_NUM = 3;
     private const int THIRD_DIALOGUE_NUM = 1;
@@ -127,7 +125,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Inst = this;
         scriptReader.LoadDialogueData(); // 대사 데이터 로드
     }
     private void Start()
@@ -160,24 +157,6 @@ public class GameManager : MonoBehaviour
                                                 currentSuccessCnt,
                                                 currentGreatSuccessCnt,
                                                 currentFailCnt);
-    }
-
-    // 하루가 끝났을 때, 각종 리셋 하는 함수
-    public void ResetGame()
-    {
-        visitors = 0; // 정산 화면에서 보여진 후 방문자 수 초기화
-        currentFailCnt = 0; // 정산 화면에서 보여진 후 현재 실패 횟수 초기화
-        currentSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 성공 횟수 초기화
-        currentGreatSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 대 성공 횟수 초기화
-        currentGold = 0; // 정산 화면에서 보여진 후 현재 골드 양 초기화
-        uiManager.SetBackGround(BgType.CloseCounter);
-
-        UpdateDayUI(); // 일 수 갱신
-
-        // 첫 번째 방문이지만, 첫 날이 아니라면,
-        // 오프닝 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해준다.
-        initializeBuffer();
-        HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅
     }
 
     public void HandlePreEnhancementFlow(int startIndex)
@@ -348,9 +327,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    #region Event Aniamtion
+
+    // 하루가 끝났을 때, 각종 리셋 하는 함수
+    public void ResetGame()
+    {
+        visitors = 0; // 정산 화면에서 보여진 후 방문자 수 초기화
+        currentFailCnt = 0; // 정산 화면에서 보여진 후 현재 실패 횟수 초기화
+        currentSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 성공 횟수 초기화
+        currentGreatSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 대 성공 횟수 초기화
+        currentGold = 0; // 정산 화면에서 보여진 후 현재 골드 양 초기화
+        uiManager.SetBackGround(BgType.CloseCounter);
+
+        UpdateDayUI(); // 일 수 갱신
+
+        // 첫 번째 방문이지만, 첫 날이 아니라면,
+        // 오프닝 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해준다.
+        initializeBuffer();
+        HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅
+    }
+
     public void SetBackGround(BgType bgType)
     {
-        settlementWindow.Adjustment(); // 정산 창에 현재 일차, 성공 횟수, 대성공 횟수, 실패 횟수, 골드 수치 갱신
+        settlementWindow.SetupSettlementUI(); // 정산 창에 현재 일차, 성공 횟수, 대성공 횟수, 실패 횟수, 골드 수치 갱신
         uiManager.SetBackGround(bgType); // 정산 할 때 배경 이미지 변경
     }
 
@@ -359,11 +358,11 @@ public class GameManager : MonoBehaviour
         HandlePreEnhancementFlow(1);
         SetVisitor(1);
         topUIManager.TopBarDisPlay(); // 방문자 수 갱신
-        //backGround.sprite = openCounterImg;
         uiManager.SetBackGround(bgType);
         SoundManager.Inst.PlaySFX(ESfx.Bell);
     }
 
+    #endregion
 
     #region NPC 퇴장 연출
     // 나가는 연출

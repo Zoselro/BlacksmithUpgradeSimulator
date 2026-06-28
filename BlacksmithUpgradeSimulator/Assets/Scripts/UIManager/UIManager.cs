@@ -84,7 +84,7 @@ public class UIManager : MonoBehaviour
         //npcAnimator.speed = 0f;
         //leftImageAnimator.speed = 0f;
         //welcomPopupAnimator.speed = 0f;
-        settlementWindow.FadeAnimatorSpeed(0f);
+        //settlementWindow.FadeAnimatorSpeed(0f);
     }
 
     // 애니메이터의 속도를 1로 설정하여 애니메이션을 재생하는 메서드
@@ -93,6 +93,6 @@ public class UIManager : MonoBehaviour
         //npcAnimator.speed = 1f;
         //leftImageAnimator.speed = 1f;
         //welcomPopupAnimator.speed = 1f;
-        settlementWindow.FadeAnimatorSpeed(1f);
+        //settlementWindow.FadeAnimatorSpeed(1f);
     }
 }
