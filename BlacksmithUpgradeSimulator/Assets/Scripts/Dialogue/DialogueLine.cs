@@ -32,7 +32,9 @@ public class DialogueLine
     public void Set(string nickName, string content, Sprite sprite, Speaker speak, Dir dir)
     {
         this.nickName = nickName;
-        this.content = content.Replace(".", ".\n").Replace("!","!\n");
+        //this.content = content.Replace(".", ".\n").Replace("!","!\n");
+        //this.content = content.Replace("|", "\n");
+        this.content = content;
         this.sprite = sprite;
         this.speak = speak;
         this.dir = dir;

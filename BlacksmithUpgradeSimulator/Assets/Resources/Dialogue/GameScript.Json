@@ -9,11 +9,11 @@
       "eventID": "shopOpen00"
     },
     {
-      "text": "어서 오시오! 무엇을 도와드릴까?",
+      "text": "어서 오시오!\n 무엇을 도와드릴까?",
       "eventID": "greetSmith"
     },
     {
-      "text": "대장간에 잘 왔소. 뭘 맡기러 오셨나?",
+      "text": "대장간에 잘 왔소.\n 뭘 맡기러 오셨나?",
       "eventID": "greetSmith"
     },
     {

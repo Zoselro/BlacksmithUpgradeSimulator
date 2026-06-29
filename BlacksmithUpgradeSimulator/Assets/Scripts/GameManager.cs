@@ -347,7 +347,7 @@ public class GameManager : MonoBehaviour
         HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅
     }
 
-    public void SetBackGround(BgType bgType)
+    public void SetupSettlementUI(BgType bgType)
     {
         settlementWindow.SetupSettlementUI(); // 정산 창에 현재 일차, 성공 횟수, 대성공 횟수, 실패 횟수, 골드 수치 갱신
         uiManager.SetBackGround(bgType); // 정산 할 때 배경 이미지 변경

@@ -119,6 +119,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &149397549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 149397551}
+  - component: {fileID: 149397550}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &149397550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149397549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de2e1f587c5d73142b0fc11a62091b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  versionText: {fileID: 973047965}
+--- !u!4 &149397551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149397549}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 184.94153, y: 545.14954, z: -8.394408}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &219306177
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,10 +426,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 384953655}
+  - {fileID: 760724069}
   - {fileID: 765765636}
   - {fileID: 973047964}
   - {fileID: 982141409}
-  - {fileID: 760724069}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -656,7 +701,7 @@ GameObject:
   - component: {fileID: 760724071}
   - component: {fileID: 760724070}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Title2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1012,6 +1057,7 @@ GameObject:
   - component: {fileID: 982141412}
   - component: {fileID: 982141411}
   - component: {fileID: 982141410}
+  - component: {fileID: 982141413}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -1081,7 +1127,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 982141411}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 982141413}
+        m_TargetAssemblyTypeName: GameExitButton, Assembly-CSharp
+        m_MethodName: OnClickExitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &982141411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1120,6 +1178,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982141408}
   m_CullTransparentMesh: 1
+--- !u!114 &982141413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982141408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4eb79ecc4b346248a2548f72623832c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1505120730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8b59580a6e9dc42bdb7eabd055c633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  versionText: {fileID: 973047965}
+  uiManager: {fileID: 149397550}
 --- !u!4 &1505120732
 Transform:
   m_ObjectHideFlags: 0
@@ -1249,7 +1319,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 219306180}
+  - {fileID: 149397551}
+  - {fileID: 1505120732}
   - {fileID: 638299688}
   - {fileID: 614064752}
   - {fileID: 1752221394}
-  - {fileID: 1505120732}

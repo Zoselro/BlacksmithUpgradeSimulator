@@ -26,7 +26,7 @@ public class NpcGenerator : MonoBehaviour
         npcController.Initialize(npcData); // 뽑아낸 npc의 데이터를 npcController에 초기화한다.
 
         npcController.ApplyNpcTemplate(npcData); // 뽑아낸 npc의 데이터를 npcController에 적용한다.
-        npcController.InitializeRectTransform(npcData);
+        npcController.InitializeRectTransform(npcData); // 뽑아낸 npc 이미지들의 위치를 npcController에 적용한다.
 
         weaponController.GetEnhancementLevelByAdventurerType(adventurerType); // 고객의 등급에 따라 강화 등급을 결정한다.
 

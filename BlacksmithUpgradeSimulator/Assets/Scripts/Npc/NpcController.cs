@@ -38,6 +38,7 @@ public class NpcController : MonoBehaviour
 
     NpcData currentDataTemplate;
 
+    // NPC 데이터 적용 메서드
     public void ApplyNpcTemplate(NpcData template)
     {
         currentDataTemplate = template;
@@ -69,6 +70,7 @@ public class NpcController : MonoBehaviour
         }
     }
 
+    // 상황에 따라 NPC 데이터를 적용하는 기능
     public void Initialize(NpcData npcData)
     {
         currentNpcData = npcData;
@@ -102,6 +104,7 @@ public class NpcController : MonoBehaviour
         return currentNpcData != null ? currentNpcData.GetAdventurerType() : AdventurerType.Beginner;
     }
 
+    // RectTransform 초기화 메서드
     public void InitializeRectTransform(NpcData npcData)
     {
         CopyRect(npcData.LeftArmRectTransform, leftArmRectTransform);
@@ -115,6 +118,7 @@ public class NpcController : MonoBehaviour
         CopyRect(npcData.ExpressionRectTransform, expressionRectTransform);
     }
 
+    // RectTransform 복사 메서드
     private void CopyRect(RectTransform source, RectTransform target)
     {
         target.anchorMin = source.anchorMin;

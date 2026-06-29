@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+#region enum의 배열의 위치 맞게 BGM과 SFX를 정의
 public enum EBgm
 {
     Title_music_Ver1,
@@ -16,6 +17,7 @@ public enum ESfx
     Start_Button,
     Success,
 }
+#endregion
 
 public class SoundManager : MonoBehaviour
 {

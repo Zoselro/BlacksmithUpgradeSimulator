@@ -7385,7 +7385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10263,7 +10263,7 @@ GameObject:
   - component: {fileID: 2074051137}
   - component: {fileID: 2074051142}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11455,6 +11455,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 33521988}
+  - {fileID: 2074051140}
   - {fileID: 918014735}
   - {fileID: 164328360}
   - {fileID: 686011357}
@@ -11467,5 +11468,4 @@ SceneRoots:
   - {fileID: 548800217}
   - {fileID: 170961833}
   - {fileID: 93837717}
-  - {fileID: 2074051140}
   - {fileID: 487196929}
