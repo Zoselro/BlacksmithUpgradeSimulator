@@ -801,13 +801,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: SetupSettlementUI
+    functionName: SetBackGroundImage
     data: 
-    objectReferenceParameter: {fileID: -6235853778935256792, guid: 648baf879121e404e96a189031582b6e, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.0166667
+  - time: 2
     functionName: SetupSettlementUI
     data: 
     objectReferenceParameter: {fileID: 0}

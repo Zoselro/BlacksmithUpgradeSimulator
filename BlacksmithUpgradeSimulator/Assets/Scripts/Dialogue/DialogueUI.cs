@@ -7,6 +7,8 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private DialogueBoxUI dialogueBoxUI;
     [SerializeField] private Image[] imageUI;
     [SerializeField] private Animator animator;
+    [SerializeField] private BlackSmithData blackSmithData;
+    [SerializeField] private UIManager uiManager;
 
     private Dir currentDir;
 
@@ -15,7 +17,7 @@ public class DialogueUI : MonoBehaviour
         dialogueBoxUI.Show(name, text, dir);
     }
 
-    #region 이미지의 알파값을 설정하는 메서드들
+    #region 이미지를 설정하는 메서드들
     // UI 이미지의 알파값을 설정하는 메서드
     public void SetImageUIAlpha(Image image, float alpha)
     {
@@ -24,7 +26,7 @@ public class DialogueUI : MonoBehaviour
         image.color = color;
     }
 
-    // 방향에 따라 이미지를 보여주는 메서드
+    // 방향에 따라 이미지를 바꿔주는 메서드
     public void ShowImage(Dir dir, Sprite sprite)
     {
         if (currentDir != dir)
@@ -50,28 +52,26 @@ public class DialogueUI : MonoBehaviour
             SetImageUIAlpha(imageUI[(int)currentDir], active ? 255f : 0f);
         }
     }
+
+    // 방향에 따라 이미지를 바꾸는 메서드
+
+    public void ChangeSprite(Dir dir, Sprite sprite)
+    {
+        if(currentDir == dir)
+        {
+            imageUI[(int)currentDir].sprite = sprite;
+        }
+        else
+        {
+            currentDir = dir;
+            imageUI[(int)currentDir].sprite = sprite;
+        }
+    }
     #endregion
 
-
-    public void NPCVisitTrigger()
+    public void NextTrigger()
     {
-        animator.SetTrigger("NpcVisit");
-    }
-
-    public void NPCExitTrigger()
-    {
-        animator.SetTrigger("NpcExit");
-    }
-
-
-    public void ContentBoxFalseTrigger()
-    {
-        animator.SetTrigger("ContentBoxFalse");
-    }
-
-    public void ContentBoxTrueTrigger()
-    {
-        animator.SetTrigger("ContentBoxTrue");
+        animator.SetTrigger("NextTrigger");
     }
 
     public void AdjustmentTrigger()

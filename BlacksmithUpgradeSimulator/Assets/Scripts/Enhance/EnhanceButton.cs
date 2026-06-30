@@ -17,7 +17,6 @@ public class EnhanceButton : MonoBehaviour
         enhanceUIManager.EnhanceActivePanel(false);
 
         //enhanceUIManager.SetActiveMiniGame(true); 미니게임
-        Debug.Log($"GameManager : {gm}");
         enhanceUIManager.ActiveEnhanceUIBar(true, (gm.GetProbability() * 100).ToString("F1"));
         uiManager.SetBackGround(BgType.Enhance);
         topUIManager.ActiveTopUIPanel(false);
@@ -32,7 +31,8 @@ public class EnhanceButton : MonoBehaviour
         topUIManager.ActiveTopUIPanel(true);
         enhanceUIManager.ActiveEnhanceUIBar(false);
         dialogueController.OnClickNextBtn(); // 강화 이후 대사 실행
-        dialogueUI.ContentBoxTrueTrigger();
+        //dialogueUI.ContentBoxTrueTrigger();
+        dialogueUI.NextTrigger();
         enhanceUIManager.ActiveConfirmButton(false);
         enhanceManager.EnhancementImageActive(false); // EnhancementImage를 끄도록 요청
     }

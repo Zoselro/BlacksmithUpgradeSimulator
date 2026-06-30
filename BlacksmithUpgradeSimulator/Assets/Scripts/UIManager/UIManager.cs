@@ -49,7 +49,8 @@ public class UIManager : MonoBehaviour
     public void WelcomNextNpc(string text)
     {
         welcomText.text = text;
-        dialogueUI.NPCVisitTrigger();
+        //dialogueUI.NPCVisitTrigger();
+        dialogueUI.NextTrigger();
     }
 
     // 카운터 이미지 활성화 여부 설정 메서드

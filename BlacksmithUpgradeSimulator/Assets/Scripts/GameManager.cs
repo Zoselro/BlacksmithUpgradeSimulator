@@ -349,8 +349,11 @@ public class GameManager : MonoBehaviour
 
     public void SetupSettlementUI(BgType bgType)
     {
+        dialogueUI.ChangeSprite(Dir.Right, blackSmithData.NormalSprite); // 오른쪽 대장장이 이미지를 기본 이미지로 세팅
         settlementWindow.SetupSettlementUI(); // 정산 창에 현재 일차, 성공 횟수, 대성공 횟수, 실패 횟수, 골드 수치 갱신
         uiManager.SetBackGround(bgType); // 정산 할 때 배경 이미지 변경
+        dialogueUI.ShowImage(Dir.Left, false); // 왼쪽 스프라이트 끄기
+        dialogueUI.ShowImage(Dir.Right, true); // 오른쪽 스프라이트 켜기
     }
 
     public void SetBackGroundOpenCounter(BgType bgType)
@@ -362,14 +365,19 @@ public class GameManager : MonoBehaviour
         SoundManager.Inst.PlaySFX(ESfx.Bell);
     }
 
+    public void SetBackGroundImage(BgType bgType)
+    {
+        uiManager.SetBackGround(bgType);
+    }
+
     #endregion
 
     #region NPC 퇴장 연출
     // 나가는 연출
     public void ExitAnimation()
     {
-        dialogueUI.NPCExitTrigger(); // NPC 나가는 연출 트리거
-
+        //dialogueUI.NPCExitTrigger(); // NPC 나가는 연출 트리거
+        dialogueUI.NextTrigger();
         if (visitors > 7)
         {
             Debug.Log("손님 끝");
@@ -382,7 +390,8 @@ public class GameManager : MonoBehaviour
     #region 무기 정보를 확인하는 메서드
     public void StartEnhanceInteraction(WeaponController weapon)
     {
-        dialogueUI.ContentBoxFalseTrigger(); // 대화 내용창 끄는 트리거
+        //dialogueUI.ContentBoxFalseTrigger(); // 대화 내용창 끄는 트리거
+        dialogueUI.NextTrigger();
         enhanceUIManager.OnClickActiveEnhanceActivePanel(true);
         enhanceUIManager.Initialized(weapon.PrevEnhancementLevel, weapon.Sprite, weapon.GetWeaponTypeName(), weapon.GetWeaponRankName());
     }
