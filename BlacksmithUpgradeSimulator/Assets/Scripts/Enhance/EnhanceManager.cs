@@ -22,6 +22,7 @@ public class EnhanceManager : MonoBehaviour
 
     private EnhancementImage enhancementImage;
     private EnhanceResult result; // 강화 결과
+    public EnhanceResult Result => result;
 
     private float currentEnhanceTime;
 

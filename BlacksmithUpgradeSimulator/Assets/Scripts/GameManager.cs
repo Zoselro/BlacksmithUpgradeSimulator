@@ -384,6 +384,10 @@ public class GameManager : MonoBehaviour
             dialogueUI.AdjustmentTrigger();
         }
         topUIManager.SetGoldText(gold);
+
+        // 골드 텍스트가 올라가면서 애니메이션 연출
+        Debug.Log($"강화 결과 : {enhanceManager.Result}");
+        
     }
     #endregion
 
