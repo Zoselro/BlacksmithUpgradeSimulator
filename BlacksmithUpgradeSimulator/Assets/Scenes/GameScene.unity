@@ -5436,6 +5436,7 @@ MonoBehaviour:
   - {fileID: -8871750454027700903, guid: ed74a4f19e46d2f45a3e36313b60e211, type: 3}
   - {fileID: -8871750454027700903, guid: 024a3aa15d111d24a9b0ba43e7854431, type: 3}
   - {fileID: -8871750454027700903, guid: 278dbe6094b789a468a55d2ba90d4b02, type: 3}
+  - {fileID: 208738670285433854, guid: 59aad02dba62c7146ab113dbb0b2fa44, type: 3}
   adventurerType: 0
 --- !u!4 &1200748677
 Transform:

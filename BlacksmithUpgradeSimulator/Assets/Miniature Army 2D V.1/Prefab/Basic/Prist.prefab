@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 286782432450102103, guid: 85e38f95df3080e43acd42dc145b5678, type: 3}
+  m_Sprite: {fileID: 3312357049286298584, guid: 62d58f32c38c4db44b053a1d59fee45e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -659,9 +659,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   adventuerType: 0
   nameID: "\uD504\uB9AC\uC2A4\uD2B8"
-  normalSprite: {fileID: 286782432450102103, guid: 85e38f95df3080e43acd42dc145b5678, type: 3}
-  happySprite: {fileID: 8861505317297529154, guid: 920b848109357ab47b0646f3b04230e8, type: 3}
-  sadSprite: {fileID: 8249165508676523624, guid: 0f177eabcc3bc77499a841092ffedf50, type: 3}
+  gender: 1
+  normalSprite: {fileID: 3312357049286298584, guid: 62d58f32c38c4db44b053a1d59fee45e, type: 3}
+  happySprite: {fileID: 7215429606341596565, guid: 21f04befa2fe05e43a5a48338441e3b5, type: 3}
+  sadSprite: {fileID: -5450796174075938480, guid: 3eb589ee5c63cc943b586216c6835f61, type: 3}
   leftLeg: {fileID: 3558378867911628903}
   leftLegRectTransform: {fileID: 8756745064125892550}
   rightLeg: {fileID: 879849175632651451}
