@@ -34,6 +34,7 @@ public class EnhanceManager : MonoBehaviour
         if (isEnhance)
         {
             isEnhancing = true;
+            SoundManager.Inst.PlayInterruptibleSFX(ESfx.Loading_Enchant);
             Debug.Log("강화 시작");
             return;
         }
@@ -62,6 +63,7 @@ public class EnhanceManager : MonoBehaviour
             if (progress >= 1f)
             {
                 isEnhancing = false;
+                SoundManager.Inst.StopSFX();
                 currentEnhanceTime = 0; // 강화 시간 초기화
                 BuildEnhanceResultPrefabMap(); // 성공, 대성공, 실패 prefab 세팅
                 result = Enhance(successProb, greatSuccessRatio, failCnt, successCnt, greatSuccessCnt,

@@ -597,7 +597,7 @@ TextureImporter:
         width: 84
         height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -611,28 +611,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_1
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 2097
-        width: 141
-        height: 176
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc443d9bb2d511e70800000000000000
-      internalID: 9084144365765608652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_2
       rect:
         serializedVersion: 2
@@ -641,7 +619,7 @@ TextureImporter:
         width: 55
         height: 223
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -663,7 +641,7 @@ TextureImporter:
         width: 46
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -677,28 +655,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_4
-      rect:
-        serializedVersion: 2
-        x: 507
-        y: 2097
-        width: 123
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b0e09d74b35a0c00800000000000000
-      internalID: 867597912888107192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_5
       rect:
         serializedVersion: 2
@@ -707,7 +663,7 @@ TextureImporter:
         width: 53
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -729,7 +685,7 @@ TextureImporter:
         width: 49
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -743,28 +699,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_7
-      rect:
-        serializedVersion: 2
-        x: 831
-        y: 2097
-        width: 123
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 76de9f34eb3197570800000000000000
-      internalID: 8464818682524724583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_8
       rect:
         serializedVersion: 2
@@ -773,7 +707,7 @@ TextureImporter:
         width: 64
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -795,7 +729,7 @@ TextureImporter:
         width: 61
         height: 229
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -809,28 +743,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_10
-      rect:
-        serializedVersion: 2
-        x: 1185
-        y: 2097
-        width: 132
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8da9487394c89e370800000000000000
-      internalID: 8352361230027234008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_11
       rect:
         serializedVersion: 2
@@ -839,7 +751,7 @@ TextureImporter:
         width: 55
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -861,7 +773,7 @@ TextureImporter:
         width: 64
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -875,29 +787,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_13
-      rect:
-        serializedVersion: 2
-        x: 1539
-        y: 2097
-        width: 132
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9908a9cd4dee536c0800000000000000
-      internalID: -4164159682432565095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_14
+      name: Red_Armor
       rect:
         serializedVersion: 2
         x: 1722
@@ -905,7 +795,7 @@ TextureImporter:
         width: 126
         height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -919,7 +809,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_15
+      name: Blue_Armor
       rect:
         serializedVersion: 2
         x: 1914
@@ -927,7 +817,7 @@ TextureImporter:
         width: 126
         height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -941,73 +831,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_16
-      rect:
-        serializedVersion: 2
-        x: 2105
-        y: 2032
-        width: 126
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1fbd77ec34732f980800000000000000
-      internalID: -8506675981783147535
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_17
-      rect:
-        serializedVersion: 2
-        x: 2297
-        y: 2032
-        width: 126
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bb4b2bed55a8d7070800000000000000
-      internalID: 8105787005749867707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_18
-      rect:
-        serializedVersion: 2
-        x: 2489
-        y: 2032
-        width: 126
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 153ae6fcccd7754c0800000000000000
-      internalID: -4298829000694914223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_19
+      name: White_Armor
       rect:
         serializedVersion: 2
         x: 2681
@@ -1015,7 +839,7 @@ TextureImporter:
         width: 125
         height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1029,7 +853,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_20
+      name: Black_Armor
       rect:
         serializedVersion: 2
         x: 2872
@@ -1037,7 +861,7 @@ TextureImporter:
         width: 126
         height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1051,28 +875,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_21
-      rect:
-        serializedVersion: 2
-        x: 557
-        y: 2041
-        width: 46
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af6c8f172eabcf940800000000000000
-      internalID: 5331341540637329146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_22
       rect:
         serializedVersion: 2
@@ -1081,7 +883,7 @@ TextureImporter:
         width: 72
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1103,7 +905,7 @@ TextureImporter:
         width: 58
         height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1117,28 +919,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_24
-      rect:
-        serializedVersion: 2
-        x: 277
-        y: 1790
-        width: 108
-        height: 208
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e061f5f4d6a358c0800000000000000
-      internalID: -4011679409467465500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_25
       rect:
         serializedVersion: 2
@@ -1147,7 +927,7 @@ TextureImporter:
         width: 55
         height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1161,28 +941,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_26
-      rect:
-        serializedVersion: 2
-        x: 528
-        y: 1796
-        width: 114
-        height: 202
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ca3043c23055e27a0800000000000000
-      internalID: -6400084548332026964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_27
       rect:
         serializedVersion: 2
@@ -1191,7 +949,7 @@ TextureImporter:
         width: 53
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1213,7 +971,7 @@ TextureImporter:
         width: 49
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1227,28 +985,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_29
-      rect:
-        serializedVersion: 2
-        x: 831
-        y: 1834
-        width: 123
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 77214946ff3408840800000000000000
-      internalID: 5224250331932922487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_30
       rect:
         serializedVersion: 2
@@ -1257,7 +993,7 @@ TextureImporter:
         width: 64
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1279,7 +1015,7 @@ TextureImporter:
         width: 61
         height: 229
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1293,28 +1029,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_32
-      rect:
-        serializedVersion: 2
-        x: 1185
-        y: 1837
-        width: 132
-        height: 164
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a48c9150135048990800000000000000
-      internalID: -7384771780883658678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_33
       rect:
         serializedVersion: 2
@@ -1323,7 +1037,7 @@ TextureImporter:
         width: 55
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1345,7 +1059,7 @@ TextureImporter:
         width: 64
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1359,28 +1073,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_35
-      rect:
-        serializedVersion: 2
-        x: 1539
-        y: 1837
-        width: 132
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bfa4286f0abdfc2c0800000000000000
-      internalID: -4409064025795441925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_36
       rect:
         serializedVersion: 2
@@ -1389,7 +1081,7 @@ TextureImporter:
         width: 126
         height: 235
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1411,7 +1103,7 @@ TextureImporter:
         width: 126
         height: 235
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1425,72 +1117,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_38
-      rect:
-        serializedVersion: 2
-        x: 2105
-        y: 1758
-        width: 126
-        height: 235
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 011f5d8f9ff571d10800000000000000
-      internalID: 2096249678790521104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_39
-      rect:
-        serializedVersion: 2
-        x: 2297
-        y: 1758
-        width: 126
-        height: 235
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f943bf3835ea1ea60800000000000000
-      internalID: 7701628511500055711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_40
-      rect:
-        serializedVersion: 2
-        x: 2489
-        y: 1758
-        width: 126
-        height: 235
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c6c9bc742376bd40800000000000000
-      internalID: 5599789787230357193
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_41
       rect:
         serializedVersion: 2
@@ -1499,7 +1125,7 @@ TextureImporter:
         width: 125
         height: 235
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1521,7 +1147,7 @@ TextureImporter:
         width: 126
         height: 235
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1543,7 +1169,7 @@ TextureImporter:
         width: 87
         height: 126
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1565,7 +1191,7 @@ TextureImporter:
         width: 87
         height: 126
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1587,7 +1213,7 @@ TextureImporter:
         width: 87
         height: 126
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1609,7 +1235,7 @@ TextureImporter:
         width: 85
         height: 126
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1623,28 +1249,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_47
-      rect:
-        serializedVersion: 2
-        x: 542
-        y: 1625
-        width: 88
-        height: 126
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d6c4e1b4fad5bf090800000000000000
-      internalID: -7999697305632617363
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_48
       rect:
         serializedVersion: 2
@@ -1653,7 +1257,7 @@ TextureImporter:
         width: 53
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1675,7 +1279,7 @@ TextureImporter:
         width: 49
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1689,28 +1293,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_50
-      rect:
-        serializedVersion: 2
-        x: 831
-        y: 1575
-        width: 123
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 767a18b0e8a419090800000000000000
-      internalID: -8029554686686025881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_51
       rect:
         serializedVersion: 2
@@ -1719,7 +1301,7 @@ TextureImporter:
         width: 64
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1741,7 +1323,7 @@ TextureImporter:
         width: 61
         height: 229
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1755,28 +1337,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_53
-      rect:
-        serializedVersion: 2
-        x: 1185
-        y: 1575
-        width: 132
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a70cce134e1471320800000000000000
-      internalID: 2528562164137771130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_54
       rect:
         serializedVersion: 2
@@ -1785,7 +1345,7 @@ TextureImporter:
         width: 55
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1807,7 +1367,7 @@ TextureImporter:
         width: 64
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1821,28 +1381,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_56
-      rect:
-        serializedVersion: 2
-        x: 1539
-        y: 1575
-        width: 132
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: afd93fb503b64b3c0800000000000000
-      internalID: -4344729885060391430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_57
       rect:
         serializedVersion: 2
@@ -1851,7 +1389,7 @@ TextureImporter:
         width: 132
         height: 332
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1873,7 +1411,7 @@ TextureImporter:
         width: 132
         height: 332
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1887,72 +1425,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_59
-      rect:
-        serializedVersion: 2
-        x: 2103
-        y: 1383
-        width: 131
-        height: 332
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 411d97b9aa1a72700800000000000000
-      internalID: 515558436482175252
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_60
-      rect:
-        serializedVersion: 2
-        x: 2294
-        y: 1383
-        width: 132
-        height: 332
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d91188284cf2d5190800000000000000
-      internalID: -7972163244325858915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_61
-      rect:
-        serializedVersion: 2
-        x: 2486
-        y: 1383
-        width: 132
-        height: 332
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e292db034eecd2a30800000000000000
-      internalID: 4192234307617368366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_62
       rect:
         serializedVersion: 2
@@ -1961,7 +1433,7 @@ TextureImporter:
         width: 131
         height: 332
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1983,7 +1455,7 @@ TextureImporter:
         width: 132
         height: 332
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2005,7 +1477,7 @@ TextureImporter:
         width: 52
         height: 324
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2027,7 +1499,7 @@ TextureImporter:
         width: 58
         height: 371
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2049,7 +1521,7 @@ TextureImporter:
         width: 136
         height: 374
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2071,7 +1543,7 @@ TextureImporter:
         width: 81
         height: 393
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2093,7 +1565,7 @@ TextureImporter:
         width: 53
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2115,7 +1587,7 @@ TextureImporter:
         width: 49
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2129,28 +1601,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_70
-      rect:
-        serializedVersion: 2
-        x: 831
-        y: 1312
-        width: 123
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5d321e3db9bb93de0800000000000000
-      internalID: -1352843935099051051
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_71
       rect:
         serializedVersion: 2
@@ -2159,7 +1609,7 @@ TextureImporter:
         width: 64
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2181,7 +1631,7 @@ TextureImporter:
         width: 61
         height: 229
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2195,28 +1645,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_73
-      rect:
-        serializedVersion: 2
-        x: 1185
-        y: 1315
-        width: 132
-        height: 164
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9a5f9369f5d3b2f20800000000000000
-      internalID: 3398877824532739497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_74
       rect:
         serializedVersion: 2
@@ -2225,7 +1653,7 @@ TextureImporter:
         width: 55
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2247,7 +1675,7 @@ TextureImporter:
         width: 64
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2261,28 +1689,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_76
-      rect:
-        serializedVersion: 2
-        x: 1539
-        y: 1312
-        width: 132
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3482c360bfeaf41b0800000000000000
-      internalID: -5670121012671535037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_77
       rect:
         serializedVersion: 2
@@ -2291,7 +1697,7 @@ TextureImporter:
         width: 168
         height: 442
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2313,7 +1719,7 @@ TextureImporter:
         width: 167
         height: 442
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2327,72 +1733,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_79
-      rect:
-        serializedVersion: 2
-        x: 2085
-        y: 896
-        width: 167
-        height: 442
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 14122691364a33340800000000000000
-      internalID: 4842394769887994177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_80
-      rect:
-        serializedVersion: 2
-        x: 2277
-        y: 896
-        width: 167
-        height: 442
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a7e93c5c7a1391f30800000000000000
-      internalID: 4546719895454457466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_81
-      rect:
-        serializedVersion: 2
-        x: 2468
-        y: 896
-        width: 167
-        height: 442
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23d53c13904207b90800000000000000
-      internalID: -7246252178530935502
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_82
       rect:
         serializedVersion: 2
@@ -2401,7 +1741,7 @@ TextureImporter:
         width: 167
         height: 442
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2423,7 +1763,7 @@ TextureImporter:
         width: 167
         height: 442
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2445,7 +1785,7 @@ TextureImporter:
         width: 84
         height: 273
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2467,7 +1807,7 @@ TextureImporter:
         width: 81
         height: 317
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2489,7 +1829,7 @@ TextureImporter:
         width: 140
         height: 313
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2511,7 +1851,7 @@ TextureImporter:
         width: 117
         height: 323
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2533,7 +1873,7 @@ TextureImporter:
         width: 53
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2555,7 +1895,7 @@ TextureImporter:
         width: 49
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2569,28 +1909,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_90
-      rect:
-        serializedVersion: 2
-        x: 831
-        y: 1053
-        width: 123
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f14066f4b04209a90800000000000000
-      internalID: -7309302564226989025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_91
       rect:
         serializedVersion: 2
@@ -2599,7 +1917,7 @@ TextureImporter:
         width: 64
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2621,7 +1939,7 @@ TextureImporter:
         width: 61
         height: 229
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2635,28 +1953,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_93
-      rect:
-        serializedVersion: 2
-        x: 1185
-        y: 1053
-        width: 132
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f3e916f8709859390800000000000000
-      internalID: -7812187313040941505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_94
       rect:
         serializedVersion: 2
@@ -2665,7 +1961,7 @@ TextureImporter:
         width: 55
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2687,7 +1983,7 @@ TextureImporter:
         width: 64
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2701,28 +1997,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_96
-      rect:
-        serializedVersion: 2
-        x: 1539
-        y: 1053
-        width: 132
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ea3ce79fcbd33530800000000000000
-      internalID: 3833649392475978473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_97
       rect:
         serializedVersion: 2
@@ -2731,7 +2005,7 @@ TextureImporter:
         width: 53
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2753,7 +2027,7 @@ TextureImporter:
         width: 49
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2767,28 +2041,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_99
-      rect:
-        serializedVersion: 2
-        x: 831
-        y: 790
-        width: 123
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: edae732bbd0241890800000000000000
-      internalID: -7488324152450356514
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_100
       rect:
         serializedVersion: 2
@@ -2797,7 +2049,7 @@ TextureImporter:
         width: 64
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2819,7 +2071,7 @@ TextureImporter:
         width: 61
         height: 229
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2833,28 +2085,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_102
-      rect:
-        serializedVersion: 2
-        x: 1185
-        y: 793
-        width: 132
-        height: 164
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bc35ec409cb2c0ed0800000000000000
-      internalID: -2446532355199970357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_103
       rect:
         serializedVersion: 2
@@ -2863,7 +2093,7 @@ TextureImporter:
         width: 55
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2885,7 +2115,7 @@ TextureImporter:
         width: 64
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2899,28 +2129,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_105
-      rect:
-        serializedVersion: 2
-        x: 1539
-        y: 790
-        width: 132
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d1bd2acb4d66d8840800000000000000
-      internalID: 5227947806330903325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_106
       rect:
         serializedVersion: 2
@@ -2929,7 +2137,7 @@ TextureImporter:
         width: 126
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2951,7 +2159,7 @@ TextureImporter:
         width: 126
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2965,72 +2173,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_108
-      rect:
-        serializedVersion: 2
-        x: 2105
-        y: 637
-        width: 126
-        height: 217
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 81491dc9bbb3b6800800000000000000
-      internalID: 606644251787367448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_109
-      rect:
-        serializedVersion: 2
-        x: 2297
-        y: 637
-        width: 126
-        height: 217
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c7838a315faa5260800000000000000
-      internalID: 7087169727029807040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_110
-      rect:
-        serializedVersion: 2
-        x: 2489
-        y: 637
-        width: 126
-        height: 217
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c9f071c04e61114f0800000000000000
-      internalID: -859880885139861604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_111
       rect:
         serializedVersion: 2
@@ -3039,7 +2181,7 @@ TextureImporter:
         width: 125
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3061,7 +2203,7 @@ TextureImporter:
         width: 126
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3083,7 +2225,7 @@ TextureImporter:
         width: 129
         height: 279
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3105,7 +2247,7 @@ TextureImporter:
         width: 160
         height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3127,7 +2269,7 @@ TextureImporter:
         width: 112
         height: 209
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3149,7 +2291,7 @@ TextureImporter:
         width: 53
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3171,7 +2313,7 @@ TextureImporter:
         width: 49
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3185,28 +2327,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_118
-      rect:
-        serializedVersion: 2
-        x: 831
-        y: 531
-        width: 123
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4c230e9d5f9ed7f60800000000000000
-      internalID: 8033834552430441156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_119
       rect:
         serializedVersion: 2
@@ -3215,7 +2335,7 @@ TextureImporter:
         width: 64
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3237,7 +2357,7 @@ TextureImporter:
         width: 61
         height: 229
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3251,28 +2371,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_121
-      rect:
-        serializedVersion: 2
-        x: 1185
-        y: 531
-        width: 132
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3377c9f3a89f7e580800000000000000
-      internalID: -8797788974876952781
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_122
       rect:
         serializedVersion: 2
@@ -3281,7 +2379,7 @@ TextureImporter:
         width: 55
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3303,7 +2401,7 @@ TextureImporter:
         width: 64
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3317,28 +2415,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_124
-      rect:
-        serializedVersion: 2
-        x: 1539
-        y: 531
-        width: 132
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b55d3e2b4c018e4c0800000000000000
-      internalID: -4258135010677893797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_125
       rect:
         serializedVersion: 2
@@ -3347,7 +2423,7 @@ TextureImporter:
         width: 171
         height: 274
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3369,7 +2445,7 @@ TextureImporter:
         width: 170
         height: 274
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3383,72 +2459,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_127
-      rect:
-        serializedVersion: 2
-        x: 2082
-        y: 321
-        width: 170
-        height: 274
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 67174f1fb150fb940800000000000000
-      internalID: 5313971702902059382
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_128
-      rect:
-        serializedVersion: 2
-        x: 2274
-        y: 321
-        width: 170
-        height: 274
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 328aad33426e0f4e0800000000000000
-      internalID: -1949805595488245725
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_129
-      rect:
-        serializedVersion: 2
-        x: 2465
-        y: 321
-        width: 170
-        height: 274
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 858c39fc6fa9d0b00800000000000000
-      internalID: 796463093949646936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_130
       rect:
         serializedVersion: 2
@@ -3457,7 +2467,7 @@ TextureImporter:
         width: 170
         height: 274
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3479,7 +2489,7 @@ TextureImporter:
         width: 170
         height: 274
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3493,50 +2503,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_132
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 410
-        width: 38
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc7681b4f9ff65370800000000000000
-      internalID: 8311111221983602636
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_133
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 377
-        width: 167
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3cbffdb2511cb6350800000000000000
-      internalID: 6011110424330632131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_134
       rect:
         serializedVersion: 2
@@ -3545,7 +2511,7 @@ TextureImporter:
         width: 146
         height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3567,7 +2533,7 @@ TextureImporter:
         width: 66
         height: 179
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3589,7 +2555,7 @@ TextureImporter:
         width: 108
         height: 182
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3611,7 +2577,7 @@ TextureImporter:
         width: 132
         height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3625,182 +2591,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_138
-      rect:
-        serializedVersion: 2
-        x: 94
-        y: 324
-        width: 41
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6afca31cd7671be40800000000000000
-      internalID: 5670443688321011622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_139
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 292
-        width: 232
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e7e6ae74f016d7ff0800000000000000
-      internalID: -36766503690146178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_140
-      rect:
-        serializedVersion: 2
-        x: 519
-        y: 339
-        width: 34
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f1359cea5d04f0370800000000000000
-      internalID: 8290916725517013791
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_141
-      rect:
-        serializedVersion: 2
-        x: 554
-        y: 339
-        width: 44
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 97b6584e3d06f7810800000000000000
-      internalID: 1765236042140838777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_142
-      rect:
-        serializedVersion: 2
-        x: 598
-        y: 330
-        width: 247
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb82d6f9d57da1b00800000000000000
-      internalID: 800188680918345919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_143
-      rect:
-        serializedVersion: 2
-        x: 846
-        y: 339
-        width: 94
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52783ca8209a12ce0800000000000000
-      internalID: -1431677378144008411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_144
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 236
-        width: 38
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d77d6a95c89b51d30800000000000000
-      internalID: 4401628223275194237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_145
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 233
-        width: 232
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17e09422291e42730800000000000000
-      internalID: 3973548789004308081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_146
       rect:
         serializedVersion: 2
@@ -3809,7 +2599,7 @@ TextureImporter:
         width: 143
         height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3831,7 +2621,7 @@ TextureImporter:
         width: 143
         height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3845,72 +2635,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_148
-      rect:
-        serializedVersion: 2
-        x: 2153
-        y: 106
-        width: 143
-        height: 161
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32bc720430feb4ca0800000000000000
-      internalID: -6031464478692357341
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_149
-      rect:
-        serializedVersion: 2
-        x: 2330
-        y: 106
-        width: 143
-        height: 161
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 98f9b0f7fd28f77d0800000000000000
-      internalID: -2918470137092006007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_150
-      rect:
-        serializedVersion: 2
-        x: 2507
-        y: 106
-        width: 143
-        height: 161
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a0f6e28f43dd3b20800000000000000
-      internalID: 3115878855662301351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_151
       rect:
         serializedVersion: 2
@@ -3919,7 +2643,7 @@ TextureImporter:
         width: 144
         height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3941,7 +2665,7 @@ TextureImporter:
         width: 144
         height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3955,50 +2679,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miniature-army3072x2304_153
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 180
-        width: 61
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb687c70cf10084a0800000000000000
-      internalID: -6593267672496503106
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_154
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 177
-        width: 200
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9b3e4a5dc4408a680800000000000000
-      internalID: -8743733948491439175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: miniature-army3072x2304_155
       rect:
         serializedVersion: 2
@@ -4007,7 +2687,7 @@ TextureImporter:
         width: 149
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4029,7 +2709,7 @@ TextureImporter:
         width: 149
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4051,7 +2731,7 @@ TextureImporter:
         width: 149
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4073,7 +2753,7 @@ TextureImporter:
         width: 149
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4095,7 +2775,7 @@ TextureImporter:
         width: 149
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4117,7 +2797,7 @@ TextureImporter:
         width: 149
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4139,7 +2819,7 @@ TextureImporter:
         width: 149
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4152,55 +2832,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_162
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 121
-        width: 49
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0db4a4bd37b0d9d40800000000000000
-      internalID: 5592638904492248016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: miniature-army3072x2304_163
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 91
-        width: 103
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5fda143ff35fd06a0800000000000000
-      internalID: -6481254633703363083
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bc07fee6001dcf74997d3c5a7923af7d
     internalID: 0
     vertices: []
     indices: 
@@ -4210,6 +2846,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Black_Armor: -5464533873236084675
+      Blue_Armor: -7719100995462474730
+      Red_Armor: 3695021356250893788
+      White_Armor: 3286223585745917101
       miniature-army3072x2304_0: -6670432908238657
       miniature-army3072x2304_1: 9084144365765608652
       miniature-army3072x2304_10: 8352361230027234008
@@ -4256,7 +2896,6 @@ TextureImporter:
       miniature-army3072x2304_137: 783939153708242406
       miniature-army3072x2304_138: 5670443688321011622
       miniature-army3072x2304_139: -36766503690146178
-      miniature-army3072x2304_14: 3695021356250893788
       miniature-army3072x2304_140: 8290916725517013791
       miniature-army3072x2304_141: 1765236042140838777
       miniature-army3072x2304_142: 800188680918345919
@@ -4267,7 +2906,6 @@ TextureImporter:
       miniature-army3072x2304_147: 6591770282549843712
       miniature-army3072x2304_148: -6031464478692357341
       miniature-army3072x2304_149: -2918470137092006007
-      miniature-army3072x2304_15: -7719100995462474730
       miniature-army3072x2304_150: 3115878855662301351
       miniature-army3072x2304_151: 8241975505966065080
       miniature-army3072x2304_152: 9088663514022681593
@@ -4285,9 +2923,7 @@ TextureImporter:
       miniature-army3072x2304_163: -6481254633703363083
       miniature-army3072x2304_17: 8105787005749867707
       miniature-army3072x2304_18: -4298829000694914223
-      miniature-army3072x2304_19: 3286223585745917101
       miniature-army3072x2304_2: 8651286607619702715
-      miniature-army3072x2304_20: -5464533873236084675
       miniature-army3072x2304_21: 5331341540637329146
       miniature-army3072x2304_22: 5238895156343132483
       miniature-army3072x2304_23: -8358778664820477422

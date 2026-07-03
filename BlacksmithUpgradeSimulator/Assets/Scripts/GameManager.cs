@@ -370,6 +370,11 @@ public class GameManager : MonoBehaviour
         uiManager.SetBackGround(bgType);
     }
 
+    public void PlaySfx(ESfx sfxType)
+    {
+        SoundManager.Inst.PlaySFX(sfxType);
+    }
+
     #endregion
 
     #region NPC 퇴장 연출

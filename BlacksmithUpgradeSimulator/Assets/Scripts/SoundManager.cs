@@ -16,6 +16,7 @@ public enum ESfx
     Button_Click,
     Start_Button,
     Success,
+    Loading_Enchant
 }
 #endregion
 
@@ -92,6 +93,24 @@ public class SoundManager : MonoBehaviour
         {
             Debug.LogWarning("SFX not found in Dictionary!");
         }
+    }
+
+    public void PlayInterruptibleSFX(ESfx sfxType)
+    {
+        if (sfxDict.TryGetValue(sfxType, out var clip))
+        {
+            sfxSource.clip = clip;
+            sfxSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("SFX not found in Dictionary!");
+        }
+    }
+
+    public void StopSFX()
+    {
+        sfxSource.Stop();
     }
 
     public void SetSFX(float volume)
