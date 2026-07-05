@@ -12,6 +12,8 @@ public class NpcGenerator : MonoBehaviour
 
     public WeaponController WeaponController => weaponController;
 
+    private Dictionary<AdventurerType, List<NpcData>> npcDataMap;
+
     List<NpcData> candidates = new List<NpcData>();
 
     public NpcData Setting(AdventurerType adventurerType)
@@ -35,24 +37,53 @@ public class NpcGenerator : MonoBehaviour
         return npcData;
     }
 
+    //private NpcData PickNpcDataByType(AdventurerType type)
+    //{
+    //    candidates.Clear(); // 후보 리스트를 초기화
+    //    for (int i = 0; i < npcDatas.Length; i++)
+    //    {
+    //        if (npcDatas[i].GetAdventurerType() == type)
+    //        {
+    //            candidates.Add(npcDatas[i]);
+    //        }
+    //    }
+
+    //    if (candidates.Count == 0)
+    //    {
+    //        Debug.LogError($"[NpcGenerator] {type} 타입의 NpcData가 없습니다.");
+    //        return null;
+    //    }
+
+    //    int index = Random.Range(0, candidates.Count);
+    //    return candidates[index];
+    //}
+
     private NpcData PickNpcDataByType(AdventurerType type)
     {
-        candidates.Clear(); // 후보 리스트를 초기화
-        for (int i = 0; i < npcDatas.Length; i++)
+        if (!npcDataMap.TryGetValue(type, out List<NpcData> candidates))
         {
-            if (npcDatas[i].GetAdventurerType() == type)
-            {
-                candidates.Add(npcDatas[i]);
-            }
-        }
-
-        if (candidates.Count == 0)
-        {
-            Debug.LogError($"[NpcGenerator] {type} 타입의 NpcData가 없습니다.");
+            Debug.LogError($"{type} 타입의 NPC가 없습니다.");
             return null;
         }
 
         int index = Random.Range(0, candidates.Count);
         return candidates[index];
+    }
+
+    public void InitializeNpcDataMap()
+    {
+        npcDataMap = new Dictionary<AdventurerType, List<NpcData>>();
+
+        foreach (NpcData npcData in npcDatas)
+        {
+            AdventurerType type = npcData.GetAdventurerType();
+
+            if (!npcDataMap.ContainsKey(type))
+            {
+                npcDataMap[type] = new List<NpcData>();
+            }
+
+            npcDataMap[type].Add(npcData);
+        }
     }
 }

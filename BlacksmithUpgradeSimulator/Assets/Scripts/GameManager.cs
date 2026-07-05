@@ -129,6 +129,8 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        npcGenerator.InitializeNpcDataMap(); // npcGenerator의 npcDataMap 초기화
+
         SoundManager.Inst.PlayBGM(EBgm.Counter_music); // BGM 재생
         InitDialogueSet(); // 대화 객체 저장공간 초기화
         initializeBuffer(); // 대사 버퍼 저장공간 초기화
