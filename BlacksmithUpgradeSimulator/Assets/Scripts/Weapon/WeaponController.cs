@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class WeaponController : MonoBehaviour
 {
     [SerializeField] private WeaponData[] weapons;
-    [SerializeField] private Image weaponImage;
     private int prevEnhancementLevel = 0; // 강화 전 레벨
     private int nextEnhancementLevel = 0; // 강화 후 레벨
     public int PrevEnhancementLevel => prevEnhancementLevel;
