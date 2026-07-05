@@ -5,7 +5,6 @@ using UnityEngine.U2D;
 public class DialogueController : MonoBehaviour
 {
     [SerializeField] private UIManager uiManager;
-    [SerializeField] private GameManager gameManager;
     [SerializeField] private DialogueUI dialogueUI;
 
     DialogueSet[] dialogues = null;

@@ -65,7 +65,7 @@ public class EnhanceManager : MonoBehaviour
                 isEnhancing = false;
                 SoundManager.Inst.StopSFX();
                 currentEnhanceTime = 0; // 강화 시간 초기화
-                BuildEnhanceResultPrefabMap(); // 성공, 대성공, 실패 prefab 세팅
+                //BuildEnhanceResultPrefabMap(); // 성공, 대성공, 실패 prefab 세팅
                 result = Enhance(successProb, greatSuccessRatio, failCnt, successCnt, greatSuccessCnt,
                                             currentFailCnt, currentSuccessCnt, currentGreatSuccessCnt);
                 Debug.Log($"강화 결과 : {result}");

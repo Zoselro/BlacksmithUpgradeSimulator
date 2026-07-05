@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
         InitDialogueSet(); // 대화 객체 저장공간 초기화
         initializeBuffer(); // 대사 버퍼 저장공간 초기화
         UpdateDayUI(); // 일 수 갱신
+        enhanceManager.BuildEnhanceResultPrefabMap(); // 강화 결과 prefab 세팅
 
         uiManager.SetBackGround(); // 배경 세팅
         HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅

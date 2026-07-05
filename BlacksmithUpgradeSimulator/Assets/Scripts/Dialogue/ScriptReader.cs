@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ScriptReader : MonoBehaviour
 {
-    private List<DialogueData> dialogueDataList = null;
+    private List<DialogueData> dialogueDataList = new List<DialogueData>();
 
     private TextAsset dialogueJson = null;
     private string path = "Dialogue/GameScript";
@@ -19,7 +19,7 @@ public class ScriptReader : MonoBehaviour
 
     public string ReadPlayer(string eventId)
     {
-        dialogueDataList = new List<DialogueData>();
+        dialogueDataList.Clear(); // 대사 리스트 초기화
 
         foreach (DialogueData dialogueData in dialoguesLines.lines)
         {
@@ -36,7 +36,7 @@ public class ScriptReader : MonoBehaviour
 
     public string ReadNPC(string NpcType, string NpcTendency, NpcState npcState, Gender gender)
     {
-        dialogueDataList = new List<DialogueData>();
+        dialogueDataList.Clear(); // 대사 리스트 초기화
 
         foreach (DialogueData dialogueData in dialoguesLines.lines)
         {

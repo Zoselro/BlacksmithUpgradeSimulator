@@ -12,6 +12,8 @@ public class NpcGenerator : MonoBehaviour
 
     public WeaponController WeaponController => weaponController;
 
+    List<NpcData> candidates = new List<NpcData>();
+
     public NpcData Setting(AdventurerType adventurerType)
     {
         this.adventurerType = adventurerType;
@@ -35,7 +37,7 @@ public class NpcGenerator : MonoBehaviour
 
     private NpcData PickNpcDataByType(AdventurerType type)
     {
-        List<NpcData> candidates = new List<NpcData>();
+        candidates.Clear(); // 후보 리스트를 초기화
         for (int i = 0; i < npcDatas.Length; i++)
         {
             if (npcDatas[i].GetAdventurerType() == type)

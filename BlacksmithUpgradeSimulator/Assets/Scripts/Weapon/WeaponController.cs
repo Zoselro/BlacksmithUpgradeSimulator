@@ -16,9 +16,9 @@ public class WeaponController : MonoBehaviour
 
     private WeaponData weaponData;
 
+    List<WeaponData> filtered = new List<WeaponData>();
     public void GetEnhancementLevelByAdventurerType(AdventurerType type)
     {
-        //sprite = sprites[Random.Range(0, sprites.Length)]; // 무기 랜덤 이미지
         if (type == AdventurerType.Beginner)
         {
             prevEnhancementLevel = Random.Range(0, 4); // +0 ~ +3
@@ -48,8 +48,7 @@ public class WeaponController : MonoBehaviour
 
     private WeaponData GetWeapon(WeaponRank rank)
     {
-        List<WeaponData> filtered = new List<WeaponData>();
-
+        filtered.Clear(); // 필터링된 무기 리스트 초기화
         foreach (WeaponData weapon in weapons)
         {
             if (weapon.GetWeaponRank() == rank)
@@ -64,7 +63,6 @@ public class WeaponController : MonoBehaviour
             return null;
         }
         WeaponData wd = filtered[Random.Range(0, filtered.Count)];
-        Debug.Log($"선택된 무기: {wd.name}, 등급: {wd.GetWeaponRank()}, 타입: {wd.GetWeaponType()}");
         return wd;
     }
 
