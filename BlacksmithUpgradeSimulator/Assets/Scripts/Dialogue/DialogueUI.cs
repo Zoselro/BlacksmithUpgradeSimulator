@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
 {
+    [SerializeField] private GameManager gm;
+
     [Header("DialogueBox")]
     [SerializeField] private DialogueBoxUI dialogueBoxUI;
     [SerializeField] private Image[] imageUI;
@@ -77,6 +79,6 @@ public class DialogueUI : MonoBehaviour
     public void AdjustmentTrigger()
     {
         animator.SetTrigger("Adjustment");
-        dialogueBoxUI.SetEndContentBox("ø¿¥√¿∫ ¿Ã¬Î «“±Ó ...");
+        dialogueBoxUI.SetEndContentBox(gm.DialogueClosePlayerData);
     }
 }

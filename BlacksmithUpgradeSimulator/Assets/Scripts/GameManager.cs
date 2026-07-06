@@ -91,6 +91,8 @@ public class GameManager : MonoBehaviour
     DialogueSet[] dialogueSet = new DialogueSet[4];
     private DialogueLine[][] buffer = new DialogueLine[4][];
 
+    private float[] weight = new float[] { 0f, 0f, 0f }; // 가중치에 따라서 리스트중 Npc 타입 결정
+
     private bool isPaused; // 게임이 일시정지 상태인지 여부를 나타내는 변수
     public bool IsPaused => isPaused;
 
@@ -121,6 +123,7 @@ public class GameManager : MonoBehaviour
 
     // 정산 할 때 대사
     private string dialogueClosePlayerData = "";
+    public string DialogueClosePlayerData => dialogueClosePlayerData; // 정산 할 때 대사
     // --------------- 대사 변수 -----------------
 
     private void Awake()
@@ -130,7 +133,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         npcGenerator.InitializeNpcDataMap(); // npcGenerator의 npcDataMap 초기화
-
         SoundManager.Inst.PlayBGM(EBgm.Counter_music); // BGM 재생
         InitDialogueSet(); // 대화 객체 저장공간 초기화
         initializeBuffer(); // 대사 버퍼 저장공간 초기화
@@ -139,8 +141,6 @@ public class GameManager : MonoBehaviour
 
         uiManager.SetBackGround(); // 배경 세팅
         HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅
-
-
         // 테스트 용도
         //string[] abc = { dialogueOpeningData, dialogueWelcomPlayerData, dialogueVisitNpcData, dialogueRequestNpcData,
         //    dialoguePlayerSuccessData, dialogueNPCSuccessExitData, dialoguePlayerFailData, dialogueNPCFailExitData,
@@ -223,39 +223,38 @@ public class GameManager : MonoBehaviour
 
     private AdventurerType GetWeightedCustomer()
     {
-        AdventurerType adventurerType;
         switch (visitors)
         {
             case 0:
-                adventurerType = GetWeightedRandom(adventurerTypeArr, new float[] { 1f, 0f, 0f });
+                weight[0] = 1f; weight[1] = 0f; weight[2] = 0f;
                 break;
-            case 1: 
-                adventurerType = GetWeightedRandom(adventurerTypeArr, new float[] { 0.9f, 0.08f, 0.02f });
+            case 1:
+                weight[0] = 0.9f; weight[1] = 0.08f; weight[2] = 0.02f;
                 break;
             case 2:
-                adventurerType = GetWeightedRandom(adventurerTypeArr, new float[] { 0.7f, 0.25f, 0.05f });
+                weight[0] = 0.7f; weight[1] = 0.25f; weight[2] = 0.05f;
                 break;
             case 3:
-                adventurerType = GetWeightedRandom(adventurerTypeArr, new float[] { 0.45f, 0.45f, 0.1f });
+                weight[0] = 0.45f; weight[1] = 0.45f; weight[2] = 0.1f;
                 break;
             case 4:
-                adventurerType = GetWeightedRandom(adventurerTypeArr, new float[] { 0.2f, 0.6f, 0.2f });
+                weight[0] = 0.2f; weight[1] = 0.6f; weight[2] = 0.2f;
                 break;
             case 5:
-                adventurerType = GetWeightedRandom(adventurerTypeArr, new float[] { 0.1f, 0.45f, 0.45f });
+                weight[0] = 0.1f; weight[1] = 0.45f; weight[2] = 0.45f;
                 break;
             case 6:
-                adventurerType = GetWeightedRandom(adventurerTypeArr, new float[] { 0f, 0.45f, 0.55f });
+                weight[0] = 0f; weight[1] = 0.45f; weight[2] = 0.55f;
                 break;
             case 7:
-                adventurerType = GetWeightedRandom(adventurerTypeArr, new float[] { 0f, 0.3f, 0.7f });
+                weight[0] = 0f; weight[1] = 0.3f; weight[2] = 0.7f;
                 break;
             default:
-                adventurerType = GetWeightedRandom(adventurerTypeArr, new float[] { 0f, 0.1f, 0.9f });
+                weight[0] = 0f; weight[1] = 0.1f; weight[2] = 0.9f;
                 break;
         }
 
-        return adventurerType;
+        return GetWeightedRandom(adventurerTypeArr, weight);
     }
 
     public void SetGold(int amount)

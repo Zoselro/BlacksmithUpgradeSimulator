@@ -7052,6 +7052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8c965f4a4322245bc226c1f4be9b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 2074051146}
   dialogueBoxUI: {fileID: 606475375}
   imageUI:
   - {fileID: 537439268}
@@ -8064,7 +8065,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 686011356}
-  gameManager: {fileID: 0}
   dialogueUI: {fileID: 1466799736}
 --- !u!1 &1663129339
 GameObject:

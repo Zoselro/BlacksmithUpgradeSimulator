@@ -14,7 +14,7 @@ public class NpcGenerator : MonoBehaviour
 
     private Dictionary<AdventurerType, List<NpcData>> npcDataMap;
 
-    List<NpcData> candidates = new List<NpcData>();
+    //List<NpcData> candidates = new List<NpcData>();
 
     public NpcData Setting(AdventurerType adventurerType)
     {
