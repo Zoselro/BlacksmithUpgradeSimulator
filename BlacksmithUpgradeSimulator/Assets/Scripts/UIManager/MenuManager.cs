@@ -15,8 +15,17 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button settingButton;
     [SerializeField] private Button exitButton;
     [SerializeField] private TextMeshProUGUI menuText;
+
+    [Header("Option")]
     [SerializeField] private Slider bgmSlider;
     [SerializeField] private Slider sfxSlider;
+    [SerializeField] private RectTransform bgmFrontGround;
+    [SerializeField] private RectTransform sfxFrontGround;
+
+    [Header("ExitPopup")]
+    [SerializeField] private GameObject exitPopup;
+    [SerializeField] private Button exitYesButton;
+    [SerializeField] private Button exitNoButton;
 
     private bool wasEnhancingBeforeMenu; // 메뉴가 열리기 전에 강화 중이었는지 여부를 저장하는 변수
 
@@ -65,9 +74,25 @@ public class MenuManager : MonoBehaviour
     public void OnExitButton()
     {
         SoundManager.Inst.PlaySFX(ESfx.Button_Click);
+        exitPopup.SetActive(true);
+        Debug.Log("종료 버튼이 클릭되었습니다.");
         // 게임 종료 로직을 여기에 작성
+        //Debug.Log("게임이 종료됩니다.");
+        //SceneManager.LoadScene("GameStart");
+    }
+
+    public void OnExitYesButton()
+    {
+        SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         Debug.Log("게임이 종료됩니다.");
         SceneManager.LoadScene("GameStart");
+    }
+
+    public void OnExitNoButton()
+    {
+        SoundManager.Inst.PlaySFX(ESfx.Button_Click);
+        exitPopup.SetActive(false);
+        Debug.Log("게임 종료 취소.");
     }
 
     public void SettingComplete(bool active)
@@ -102,12 +127,14 @@ public class MenuManager : MonoBehaviour
     public void SetBgm()
     {
         Debug.Log($"BGM 슬라이더 값: {bgmSlider.value}");
+        bgmFrontGround.localScale = new Vector3(bgmSlider.value, 1f, 1f);
         SoundManager.Inst.SetBGM(bgmSlider.value);
     }
 
     public void SetSFX()
     {
         Debug.Log($"SFX 슬라이더 값: {sfxSlider.value}");
+        sfxFrontGround.localScale = new Vector3(sfxSlider.value, 1f, 1f);
         SoundManager.Inst.SetSFX(sfxSlider.value);
     }
 }

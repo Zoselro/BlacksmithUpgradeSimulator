@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UIElements;
 // 감정 상태를 나타내는 enum
 public enum Emotion
 {
