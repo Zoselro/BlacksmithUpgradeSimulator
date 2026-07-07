@@ -17,7 +17,7 @@ public class WeaponController : MonoBehaviour
     private WeaponData weaponData;
 
     List<WeaponData> filtered = new List<WeaponData>();
-    public void GetEnhancementLevelByAdventurerType(AdventurerType type)
+    public int GetEnhancementLevelByAdventurerType(AdventurerType type)
     {
         if (type == AdventurerType.Beginner)
         {
@@ -36,6 +36,8 @@ public class WeaponController : MonoBehaviour
         }
         weaponData = GetWeapon(weaponRank);
         sprite = weaponData.GetWeaponSprite();
+
+        return prevEnhancementLevel;
     }
 
     public void SetEnhancementStages(int cnt)

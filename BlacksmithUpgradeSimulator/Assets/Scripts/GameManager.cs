@@ -184,7 +184,9 @@ public class GameManager : MonoBehaviour
     {
         adventurerType = GetWeightedCustomer(); // 방문 고객수에 따라 방문 고객의 등급이 정해진다.
         npcData = npcGenerator.Setting(adventurerType); // 고객의 타입을 Generator에 알려준 후 , 타입을 갖고 그 고객의 전반적인 세팅을 한다.
-        probability = enhanceChanceCalculator.GetRandomEnhanceChance(adventurerType);//NpcGenerator.AdventurerType); // 고객의 타입에 따라 강화 확률이 결정이 된다.
+        //probability = enhanceChanceCalculator.GetRandomEnhanceChance(adventurerType);//NpcGenerator.AdventurerType); // 고객의 타입에 따라 강화 확률이 결정이 된다.
+
+        probability = enhanceChanceCalculator.GetEnhanceProbablity(npcGenerator.EnhancemmentLevel); // 무기 강화에 따라 강화 확률이 결정이 된다.
 
         return npcData;
     }

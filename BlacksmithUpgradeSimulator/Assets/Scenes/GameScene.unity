@@ -949,7 +949,7 @@ MonoBehaviour:
   - {fileID: 7247810682480339683, guid: 5567e9b07fc45b545b4d5b8d988987a2, type: 3}
   topUIManager: {fileID: 1818317714}
   canvasParent: {fileID: 2074051140}
-  greatSuccessRatio: 0.1
+  greatSuccessRatio: 0.05
   bonusProbablity: 0
 --- !u!224 &164328360
 RectTransform:
@@ -6125,6 +6125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec33997f8cd01e24a8684bb398692be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enhancementLevel: 0
   weaponController: {fileID: 401695336}
   npcController: {fileID: 2738235679479019880}
   npcDatas:
