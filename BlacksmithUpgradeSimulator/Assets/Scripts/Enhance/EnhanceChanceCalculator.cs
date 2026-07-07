@@ -12,20 +12,21 @@ public class EnhanceChanceCalculator : MonoBehaviour
 
     [SerializeField] private float advancedLowerProbability;
     [SerializeField] private float advancedUpperProbability;
-    public float GetRandomEnhanceChance(AdventurerType type)
-    {
-        // 초급,중급,고급 모험가 일 경우 확률은 다르게 표기.
-        switch (type)
-        {
-            case AdventurerType.Beginner:
-                return Random.Range(beginnerpLowerProbability, beginnerpUpperProbability);
-            case AdventurerType.Intermediate:
-                return Random.Range(intermediateLowerProbability, intermediateUpperProbability);
-            case AdventurerType.Advanced:
-                return Random.Range(advancedLowerProbability, advancedUpperProbability);
-            default: return 0.50f;
-        }
-    }
+
+    //public float GetRandomEnhanceChance(AdventurerType type)
+    //{
+    //    // 초급,중급,고급 모험가 일 경우 확률은 다르게 표기.
+    //    switch (type)
+    //    {
+    //        case AdventurerType.Beginner:
+    //            return Random.Range(beginnerpLowerProbability, beginnerpUpperProbability);
+    //        case AdventurerType.Intermediate:
+    //            return Random.Range(intermediateLowerProbability, intermediateUpperProbability);
+    //        case AdventurerType.Advanced:
+    //            return Random.Range(advancedLowerProbability, advancedUpperProbability);
+    //        default: return 0.50f;
+    //    }
+    //}
 
     public float GetEnhanceProbablity(int level)
     {

@@ -21,17 +21,17 @@ public class WeaponController : MonoBehaviour
     {
         if (type == AdventurerType.Beginner)
         {
-            prevEnhancementLevel = Random.Range(0, 4); // +0 ~ +3
+            prevEnhancementLevel = Random.Range(0, 5); // +0 ~ +3
             weaponRank = WeaponRank.Common;
         }
         else if (type == AdventurerType.Intermediate)
         {
-            prevEnhancementLevel = Random.Range(3, 7); // +3 ~ +6
+            prevEnhancementLevel = Random.Range(5, 10); // +3 ~ +6
             weaponRank = WeaponRank.Rare;
         }
         else if (type == AdventurerType.Advanced)
         {
-            prevEnhancementLevel = Random.Range(6, 10); // +6 ~ +9
+            prevEnhancementLevel = Random.Range(10, 15); // +6 ~ +9
             weaponRank = WeaponRank.Epic;
         }
         weaponData = GetWeapon(weaponRank);
