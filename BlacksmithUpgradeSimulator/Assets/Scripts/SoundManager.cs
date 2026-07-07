@@ -16,7 +16,8 @@ public enum ESfx
     Button_Click,
     Start_Button,
     Success,
-    Loading_Enchant
+    Loading_Enchant,
+    Settle_sound
 }
 #endregion
 

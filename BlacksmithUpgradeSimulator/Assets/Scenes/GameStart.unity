@@ -479,6 +479,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 01fb4ca9fce3a1243a7bab628d4638d3, type: 3}
   - {fileID: 8300000, guid: 95139bc4f23828e41b31dd1ac87ebfc8, type: 3}
   - {fileID: 8300000, guid: 7900c9c1a62cc0341a8b23355ea62681, type: 3}
+  - {fileID: 8300000, guid: 3e183b6b82ea29747ae21785b5956ab7, type: 3}
   bgmSource: {fileID: 638299690}
   sfxSource: {fileID: 638299689}
 --- !u!4 &638299688
