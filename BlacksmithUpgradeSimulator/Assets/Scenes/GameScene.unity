@@ -8799,6 +8799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 686011356}
   dialogueUI: {fileID: 1466799736}
+  charName: {fileID: 1638758688}
 --- !u!1 &1663129339
 GameObject:
   m_ObjectHideFlags: 0
@@ -9004,7 +9005,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: -5042864787211950734, guid: 8774c77857b36f9478c6dc7a412fe0c0, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 8774c77857b36f9478c6dc7a412fe0c0, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -10581,7 +10582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -45}
+  m_AnchoredPosition: {x: 1.5, y: 3.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1936266685

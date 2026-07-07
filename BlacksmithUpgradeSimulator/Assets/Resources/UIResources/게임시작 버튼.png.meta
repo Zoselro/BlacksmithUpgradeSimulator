@@ -103,13 +103,13 @@ TextureImporter:
       name: "\uAC8C\uC784\uC2DC\uC791 \uBC84\uD2BC_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1536
-        height: 1024
+        x: 174
+        y: 324
+        width: 1185
+        height: 397
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 471, y: 440, z: 470, w: 393}
+      border: {x: 316, y: 130, z: 287, w: 92}
       customData: 
       outline: []
       physicsShape: []

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.U2D;
@@ -6,6 +7,7 @@ public class DialogueController : MonoBehaviour
 {
     [SerializeField] private UIManager uiManager;
     [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] private TextMeshProUGUI charName;
 
     DialogueSet[] dialogues = null;
 
@@ -56,6 +58,12 @@ public class DialogueController : MonoBehaviour
         {
             Debug.Log("대장장이 대사 -> 대장장이 이미지 보여주기");
             dialogueUI.ShowImage(dialogueSet.Dialogues[dialogueLineIndex].Dir, dialogueSet.Dialogues[dialogueLineIndex].Sprite);
+            charName.color = new Color(0f, 175f, 239f);
+        }
+
+        if (dialogueSet.Dialogues[dialogueLineIndex].Speak == Speaker.Npc)
+        {
+            charName.color = Color.yellow;
         }
 
         dialogueLineIndex++;
