@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
     private const int THIRD_DIALOGUE_NUM = 1;
     private const int FOURTH_DIALOGUE_NUM = 2;
 
-    [SerializeField] private int gold;
-    public int Gold => gold;
+    //[SerializeField] private int gold;
+    //public int Gold => gold;
 
     [SerializeField] private int visitors;
     public int Visitors => visitors;
@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DialogueUI dialogueUI;
     [SerializeField] private TypingManager typingManager;
     [SerializeField] private SettlementWindow settlementWindow;
+    [SerializeField] private GameDataManager gameDataManager;
 
     [Header("Options")]
     [SerializeField] private float enhanceTime = 3f;
@@ -136,6 +137,8 @@ public class GameManager : MonoBehaviour
         InitDialogueSet(); // 대화 객체 저장공간 초기화
         initializeBuffer(); // 대사 버퍼 저장공간 초기화
         UpdateDayUI(); // 일 수 갱신
+        topUIManager.SetGoldText(gameDataManager.GetGold()); // 골드 갱신
+
         enhanceManager.BuildEnhanceResultPrefabMap(); // 강화 결과 prefab 세팅
 
         uiManager.SetBackGround(); // 배경 세팅
@@ -152,7 +155,7 @@ public class GameManager : MonoBehaviour
     {
         if (!enhanceManager.IsEnhancing) return;
         enhanceManager.PlayEnhance(probability, adventurerType,
-                                                npcGenerator.WeaponController, gold,
+                                                npcGenerator.WeaponController, gameDataManager.GetGold(),
                                                 failCnt, successCnt,
                                                 greatSuccessCnt,
                                                 currentGold,
@@ -260,11 +263,17 @@ public class GameManager : MonoBehaviour
 
     public void SetGold(int amount)
     {
-        gold += amount;
-        if (gold <= 0)
-        {
-            gold = 0;
-        }
+        gameDataManager.SetGold(gameDataManager.GetGold() + amount); // 게임 데이터 매니저에 골드 값 저장
+    }
+    
+    public int GetGold()
+    {
+        return gameDataManager.GetGold();
+    }
+
+    public int GetDay()
+    {
+        return gameDataManager.GetDay();
     }
 
     public void SetSuccessCnt(int successCnt)
@@ -391,7 +400,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("손님 끝");
             dialogueUI.AdjustmentTrigger();
         }
-        topUIManager.SetGoldText(gold);
+        topUIManager.SetGoldText(gameDataManager.GetGold());
 
         // 골드 텍스트가 올라가면서 애니메이션 연출
         Debug.Log($"강화 결과 : {enhanceManager.Result}");

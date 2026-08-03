@@ -15,7 +15,7 @@ public class TopUIManager : MonoBehaviour
         npcVisitCount.text = "방문 수 : " + gm.Visitors + "명";
         dayOfWeekText.text = gm.Weekday;
         progressDaysText.text = gm.Days + " 일차";
-        goldText.text = gm.Gold.ToString("N0");
+        goldText.text = gm.GetGold().ToString("N0");
     }
     public void ResetData()
     {

@@ -19,7 +19,7 @@ public class SettlementWindow : MonoBehaviour
 
     public void SetupSettlementUI()
     {
-        dayCnt.text = gm.Days.ToString() + " 일차 정산 일지";
+        dayCnt.text = gm.GetDay().ToString() + " 일차 정산 일지";
         successCnt.text = gm.CurrentSuccessCnt.ToString();
         greatSuccessCnt.text = gm.CurrentGreatSuccessCnt.ToString();
         failCnt.text = gm.CurrentFailCnt.ToString();
