@@ -14,6 +14,7 @@ public class EnhanceManager : MonoBehaviour
     [SerializeField] private EnhanceButton enhanceButton;
     [SerializeField] private EnhancementImage[] enhanceResultPopups; // 성공, 실패, 대 성공 팝업창 프리팹이 들어있는 오브젝트 배열
     [SerializeField] private TopUIManager topUIManager;
+    [SerializeField] private GameDataManager gameDataManager;
     [SerializeField] private Transform canvasParent; // EnhancementImage 프리팹이 생성될 때 부모로 설정할 캔버스의 Transform
 
     [SerializeField] private float greatSuccessRatio; // 대성공 확률
@@ -69,7 +70,7 @@ public class EnhanceManager : MonoBehaviour
                 result = Enhance(successProb, greatSuccessRatio, failCnt, successCnt, greatSuccessCnt,
                                             currentFailCnt, currentSuccessCnt, currentGreatSuccessCnt);
                 Debug.Log($"강화 결과 : {result}");
-
+                gameDataManager.SetGameStatus(GameStatus.Enhanced);
                 // GameManager에게 강화 결과를 전달.
                 // GameManager는 전달 받은 강화결과로 대사 세팅
                 gm.SetPostEnhancementDialogue(result);
@@ -108,8 +109,10 @@ public class EnhanceManager : MonoBehaviour
 
         if (roll > successProb)
         {
-            gm.SetFailCnt(1);
-            gm.SetCurrentFailCnt(1);
+            //gm.SetFailCnt(1);
+            //gm.SetCurrentFailCnt(1);
+            gameDataManager.SetFailCount(failCnt + 1);
+            gameDataManager.SetCurrentFailCount(currentFailCnt + 1);
             return EnhanceResult.Fail;
         }
 
@@ -117,13 +120,17 @@ public class EnhanceManager : MonoBehaviour
 
         if (roll <= greatSuccessProb)
         {
-            gm.SetGreatSuccessCnt(1);
-            gm.SetCurrentGreatSuccessCnt(1);
+            //gm.SetGreatSuccessCnt(1);
+            //gm.SetCurrentGreatSuccessCnt(1);
+            gameDataManager.SetGreatSuccessCount(greatSuccessCnt + 1);
+            gameDataManager.SetCurrentGreatSuccessCount(currentGreatSuccessCnt + 1);
             return EnhanceResult.GreatSuccess;
 
         }
-        gm.SetCurrentSuccessCnt(1);
-        gm.SetSuccessCnt(1);
+        //gm.SetCurrentSuccessCnt(1);
+        //gm.SetSuccessCnt(1);
+        gameDataManager.SetSuccessCount(successCnt + 1);
+        gameDataManager.SetCurrentSuccessCount(currentSuccessCnt + 1);
         return EnhanceResult.Success;
     }
 
@@ -140,22 +147,28 @@ public class EnhanceManager : MonoBehaviour
             case EnhanceResult.GreatSuccess:
                 if (adventurerType == AdventurerType.Beginner)
                 {
-                    gm.SetGold(100);
-                    gm.SetCurrentGold(100);
+                    //gm.SetGold(100);
+                    //gm.SetCurrentGold(100);
+                    gameDataManager.SetGold(gold + 100);
+                    gameDataManager.SetCurrentGold(currentGold + 100);
                     weapon.SetEnhancementStages(2);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
                 else if (adventurerType == AdventurerType.Intermediate)
                 {
-                    gm.SetGold(200);
-                    gm.SetCurrentGold(200);
+                    //gm.SetGold(200);
+                    //gm.SetCurrentGold(200);
+                    gameDataManager.SetGold(gold + 200);
+                    gameDataManager.SetCurrentGold(currentGold + 200);
                     weapon.SetEnhancementStages(2);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
                 else
                 {
-                    gm.SetGold(250);
-                    gm.SetCurrentGold(250);
+                    //gm.SetGold(250);
+                    //gm.SetCurrentGold(250);
+                    gameDataManager.SetGold(gold + 250);
+                    gameDataManager.SetCurrentGold(currentGold + 250);
                     weapon.SetEnhancementStages(2);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
@@ -166,22 +179,28 @@ public class EnhanceManager : MonoBehaviour
                 //성공하면 보상금 획득
                 if (adventurerType == AdventurerType.Beginner)
                 {
-                    gm.SetGold(50);
-                    gm.SetCurrentGold(50);
+                    //gm.SetGold(50);
+                    //gm.SetCurrentGold(50);
+                    gameDataManager.SetGold(gold + 50);
+                    gameDataManager.SetCurrentGold(currentGold + 50);
                     weapon.SetEnhancementStages(1);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
                 else if (adventurerType == AdventurerType.Intermediate)
                 {
-                    gm.SetGold(100);
-                    gm.SetCurrentGold(100);
+                    //gm.SetGold(100);
+                    //gm.SetCurrentGold(100);
+                    gameDataManager.SetGold(gold + 100);
+                    gameDataManager.SetCurrentGold(currentGold + 100);
                     weapon.SetEnhancementStages(1);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }
                 else
                 {
-                    gm.SetGold(100);
-                    gm.SetCurrentGold(100);
+                    //gm.SetGold(100);
+                    //gm.SetCurrentGold(100);
+                    gameDataManager.SetGold(gold + 100);
+                    gameDataManager.SetCurrentGold(currentGold + 100);
                     weapon.SetEnhancementStages(1);
                     enhancementImage = Instantiate(prefabMap[result], canvasParent, false).GetComponent<EnhancementImage>();
                 }

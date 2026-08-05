@@ -948,6 +948,7 @@ MonoBehaviour:
   - {fileID: 7247810682480339683, guid: 0894d23b30c1a764c854e0223a3e7218, type: 3}
   - {fileID: 7247810682480339683, guid: 5567e9b07fc45b545b4d5b8d988987a2, type: 3}
   topUIManager: {fileID: 1818317714}
+  gameDataManager: {fileID: 1279927544}
   canvasParent: {fileID: 2074051140}
   greatSuccessRatio: 0.05
   bonusProbablity: 0
@@ -9793,6 +9794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce587ad263f88834ba96d678eae567cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameDataManager: {fileID: 1279927544}
   gm: {fileID: 2074051146}
   npcVisitCount: {fileID: 462020137}
   progressDaysText: {fileID: 330951682}
@@ -11422,9 +11424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b65e6ffdbebe04b9180e713daf01bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 0
-  visitors: 0
-  days: 0
   dialogueController: {fileID: 1658584435}
   enhanceChanceCalculator: {fileID: 548800216}
   uiManager: {fileID: 686011356}
@@ -11545,7 +11544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b74660f0a3a277499aaef18c8cc9d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 2074051146}
+  gameDataManager: {fileID: 1279927544}
   dayCnt: {fileID: 1625916162}
   successCnt: {fileID: 857482634}
   greatSuccessCnt: {fileID: 198575721}

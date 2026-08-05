@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class SettlementWindow : MonoBehaviour
 {
-    [SerializeField] private GameManager gm;
 
+    [SerializeField] private GameDataManager gameDataManager;
     [SerializeField] private TextMeshProUGUI dayCnt;
     [SerializeField] private TextMeshProUGUI successCnt;
     [SerializeField] private TextMeshProUGUI greatSuccessCnt;
@@ -19,11 +19,11 @@ public class SettlementWindow : MonoBehaviour
 
     public void SetupSettlementUI()
     {
-        dayCnt.text = gm.GetDay().ToString() + " 일차 정산 일지";
-        successCnt.text = gm.CurrentSuccessCnt.ToString();
-        greatSuccessCnt.text = gm.CurrentGreatSuccessCnt.ToString();
-        failCnt.text = gm.CurrentFailCnt.ToString();
-        goldCnt.text = gm.CurrentGold.ToString();
+        dayCnt.text = gameDataManager.GetDay().ToString() + " 일차 정산 일지";
+        successCnt.text = gameDataManager.GetCurrentSuccessCount().ToString();
+        greatSuccessCnt.text = gameDataManager.GetCurrentGreatSuccessCount().ToString();
+        failCnt.text = gameDataManager.GetCurrentFailCount().ToString();
+        goldCnt.text = gameDataManager.GetCurrentGold().ToString();
     }
 
     public void StartNextDayText(string startNextDayText)

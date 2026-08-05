@@ -38,26 +38,6 @@ public class GameManager : MonoBehaviour
     int dayindex = 0;
     public string Weekday => weekday;
 
-    //[SerializeField] private int days = 0;
-    //public int Days => days;
-
-    private int successCnt = 0;
-    private int greatSuccessCnt = 0;
-    private int failCnt = 0;
-    public int SuccessCnt => successCnt;
-    public int GreatSuccessCnt => greatSuccessCnt;
-    public int FailCnt => failCnt;
-
-    private int currentGold = 0; // 정산 화면에서 보여지는 현재 골드 양
-    private int currentSuccessCnt = 0; // 정산 화면에서 보여지는 현재 성공 횟수
-    private int currentGreatSuccessCnt = 0; // 정산 화면에서 보여지는 현재 대 성공 횟수
-    private int currentFailCnt = 0; // 정산 화면에서 보여지는 현재 실패 횟수
-
-    public int CurrentGold => currentGold;
-    public int CurrentSuccessCnt => currentSuccessCnt;
-    public int CurrentGreatSuccessCnt => currentGreatSuccessCnt;
-    public int CurrentFailCnt => currentFailCnt;
-
     [Header("Dialogue Management")]
     [SerializeField] private DialogueController dialogueController;
 
@@ -98,6 +78,8 @@ public class GameManager : MonoBehaviour
     private bool isPaused; // 게임이 일시정지 상태인지 여부를 나타내는 변수
     public bool IsPaused => isPaused;
 
+    private bool isLoadedFromSave; // 이어하기 여부를 저장하는 변수
+
     // --------------- 대사 변수 -----------------
     [Header("ScriptReader")]
     [SerializeField] private ScriptReader scriptReader;
@@ -131,9 +113,18 @@ public class GameManager : MonoBehaviour
     {
         CreateBuffer(); // 대화 객체 저장공간 초기화
         scriptReader.LoadDialogueData(); // 대사 데이터 로드
+        isLoadedFromSave = gameDataManager.GetVisitors() > 0; // 방문자 수가 0명 이상이면 이어하기로 판단
+
+        if (gameDataManager.GetGameStatus() == GameStatus.Enhanced) // 강화가 끝난 상태라면, 다시 데이터를 롤백
+        {
+            Debug.Log("데이터 롤백!");
+            gameDataManager.RollbackGameData(); // 게임 데이터 롤백
+        }
     }
     private void Start()
     {
+        gameDataManager.SetGameStatus(GameStatus.NoEnhancing); // 게임 상태를 강화 전으로 초기화
+
         npcGenerator.InitializeNpcDataMap(); // npcGenerator의 npcDataMap 초기화
         SoundManager.Inst.PlayBGM(EBgm.Counter_music); // BGM 재생
         InitDialogueSet(); // 대화 객체 저장공간 초기화
@@ -164,16 +155,17 @@ public class GameManager : MonoBehaviour
         if (!enhanceManager.IsEnhancing) return;
         enhanceManager.PlayEnhance(probability, adventurerType,
                                                 npcGenerator.WeaponController, gameDataManager.GetGold(),
-                                                failCnt, successCnt,
-                                                greatSuccessCnt,
-                                                currentGold,
-                                                currentSuccessCnt,
-                                                currentGreatSuccessCnt,
-                                                currentFailCnt);
+                                                gameDataManager.GetFailCount(),gameDataManager.GetSuccessCount(),
+                                                gameDataManager.GetGreatSuccessCount(),
+                                                gameDataManager.GetCurrentGold(),
+                                                gameDataManager.GetCurrentSuccessCount(),
+                                                gameDataManager.GetCurrentGreatSuccessCount(),
+                                                gameDataManager.GetCurrentFailCount());
     }
 
     public void HandlePreEnhancementFlow(int startIndex)
     {
+        gameDataManager.SetGameStatus(GameStatus.NoEnhancing); // 게임 상태를 강화 전으로 초기화
         npcData = SetupNpc(); // Npc 세팅
 
         SetPreEnhancementDialogue(); // 대사 불러오기
@@ -270,100 +262,14 @@ public class GameManager : MonoBehaviour
         return GetWeightedRandom(adventurerTypeArr, weight);
     }
 
-    public void SetGold(int amount)
-    {
-        gameDataManager.SetGold(gameDataManager.GetGold() + amount); // 게임 데이터 매니저에 골드 값 저장
-    }
-    
-    public int GetGold()
-    {
-        return gameDataManager.GetGold();
-    }
-
-    public int GetDay()
-    {
-        return gameDataManager.GetDay();
-    }
-
-    public int GetVisitors()
-    {
-        return gameDataManager.GetVisitors();
-    }
-
-    public void SetSuccessCnt(int successCnt)
-    {
-        this.successCnt += successCnt;
-        if(this.successCnt < 0)
-        {
-            this.successCnt = 0;
-        }
-    }
-
-    public void SetGreatSuccessCnt(int greatSuccessCnt)
-    {
-        this.greatSuccessCnt += greatSuccessCnt;
-        if(this.greatSuccessCnt < 0)
-        {
-            this.greatSuccessCnt = 0;
-        }
-    }
-
-    public void SetFailCnt(int failCnt)
-    {
-        this.failCnt += failCnt;
-        if(this.failCnt < 0)
-        {
-            this.failCnt = 0;
-        }
-    }
-
-    public void SetCurrentGold(int currentGold)
-    {
-        this.currentGold += currentGold;
-        if(this.currentGold < 0)
-        {
-            this.currentGold = 0;
-        }
-    }
-
-    public void SetCurrentSuccessCnt(int currentSuccessCnt)
-    {
-        this.currentSuccessCnt += currentSuccessCnt;
-        if(this.currentSuccessCnt < 0)
-        {
-            this.currentSuccessCnt = 0;
-        }
-    }
-
-    public void SetCurrentGreatSuccessCnt(int currentGreatSuccessCnt)
-    {
-        this.currentGreatSuccessCnt += currentGreatSuccessCnt;
-        if(this.currentGreatSuccessCnt < 0)
-        {
-            this.currentGreatSuccessCnt = 0;
-        }
-    }
-
-    public void SetCurrentFailCnt(int currentFailCnt)
-    {
-        this.currentFailCnt += currentFailCnt;
-        if(this.currentFailCnt < 0)
-        {
-            this.currentFailCnt = 0;
-        }
-    }
-
     #region Event Aniamtion
 
     // 하루가 끝났을 때, 각종 리셋 하는 함수
     public void ResetGame()
     {
-        //visitors = 0; // 정산 화면에서 보여진 후 방문자 수 초기화
         gameDataManager.SetVisitors(0);
-        currentFailCnt = 0; // 정산 화면에서 보여진 후 현재 실패 횟수 초기화
-        currentSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 성공 횟수 초기화
-        currentGreatSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 대 성공 횟수 초기화
-        currentGold = 0; // 정산 화면에서 보여진 후 현재 골드 양 초기화
+        gameDataManager.ResetSettlementData(); // 정산 화면에서 보여진 후 현재 골드 양, 현재 성공 횟수, 현재 대 성공 횟수, 현재 실패 횟수 초기화
+
         uiManager.SetBackGround(BgType.CloseCounter);
 
         UpdateDayUI(); // 일 수 갱신
@@ -386,7 +292,14 @@ public class GameManager : MonoBehaviour
     public void SetBackGroundOpenCounter(BgType bgType)
     {
         HandlePreEnhancementFlow(1);
-        gameDataManager.SetVisitors(gameDataManager.GetVisitors() + 1); // 방문자 수 증가
+
+        gameDataManager.BackupGameData(); // 게임 데이터 백업
+
+        if (!isLoadedFromSave)
+            gameDataManager.SetVisitors(gameDataManager.GetVisitors() + 1); // 방문자 수 증가
+        
+        isLoadedFromSave = false; // 첫 호출 이후부터는 정상 동작
+
         topUIManager.TopBarDisPlay(); // 방문자 수 갱신
         uiManager.SetBackGround(bgType);
         SoundManager.Inst.PlaySFX(ESfx.Bell);

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class TopUIManager : MonoBehaviour
 {
+    [SerializeField] private GameDataManager gameDataManager;
     [SerializeField] private GameManager gm;
     [SerializeField] private TextMeshProUGUI npcVisitCount;
     [SerializeField] private TextMeshProUGUI progressDaysText;
@@ -12,10 +13,10 @@ public class TopUIManager : MonoBehaviour
     [SerializeField] private GameObject topUIPanel;
     public void TopBarDisPlay()
     {
-        npcVisitCount.text = "방문 수 : " + gm.GetVisitors() + "명";
+        npcVisitCount.text = "방문 수 : " + gameDataManager.GetVisitors() + "명";
         dayOfWeekText.text = gm.Weekday;
-        progressDaysText.text = gm.GetDay() + " 일차";
-        goldText.text = gm.GetGold().ToString("N0");
+        progressDaysText.text = gameDataManager.GetDay() + " 일차";
+        goldText.text = gameDataManager.GetGold().ToString("N0");
     }
     public void ResetData()
     {
