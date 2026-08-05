@@ -12,9 +12,9 @@ public class TopUIManager : MonoBehaviour
     [SerializeField] private GameObject topUIPanel;
     public void TopBarDisPlay()
     {
-        npcVisitCount.text = "방문 수 : " + gm.Visitors + "명";
+        npcVisitCount.text = "방문 수 : " + gm.GetVisitors() + "명";
         dayOfWeekText.text = gm.Weekday;
-        progressDaysText.text = gm.Days + " 일차";
+        progressDaysText.text = gm.GetDay() + " 일차";
         goldText.text = gm.GetGold().ToString("N0");
     }
     public void ResetData()

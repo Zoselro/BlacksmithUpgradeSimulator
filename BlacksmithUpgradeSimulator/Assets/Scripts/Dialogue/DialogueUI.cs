@@ -81,4 +81,9 @@ public class DialogueUI : MonoBehaviour
         animator.SetTrigger("Adjustment");
         dialogueBoxUI.SetEndContentBox(gm.DialogueClosePlayerData);
     }
+
+    public void PlayAniamtion(string animation)
+    {
+        animator.Play(animation);
+    }
 }

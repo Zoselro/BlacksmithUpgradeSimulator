@@ -8,7 +8,7 @@ public class GameDataManager : MonoBehaviour
     private void Awake()
     {
         filePath = Path.Combine(Application.persistentDataPath, "GameData.csv");
-
+        Debug.Log($"filePath : {filePath}");
         if (!File.Exists(filePath))
         {
             File.WriteAllText(filePath, "Day,Gold,Visitors\n0,0,0");

@@ -26,19 +26,21 @@ public class GameManager : MonoBehaviour
     //[SerializeField] private int gold;
     //public int Gold => gold;
 
-    [SerializeField] private int visitors;
-    public int Visitors => visitors;
-    public void SetVisitor(int visit)
-    {
-        visitors += visit;
-    }
+    //[SerializeField] private int visitors;
+    //public int Visitors => visitors;
+    //public void SetVisitor(int visit)
+    //{
+    //    visitors += visit;
+    //}
 
     string[] weekdays = { "월", "화", "수", "목", "금", "토", "일" };
     string weekday = "";
     int dayindex = 0;
     public string Weekday => weekday;
-    [SerializeField] private int days = 0;
-    public int Days => days;
+
+    //[SerializeField] private int days = 0;
+    //public int Days => days;
+
     private int successCnt = 0;
     private int greatSuccessCnt = 0;
     private int failCnt = 0;
@@ -97,7 +99,6 @@ public class GameManager : MonoBehaviour
     public bool IsPaused => isPaused;
 
     // --------------- 대사 변수 -----------------
-    //ScriptReaderDialogueLines dialogueLines = null; // 대사 데이터를 저장하는 객체
     [Header("ScriptReader")]
     [SerializeField] private ScriptReader scriptReader;
 
@@ -128,6 +129,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        CreateBuffer(); // 대화 객체 저장공간 초기화
         scriptReader.LoadDialogueData(); // 대사 데이터 로드
     }
     private void Start()
@@ -136,19 +138,25 @@ public class GameManager : MonoBehaviour
         SoundManager.Inst.PlayBGM(EBgm.Counter_music); // BGM 재생
         InitDialogueSet(); // 대화 객체 저장공간 초기화
         initializeBuffer(); // 대사 버퍼 저장공간 초기화
-        UpdateDayUI(); // 일 수 갱신
+        //UpdateDayUI(); // 일 수 갱신
+        topUIManager.TopBarDisPlay(); // 일 수 갱신
+
         topUIManager.SetGoldText(gameDataManager.GetGold()); // 골드 갱신
 
         enhanceManager.BuildEnhanceResultPrefabMap(); // 강화 결과 prefab 세팅
 
         uiManager.SetBackGround(); // 배경 세팅
-        HandlePreEnhancementFlow(0); // 강화 하기전 흐름 처리와 첫 방문 대사 세팅
-        // 테스트 용도
-        //string[] abc = { dialogueOpeningData, dialogueWelcomPlayerData, dialogueVisitNpcData, dialogueRequestNpcData,
-        //    dialoguePlayerSuccessData, dialogueNPCSuccessExitData, dialoguePlayerFailData, dialogueNPCFailExitData,
-        //    dialoguePlayerGreateSuccessData, dialogueBlackSmithDeliverData, dialogueClosePlayerData};
 
-        //typingManager.SendText(abc); // 첫 방문 대사 타이핑 시작
+        if(gameDataManager.GetVisitors() <= 0)
+        {
+            HandlePreEnhancementFlow(0); // 방문자 수가 0명이면, 첫 방문 대사 세팅
+            dialogueUI.PlayAniamtion("BlackSmithEnter");
+        }
+        else
+        {
+            dialogueUI.PlayAniamtion("WelcomNpc");
+            HandlePreEnhancementFlow(1); // 방문자 수가 0명이 아니면, 첫 방문 대사 제외 나머지 세팅
+        }
     }
 
     private void Update()
@@ -172,14 +180,16 @@ public class GameManager : MonoBehaviour
 
         // GameManager의 대사 세팅 함수에서 대사 세팅이 끝나면,
         // 대화 컨트롤러에게 대화 객체를 전달해준다.
+
         dialogueController.SetDialogue(SetDialogue(), startIndex);
     }
 
 
     public void UpdateDayUI()
     {
-        days += 1;
-        dayindex = (days - 1) % weekdays.Length;
+        //days += 1;
+        gameDataManager.SetDay(gameDataManager.GetDay() + 1);
+        dayindex = (gameDataManager.GetDay() - 1) % weekdays.Length;
         weekday = weekdays[dayindex];
         topUIManager.TopBarDisPlay(); // 일 수 갱신
     }
@@ -187,7 +197,6 @@ public class GameManager : MonoBehaviour
     {
         adventurerType = GetWeightedCustomer(); // 방문 고객수에 따라 방문 고객의 등급이 정해진다.
         npcData = npcGenerator.Setting(adventurerType); // 고객의 타입을 Generator에 알려준 후 , 타입을 갖고 그 고객의 전반적인 세팅을 한다.
-        //probability = enhanceChanceCalculator.GetRandomEnhanceChance(adventurerType);//NpcGenerator.AdventurerType); // 고객의 타입에 따라 강화 확률이 결정이 된다.
 
         probability = enhanceChanceCalculator.GetEnhanceProbablity(npcGenerator.EnhancemmentLevel); // 무기 강화에 따라 강화 확률이 결정이 된다.
 
@@ -227,7 +236,7 @@ public class GameManager : MonoBehaviour
 
     private AdventurerType GetWeightedCustomer()
     {
-        switch (visitors)
+        switch (gameDataManager.GetVisitors())
         {
             case 0:
                 weight[0] = 1f; weight[1] = 0f; weight[2] = 0f;
@@ -274,6 +283,11 @@ public class GameManager : MonoBehaviour
     public int GetDay()
     {
         return gameDataManager.GetDay();
+    }
+
+    public int GetVisitors()
+    {
+        return gameDataManager.GetVisitors();
     }
 
     public void SetSuccessCnt(int successCnt)
@@ -344,7 +358,8 @@ public class GameManager : MonoBehaviour
     // 하루가 끝났을 때, 각종 리셋 하는 함수
     public void ResetGame()
     {
-        visitors = 0; // 정산 화면에서 보여진 후 방문자 수 초기화
+        //visitors = 0; // 정산 화면에서 보여진 후 방문자 수 초기화
+        gameDataManager.SetVisitors(0);
         currentFailCnt = 0; // 정산 화면에서 보여진 후 현재 실패 횟수 초기화
         currentSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 성공 횟수 초기화
         currentGreatSuccessCnt = 0; // 정산 화면에서 보여진 후 현재 대 성공 횟수 초기화
@@ -371,7 +386,7 @@ public class GameManager : MonoBehaviour
     public void SetBackGroundOpenCounter(BgType bgType)
     {
         HandlePreEnhancementFlow(1);
-        SetVisitor(1);
+        gameDataManager.SetVisitors(gameDataManager.GetVisitors() + 1); // 방문자 수 증가
         topUIManager.TopBarDisPlay(); // 방문자 수 갱신
         uiManager.SetBackGround(bgType);
         SoundManager.Inst.PlaySFX(ESfx.Bell);
@@ -395,7 +410,7 @@ public class GameManager : MonoBehaviour
     {
         //dialogueUI.NPCExitTrigger(); // NPC 나가는 연출 트리거
         dialogueUI.NextTrigger();
-        if (visitors > 7)
+        if (gameDataManager.GetVisitors() > 7)
         {
             Debug.Log("손님 끝");
             dialogueUI.AdjustmentTrigger();
@@ -435,28 +450,33 @@ public class GameManager : MonoBehaviour
             dialogueSet[i] = new DialogueSet();
         }
     }
-    public void initializeBuffer()
+
+    private void CreateBuffer()
+    {
+        buffer[0] = new DialogueLine[FIRST_DIALOGUE_NUM];
+        buffer[1] = new DialogueLine[SECOND_DIALOGUE_NUM];
+        buffer[2] = new DialogueLine[THIRD_DIALOGUE_NUM];
+        buffer[3] = new DialogueLine[FOURTH_DIALOGUE_NUM];
+
+        for (int i = 0; i < buffer.Length; i++)
+        {
+            for (int j = 0; j < buffer[i].Length; j++)
+            {
+                buffer[i][j] = new DialogueLine();
+            }
+        }
+    }
+
+    private void initializeBuffer()
     {
         // 만약, 첫 번째 방문이라면, 대사 버퍼에 대사 객체를 새로 만들어준다.
-        if (visitors <= 0 && days == 0)
+        if (gameDataManager.GetVisitors() <= 0 && gameDataManager.GetDay() == 0)
         {
-            Debug.Log("첫 번째 날에 첫 번째 방문입니다. 대사 버퍼에 대사 객체를 새로 만들어줍니다.");
-            buffer[0] = new DialogueLine[FIRST_DIALOGUE_NUM];
-            buffer[1] = new DialogueLine[SECOND_DIALOGUE_NUM];
-            buffer[2] = new DialogueLine[THIRD_DIALOGUE_NUM];
-            buffer[3] = new DialogueLine[FOURTH_DIALOGUE_NUM];
-
-            for (int i = 0; i < buffer.Length; i++)
-            {
-                for (int j = 0; j < buffer[i].Length; j++)
-                {
-                    buffer[i][j] = new DialogueLine();
-                }
-            }
+            CreateBuffer();
         }
         // 첫 번째 방문이지만, 첫 날이 아니라면,
         // 오프닝 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해준다.
-        else if (visitors <= 0 && days > 0)
+        else if (gameDataManager.GetVisitors() <= 0 && gameDataManager.GetDay() > 0)
         {
             Debug.Log("첫 번째 방문이지만, 첫 날이 아닙니다. 오프닝 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해줍니다.");
             for (int i = 0; i < buffer.Length; i++)
@@ -484,7 +504,7 @@ public class GameManager : MonoBehaviour
     // 강화 하기전 대장장이와 NPC의 대사 세팅
     public void SetPreEnhancementDialogue()
     {
-        if(visitors <= 0) // 첫 번째 방문이라면, 오프닝 대사와 정산 대사 세팅
+        if(gameDataManager.GetVisitors() <= 0) // 첫 번째 방문이라면, 오프닝 대사와 정산 대사 세팅
         {
             dialogueOpeningData = scriptReader.ReadPlayer(blackSmithData.OpenID);
             dialogueClosePlayerData = scriptReader.ReadPlayer(blackSmithData.CloseID);
@@ -503,7 +523,7 @@ public class GameManager : MonoBehaviour
 
     public DialogueSet[] SetDialogue()
     {
-        if (visitors == 0)
+        if (gameDataManager.GetVisitors() == 0)
         {
             buffer[0][0].Set(blackSmithData.NameID, dialogueOpeningData,
                                         blackSmithData.BackSprite, Speaker.BlackSmith, Dir.Left);
