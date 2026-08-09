@@ -4,7 +4,8 @@ using UnityEngine;
 public enum GameStatus
 {
     NoEnhancing, // 강화 전
-    Enhanced // 강화 후
+    Enhancing, // 강화 진행중
+    Enhanced // 강화 완료
 }
 
 public class GameDataManager : MonoBehaviour

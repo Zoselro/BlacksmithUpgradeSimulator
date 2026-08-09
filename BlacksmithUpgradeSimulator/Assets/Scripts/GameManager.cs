@@ -113,9 +113,15 @@ public class GameManager : MonoBehaviour
     {
         CreateBuffer(); // 대화 객체 저장공간 초기화
         scriptReader.LoadDialogueData(); // 대사 데이터 로드
-        isLoadedFromSave = gameDataManager.GetVisitors() > 0; // 방문자 수가 0명 이상이면 이어하기로 판단
-
-        if (gameDataManager.GetGameStatus() == GameStatus.Enhanced) // 강화가 끝난 상태라면, 다시 데이터를 롤백
+        isLoadedFromSave = gameDataManager.GetVisitors() > 0; // 방문자 수가 1명 이상이면 이어하기로 판단
+        
+        // 강화를 끝내고 난 후, 게임을 종료했다면, 방문자 수를 증가시키는 로직을 추가
+        if (gameDataManager.GetGameStatus() == GameStatus.Enhanced && gameDataManager.GetVisitors() < 8)
+        {
+            gameDataManager.SetVisitors(gameDataManager.GetVisitors() + 1); // 방문자 수 증가
+            gameDataManager.SetGameStatus(GameStatus.NoEnhancing);
+        }
+        else if (gameDataManager.GetGameStatus() == GameStatus.Enhancing) // 강화진행도중 게임을 껏다면 다시 데이터를 롤백
         {
             Debug.Log("데이터 롤백!");
             gameDataManager.RollbackGameData(); // 게임 데이터 롤백
@@ -123,13 +129,15 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        gameDataManager.SetGameStatus(GameStatus.NoEnhancing); // 게임 상태를 강화 전으로 초기화
-
         npcGenerator.InitializeNpcDataMap(); // npcGenerator의 npcDataMap 초기화
         SoundManager.Inst.PlayBGM(EBgm.Counter_music); // BGM 재생
         InitDialogueSet(); // 대화 객체 저장공간 초기화
         initializeBuffer(); // 대사 버퍼 저장공간 초기화
-        //UpdateDayUI(); // 일 수 갱신
+
+        int dayindex = 0;
+        dayindex = (gameDataManager.GetDay() - 1) % weekdays.Length; // 저장되어 있는 일 수를 불러온 후 요일 인덱스 계산
+        weekday = weekdays[dayindex]; // 계산된 요일 인덱스를 기반으로 요일 문자열 세팅
+
         topUIManager.TopBarDisPlay(); // 일 수 갱신
 
         topUIManager.SetGoldText(gameDataManager.GetGold()); // 골드 갱신
@@ -138,20 +146,41 @@ public class GameManager : MonoBehaviour
 
         uiManager.SetBackGround(); // 배경 세팅
 
-        if(gameDataManager.GetVisitors() <= 0)
+        int visitors = gameDataManager.GetVisitors();
+        GameStatus status = gameDataManager.GetGameStatus();
+
+        if (visitors <= 0)
         {
             HandlePreEnhancementFlow(0); // 방문자 수가 0명이면, 첫 방문 대사 세팅
             dialogueUI.PlayAniamtion("BlackSmithEnter");
+            gameDataManager.SetGameStatus(GameStatus.NoEnhancing);
         }
-        else
+        else if (visitors <= 7) // 방문자 수가 9명 미만이면, 첫 방문 대사 제외 나머지 세팅
         {
             dialogueUI.PlayAniamtion("WelcomNpc");
             HandlePreEnhancementFlow(1); // 방문자 수가 0명이 아니면, 첫 방문 대사 제외 나머지 세팅
+            gameDataManager.SetGameStatus(GameStatus.NoEnhancing);
+        }
+        else if (visitors >= 8)
+        {
+            if (status == GameStatus.Enhanced)
+            {
+                dialogueUI.PlayAniamtion("Adjustment");
+            }
+            else
+            {
+                dialogueUI.PlayAniamtion("WelcomNpc");
+                HandlePreEnhancementFlow(1);
+
+                gameDataManager.SetGameStatus(GameStatus.NoEnhancing);
+            }
+            gameDataManager.SetGameStatus(GameStatus.NoEnhancing);
         }
     }
 
     private void Update()
     {
+        Debug.Log($"status : {gameDataManager.GetGameStatus()}");
         if (!enhanceManager.IsEnhancing) return;
         enhanceManager.PlayEnhance(probability, adventurerType,
                                                 npcGenerator.WeaponController, gameDataManager.GetGold(),
@@ -161,11 +190,12 @@ public class GameManager : MonoBehaviour
                                                 gameDataManager.GetCurrentSuccessCount(),
                                                 gameDataManager.GetCurrentGreatSuccessCount(),
                                                 gameDataManager.GetCurrentFailCount());
+
     }
 
     public void HandlePreEnhancementFlow(int startIndex)
     {
-        gameDataManager.SetGameStatus(GameStatus.NoEnhancing); // 게임 상태를 강화 전으로 초기화
+        //gameDataManager.SetGameStatus(GameStatus.NoEnhancing); // 게임 상태를 강화 전으로 초기화
         npcData = SetupNpc(); // Npc 세팅
 
         SetPreEnhancementDialogue(); // 대사 불러오기
@@ -176,8 +206,7 @@ public class GameManager : MonoBehaviour
         dialogueController.SetDialogue(SetDialogue(), startIndex);
     }
 
-
-    public void UpdateDayUI()
+    public void NextDay()
     {
         //days += 1;
         gameDataManager.SetDay(gameDataManager.GetDay() + 1);
@@ -271,8 +300,8 @@ public class GameManager : MonoBehaviour
         gameDataManager.ResetSettlementData(); // 정산 화면에서 보여진 후 현재 골드 양, 현재 성공 횟수, 현재 대 성공 횟수, 현재 실패 횟수 초기화
 
         uiManager.SetBackGround(BgType.CloseCounter);
-
-        UpdateDayUI(); // 일 수 갱신
+        
+        NextDay(); // 일 수 갱신
 
         // 첫 번째 방문이지만, 첫 날이 아니라면,
         // 오프닝 대사 버퍼에 있는 대사 객체들의 내용을 초기화 해준다.
@@ -293,12 +322,12 @@ public class GameManager : MonoBehaviour
     {
         HandlePreEnhancementFlow(1);
 
-        gameDataManager.BackupGameData(); // 게임 데이터 백업
-
         if (!isLoadedFromSave)
             gameDataManager.SetVisitors(gameDataManager.GetVisitors() + 1); // 방문자 수 증가
-        
+
         isLoadedFromSave = false; // 첫 호출 이후부터는 정상 동작
+
+        gameDataManager.BackupGameData(); // 게임 데이터 백업
 
         topUIManager.TopBarDisPlay(); // 방문자 수 갱신
         uiManager.SetBackGround(bgType);
@@ -327,6 +356,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("손님 끝");
             dialogueUI.AdjustmentTrigger();
+            gameDataManager.SetGameStatus(GameStatus.NoEnhancing); // 게임 상태를 강화 전으로 초기화
         }
         topUIManager.SetGoldText(gameDataManager.GetGold());
 

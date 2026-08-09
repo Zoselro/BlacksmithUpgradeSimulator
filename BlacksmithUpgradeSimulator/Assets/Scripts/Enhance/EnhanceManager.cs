@@ -59,6 +59,7 @@ public class EnhanceManager : MonoBehaviour
             currentEnhanceTime += Time.deltaTime;
             float progress = Mathf.Clamp01(currentEnhanceTime / gm.EnhanceTime);
             enhanceUIManager.EnhanceProgressBar(progress);
+            gameDataManager.SetGameStatus(GameStatus.Enhancing);
 
             // 만약 강화 시간초가 지났다면?
             if (progress >= 1f)
