@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum GameStatus
 {
-    NoEnhancing, // 강화 전
+    NoEnhance, // 강화 전
     Enhancing, // 강화 진행중
     Enhanced // 강화 완료
 }
@@ -244,6 +244,7 @@ public class GameDataManager : MonoBehaviour
         SetCurrentSuccessCount(0);
         SetCurrentGreatSuccessCount(0);
         SetCurrentFailCount(0);
+        SetGameStatus(GameStatus.NoEnhance);
     }
 
     #endregion

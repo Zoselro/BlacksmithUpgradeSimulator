@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
         if (gameDataManager.GetGameStatus() == GameStatus.Enhanced && gameDataManager.GetVisitors() < 8)
         {
             gameDataManager.SetVisitors(gameDataManager.GetVisitors() + 1); // 방문자 수 증가
-            gameDataManager.SetGameStatus(GameStatus.NoEnhancing);
+            gameDataManager.SetGameStatus(GameStatus.NoEnhance);
         }
         else if (gameDataManager.GetGameStatus() == GameStatus.Enhancing) // 강화진행도중 게임을 껏다면 다시 데이터를 롤백
         {
@@ -152,14 +152,14 @@ public class GameManager : MonoBehaviour
         if (visitors <= 0)
         {
             HandlePreEnhancementFlow(0); // 방문자 수가 0명이면, 첫 방문 대사 세팅
+            gameDataManager.SetGameStatus(GameStatus.NoEnhance); // 첫 방문이므로 강화 전 상태로 세팅
             dialogueUI.PlayAniamtion("BlackSmithEnter");
-            gameDataManager.SetGameStatus(GameStatus.NoEnhancing);
         }
         else if (visitors <= 7) // 방문자 수가 9명 미만이면, 첫 방문 대사 제외 나머지 세팅
         {
-            dialogueUI.PlayAniamtion("WelcomNpc");
             HandlePreEnhancementFlow(1); // 방문자 수가 0명이 아니면, 첫 방문 대사 제외 나머지 세팅
-            gameDataManager.SetGameStatus(GameStatus.NoEnhancing);
+            gameDataManager.SetGameStatus(GameStatus.NoEnhance); // Npc가 방문했으므로 강화 전 상태로 세팅
+            dialogueUI.PlayAniamtion("WelcomNpc");
         }
         else if (visitors >= 8)
         {
@@ -169,10 +169,9 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                dialogueUI.PlayAniamtion("WelcomNpc");
                 HandlePreEnhancementFlow(1);
-
-                gameDataManager.SetGameStatus(GameStatus.NoEnhancing);
+                gameDataManager.SetGameStatus(GameStatus.NoEnhance); // Npc가 8명이고, 강화가 끝나지 않은 상태라면, 강화 전 상태로 세팅
+                dialogueUI.PlayAniamtion("WelcomNpc");
             }
         }
     }
@@ -298,7 +297,6 @@ public class GameManager : MonoBehaviour
         gameDataManager.SetVisitors(0);
         gameDataManager.ResetSettlementData(); // 정산 화면에서 보여진 후 현재 골드 양, 현재 성공 횟수, 현재 대 성공 횟수, 현재 실패 횟수 초기화
         isLoadedFromSave = false; // 이어하기 여부 초기화
-        gameDataManager.SetGameStatus(GameStatus.NoEnhancing); // 게임 상태를 강화 전으로 초기화
 
         uiManager.SetBackGround(BgType.CloseCounter);
         
