@@ -174,13 +174,13 @@ public class GameManager : MonoBehaviour
 
                 gameDataManager.SetGameStatus(GameStatus.NoEnhancing);
             }
-            gameDataManager.SetGameStatus(GameStatus.NoEnhancing);
         }
     }
 
     private void Update()
     {
         Debug.Log($"status : {gameDataManager.GetGameStatus()}");
+        Debug.Log($"isLoadedFromSave : {isLoadedFromSave}");
         if (!enhanceManager.IsEnhancing) return;
         enhanceManager.PlayEnhance(probability, adventurerType,
                                                 npcGenerator.WeaponController, gameDataManager.GetGold(),
@@ -195,7 +195,6 @@ public class GameManager : MonoBehaviour
 
     public void HandlePreEnhancementFlow(int startIndex)
     {
-        //gameDataManager.SetGameStatus(GameStatus.NoEnhancing); // 게임 상태를 강화 전으로 초기화
         npcData = SetupNpc(); // Npc 세팅
 
         SetPreEnhancementDialogue(); // 대사 불러오기
@@ -298,6 +297,8 @@ public class GameManager : MonoBehaviour
     {
         gameDataManager.SetVisitors(0);
         gameDataManager.ResetSettlementData(); // 정산 화면에서 보여진 후 현재 골드 양, 현재 성공 횟수, 현재 대 성공 횟수, 현재 실패 횟수 초기화
+        isLoadedFromSave = false; // 이어하기 여부 초기화
+        gameDataManager.SetGameStatus(GameStatus.NoEnhancing); // 게임 상태를 강화 전으로 초기화
 
         uiManager.SetBackGround(BgType.CloseCounter);
         
@@ -318,12 +319,15 @@ public class GameManager : MonoBehaviour
         dialogueUI.ShowImage(Dir.Right, true); // 오른쪽 스프라이트 켜기
     }
 
-    public void SetBackGroundOpenCounter(BgType bgType)
+    public void WelcomNpc(BgType bgType)
     {
         HandlePreEnhancementFlow(1);
 
         if (!isLoadedFromSave)
+        {
+            Debug.Log("방문자 수 증가");
             gameDataManager.SetVisitors(gameDataManager.GetVisitors() + 1); // 방문자 수 증가
+        }
 
         isLoadedFromSave = false; // 첫 호출 이후부터는 정상 동작
 
@@ -356,7 +360,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("손님 끝");
             dialogueUI.AdjustmentTrigger();
-            gameDataManager.SetGameStatus(GameStatus.NoEnhancing); // 게임 상태를 강화 전으로 초기화
         }
         topUIManager.SetGoldText(gameDataManager.GetGold());
 
