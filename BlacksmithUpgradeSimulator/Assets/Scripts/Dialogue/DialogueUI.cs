@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
@@ -19,8 +19,8 @@ public class DialogueUI : MonoBehaviour
         dialogueBoxUI.Show(name, text, dir);
     }
 
-    #region ÀÌ¹ÌÁö¸¦ ¼³Á¤ÇÏ´Â ¸Ş¼­µåµé
-    // UI ÀÌ¹ÌÁöÀÇ ¾ËÆÄ°ªÀ» ¼³Á¤ÇÏ´Â ¸Ş¼­µå
+    #region ì´ë¯¸ì§€ë¥¼ ì„¤ì •í•˜ëŠ” ë©”ì„œë“œë“¤
+    // UI ì´ë¯¸ì§€ì˜ ì•ŒíŒŒê°’ì„ ì„¤ì •í•˜ëŠ” ë©”ì„œë“œ
     public void SetImageUIAlpha(Image image, float alpha)
     {
         Color color = image.color;
@@ -28,7 +28,7 @@ public class DialogueUI : MonoBehaviour
         image.color = color;
     }
 
-    // ¹æÇâ¿¡ µû¶ó ÀÌ¹ÌÁö¸¦ ¹Ù²ãÁÖ´Â ¸Ş¼­µå
+    // ë°©í–¥ì— ë”°ë¼ ì´ë¯¸ì§€ë¥¼ ë°”ê¿”ì£¼ëŠ” ë©”ì„œë“œ
     public void ShowImage(Dir dir, Sprite sprite)
     {
         if (currentDir != dir)
@@ -40,7 +40,7 @@ public class DialogueUI : MonoBehaviour
          imageUI[(int)currentDir].sprite = sprite;
     }
 
-    // ¹æÇâ¿¡ µû¶ó ÀÌ¹ÌÁö¸¦ º¸¿©ÁÖ´Â ¸Ş¼­µå
+    // ë°©í–¥ì— ë”°ë¼ ì´ë¯¸ì§€ë¥¼ ë³´ì—¬ì£¼ëŠ” ë©”ì„œë“œ
     public void ShowImage(Dir dir, bool active)
     {
         if (currentDir != dir)
@@ -55,7 +55,7 @@ public class DialogueUI : MonoBehaviour
         }
     }
 
-    // ¹æÇâ¿¡ µû¶ó ÀÌ¹ÌÁö¸¦ ¹Ù²Ù´Â ¸Ş¼­µå
+    // ë°©í–¥ì— ë”°ë¼ ì´ë¯¸ì§€ë¥¼ ë°”ê¾¸ëŠ” ë©”ì„œë“œ
 
     public void ChangeSprite(Dir dir, Sprite sprite)
     {

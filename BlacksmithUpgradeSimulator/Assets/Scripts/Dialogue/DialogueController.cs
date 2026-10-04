@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.U2D;
@@ -11,8 +11,8 @@ public class DialogueController : MonoBehaviour
 
     DialogueSet[] dialogues = null;
 
-    int dialogueSetIndex = 0; // ´ëÈ­ °´Ã¼ÀÇ Index
-    int dialogueLineIndex = 0; // ´ëÈ­ °´Ã¼ ¼Ó¿¡ ÀÖ´Â ´ë»çµé Index
+    int dialogueSetIndex = 0; // ëŒ€í™” ê°ì²´ì˜ Index
+    int dialogueLineIndex = 0; // ëŒ€í™” ê°ì²´ ì†ì— ìˆëŠ” ëŒ€ì‚¬ë“¤ Index
 
     public void OnSpaceBar(InputAction.CallbackContext context)
     {
@@ -31,20 +31,20 @@ public class DialogueController : MonoBehaviour
 
     public void OnDialogueNext(DialogueSet dialogueSet)
     {
-        // ´ëÈ­°¡ ³¡³ªÁö ¾Ê¾ÒÀ¸¸é,
-        // ´ÙÀ½ ´ë»ç¸¦ ½ÇÇà
-        // index ++ ÀÌÈÄ °¡Á®¿È.
-        // UIÇÑÅ× ½ÇÇà
+        // ëŒ€í™”ê°€ ëë‚˜ì§€ ì•Šì•˜ìœ¼ë©´,
+        // ë‹¤ìŒ ëŒ€ì‚¬ë¥¼ ì‹¤í–‰
+        // index ++ ì´í›„ ê°€ì ¸ì˜´.
+        // UIí•œí…Œ ì‹¤í–‰
 
         if (dialogueSet == null ||
             dialogues[dialogueSetIndex].Dialogues == null ||
             !dialogueSet.Dialogues[dialogueLineIndex].IsValid)
         {
-            Debug.Log("´ë»ç ¾ø°Å³ª ´ÙÀ½ ´ë»ç°¡ Á¸ÀçÇÏÁö ¾ÊÀ½ -> ½ºÅµ");
+            Debug.Log("ëŒ€ì‚¬ ì—†ê±°ë‚˜ ë‹¤ìŒ ëŒ€ì‚¬ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŒ -> ìŠ¤í‚µ");
             return;
         }
 
-        // ´ëÀåÀåÀÌ°¡ ¹«±â¸¦ °Ç³» ÁÙ ¶§, NPC È°¼ºÈ­
+        // ëŒ€ì¥ì¥ì´ê°€ ë¬´ê¸°ë¥¼ ê±´ë‚´ ì¤„ ë•Œ, NPC í™œì„±í™”
         if (dialogueSetIndex == 3 && dialogueLineIndex == 0)
         {
             uiManager.ShowPrefab(true);
@@ -56,7 +56,7 @@ public class DialogueController : MonoBehaviour
 
         if (dialogueSet.Dialogues[dialogueLineIndex].Speak == Speaker.BlackSmith)
         {
-            Debug.Log("´ëÀåÀåÀÌ ´ë»ç -> ´ëÀåÀåÀÌ ÀÌ¹ÌÁö º¸¿©ÁÖ±â");
+            Debug.Log("ëŒ€ì¥ì¥ì´ ëŒ€ì‚¬ -> ëŒ€ì¥ì¥ì´ ì´ë¯¸ì§€ ë³´ì—¬ì£¼ê¸°");
             dialogueUI.ShowImage(dialogueSet.Dialogues[dialogueLineIndex].Dir, dialogueSet.Dialogues[dialogueLineIndex].Sprite);
             charName.color = new Color(0f, 175f, 239f);
         }
@@ -71,13 +71,13 @@ public class DialogueController : MonoBehaviour
 
     public void OnDialogueEnd(DialogueSet dialogue)
     {
-        // ¸¸¾à¿¡ ´ëÈ­°¡ ³¡³µÀ¸¸é (ÇöÀç ´ë»ç ¹øÈ£¶û ´ë»çÀÇ ÃÑ °³¼ö¶û ºñ±³) 
-        // ´ëÈ­ Á¾·á(UI ºñÈ°¼ºÈ­, ³¡³µÀ» ¶§ ÀÌº¥Æ® ½ÇÇà)
-        // ´ëÈ­ ³¡
+        // ë§Œì•½ì— ëŒ€í™”ê°€ ëë‚¬ìœ¼ë©´ (í˜„ì¬ ëŒ€ì‚¬ ë²ˆí˜¸ë‘ ëŒ€ì‚¬ì˜ ì´ ê°œìˆ˜ë‘ ë¹„êµ) 
+        // ëŒ€í™” ì¢…ë£Œ(UI ë¹„í™œì„±í™”, ëë‚¬ì„ ë•Œ ì´ë²¤íŠ¸ ì‹¤í–‰)
+        // ëŒ€í™” ë
         dialogue.EndFuncExecution();
 
-        dialogueSetIndex++;     // ´ÙÀ½ ´ëÈ­ °´Ã¼·Î
-        dialogueLineIndex = 0;  // ´ë»ç ÃÊ±âÈ­
+        dialogueSetIndex++;     // ë‹¤ìŒ ëŒ€í™” ê°ì²´ë¡œ
+        dialogueLineIndex = 0;  // ëŒ€ì‚¬ ì´ˆê¸°í™”
 
         if (dialogueSetIndex < dialogues.Length)
         {
@@ -85,25 +85,25 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
-            Debug.Log("¸ğµç ´ëÈ­ Á¾·á");
+            Debug.Log("ëª¨ë“  ëŒ€í™” ì¢…ë£Œ");
         }
     }
 
     public void OnClickNextBtn()
     { 
-        // ´ÙÀ½¹öÆ°À» ´­·¶À» ¶§
-        // ¸¸¾à¿¡ ´ëÈ­°¡ ³¡³µÀ¸¸é (ÇöÀç ´ë»ç ¹øÈ£¶û ´ë»çÀÇ ÃÑ °³¼ö¶û ºñ±³) 
-        // ´ëÈ­ Á¾·á(UI ºñÈ°¼ºÈ­, ³¡³µÀ» ¶§ ÀÌº¥Æ® ½ÇÇà)
-        // ´ëÈ­°¡ ³¡³ªÁö ¾Ê¾ÒÀ¸¸é,
-        // ´ÙÀ½ ´ë»ç¸¦ ½ÇÇà
-        // index ++ ÀÌÈÄ °¡Á®¿È.
-        // UIÇÑÅ× ½ÇÇà
+        // ë‹¤ìŒë²„íŠ¼ì„ ëˆŒë €ì„ ë•Œ
+        // ë§Œì•½ì— ëŒ€í™”ê°€ ëë‚¬ìœ¼ë©´ (í˜„ì¬ ëŒ€ì‚¬ ë²ˆí˜¸ë‘ ëŒ€ì‚¬ì˜ ì´ ê°œìˆ˜ë‘ ë¹„êµ) 
+        // ëŒ€í™” ì¢…ë£Œ(UI ë¹„í™œì„±í™”, ëë‚¬ì„ ë•Œ ì´ë²¤íŠ¸ ì‹¤í–‰)
+        // ëŒ€í™”ê°€ ëë‚˜ì§€ ì•Šì•˜ìœ¼ë©´,
+        // ë‹¤ìŒ ëŒ€ì‚¬ë¥¼ ì‹¤í–‰
+        // index ++ ì´í›„ ê°€ì ¸ì˜´.
+        // UIí•œí…Œ ì‹¤í–‰
 
         SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         if (dialogues == null) 
             return;
 
-        // ¾ÆÁ÷ ´ë»ç°¡ ³²¾ÆÀÖÀ¸¸é
+        // ì•„ì§ ëŒ€ì‚¬ê°€ ë‚¨ì•„ìˆìœ¼ë©´
         if (dialogueLineIndex < dialogues[dialogueSetIndex].Dialogues.Length)
         {
             OnDialogueNext(dialogues[dialogueSetIndex]);
@@ -121,7 +121,7 @@ public class DialogueController : MonoBehaviour
         dialogueSetIndex = startIndex;
         dialogueLineIndex = 0;
 
-        // ½ÃÀÛÇÏÀÚ¸¶ÀÚ Ã¹ ´ë»ç Ãâ·Â
+        // ì‹œì‘í•˜ìë§ˆì ì²« ëŒ€ì‚¬ ì¶œë ¥
         if (dialogues != null && dialogueSetIndex < dialogues.Length)
         {
             OnDialogueNext(dialogues[dialogueSetIndex]);

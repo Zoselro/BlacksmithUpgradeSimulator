@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -15,7 +15,7 @@ public class StarCatchManager : MonoBehaviour
 
     [SerializeField] private float plusProbability;
     [SerializeField] private float speed = 1.0f;
-    [SerializeField] private float waitTime = 0.5f; // ÇØ´ç ½Ã°£ÃÊ ÈÄ¿¡ ´Ù½Ã ¹Ì´Ï°ÔÀÓ ½ÃÀÛÇÏ±â À§ÇÑ ÇÃ·¡±× º¯¼ö
+    [SerializeField] private float waitTime = 0.5f; // í•´ë‹¹ ì‹œê°„ì´ˆ í›„ì— ë‹¤ì‹œ ë¯¸ë‹ˆê²Œì„ ì‹œì‘í•˜ê¸° ìœ„í•œ í”Œë˜ê·¸ ë³€ìˆ˜
     [SerializeField] private int maxEnhancementSteps = 3;
     public int MaxEnhacementSteps => maxEnhancementSteps;
 
@@ -23,11 +23,11 @@ public class StarCatchManager : MonoBehaviour
     [SerializeField] private GameObject enhancementProgressBarObj;
 
     private float currentWaitTime;
-    private bool isRight; // Slider°¡ ¿ŞÂÊÀ¸·Î °¬´ÂÁö¿¡ ´ëÇÑ ÇÃ·¡±× º¯¼ö
-    private bool isSpaceBarPress; // ½ºÆäÀÌ½º¹Ù¸¦ ´­·¶À» ¶§ ÇÃ·¡±× º¯¼ö
+    private bool isRight; // Sliderê°€ ì™¼ìª½ìœ¼ë¡œ ê°”ëŠ”ì§€ì— ëŒ€í•œ í”Œë˜ê·¸ ë³€ìˆ˜
+    private bool isSpaceBarPress; // ìŠ¤í˜ì´ìŠ¤ë°”ë¥¼ ëˆŒë €ì„ ë•Œ í”Œë˜ê·¸ ë³€ìˆ˜
     private bool isSpacePressedCount;
     public bool IsSpacePressedCount => isSpacePressedCount;
-    private float currentEnhancementStep = 0f; // enhancementProgressBarÀÇ °ÔÀÌÁö°¡ Ã¤¿öÁö´Â Á¤µµ
+    private float currentEnhancementStep = 0f; // enhancementProgressBarì˜ ê²Œì´ì§€ê°€ ì±„ì›Œì§€ëŠ” ì •ë„
 
     int spaceBarPressCount = 0;
 
@@ -39,9 +39,9 @@ public class StarCatchManager : MonoBehaviour
 
     public void StarCatchStart()
     {
-        if (!isSpaceBarPress) // ½ºÆäÀÌ½º¹Ù¸¦ ´©¸£Áö ¾Ê¾ÒÀ» °æ¿ì
+        if (!isSpaceBarPress) // ìŠ¤í˜ì´ìŠ¤ë°”ë¥¼ ëˆ„ë¥´ì§€ ì•Šì•˜ì„ ê²½ìš°
         {
-            if (!isRight) // Slider°¡ ¿À¸¥ÂÊÀ¸·Î ¾ÆÁ÷ ¾È°¬À¸¸é?
+            if (!isRight) // Sliderê°€ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì•„ì§ ì•ˆê°”ìœ¼ë©´?
             {
                 starSlider.value += Time.deltaTime * speed;
 
@@ -51,7 +51,7 @@ public class StarCatchManager : MonoBehaviour
                     isRight = true;
                 }
             }
-            else // Slider°¡ ¿À¸¥ÂÊÀ¸·Î °¬´Ù¸é?
+            else // Sliderê°€ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ê°”ë‹¤ë©´?
             {
                 starSlider.value -= Time.deltaTime * speed;
 
@@ -62,17 +62,17 @@ public class StarCatchManager : MonoBehaviour
                 }
             }
         }
-        else if (isSpaceBarPress)// ½ºÆäÀÌ½º¹Ù¸¦ ´­·¶À» °æ¿ì
+        else if (isSpaceBarPress)// ìŠ¤í˜ì´ìŠ¤ë°”ë¥¼ ëˆŒë €ì„ ê²½ìš°
         {
 
-            if (currentWaitTime <= waitTime) // 0.5ÃÊµÚ¿¡ °ÔÀÓ Àç ½ÃÀÛ
+            if (currentWaitTime <= waitTime) // 0.5ì´ˆë’¤ì— ê²Œì„ ì¬ ì‹œì‘
             {
                 currentWaitTime += Time.deltaTime;
                 if (currentWaitTime >= waitTime)
                 {
-                    isSpaceBarPress = false; // ½ºÆäÀÌ½º¹Ù¸¦ ´­·¶À» ¶§ ÇÃ·¡±× º¯¼ö ÃÊ±âÈ­
-                    currentWaitTime = 0f; // ½Ã°£ ÃÊ±âÈ­
-                    starSlider.value = 0f; // Slider À§Ä¡ ÃÊ±âÈ­
+                    isSpaceBarPress = false; // ìŠ¤í˜ì´ìŠ¤ë°”ë¥¼ ëˆŒë €ì„ ë•Œ í”Œë˜ê·¸ ë³€ìˆ˜ ì´ˆê¸°í™”
+                    currentWaitTime = 0f; // ì‹œê°„ ì´ˆê¸°í™”
+                    starSlider.value = 0f; // Slider ìœ„ì¹˜ ì´ˆê¸°í™”
                 }
             }
         }
@@ -90,16 +90,16 @@ public class StarCatchManager : MonoBehaviour
             {
                 //Debug.Log("Success");
                 enhanceManager.BonusProbablity(plusProbability);
-                //topBarUIManager.ProbabilityText.text = "°­È­ È®·ü : " + (enhanceManager.GetProbability() * 100).ToString("F1") + "%";
+                //topBarUIManager.ProbabilityText.text = "ê°•í™” í™•ë¥  : " + (enhanceManager.GetProbability() * 100).ToString("F1") + "%";
                 enhancementProgressBar.localScale += new Vector3(currentEnhancementStep, 0f, 0f);
             }
             else
             {
                 //Debug.Log("Fail");
             }
-            if (spaceBarPressCount >= maxEnhancementSteps) // ¸¸¾à ½ºÆäÀÌ½º¹Ù¸¦ ÇØ´ç ¼ö ¸¸Å­ ´­·¶´Ù¸é?
+            if (spaceBarPressCount >= maxEnhancementSteps) // ë§Œì•½ ìŠ¤í˜ì´ìŠ¤ë°”ë¥¼ í•´ë‹¹ ìˆ˜ ë§Œí¼ ëˆŒë €ë‹¤ë©´?
             {
-                // ÀÏ¾î³¯ ÀÏ ¼öÇà
+                // ì¼ì–´ë‚  ì¼ ìˆ˜í–‰
                 startCatchObject.gameObject.SetActive(false);
                 enhancementProgressBarObj.gameObject.SetActive(false);
                 isSpacePressedCount = true;
@@ -111,20 +111,20 @@ public class StarCatchManager : MonoBehaviour
 
     private bool IsHandleCenterInsideArea(RectTransform area, RectTransform handle)
     {
-        // 1) ¼º°ø¿µ¿ªÀÇ ¿ùµå ÄÚ³Ê(ÁÂÇÏ/ÁÂ»ó/¿ì»ó/¿ìÇÏ)
+        // 1) ì„±ê³µì˜ì—­ì˜ ì›”ë“œ ì½”ë„ˆ(ì¢Œí•˜/ì¢Œìƒ/ìš°ìƒ/ìš°í•˜)
         Vector3[] corners = new Vector3[4];
         area.GetWorldCorners(corners);
 
-        // area ¿ùµå Rect ¸¸µé±â
+        // area ì›”ë“œ Rect ë§Œë“¤ê¸°
         float minX = corners[0].x;
         float maxX = corners[2].x;
         float minY = corners[0].y;
         float maxY = corners[2].y;
 
-        // 2) ÇÚµéÀÇ Áß½É ¿ùµå ÁÂÇ¥
+        // 2) í•¸ë“¤ì˜ ì¤‘ì‹¬ ì›”ë“œ ì¢Œí‘œ
         Vector3 handleCenter = handle.TransformPoint(handle.rect.center);
 
-        // 3) Æ÷ÇÔ ¿©ºÎ
+        // 3) í¬í•¨ ì—¬ë¶€
         return (handleCenter.x >= minX && handleCenter.x <= maxX &&
                 handleCenter.y >= minY && handleCenter.y <= maxY);
     }

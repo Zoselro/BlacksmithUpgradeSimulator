@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class EnhanceButton : MonoBehaviour
 {
@@ -12,11 +12,11 @@ public class EnhanceButton : MonoBehaviour
 
     public void EnhanceButtonOnClick()
     {
-        enhanceManager.RequestEnhance(true); // °­È­ ½ÃÀÛ ¿äÃ»
+        enhanceManager.RequestEnhance(true); // ê°•í™” ì‹œì‘ ìš”ì²­
         SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         enhanceUIManager.EnhanceActivePanel(false);
 
-        //enhanceUIManager.SetActiveMiniGame(true); ¹Ì´Ï°ÔÀÓ
+        //enhanceUIManager.SetActiveMiniGame(true); ë¯¸ë‹ˆê²Œì„
         enhanceUIManager.ActiveEnhanceUIBar(true, (gm.GetProbability() * 100).ToString("F1"));
         uiManager.SetBackGround(BgType.Enhance);
         topUIManager.ActiveTopUIPanel(false);
@@ -30,10 +30,10 @@ public class EnhanceButton : MonoBehaviour
         uiManager.SetBackGround(BgType.Blacksmith);
         topUIManager.ActiveTopUIPanel(true);
         enhanceUIManager.ActiveEnhanceUIBar(false);
-        dialogueController.OnClickNextBtn(); // °­È­ ÀÌÈÄ ´ë»ç ½ÇÇà
+        dialogueController.OnClickNextBtn(); // ê°•í™” ì´í›„ ëŒ€ì‚¬ ì‹¤í–‰
         //dialogueUI.ContentBoxTrueTrigger();
         dialogueUI.NextTrigger();
         enhanceUIManager.ActiveConfirmButton(false);
-        enhanceManager.EnhancementImageActive(false); // EnhancementImage¸¦ ²ôµµ·Ï ¿äÃ»
+        enhanceManager.EnhancementImageActive(false); // EnhancementImageë¥¼ ë„ë„ë¡ ìš”ì²­
     }
 }

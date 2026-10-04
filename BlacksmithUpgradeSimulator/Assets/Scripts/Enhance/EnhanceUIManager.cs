@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,9 +43,9 @@ public class EnhanceUIManager : MonoBehaviour
     public void Initialized(int weaponLevel, Sprite weaponImg, string type, string rank)
     {
         this.weaponImg.sprite = weaponImg;
-        weaponTypeText.text = "¹«±â µî±Þ : " + rank;
-        weaponRankText.text = "¹«±â Á¾·ù : " + type;
-        weaponLevelText.text = "°­È­ ´Ü°è : + " + weaponLevel;
+        weaponTypeText.text = "ë¬´ê¸° ë“±ê¸‰ : " + rank;
+        weaponRankText.text = "ë¬´ê¸° ì¢…ë¥˜ : " + type;
+        weaponLevelText.text = "ê°•í™” ë‹¨ê³„ : + " + weaponLevel;
     }
 
     public void SetActiveMiniGame(bool active)
@@ -63,7 +63,7 @@ public class EnhanceUIManager : MonoBehaviour
         enhanceProgressBar.gameObject.SetActive(active);
         enhanceProbabilityUI.gameObject.SetActive(active);
 
-        enhanceProbability.text = $"¼º°ø È®·ü : {probability.ToString()}%";
+        enhanceProbability.text = $"ì„±ê³µ í™•ë¥  : {probability.ToString()}%";
     }
 
     public void ActiveEnhanceUIBar(bool active)

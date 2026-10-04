@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 
 public class StartSceneUIManager : MonoBehaviour
@@ -7,6 +7,6 @@ public class StartSceneUIManager : MonoBehaviour
 
     public void SetVersionTest(string text)
     {
-        versionText.text = $"ºôµå ¹öÀü : {text}";
+        versionText.text = $"ë¹Œë“œ ë²„ì „ : {text}";
     }
 }

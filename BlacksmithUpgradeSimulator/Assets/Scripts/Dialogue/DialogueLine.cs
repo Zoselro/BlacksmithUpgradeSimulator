@@ -1,12 +1,12 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public enum Speaker
 {
-    BlackSmith, // ´ëÀåÀåÀÌ
+    BlackSmith, // ëŒ€ì¥ì¥ì´
     Npc // NPC
 }
 
-public enum Dir // ¸»ÇÏ´Â »ç¶÷ÀÇ À§Ä¡
+public enum Dir // ë§í•˜ëŠ” ì‚¬ëŒì˜ ìœ„ì¹˜
 {
     Left,
     Right

@@ -1,19 +1,19 @@
-using System.IO;
+ï»¿using System.IO;
 using UnityEngine;
 
 public enum GameStatus
 {
-    NoEnhance, // °­È­ Àü
-    Enhancing, // °­È­ ÁøÇàÁß
-    Enhanced // °­È­ ¿Ï·á
+    NoEnhance, // ê°•í™” ì „
+    Enhancing, // ê°•í™” ì§„í–‰ì¤‘
+    Enhanced // ê°•í™” ì™„ë£Œ
 }
 
 public class GameDataManager : MonoBehaviour
 {
-    private string gameDataFilePath; // °ÔÀÓ µ¥ÀÌÅÍ ÆÄÀÏ °æ·Î
-    private string statisticsDataPath; // Åë°è µ¥ÀÌÅÍ ÆÄÀÏ °æ·Î
-    private string settlementDataPath; // Á¤»ê µ¥ÀÌÅÍ ÆÄÀÏ °æ·Î
-    private string backUpGameDataPath; // ·Ñ¹é °ÔÀÓ µ¥ÀÌÅÍ ÆÄÀÏ °æ·Î
+    private string gameDataFilePath; // ê²Œì„ ë°ì´í„° íŒŒì¼ ê²½ë¡œ
+    private string statisticsDataPath; // í†µê³„ ë°ì´í„° íŒŒì¼ ê²½ë¡œ
+    private string settlementDataPath; // ì •ì‚° ë°ì´í„° íŒŒì¼ ê²½ë¡œ
+    private string backUpGameDataPath; // ë¡¤ë°± ê²Œì„ ë°ì´í„° íŒŒì¼ ê²½ë¡œ
 
     private const string DEFAULT_GAME_DATA_CSV =
     "Day,Gold,Visitors\n1,0,0";
@@ -29,10 +29,10 @@ public class GameDataManager : MonoBehaviour
 
     private void Awake()
     {
-        CreateFile("GameData.csv", ref gameDataFilePath, DEFAULT_GAME_DATA_CSV); // °ÔÀÓ µ¥ÀÌÅÍ ÆÄÀÏ »ı¼º
-        CreateFile("StatisticsData.csv", ref statisticsDataPath, DEFAULT_RESULT_DATA_CSV); // Åë°è µ¥ÀÌÅÍ ÆÄÀÏ »ı¼º
-        CreateFile("SettlementData.csv", ref settlementDataPath, DEFAULT_SETTLEMENT_DATA_CSV); // Á¤»ê µ¥ÀÌÅÍ ÆÄÀÏ »ı¼º
-        CreateFile("BackUpData.csv", ref backUpGameDataPath, DEFAULT_BACKUP_GAMEDATA_CSV); // ·Ñ¹é °ÔÀÓ µ¥ÀÌÅÍ ÆÄÀÏ »ı¼º
+        CreateFile("GameData.csv", ref gameDataFilePath, DEFAULT_GAME_DATA_CSV); // ê²Œì„ ë°ì´í„° íŒŒì¼ ìƒì„±
+        CreateFile("StatisticsData.csv", ref statisticsDataPath, DEFAULT_RESULT_DATA_CSV); // í†µê³„ ë°ì´í„° íŒŒì¼ ìƒì„±
+        CreateFile("SettlementData.csv", ref settlementDataPath, DEFAULT_SETTLEMENT_DATA_CSV); // ì •ì‚° ë°ì´í„° íŒŒì¼ ìƒì„±
+        CreateFile("BackUpData.csv", ref backUpGameDataPath, DEFAULT_BACKUP_GAMEDATA_CSV); // ë¡¤ë°± ê²Œì„ ë°ì´í„° íŒŒì¼ ìƒì„±
     }
 
     private void CreateFile(string fileName, ref string filePath, string defaultCSV)
@@ -43,6 +43,22 @@ public class GameDataManager : MonoBehaviour
         {
             File.WriteAllText(filePath, defaultCSV);
         }
+    }
+
+    // ìƒˆ ê²Œì„ ì—¬ë¶€ íŒì • (GameScene ë°–, ì˜ˆ: íƒ€ì´í‹€ì—ì„œë„ ì‚¬ìš©í•  ìˆ˜ ìˆë„ë¡ ì •ì  ë©”ì„œë“œ)
+    // ì €ì¥ íŒŒì¼ì´ ì—†ê±°ë‚˜ 1ì¼ì°¨, ê³¨ë“œ 0, ë°©ë¬¸ì 0 ì´ë©´ ìƒˆ ê²Œì„ìœ¼ë¡œ íŒë‹¨í•œë‹¤.
+    public static bool IsNewGame()
+    {
+        string path = Path.Combine(Application.persistentDataPath, "GameData.csv");
+        if (!File.Exists(path))
+            return true;
+
+        string[] lines = File.ReadAllLines(path);
+        if (lines.Length < 2)
+            return true;
+
+        string[] data = lines[1].Split(',');
+        return data.Length >= 3 && data[0].Trim() == "1" && data[1].Trim() == "0" && data[2].Trim() == "0";
     }
 
     #region Get
@@ -251,7 +267,7 @@ public class GameDataManager : MonoBehaviour
 
     #region Reset
 
-    // °ÔÀÓ µ¥ÀÌÅÍ ¹é¾÷ ±â´É: ÇöÀç °ÔÀÓ µ¥ÀÌÅÍ¸¦ ¹é¾÷ ÆÄÀÏ¿¡ ÀúÀå
+    // ê²Œì„ ë°ì´í„° ë°±ì—… ê¸°ëŠ¥: í˜„ì¬ ê²Œì„ ë°ì´í„°ë¥¼ ë°±ì—… íŒŒì¼ì— ì €ì¥
     public void BackupGameData()
     {
         string[] lines =
@@ -263,7 +279,7 @@ public class GameDataManager : MonoBehaviour
         File.WriteAllLines(backUpGameDataPath, lines);
     }
 
-    // ·Ñ¹é ±â´É: ¹é¾÷µÈ µ¥ÀÌÅÍ¸¦ ºÒ·¯¿Í¼­ °ÔÀÓ µ¥ÀÌÅÍ¸¦ º¹¿ø
+    // ë¡¤ë°± ê¸°ëŠ¥: ë°±ì—…ëœ ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ì™€ì„œ ê²Œì„ ë°ì´í„°ë¥¼ ë³µì›
     public void RollbackGameData()
     {
         if (File.Exists(backUpGameDataPath))

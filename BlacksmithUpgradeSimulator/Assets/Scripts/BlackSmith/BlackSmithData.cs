@@ -1,34 +1,34 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 [CreateAssetMenu(fileName = "BlackSmithData", menuName = "Project Forge/BlackSmithData")]
 public class BlackSmithData : ScriptableObject
 {
     [SerializeField] string nameID;
-    public string NameID => nameID; // ´ëÀåÀåÀÌ ´Ð³×ÀÓ
+    public string NameID => nameID; // ëŒ€ìž¥ìž¥ì´ ë‹‰ë„¤ìž„
 
 
     [SerializeField] private Sprite backSprite;
     public Sprite BackSprite => backSprite;
-    [SerializeField] private Sprite normalSprite; // ´ëÀåÀåÀÌ ½½ÇÄ,¿ôÀ½,Normal ÀÌ¹ÌÁö
+    [SerializeField] private Sprite normalSprite; // ëŒ€ìž¥ìž¥ì´ ìŠ¬í””,ì›ƒìŒ,Normal ì´ë¯¸ì§€
     public Sprite NormalSprite => normalSprite;
     [SerializeField] private Sprite happySprite;
     public Sprite HappySprite => happySprite;
     [SerializeField] private Sprite sadSprite;
     public Sprite SadSprite => sadSprite;
-    [SerializeField] private string openID; // ´ëÀå°£ ¿ÀÇÂ eventID
+    [SerializeField] private string openID; // ëŒ€ìž¥ê°„ ì˜¤í”ˆ eventID
     public string OpenID => openID;
-    [SerializeField] private string closeID; // ´ëÀå°£ ´ÝÀ» ¶§ eventID
+    [SerializeField] private string closeID; // ëŒ€ìž¥ê°„ ë‹«ì„ ë•Œ eventID
     public string CloseID => closeID;
-    [SerializeField] string welcomeID; // ¼Õ´Ô ¹æ¹® ½Ã Ãâ·ÂµÇ´Â eventID
+    [SerializeField] string welcomeID; // ì†ë‹˜ ë°©ë¬¸ ì‹œ ì¶œë ¥ë˜ëŠ” eventID
     public string WelcomeID => welcomeID;
-    [SerializeField] private string completeFailID; // °­È­¿¡ ½ÇÆÐÇßÀ» ¶§ Ãâ·ÂµÇ´Â eventID
+    [SerializeField] private string completeFailID; // ê°•í™”ì— ì‹¤íŒ¨í–ˆì„ ë•Œ ì¶œë ¥ë˜ëŠ” eventID
     public string CompleteFailID => completeFailID;
-    [SerializeField] private string completeSuccessID; // °­È­¿¡ ¼º°øÇßÀ» ¶§ Ãâ·ÂµÇ´Â eventID
+    [SerializeField] private string completeSuccessID; // ê°•í™”ì— ì„±ê³µí–ˆì„ ë•Œ ì¶œë ¥ë˜ëŠ” eventID
     public string CompleteSuccessID => completeSuccessID;
-    [SerializeField] string enhanceSuccessID; // °­È­¿¡ ¼º°øÇßÀ» ¶§ Ãâ·ÂµÇ´Â eventID
+    [SerializeField] string enhanceSuccessID; // ê°•í™”ì— ì„±ê³µí–ˆì„ ë•Œ ì¶œë ¥ë˜ëŠ” eventID
     public string EnhanceSuccessID => enhanceSuccessID;
-    [SerializeField] private string enhaceGreatSuccess; // °­È­¿¡ ´ë¼º°ø ÇßÀ» ¶§ Ãâ·ÂµÇ´Â eventID
+    [SerializeField] private string enhaceGreatSuccess; // ê°•í™”ì— ëŒ€ì„±ê³µ í–ˆì„ ë•Œ ì¶œë ¥ë˜ëŠ” eventID
     public string EnhanceGreatSuccessID => enhaceGreatSuccess; 
-    [SerializeField] string enhanceFailID; // °­È­¿¡ ½ÇÆÐÇßÀ» ¶§ Ãâ·ÂµÇ´Â eventID
+    [SerializeField] string enhanceFailID; // ê°•í™”ì— ì‹¤íŒ¨í–ˆì„ ë•Œ ì¶œë ¥ë˜ëŠ” eventID
     public string EnhanceFailID => enhanceFailID;
 }

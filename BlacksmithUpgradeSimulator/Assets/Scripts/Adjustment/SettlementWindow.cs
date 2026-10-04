@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +19,7 @@ public class SettlementWindow : MonoBehaviour
 
     public void SetupSettlementUI()
     {
-        dayCnt.text = gameDataManager.GetDay().ToString() + " ÀÏÂ÷ Á¤»ê ÀÏÁö";
+        dayCnt.text = gameDataManager.GetDay().ToString() + " ì¼ì°¨ ì •ì‚° ì¼ì§€";
         successCnt.text = gameDataManager.GetCurrentSuccessCount().ToString();
         greatSuccessCnt.text = gameDataManager.GetCurrentGreatSuccessCount().ToString();
         failCnt.text = gameDataManager.GetCurrentFailCount().ToString();

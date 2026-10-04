@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 public enum AdventurerType
@@ -16,10 +16,10 @@ public enum Gender
 
 public enum NpcTendency
 {
-    Runaway, // ÆøÁÖ
-    Cynical, // ³Ã¼Ò
-    Insight, // ÅëÂû
-    Cheerful, // ¸í¶û
+    Runaway, // í­ì£¼
+    Cynical, // ëƒ‰ì†Œ
+    Insight, // í†µì°°
+    Cheerful, // ëª…ë‘
 }
 
 public class NpcData : MonoBehaviour

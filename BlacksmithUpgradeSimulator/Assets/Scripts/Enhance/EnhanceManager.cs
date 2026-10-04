@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 public enum EnhanceResult
 {
@@ -12,17 +12,17 @@ public class EnhanceManager : MonoBehaviour
     [SerializeField] private GameManager gm;
     [SerializeField] private EnhanceUIManager enhanceUIManager;
     [SerializeField] private EnhanceButton enhanceButton;
-    [SerializeField] private EnhancementImage[] enhanceResultPopups; // ¼º°ø, ½ÇÆĞ, ´ë ¼º°ø ÆË¾÷Ã¢ ÇÁ¸®ÆÕÀÌ µé¾îÀÖ´Â ¿ÀºêÁ§Æ® ¹è¿­
+    [SerializeField] private EnhancementImage[] enhanceResultPopups; // ì„±ê³µ, ì‹¤íŒ¨, ëŒ€ ì„±ê³µ íŒì—…ì°½ í”„ë¦¬íŒ¹ì´ ë“¤ì–´ìˆëŠ” ì˜¤ë¸Œì íŠ¸ ë°°ì—´
     [SerializeField] private TopUIManager topUIManager;
     [SerializeField] private GameDataManager gameDataManager;
-    [SerializeField] private Transform canvasParent; // EnhancementImage ÇÁ¸®ÆÕÀÌ »ı¼ºµÉ ¶§ ºÎ¸ğ·Î ¼³Á¤ÇÒ Äµ¹ö½ºÀÇ Transform
+    [SerializeField] private Transform canvasParent; // EnhancementImage í”„ë¦¬íŒ¹ì´ ìƒì„±ë  ë•Œ ë¶€ëª¨ë¡œ ì„¤ì •í•  ìº”ë²„ìŠ¤ì˜ Transform
 
-    [SerializeField] private float greatSuccessRatio; // ´ë¼º°ø È®·ü
-    [SerializeField] private float bonusProbablity; // º¸³Ê½º °­È­ È®·ü
+    [SerializeField] private float greatSuccessRatio; // ëŒ€ì„±ê³µ í™•ë¥ 
+    [SerializeField] private float bonusProbablity; // ë³´ë„ˆìŠ¤ ê°•í™” í™•ë¥ 
     private Dictionary<EnhanceResult, EnhancementImage> prefabMap;
 
     private EnhancementImage enhancementImage;
-    private EnhanceResult result; // °­È­ °á°ú
+    private EnhanceResult result; // ê°•í™” ê²°ê³¼
     public EnhanceResult Result => result;
 
     private float currentEnhanceTime;
@@ -36,13 +36,13 @@ public class EnhanceManager : MonoBehaviour
         {
             isEnhancing = true;
             SoundManager.Inst.PlayInterruptibleSFX(ESfx.Loading_Enchant);
-            Debug.Log("°­È­ ½ÃÀÛ");
+            Debug.Log("ê°•í™” ì‹œì‘");
             return;
         }
         else
         {
             isEnhancing = false;
-            Debug.Log("°­È­ Áß´Ü");
+            Debug.Log("ê°•í™” ì¤‘ë‹¨");
             return;
         }
     }
@@ -61,24 +61,24 @@ public class EnhanceManager : MonoBehaviour
             enhanceUIManager.EnhanceProgressBar(progress);
             gameDataManager.SetGameStatus(GameStatus.Enhancing);
 
-            // ¸¸¾à °­È­ ½Ã°£ÃÊ°¡ Áö³µ´Ù¸é?
+            // ë§Œì•½ ê°•í™” ì‹œê°„ì´ˆê°€ ì§€ë‚¬ë‹¤ë©´?
             if (progress >= 1f)
             {
                 isEnhancing = false;
                 SoundManager.Inst.StopSFX();
-                currentEnhanceTime = 0; // °­È­ ½Ã°£ ÃÊ±âÈ­
-                //BuildEnhanceResultPrefabMap(); // ¼º°ø, ´ë¼º°ø, ½ÇÆĞ prefab ¼¼ÆÃ
+                currentEnhanceTime = 0; // ê°•í™” ì‹œê°„ ì´ˆê¸°í™”
+                //BuildEnhanceResultPrefabMap(); // ì„±ê³µ, ëŒ€ì„±ê³µ, ì‹¤íŒ¨ prefab ì„¸íŒ…
                 result = Enhance(successProb, greatSuccessRatio, failCnt, successCnt, greatSuccessCnt,
                                             currentFailCnt, currentSuccessCnt, currentGreatSuccessCnt);
-                Debug.Log($"°­È­ °á°ú : {result}");
+                Debug.Log($"ê°•í™” ê²°ê³¼ : {result}");
                 gameDataManager.SetGameStatus(GameStatus.Enhanced);
-                // GameManager¿¡°Ô °­È­ °á°ú¸¦ Àü´Ş.
-                // GameManager´Â Àü´Ş ¹ŞÀº °­È­°á°ú·Î ´ë»ç ¼¼ÆÃ
+                // GameManagerì—ê²Œ ê°•í™” ê²°ê³¼ë¥¼ ì „ë‹¬.
+                // GameManagerëŠ” ì „ë‹¬ ë°›ì€ ê°•í™”ê²°ê³¼ë¡œ ëŒ€ì‚¬ ì„¸íŒ…
                 gm.SetPostEnhancementDialogue(result);
                 gm.OnEnhanceResult(result);
 
                 EnhanceEquipment(adventurerType, result, gold, currentGold, weapon);
-                enhancementImage.UpdateEnhancementWeaponUI(weapon); // ¹«±â ÀÌ¹ÌÁö ¹× °­È­ °á°ú ¼¼ÆÃ
+                enhancementImage.UpdateEnhancementWeaponUI(weapon); // ë¬´ê¸° ì´ë¯¸ì§€ ë° ê°•í™” ê²°ê³¼ ì„¸íŒ…
                 enhanceUIManager.ActiveConfirmButton(true);
                 //topUIManager.SetGoldText(gm.Gold);
             }
@@ -98,8 +98,8 @@ public class EnhanceManager : MonoBehaviour
         }
     }
 
-    // È®·ü, ´ë¼º°ø È®·ü, ½ÇÆĞ, ¼º°ø, ´ë¼º°ø Ä«¿îÆ®
-    // ¿¡ ´ëÇÏ¿© EnhanceResult °ªÀ» EnhanceEquipment() ¿¡ ³Ñ°ÜÁÜ
+    // í™•ë¥ , ëŒ€ì„±ê³µ í™•ë¥ , ì‹¤íŒ¨, ì„±ê³µ, ëŒ€ì„±ê³µ ì¹´ìš´íŠ¸
+    // ì— ëŒ€í•˜ì—¬ EnhanceResult ê°’ì„ EnhanceEquipment() ì— ë„˜ê²¨ì¤Œ
     public EnhanceResult Enhance(float successProb, float greatSuccessRatio,
                             int failCnt, int successCnt,
                             int greatSuccessCnt, 
@@ -135,14 +135,14 @@ public class EnhanceManager : MonoBehaviour
         return EnhanceResult.Success;
     }
 
-    // Àåºñ°­È­ ±â´É ±¸Çö
-    // NPC Å¸ÀÔ, ¼º°øÈ®·ü, EnhanceEquipment, Add ÇÒ °ñµå, ¹«±â¸¦ ³Ñ°ÜÁÜ.
+    // ì¥ë¹„ê°•í™” ê¸°ëŠ¥ êµ¬í˜„
+    // NPC íƒ€ì…, ì„±ê³µí™•ë¥ , EnhanceEquipment, Add í•  ê³¨ë“œ, ë¬´ê¸°ë¥¼ ë„˜ê²¨ì¤Œ.
     public void EnhanceEquipment(AdventurerType adventurerType, EnhanceResult result, 
                                 int gold, int currentGold, WeaponController weapon)
     {
         ESfx EnhanceResultSFX = ESfx.Fail;
 
-        // result : ±× È®·ü¿¡ ´ëÇÑ ¼º°ø, ½ÇÆĞ, ´ë¼º°ø ÀÇ ¿©ºÎ °á°ú°ª
+        // result : ê·¸ í™•ë¥ ì— ëŒ€í•œ ì„±ê³µ, ì‹¤íŒ¨, ëŒ€ì„±ê³µ ì˜ ì—¬ë¶€ ê²°ê³¼ê°’
         switch (result)
         {
             case EnhanceResult.GreatSuccess:
@@ -177,7 +177,7 @@ public class EnhanceManager : MonoBehaviour
                 break;
 
             case EnhanceResult.Success:
-                //¼º°øÇÏ¸é º¸»ó±İ È¹µæ
+                //ì„±ê³µí•˜ë©´ ë³´ìƒê¸ˆ íšë“
                 if (adventurerType == AdventurerType.Beginner)
                 {
                     //gm.SetGold(50);
@@ -230,7 +230,7 @@ public class EnhanceManager : MonoBehaviour
         SoundManager.Inst.PlaySFX(EnhanceResultSFX);
         int lastIndex = enhancementImage.transform.parent.childCount - 1;
 
-        // ¸Ç ¾Æ·¡¿¡¼­ µÎ ¹øÂ°
+        // ë§¨ ì•„ë˜ì—ì„œ ë‘ ë²ˆì§¸
         enhancementImage.transform.SetSiblingIndex(lastIndex - 1);
     }
     public void EnhancementImageActive(bool active)

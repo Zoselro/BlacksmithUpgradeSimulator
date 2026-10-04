@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,9 +13,9 @@ public class TopUIManager : MonoBehaviour
     [SerializeField] private GameObject topUIPanel;
     public void TopBarDisPlay()
     {
-        npcVisitCount.text = "¹æ¹® ¼ö : " + gameDataManager.GetVisitors() + "¸í";
+        npcVisitCount.text = "ë°©ë¬¸ ìˆ˜ : " + gameDataManager.GetVisitors() + "ëª…";
         dayOfWeekText.text = gm.Weekday;
-        progressDaysText.text = gameDataManager.GetDay() + " ÀÏÂ÷";
+        progressDaysText.text = gameDataManager.GetDay() + " ì¼ì°¨";
         goldText.text = gameDataManager.GetGold().ToString("N0");
     }
     public void ResetData()

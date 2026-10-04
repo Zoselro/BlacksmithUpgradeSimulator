@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class ScriptReader : MonoBehaviour
@@ -19,7 +19,7 @@ public class ScriptReader : MonoBehaviour
 
     public string ReadPlayer(string eventId)
     {
-        dialogueDataList.Clear(); // ´ë»ç ¸®½ºÆ® ÃÊ±âÈ­
+        dialogueDataList.Clear(); // ëŒ€ì‚¬ ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
 
         foreach (DialogueData dialogueData in dialoguesLines.lines)
         {
@@ -36,7 +36,7 @@ public class ScriptReader : MonoBehaviour
 
     public string ReadNPC(string NpcType, string NpcTendency, NpcState npcState, Gender gender)
     {
-        dialogueDataList.Clear(); // ´ë»ç ¸®½ºÆ® ÃÊ±âÈ­
+        dialogueDataList.Clear(); // ëŒ€ì‚¬ ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
 
         foreach (DialogueData dialogueData in dialoguesLines.lines)
         {
@@ -48,7 +48,7 @@ public class ScriptReader : MonoBehaviour
         }
         if (dialogueDataList.Count == 0)
         {
-            Debug.LogError($"´ë»ç ¾øÀ½: {NpcType} {NpcTendency} {npcState}");
+            Debug.LogError($"ëŒ€ì‚¬ ì—†ìŒ: {NpcType} {NpcTendency} {npcState}");
             return null;
         }
 

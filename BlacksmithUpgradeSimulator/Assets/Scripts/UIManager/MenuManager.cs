@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,31 +27,31 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button exitYesButton;
     [SerializeField] private Button exitNoButton;
 
-    private bool wasEnhancingBeforeMenu; // ¸Ş´º°¡ ¿­¸®±â Àü¿¡ °­È­ ÁßÀÌ¾ú´ÂÁö ¿©ºÎ¸¦ ÀúÀåÇÏ´Â º¯¼ö
+    private bool wasEnhancingBeforeMenu; // ë©”ë‰´ê°€ ì—´ë¦¬ê¸° ì „ì— ê°•í™” ì¤‘ì´ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì €ì¥í•˜ëŠ” ë³€ìˆ˜
 
     public void ShowMenu(bool active)
     {
         SoundManager.Inst.PlaySFX(ESfx.Button_Click);
-        menuText.text = "¸Ş´º";
-        menuPanel.SetActive(active); // ¸Ş´º ÆĞ³ÎÀÇ È°¼ºÈ­ ¿©ºÎ ¼³Á¤
-        optionUI.SetActive(!active); // ¿É¼Ç UI´Â Ã³À½¿¡ ºñÈ°¼ºÈ­
-        menuUI.SetActive(active); // ¸Ş´º UI´Â È°¼ºÈ­ ¿©ºÎ¿¡ µû¶ó ¼³Á¤
-        //gm.TryAnimation(active); // ¸Ş´º°¡ È°¼ºÈ­µÉ ¶§ °ÔÀÓ ¸Å´ÏÀú¿¡°Ô ÀÏ½ÃÁ¤Áö¸¦ ¿äÃ»ÇÏ´Â ¸Ş¼­µå È£Ãâ
+        menuText.text = "ë©”ë‰´";
+        menuPanel.SetActive(active); // ë©”ë‰´ íŒ¨ë„ì˜ í™œì„±í™” ì—¬ë¶€ ì„¤ì •
+        optionUI.SetActive(!active); // ì˜µì…˜ UIëŠ” ì²˜ìŒì— ë¹„í™œì„±í™”
+        menuUI.SetActive(active); // ë©”ë‰´ UIëŠ” í™œì„±í™” ì—¬ë¶€ì— ë”°ë¼ ì„¤ì •
+        //gm.TryAnimation(active); // ë©”ë‰´ê°€ í™œì„±í™”ë  ë•Œ ê²Œì„ ë§¤ë‹ˆì €ì—ê²Œ ì¼ì‹œì •ì§€ë¥¼ ìš”ì²­í•˜ëŠ” ë©”ì„œë“œ í˜¸ì¶œ
 
         if (active)
         {
-            wasEnhancingBeforeMenu = enhanceManager.IsEnhancing; // ¸Ş´º°¡ ¿­¸®±â Àü¿¡ °­È­ ÁßÀÌ¾ú´ÂÁö ¿©ºÎ ÀúÀå
-            Debug.Log($"¸Ş´º È°¼ºÈ­: wasEnhancingBeforeMenu = {wasEnhancingBeforeMenu}");
+            wasEnhancingBeforeMenu = enhanceManager.IsEnhancing; // ë©”ë‰´ê°€ ì—´ë¦¬ê¸° ì „ì— ê°•í™” ì¤‘ì´ì—ˆëŠ”ì§€ ì—¬ë¶€ ì €ì¥
+            Debug.Log($"ë©”ë‰´ í™œì„±í™”: wasEnhancingBeforeMenu = {wasEnhancingBeforeMenu}");
             if (wasEnhancingBeforeMenu)
             {
-                //gm.TryEnhance(true); // ¸Ş´º°¡ È°¼ºÈ­µÉ ¶§ °ÔÀÓ ¸Å´ÏÀú¿¡°Ô ÀÏ½ÃÁ¤Áö¸¦ ¿äÃ»ÇÏ´Â ¸Ş¼­µå È£Ãâ
+                //gm.TryEnhance(true); // ë©”ë‰´ê°€ í™œì„±í™”ë  ë•Œ ê²Œì„ ë§¤ë‹ˆì €ì—ê²Œ ì¼ì‹œì •ì§€ë¥¼ ìš”ì²­í•˜ëŠ” ë©”ì„œë“œ í˜¸ì¶œ
             }
         }
         else
         {
             if (wasEnhancingBeforeMenu)
             {
-                //gm.TryEnhance(false); // ¸Ş´º°¡ ºñÈ°¼ºÈ­µÉ ¶§ °ÔÀÓ ¸Å´ÏÀú¿¡°Ô ÀÏ½ÃÁ¤Áö¸¦ ÇØÁ¦ÇÏ´Â ¸Ş¼­µå È£Ãâ
+                //gm.TryEnhance(false); // ë©”ë‰´ê°€ ë¹„í™œì„±í™”ë  ë•Œ ê²Œì„ ë§¤ë‹ˆì €ì—ê²Œ ì¼ì‹œì •ì§€ë¥¼ í•´ì œí•˜ëŠ” ë©”ì„œë“œ í˜¸ì¶œ
             }
         }
     }
@@ -65,26 +65,26 @@ public class MenuManager : MonoBehaviour
     public void OnSettingButton()
     {
         SoundManager.Inst.PlaySFX(ESfx.Button_Click);
-        menuText.text = "¼³Á¤";
+        menuText.text = "ì„¤ì •";
         optionUI.SetActive(true);
         menuUI.SetActive(false);
-        Debug.Log("¼³Á¤ ¹öÆ°ÀÌ Å¬¸¯µÇ¾ú½À´Ï´Ù.");
+        Debug.Log("ì„¤ì • ë²„íŠ¼ì´ í´ë¦­ë˜ì—ˆìŠµë‹ˆë‹¤.");
     }
 
     public void OnExitButton()
     {
         SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         exitPopup.SetActive(true);
-        Debug.Log("Á¾·á ¹öÆ°ÀÌ Å¬¸¯µÇ¾ú½À´Ï´Ù.");
-        // °ÔÀÓ Á¾·á ·ÎÁ÷À» ¿©±â¿¡ ÀÛ¼º
-        //Debug.Log("°ÔÀÓÀÌ Á¾·áµË´Ï´Ù.");
+        Debug.Log("ì¢…ë£Œ ë²„íŠ¼ì´ í´ë¦­ë˜ì—ˆìŠµë‹ˆë‹¤.");
+        // ê²Œì„ ì¢…ë£Œ ë¡œì§ì„ ì—¬ê¸°ì— ì‘ì„±
+        //Debug.Log("ê²Œì„ì´ ì¢…ë£Œë©ë‹ˆë‹¤.");
         //SceneManager.LoadScene("GameStart");
     }
 
     public void OnExitYesButton()
     {
         SoundManager.Inst.PlaySFX(ESfx.Button_Click);
-        Debug.Log("°ÔÀÓÀÌ Á¾·áµË´Ï´Ù.");
+        Debug.Log("ê²Œì„ì´ ì¢…ë£Œë©ë‹ˆë‹¤.");
         SceneManager.LoadScene("GameStart");
     }
 
@@ -92,31 +92,31 @@ public class MenuManager : MonoBehaviour
     {
         SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         exitPopup.SetActive(false);
-        Debug.Log("°ÔÀÓ Á¾·á Ãë¼Ò.");
+        Debug.Log("ê²Œì„ ì¢…ë£Œ ì·¨ì†Œ.");
     }
 
     public void SettingComplete(bool active)
     {
         menuPanel.SetActive(active);
-        //gm.TryAnimation(active); // ¸Ş´º°¡ ºñÈ°¼ºÈ­µÉ ¶§ °ÔÀÓ ¸Å´ÏÀú¿¡°Ô ¾Ö´Ï¸ŞÀÌ¼ÇÀ» Àç°³ÇÏ´Â ¸Ş¼­µå È£Ãâ
+        //gm.TryAnimation(active); // ë©”ë‰´ê°€ ë¹„í™œì„±í™”ë  ë•Œ ê²Œì„ ë§¤ë‹ˆì €ì—ê²Œ ì• ë‹ˆë©”ì´ì…˜ì„ ì¬ê°œí•˜ëŠ” ë©”ì„œë“œ í˜¸ì¶œ
         SoundManager.Inst.PlaySFX(ESfx.Button_Click);
         if (active)
         {
-            wasEnhancingBeforeMenu = enhanceManager.IsEnhancing; // ¸Ş´º°¡ ¿­¸®±â Àü¿¡ °­È­ ÁßÀÌ¾ú´ÂÁö ¿©ºÎ ÀúÀå
-            Debug.Log($"¸Ş´º È°¼ºÈ­: wasEnhancingBeforeMenu = {wasEnhancingBeforeMenu}");
+            wasEnhancingBeforeMenu = enhanceManager.IsEnhancing; // ë©”ë‰´ê°€ ì—´ë¦¬ê¸° ì „ì— ê°•í™” ì¤‘ì´ì—ˆëŠ”ì§€ ì—¬ë¶€ ì €ì¥
+            Debug.Log($"ë©”ë‰´ í™œì„±í™”: wasEnhancingBeforeMenu = {wasEnhancingBeforeMenu}");
             if (wasEnhancingBeforeMenu)
             {
-                //gm.TryEnhance(true); // ¸Ş´º°¡ È°¼ºÈ­µÉ ¶§ °ÔÀÓ ¸Å´ÏÀú¿¡°Ô ÀÏ½ÃÁ¤Áö¸¦ ¿äÃ»ÇÏ´Â ¸Ş¼­µå È£Ãâ
+                //gm.TryEnhance(true); // ë©”ë‰´ê°€ í™œì„±í™”ë  ë•Œ ê²Œì„ ë§¤ë‹ˆì €ì—ê²Œ ì¼ì‹œì •ì§€ë¥¼ ìš”ì²­í•˜ëŠ” ë©”ì„œë“œ í˜¸ì¶œ
             }
         }
         else
         {
             if (wasEnhancingBeforeMenu)
             {
-               // gm.TryEnhance(false); // ¸Ş´º°¡ ºñÈ°¼ºÈ­µÉ ¶§ °ÔÀÓ ¸Å´ÏÀú¿¡°Ô ÀÏ½ÃÁ¤Áö¸¦ ÇØÁ¦ÇÏ´Â ¸Ş¼­µå È£Ãâ
+               // gm.TryEnhance(false); // ë©”ë‰´ê°€ ë¹„í™œì„±í™”ë  ë•Œ ê²Œì„ ë§¤ë‹ˆì €ì—ê²Œ ì¼ì‹œì •ì§€ë¥¼ í•´ì œí•˜ëŠ” ë©”ì„œë“œ í˜¸ì¶œ
             }
         }
-        Debug.Log("¼³Á¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+        Debug.Log("ì„¤ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
     }
 
     public void ResetSetting()
@@ -126,14 +126,14 @@ public class MenuManager : MonoBehaviour
 
     public void SetBgm()
     {
-        Debug.Log($"BGM ½½¶óÀÌ´õ °ª: {bgmSlider.value}");
+        Debug.Log($"BGM ìŠ¬ë¼ì´ë” ê°’: {bgmSlider.value}");
         bgmFrontGround.localScale = new Vector3(bgmSlider.value, 1f, 1f);
         SoundManager.Inst.SetBGM(bgmSlider.value);
     }
 
     public void SetSFX()
     {
-        Debug.Log($"SFX ½½¶óÀÌ´õ °ª: {sfxSlider.value}");
+        Debug.Log($"SFX ìŠ¬ë¼ì´ë” ê°’: {sfxSlider.value}");
         sfxFrontGround.localScale = new Vector3(sfxSlider.value, 1f, 1f);
         SoundManager.Inst.SetSFX(sfxSlider.value);
     }

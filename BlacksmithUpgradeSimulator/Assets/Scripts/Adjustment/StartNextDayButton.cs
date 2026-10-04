@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StartNextDayButton : MonoBehaviour
 {
@@ -8,6 +8,6 @@ public class StartNextDayButton : MonoBehaviour
     public void OnStartNextDayButton()
     {
         animator.SetTrigger("StartText");
-        settlementWindow.StartNextDayText("�ٽ� �Ϸ簡 ��Ҵ�.");
+        settlementWindow.StartNextDayText("다시 하루가 밝았다.");
     }
 }

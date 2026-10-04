@@ -1,7 +1,7 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
-#region enumÀÇ ¹è¿­ÀÇ À§Ä¡ ¸Â°Ô BGM°ú SFX¸¦ Á¤ÀÇ
+#region enumì˜ ë°°ì—´ì˜ ìœ„ì¹˜ ë§ê²Œ BGMê³¼ SFXë¥¼ ì •ì˜
 public enum EBgm
 {
     Title_music_Ver1,
@@ -26,12 +26,12 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Inst;
 
     [Header("Audio Clips")]
-    [SerializeField] private AudioClip[] bgmClips;  // BGM Å¬¸³ ¹è¿­
-    [SerializeField] private AudioClip[] sfxClips; // SFX Å¬¸³ ¹è¿­
+    [SerializeField] private AudioClip[] bgmClips;  // BGM í´ë¦½ ë°°ì—´
+    [SerializeField] private AudioClip[] sfxClips; // SFX í´ë¦½ ë°°ì—´
 
     [Header("Audio Sources")]
-    [SerializeField] private AudioSource bgmSource; // BGM Àç»ı AudioSource
-    [SerializeField] private AudioSource sfxSource; // SFX Àç»ı AudioSource
+    [SerializeField] private AudioSource bgmSource; // BGM ì¬ìƒ AudioSource
+    [SerializeField] private AudioSource sfxSource; // SFX ì¬ìƒ AudioSource
 
     private Dictionary<EBgm, AudioClip> bgmDict; // BGM Dictionary
     private Dictionary<ESfx, AudioClip> sfxDict; // SFX Dictionary
@@ -52,7 +52,7 @@ public class SoundManager : MonoBehaviour
         InitDictionaries();
     }
 
-    // Dictionary ÃÊ±âÈ­
+    // Dictionary ì´ˆê¸°í™”
     private void InitDictionaries()
     {
         bgmDict = new Dictionary<EBgm, AudioClip>();
@@ -68,13 +68,13 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // BGM Àç»ı
+    // BGM ì¬ìƒ
     public void PlayBGM(EBgm bgmType)
     {
         if (bgmDict.TryGetValue(bgmType, out var clip))
         {
             bgmSource.clip = clip;
-            bgmSource.loop = true; // ¹è°æÀ½¾ÇÀº ±âº»ÀûÀ¸·Î ¹İº¹ Àç»ı
+            bgmSource.loop = true; // ë°°ê²½ìŒì•…ì€ ê¸°ë³¸ì ìœ¼ë¡œ ë°˜ë³µ ì¬ìƒ
             bgmSource.Play();
         }
         else
@@ -83,7 +83,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // SFX Àç»ı
+    // SFX ì¬ìƒ
     public void PlaySFX(ESfx sfxType)
     {
         if (sfxDict.TryGetValue(sfxType, out var clip))

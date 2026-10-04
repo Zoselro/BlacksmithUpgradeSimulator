@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,8 +11,8 @@ public class EnhancementImage : MonoBehaviour
     public void UpdateEnhancementWeaponUI(WeaponController weapon)
     {
         Img.sprite = weapon.Sprite;
-        nextEnhancementLevel.text = weapon.NextEnhancementLevel.ToString() + " °­";
-        prevEnhancementLevel.text = weapon.PrevEnhancementLevel.ToString() + " °­";
+        nextEnhancementLevel.text = weapon.NextEnhancementLevel.ToString() + " ê°•";
+        prevEnhancementLevel.text = weapon.PrevEnhancementLevel.ToString() + " ê°•";
     }
 
     public EnhanceResult GetResult()

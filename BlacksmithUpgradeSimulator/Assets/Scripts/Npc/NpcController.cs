@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 public class NpcController : MonoBehaviour
@@ -38,7 +38,7 @@ public class NpcController : MonoBehaviour
 
     NpcData currentDataTemplate;
 
-    // NPC µ¥ÀÌÅÍ Àû¿ë ¸Ş¼­µå
+    // NPC ë°ì´í„° ì ìš© ë©”ì„œë“œ
     public void ApplyNpcTemplate(NpcData template)
     {
         currentDataTemplate = template;
@@ -58,7 +58,7 @@ public class NpcController : MonoBehaviour
             body.sprite = template.Body.sprite;
             face.sprite = template.Face.sprite;
             hair.sprite = template.Hair.sprite;
-            hair2.sprite = template.Hair2.sprite; // hair2µµ hair¿Í µ¿ÀÏÇÑ ½ºÇÁ¶óÀÌÆ®¸¦ »ç¿ë
+            hair2.sprite = template.Hair2.sprite; // hair2ë„ hairì™€ ë™ì¼í•œ ìŠ¤í”„ë¼ì´íŠ¸ë¥¼ ì‚¬ìš©
 
             adventurerType = template.GetAdventurerType();
 
@@ -70,15 +70,15 @@ public class NpcController : MonoBehaviour
         }
     }
 
-    // »óÈ²¿¡ µû¶ó NPC µ¥ÀÌÅÍ¸¦ Àû¿ëÇÏ´Â ±â´É
+    // ìƒí™©ì— ë”°ë¼ NPC ë°ì´í„°ë¥¼ ì ìš©í•˜ëŠ” ê¸°ëŠ¥
     public void Initialize(NpcData npcData)
     {
         currentNpcData = npcData;
-        // ÃÊ±â Ç¥Á¤À» Normal·Î ¼³Á¤
+        // ì´ˆê¸° í‘œì •ì„ Normalë¡œ ì„¤ì •
         SetEmotion(Emotion.Normal);
     }
 
-    // »óÈ²¿¡ µû¶ó Ç¥Á¤¸¸ ¹Ù²Ù´Â ±â´É
+    // ìƒí™©ì— ë”°ë¼ í‘œì •ë§Œ ë°”ê¾¸ëŠ” ê¸°ëŠ¥
     public Sprite SetEmotion(Emotion emotion)
     {
         if (currentDataTemplate == null || expression == null) return null;
@@ -104,7 +104,7 @@ public class NpcController : MonoBehaviour
         return currentNpcData != null ? currentNpcData.GetAdventurerType() : AdventurerType.Beginner;
     }
 
-    // RectTransform ÃÊ±âÈ­ ¸Ş¼­µå
+    // RectTransform ì´ˆê¸°í™” ë©”ì„œë“œ
     public void InitializeRectTransform(NpcData npcData)
     {
         CopyRect(npcData.LeftArmRectTransform, leftArmRectTransform);
@@ -118,7 +118,7 @@ public class NpcController : MonoBehaviour
         CopyRect(npcData.ExpressionRectTransform, expressionRectTransform);
     }
 
-    // RectTransform º¹»ç ¸Ş¼­µå
+    // RectTransform ë³µì‚¬ ë©”ì„œë“œ
     private void CopyRect(RectTransform source, RectTransform target)
     {
         target.anchorMin = source.anchorMin;

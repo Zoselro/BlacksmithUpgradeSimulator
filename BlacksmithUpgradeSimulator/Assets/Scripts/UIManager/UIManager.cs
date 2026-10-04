@@ -1,14 +1,14 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public enum BgType
 {
-    CloseCounter, // ´İÇô ÀÖÀ» ¶§ Ä«¿îÅÍ
-    OpenCounter, // ¿­·ÁÀÖÀ» ¶§ Ä«¿îÅÍ
-    Enhance, // ÀÛ¾÷½Ç
-    Blacksmith // ´ëÀå°£
+    CloseCounter, // ë‹«í˜€ ìˆì„ ë•Œ ì¹´ìš´í„°
+    OpenCounter, // ì—´ë ¤ìˆì„ ë•Œ ì¹´ìš´í„°
+    Enhance, // ì‘ì—…ì‹¤
+    Blacksmith // ëŒ€ì¥ê°„
 }
 
 public class UIManager : MonoBehaviour
@@ -39,13 +39,13 @@ public class UIManager : MonoBehaviour
 
     Dictionary<BgType, Sprite> bgDictionary = new Dictionary<BgType, Sprite>();
 
-    // NPC ½ºÇÁ¶óÀÌÆ® È°¼ºÈ­ ¿©ºÎ ¼³Á¤ ¸Ş¼­µå
+    // NPC ìŠ¤í”„ë¼ì´íŠ¸ í™œì„±í™” ì—¬ë¶€ ì„¤ì • ë©”ì„œë“œ
     public void ShowPrefab(bool active)
     {
-        npcCanvasGroup.alpha = active ? 1f : 0f; // È°¼ºÈ­ ¿©ºÎ¿¡ µû¶ó Åõ¸íµµ Á¶Àı
+        npcCanvasGroup.alpha = active ? 1f : 0f; // í™œì„±í™” ì—¬ë¶€ì— ë”°ë¼ íˆ¬ëª…ë„ ì¡°ì ˆ
     }
 
-    // ÀÌ¸§°ú ´ë»ç, È°¼ºÈ­ ¿©ºÎ¸¦ ¼³Á¤ÇÏ´Â ¸Ş¼­µå
+    // ì´ë¦„ê³¼ ëŒ€ì‚¬, í™œì„±í™” ì—¬ë¶€ë¥¼ ì„¤ì •í•˜ëŠ” ë©”ì„œë“œ
     public void WelcomNextNpc(string text)
     {
         welcomText.text = text;
@@ -53,13 +53,13 @@ public class UIManager : MonoBehaviour
         dialogueUI.NextTrigger();
     }
 
-    // Ä«¿îÅÍ ÀÌ¹ÌÁö È°¼ºÈ­ ¿©ºÎ ¼³Á¤ ¸Ş¼­µå
+    // ì¹´ìš´í„° ì´ë¯¸ì§€ í™œì„±í™” ì—¬ë¶€ ì„¤ì • ë©”ì„œë“œ
     public void ShowCounterImage(bool active)
     {
         counterImg.SetActive(active);
     }
 
-    // Å° °ª¿¡ µû¶ó Value¸¦ ¾ò´Â Çü½ÄÀ¸·Î ±¸Çö
+    // í‚¤ ê°’ì— ë”°ë¼ Valueë¥¼ ì–»ëŠ” í˜•ì‹ìœ¼ë¡œ êµ¬í˜„
     public void SetBackGround()
     {
         bgDictionary.Add(BgType.OpenCounter, openCounterImg);
@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
         bgDictionary.Add(BgType.Blacksmith, blacksmithBackground);
     }
 
-    // ¹è°æ ÀÌ¹ÌÁö ¼³Á¤ ¸Ş¼­µå
+    // ë°°ê²½ ì´ë¯¸ì§€ ì„¤ì • ë©”ì„œë“œ
     public void SetBackGround(BgType bgType)
     {
         backGround.sprite = bgDictionary[bgType];
@@ -79,7 +79,7 @@ public class UIManager : MonoBehaviour
         backGround.sprite = sprite;
     }
 
-    // ¾Ö´Ï¸ŞÀÌÅÍÀÇ ¼Óµµ¸¦ 0À¸·Î ¼³Á¤ÇÏ¿© ¾Ö´Ï¸ŞÀÌ¼ÇÀ» ¸ØÃß´Â ¸Ş¼­µå
+    // ì• ë‹ˆë©”ì´í„°ì˜ ì†ë„ë¥¼ 0ìœ¼ë¡œ ì„¤ì •í•˜ì—¬ ì• ë‹ˆë©”ì´ì…˜ì„ ë©ˆì¶”ëŠ” ë©”ì„œë“œ
     public void StopAnimator()
     {
         //npcAnimator.speed = 0f;
@@ -88,7 +88,7 @@ public class UIManager : MonoBehaviour
         //settlementWindow.FadeAnimatorSpeed(0f);
     }
 
-    // ¾Ö´Ï¸ŞÀÌÅÍÀÇ ¼Óµµ¸¦ 1·Î ¼³Á¤ÇÏ¿© ¾Ö´Ï¸ŞÀÌ¼ÇÀ» Àç»ıÇÏ´Â ¸Ş¼­µå
+    // ì• ë‹ˆë©”ì´í„°ì˜ ì†ë„ë¥¼ 1ë¡œ ì„¤ì •í•˜ì—¬ ì• ë‹ˆë©”ì´ì…˜ì„ ì¬ìƒí•˜ëŠ” ë©”ì„œë“œ
     public void StartAnimator()
     {
         //npcAnimator.speed = 1f;

@@ -1,12 +1,12 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class WeaponController : MonoBehaviour
 {
     [SerializeField] private WeaponData[] weapons;
-    private int prevEnhancementLevel = 0; // °­È­ Àü ·¹º§
-    private int nextEnhancementLevel = 0; // °­È­ ÈÄ ·¹º§
+    private int prevEnhancementLevel = 0; // ê°•í™” ì „ ë ˆë²¨
+    private int nextEnhancementLevel = 0; // ê°•í™” í›„ ë ˆë²¨
     public int PrevEnhancementLevel => prevEnhancementLevel;
     public int NextEnhancementLevel => nextEnhancementLevel;
 
@@ -46,11 +46,11 @@ public class WeaponController : MonoBehaviour
         nextEnhancementLevel += cnt;
     }
 
-    // WeaponRank¿¡ µû¶ó¼­ Weapons¿¡¼­ °¢°¢ ÀÏ¹İ,·¹¾î,¿¡ÇÈ¿¡ ¸Â´Â ¹«±â 1Á¾À» °¡Á®¿Í¾ß ÇÑ´Ù.
+    // WeaponRankì— ë”°ë¼ì„œ Weaponsì—ì„œ ê°ê° ì¼ë°˜,ë ˆì–´,ì—í”½ì— ë§ëŠ” ë¬´ê¸° 1ì¢…ì„ ê°€ì ¸ì™€ì•¼ í•œë‹¤.
 
     private WeaponData GetWeapon(WeaponRank rank)
     {
-        filtered.Clear(); // ÇÊÅÍ¸µµÈ ¹«±â ¸®½ºÆ® ÃÊ±âÈ­
+        filtered.Clear(); // í•„í„°ë§ëœ ë¬´ê¸° ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
         foreach (WeaponData weapon in weapons)
         {
             if (weapon.GetWeaponRank() == rank)
@@ -61,7 +61,7 @@ public class WeaponController : MonoBehaviour
 
         if (filtered.Count == 0)
         {
-            Debug.LogError("ÇØ´ç µî±Ş ¹«±â ¾øÀ½");
+            Debug.LogError("í•´ë‹¹ ë“±ê¸‰ ë¬´ê¸° ì—†ìŒ");
             return null;
         }
         WeaponData wd = filtered[Random.Range(0, filtered.Count)];
@@ -72,7 +72,7 @@ public class WeaponController : MonoBehaviour
     {
         if (weaponData == null)
         {
-            Debug.LogError("¹«±â µ¥ÀÌÅÍ°¡ ¼³Á¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("ë¬´ê¸° ë°ì´í„°ê°€ ì„¤ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
             return default;
         }
         return weaponData.GetWeaponType();
@@ -82,16 +82,16 @@ public class WeaponController : MonoBehaviour
     {
         if (weaponData == null)
         {
-            Debug.LogError("¹«±â µ¥ÀÌÅÍ°¡ ¼³Á¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("ë¬´ê¸° ë°ì´í„°ê°€ ì„¤ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
             return "Unknown";
         }
         switch (weaponData.GetWeaponType())
         {
-            case WeaponType.LongSword: return "Àå°Ë";
-            case WeaponType.ShortSword: return "´Ü°Ë";
-            case WeaponType.Bow: return "È°";
-            case WeaponType.Rapier: return "·¹ÀÌÇÇ¾î";
-            case WeaponType.Crossbow: return "¼®±Ã";
+            case WeaponType.LongSword: return "ì¥ê²€";
+            case WeaponType.ShortSword: return "ë‹¨ê²€";
+            case WeaponType.Bow: return "í™œ";
+            case WeaponType.Rapier: return "ë ˆì´í”¼ì–´";
+            case WeaponType.Crossbow: return "ì„ê¶";
         }
         return "";
     }
@@ -100,7 +100,7 @@ public class WeaponController : MonoBehaviour
     {
         if (weaponData == null)
         {
-            Debug.LogError("¹«±â µ¥ÀÌÅÍ°¡ ¼³Á¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("ë¬´ê¸° ë°ì´í„°ê°€ ì„¤ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
             return default;
         }
         return weaponData.GetWeaponRank();
@@ -110,14 +110,14 @@ public class WeaponController : MonoBehaviour
     {
         if (weaponData == null)
         {
-            Debug.LogError("¹«±â µ¥ÀÌÅÍ°¡ ¼³Á¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("ë¬´ê¸° ë°ì´í„°ê°€ ì„¤ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
             return "Unknown";
         }
         switch (weaponData.GetWeaponRank())
         {
-            case WeaponRank.Common: return "ÀÏ¹İ";
-            case WeaponRank.Rare: return "·¹¾î";
-            case WeaponRank.Epic: return "¿¡ÇÈ";
+            case WeaponRank.Common: return "ì¼ë°˜";
+            case WeaponRank.Rare: return "ë ˆì–´";
+            case WeaponRank.Epic: return "ì—í”½";
         }
         return "";
     }

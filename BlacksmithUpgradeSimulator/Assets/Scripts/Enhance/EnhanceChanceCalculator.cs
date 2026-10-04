@@ -1,9 +1,9 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 
 public class EnhanceChanceCalculator : MonoBehaviour
 {
-    // Àåºñ°­È­ ÁøÇàµÇ±â Àü ¼º°ø È®·üÀÌ 5~40%, 50%, 50%~90% È®·üÀÇ ¼¼ °¡Áö ¿É¼Ç Áß ÇÏ³ª¸¦ ·£´ıÀ¸·Î µ¹¸®´Â ±â´É
+    // ì¥ë¹„ê°•í™” ì§„í–‰ë˜ê¸° ì „ ì„±ê³µ í™•ë¥ ì´ 5~40%, 50%, 50%~90% í™•ë¥ ì˜ ì„¸ ê°€ì§€ ì˜µì…˜ ì¤‘ í•˜ë‚˜ë¥¼ ëœë¤ìœ¼ë¡œ ëŒë¦¬ëŠ” ê¸°ëŠ¥
     [SerializeField] private float beginnerpLowerProbability;
     [SerializeField] private float beginnerpUpperProbability;
 
@@ -15,7 +15,7 @@ public class EnhanceChanceCalculator : MonoBehaviour
 
     //public float GetRandomEnhanceChance(AdventurerType type)
     //{
-    //    // ÃÊ±Ş,Áß±Ş,°í±Ş ¸ğÇè°¡ ÀÏ °æ¿ì È®·üÀº ´Ù¸£°Ô Ç¥±â.
+    //    // ì´ˆê¸‰,ì¤‘ê¸‰,ê³ ê¸‰ ëª¨í—˜ê°€ ì¼ ê²½ìš° í™•ë¥ ì€ ë‹¤ë¥´ê²Œ í‘œê¸°.
     //    switch (type)
     //    {
     //        case AdventurerType.Beginner:

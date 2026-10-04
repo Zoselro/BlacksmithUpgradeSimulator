@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class NpcGenerator : MonoBehaviour
@@ -23,27 +23,27 @@ public class NpcGenerator : MonoBehaviour
     {
         this.adventurerType = adventurerType;
 
-        NpcData npcData = PickNpcDataByType(adventurerType); // adventurerTypeÀÇ ´ëÇÑ ·£´ıÇÑ npc¸¦ »Ì¾Æ³¿
+        NpcData npcData = PickNpcDataByType(adventurerType); // adventurerTypeì˜ ëŒ€í•œ ëœë¤í•œ npcë¥¼ ë½‘ì•„ëƒ„
         
         if (npcData == null)
         {
-            Debug.LogError($"[NpcGenerator] {adventurerType} Å¸ÀÔÀÇ NpcData¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogError($"[NpcGenerator] {adventurerType} íƒ€ì…ì˜ NpcDataë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
             return null;
         }
-        npcController.Initialize(npcData); // »Ì¾Æ³½ npcÀÇ µ¥ÀÌÅÍ¸¦ npcController¿¡ ÃÊ±âÈ­ÇÑ´Ù.
+        npcController.Initialize(npcData); // ë½‘ì•„ë‚¸ npcì˜ ë°ì´í„°ë¥¼ npcControllerì— ì´ˆê¸°í™”í•œë‹¤.
 
-        npcController.ApplyNpcTemplate(npcData); // »Ì¾Æ³½ npcÀÇ µ¥ÀÌÅÍ¸¦ npcController¿¡ Àû¿ëÇÑ´Ù.
-        npcController.InitializeRectTransform(npcData); // »Ì¾Æ³½ npc ÀÌ¹ÌÁöµéÀÇ À§Ä¡¸¦ npcController¿¡ Àû¿ëÇÑ´Ù.
+        npcController.ApplyNpcTemplate(npcData); // ë½‘ì•„ë‚¸ npcì˜ ë°ì´í„°ë¥¼ npcControllerì— ì ìš©í•œë‹¤.
+        npcController.InitializeRectTransform(npcData); // ë½‘ì•„ë‚¸ npc ì´ë¯¸ì§€ë“¤ì˜ ìœ„ì¹˜ë¥¼ npcControllerì— ì ìš©í•œë‹¤.
 
         enhancementLevel =
-                    weaponController.GetEnhancementLevelByAdventurerType(adventurerType); // °í°´ÀÇ µî±Ş¿¡ µû¶ó °­È­ µî±ŞÀ» °áÁ¤ÇÑ´Ù.
+                    weaponController.GetEnhancementLevelByAdventurerType(adventurerType); // ê³ ê°ì˜ ë“±ê¸‰ì— ë”°ë¼ ê°•í™” ë“±ê¸‰ì„ ê²°ì •í•œë‹¤.
 
         return npcData;
     }
 
     //private NpcData PickNpcDataByType(AdventurerType type)
     //{
-    //    candidates.Clear(); // ÈÄº¸ ¸®½ºÆ®¸¦ ÃÊ±âÈ­
+    //    candidates.Clear(); // í›„ë³´ ë¦¬ìŠ¤íŠ¸ë¥¼ ì´ˆê¸°í™”
     //    for (int i = 0; i < npcDatas.Length; i++)
     //    {
     //        if (npcDatas[i].GetAdventurerType() == type)
@@ -54,7 +54,7 @@ public class NpcGenerator : MonoBehaviour
 
     //    if (candidates.Count == 0)
     //    {
-    //        Debug.LogError($"[NpcGenerator] {type} Å¸ÀÔÀÇ NpcData°¡ ¾ø½À´Ï´Ù.");
+    //        Debug.LogError($"[NpcGenerator] {type} íƒ€ì…ì˜ NpcDataê°€ ì—†ìŠµë‹ˆë‹¤.");
     //        return null;
     //    }
 
@@ -66,7 +66,7 @@ public class NpcGenerator : MonoBehaviour
     {
         if (!npcDataMap.TryGetValue(type, out List<NpcData> candidates))
         {
-            Debug.LogError($"{type} Å¸ÀÔÀÇ NPC°¡ ¾ø½À´Ï´Ù.");
+            Debug.LogError($"{type} íƒ€ì…ì˜ NPCê°€ ì—†ìŠµë‹ˆë‹¤.");
             return null;
         }
 
